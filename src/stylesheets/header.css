@@ -1,0 +1,23 @@
+.navbar {
+    width: 65%;
+    height: 50px;
+    margin: auto;
+    padding: 10px 0;
+    background-color: rgb(250, 250, 255);
+    color: rgb(72, 72, 158);
+}
+ul {
+    font-family: Bahnschrift;
+    font-size: 1.35em;
+    text-align: center;
+}
+nav > ul > li {
+    display: inline;
+    margin: 20px;
+    padding: 7px;
+}
+
+nav > ul > li:hover {
+    border-bottom: 3px solid rgb(72, 72, 158);
+    cursor: pointer;
+}
