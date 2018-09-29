@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
-import FadeIn from 'react-fade-in'
 import '../stylesheets/slideshow.css'
 import Slide from './slide.js'
 
 class Slideshow extends Component {
+    constructor(props) {
+        super()
+        this.state = {
 
+        }
+    }
 
     render() {
         return (

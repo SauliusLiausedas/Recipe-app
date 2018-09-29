@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../stylesheets/slide.css'
+import Popup from './popup.js'
 import imgPizza from '../img/pizza.jpg'
 import imgChilli from '../img/chilli.jpg'
 import imgChickenCas from '../img/chickenCas.jpg'
@@ -67,22 +68,29 @@ class Slide extends Component {
 
     constructor() {
         super()
-        this.animatedTextRef = React.createRef()
+        this.ingredientsList = React.createRef()
         this.state = {
             slideRecipe: 0,
             recipies: recipeDB,
-            full: "recipeSlide"
+            full: "recipeSlide",
+            appear: "appear",
+            visibility: false
         }
     }
 
     componentDidMount() {
         this.interval = setInterval(() => {
-            if(this.state.slideRecipe < 3) {
-                this.setState({slideRecipe: this.state.slideRecipe + 1})
-            } else {
-                this.setState({slideRecipe: 0})
-            }
-        }, 10000);
+            this.changeSlide()
+        }, 5000);
+    }
+
+    changeSlide() {
+        if(this.state.slideRecipe < 3) {
+            this.setState({slideRecipe: this.state.slideRecipe + 1})
+        } else {
+            this.setState({slideRecipe: 0})
+        }
+
     }
 
     componentWillUnmount() {
@@ -97,18 +105,26 @@ class Slide extends Component {
         }
     }
 
+    editIngredients(e) {
+        this.setState({visibility: true})
+        clearInterval(this.interval)
+
+    }
+
     render() {
         return(
-            <div className={this.state.full }>
+            <div className={this.state.full + ' ' + this.state.appear}>
+                <Popup value={this.ingredientsList.current} visible={this.state.visibility}/>
                 <div className="recipeFrame" >
                     <h1> {this.state.recipies.meal[this.state.slideRecipe].name} </h1>
                     <img ref={this.animatedTextRef} alt={this.state.recipies.meal[this.state.slideRecipe].name} src={this.state.recipies.meal[this.state.slideRecipe].image} className="recipeImg"></img>
-                    <ul className="recipeIngredients">
+                    <ul  ref={this.ingredientsList} className="recipeIngredients">
                         {this.state.recipies.meal[this.state.slideRecipe].ingredients.map((ingredient, i) => <li key={i}>{ingredient}</li>)}
                     </ul>
                     <div className="text">
                         <p className="recipeMethod"><a href="#!" onClick={()=> this.showFullText()}> {this.state.recipies.meal[this.state.slideRecipe].method}</a></p>
                     </div>
+                    <button className="editBtn" onClick={(e) => this.editIngredients(e)}>Edit Ingredients</button>
                 </div>
             </div>
         );

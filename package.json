@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "react": "^16.5.2",
+    "react-animate-on-change": "^2.1.1",
     "react-dom": "^16.5.2",
     "react-fade-in": "^0.1.6",
     "react-scripts": "1.1.5"

@@ -1,0 +1,11 @@
+#popup {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 350px;
+    background-color: red;
+    border-radius: 15px;
+    border: 1px solid rgb(156, 164, 181);
+    background-color: rgba(255,255,255, 0.95)
+}
