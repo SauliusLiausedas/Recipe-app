@@ -6,22 +6,16 @@
     display: inline-block;
     background-color: rgb(250, 250, 255);
     width: 100%;
-    height: 500px;
+    height: auto;
     text-align: center;
     overflow: hidden;
-    opacity: 0;
-}
-
-.full {
-    transition: all 1000ms;
-    height: auto;
 }
 
 .recipeImg {
     float: left;
-    margin-left: 100px;
-    width: 300px;
-    height: 300px;
+    margin-left: 60px;
+    width: 400px;
+    height: 400px;
     opacity: 0.85;
     border-radius: 100%;
     opacity: 1;
@@ -41,7 +35,8 @@ h1 {
     list-style-position: outside;
     text-align: justify;
     float: right;
-    width: 40%;
+    margin-left: 5px;
+    width: 350px;
     margin-right: 100px;
     line-height: 1.35em;
 }
@@ -52,33 +47,16 @@ h1 {
     line-height: 1.4em;
     text-align: justify;
     float: right;
-    overflow: fragments;
+    overflow: hidden;
+    height: 2.8em;
+    transition: all 1000ms;
+}
+
+.full {
+    transition: all 1000ms;
+    height: 10em;
 }
 
 a {
     text-decoration: none;
-}
-
-.editBtn {
-    user-select: none;
-    position: absolute;
-    top: 500px;
-    left: 70%;
-    height: 30px;
-    outline: none;
-    border: none;
-    background-color: rgb(136, 144, 161);
-    border-radius: 10px;
-    font-size: 1em;
-    color: rgb(250, 250, 255);
-}
-
-.editBtn:hover {
-    background-color: rgb(156, 164, 181);
-    cursor: pointer;
-}
-
-.editBtn:active {
-    border: 1px inset white;
-    height: 32px;
 }

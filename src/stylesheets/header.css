@@ -11,13 +11,31 @@ ul {
     font-size: 1.35em;
     text-align: center;
 }
+
+.navList:hover {
+    border-bottom: 3px solid rgb(72, 72, 158);
+    cursor: pointer;
+}
+
 nav > ul > li {
     display: inline;
     margin: 20px;
     padding: 7px;
 }
 
-nav > ul > li:hover {
-    border-bottom: 3px solid rgb(72, 72, 158);
-    cursor: pointer;
+input {
+    padding: 5px;
+    margin: 0 70px 0 0;
+    float: right;
+    width: 170px;
+    height: 1.35em;
+    padding: 3px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+}
+
+input:focus {
+    background-color: rgb(245, 240, 255);
+    border-bottom: 1px solid rgb(72, 72, 158);
 }

@@ -7,11 +7,11 @@ class Header extends Component {
           <div>
               <nav className="navbar">
                   <ul>
-                      <li><a>Menu</a></li>
-                      <li><a>Recipies</a></li>
-                      <li><a>Edit recipies</a></li>
-                      <li><a>Delete Recipies</a></li>
-                      <li><a>Comments</a></li>
+                      <li className="navList"><a>Menu</a></li>
+                      <li className="navList"><a>Recipies</a></li>
+                      <li className="navList"><a>Edit recipies</a></li>
+                      <li className="navList"><a>Delete Recipies</a></li>
+                      <li><input placeholder="Search"></input></li>
                   </ul>
               </nav>
           </div>  
