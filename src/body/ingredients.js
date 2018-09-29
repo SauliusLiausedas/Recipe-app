@@ -19,10 +19,10 @@ class Ingredients extends Component {
     showIngredients() {
 
         if(this.state.edit === false) {
-            this.state.inputValues = this.props.recipies.meal[this.props.slideRecipe].ingredients
+            this.state.inputValues = this.props.recipes.meal[this.props.slideRecipe].ingredients
             return(
                 <ul ref={this.ingredientsList} className="recipeIngredients">
-                    {this.props.recipies.meal[this.props.slideRecipe].ingredients.map((ingredient, i) =>
+                    {this.props.recipes.meal[this.props.slideRecipe].ingredients.map((ingredient, i) =>
                         <li className="list" key={i}>{ingredient}</li>)}
                 </ul>
             );
