@@ -6,14 +6,6 @@ import Header from './body/header.js'
 import AllRecipes from './pages/all/allrecipes.js'
 import Error from './pages/error.js'
 
-const NewRoute = () => {
-    return (
-        <div>
-            <h1>Hello</h1>
-        </div>
-    )
-}
-
 class App extends Component {
     render() {
         return (

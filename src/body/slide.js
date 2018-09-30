@@ -20,14 +20,22 @@ class Slide extends Component {
     componentDidMount() {
         this.interval = setInterval(() => {
             this.changeSlide()
-        }, 5000);
+        }, 10000);
     }
 
-    changeSlide() {
-        if(this.state.slideRecipe < 3) {
-            this.setState({slideRecipe: this.state.slideRecipe + 1})
+    changeSlide(e) {
+        if (e === undefined) {
+            if(this.state.slideRecipe < 3) {
+                this.setState({slideRecipe: this.state.slideRecipe + 1})
+            } else {
+                this.setState({slideRecipe: 0})
+            }
         } else {
-            this.setState({slideRecipe: 0})
+            if(this.state.slideRecipe > 0) {
+                this.setState({slideRecipe: this.state.slideRecipe - 1})
+            } else {
+                this.setState({slideRecipe: 3})
+            }
         }
 
     }
@@ -50,7 +58,9 @@ class Slide extends Component {
             <div className="recipeSlide">
                 {/*<Popup value={this.ingredientsList.current} visible={this.state.visibility}/>*/}
                 <div className="recipeFrame">
+                    <h1 className="symbol left" id="left" onClick={(e) => this.changeSlide(e)}> &lt; </h1>
                     <h1> {this.state.recipes.meal[this.state.slideRecipe].name} </h1>
+                    <h1 className="symbol right" onClick={() => this.changeSlide()}> &gt; </h1>
                     <img alt={this.state.recipes.meal[this.state.slideRecipe].name}
                          src={this.state.recipes.meal[this.state.slideRecipe].image} className="recipeImg"></img>
                     <div className="ingredients" onClick={() => this.startEdit()}>

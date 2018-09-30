@@ -6,7 +6,7 @@ class Ingredients extends Component {
         super()
         this.state = {
             edit: false,
-            inputValues: new Array
+            inputValues: []
         }
     }
 
