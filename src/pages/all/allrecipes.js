@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 import recipeDB from '../../data.js'
 import '../../stylesheets/allrecipes.css'
+import ViewRecipe from './view.js'
 
 class AllRecipes extends Component {
     constructor(props) {
         super()
-        this.methodText = React.createRef()
         this.recipeNames = []
         this.recipeIngredients = {}
         this.recipeMethod = []
         this.recipeImg = []
         this.state = {
             recipes: recipeDB,
-            popup: "popup invisible"
+            recipeToShow: ""
         }
     }
 
@@ -29,21 +29,20 @@ class AllRecipes extends Component {
     }
 
     viewRecipe(e) {
-        
+        this.setState({recipeToShow: e.currentTarget.id})
     }
 
     render() {
         return (
             <div className="allRecipes">
                 {this.showAllRecipes()}
-                <div className={this.state.popup} onLoad={(e) => this.hide(e)}>
-                </div>
+                <ViewRecipe view={this.state.recipeToShow}/>
                 <div className="boxes">
                     {this.recipeNames.map((name, i) =>
                         <div key={i} id={name} className="recipe-box" onClick={(e)=>this.viewRecipe(e)}>
                             <img className="recipe-img" alt={name} src={this.recipeImg[i]}/>
                             <h2 key={i}>{name}</h2>
-                            <em><p ref={this.methodText}>{this.recipeMethod[i].slice(0, 250) + "..."}</p></em>
+                            <em><p>{this.recipeMethod[i].slice(0, 250) + "..."}</p></em>
                         </div>
                     )}
                 </div>

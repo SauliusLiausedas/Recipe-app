@@ -35,15 +35,3 @@
 .listItemName {
     font-size: 2em;
 }
-.popup {
-    position: fixed;
-    top: 15%;
-    left: 25%;
-    height: 500px;
-    width: 50%;
-    background-color: rgba(255, 255, 255, 0.95);
-}
-
-.invisible {
-    visibility: hidden;
-}
