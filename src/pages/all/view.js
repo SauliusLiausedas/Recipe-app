@@ -54,7 +54,7 @@ class ViewRecipe extends Component {
                         <ul className="ingredients-ul">
                             {this.state.renderView.ingredients.map((ingredient, i)=> <li key={i} className="ingredients-li">{ingredient} </li> )}
                         </ul>
-                        <img alt={this.state.renderview.name} className="recipeImg" src={this.state.renderView.image}/>
+                        <img className="recipeImg" src={this.state.renderView.image}/>
                         <p className="method-text">{this.state.renderView.method}</p>
                     </div>
                 </div>
