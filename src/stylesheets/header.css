@@ -65,6 +65,7 @@ input:focus {
     font-family: 'Alegreya SC', serif;
     color: orangered;
     margin-bottom: 0;
+    margin-top: 12px;
   }
 
   .navbar {
@@ -82,7 +83,6 @@ input:focus {
   .navListItem {
     display: inline-block;
     font-size: 15px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-transform: uppercase;
     padding: 20px;
   }

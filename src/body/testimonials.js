@@ -1,12 +1,6 @@
 import React, {Component} from 'react'
 import '../stylesheets/testimonials.css'
-
-const testimonialsData = [
-  '"Lorem ipsum dolor sit amet, ad eligendi pariatur. Porro!"',
-  '"Sapiente, magnam sunt quidem ex aspernatur maxime!"',
-  '"Lius quas nobis doloribus, eveniet repellat itaque."',
-  '"Porro! Lorem ipsum dolor sit amet, ad eligendi pariatur."'
-]
+import recipeDB from '../data.js'
 
 class Testimonials extends Component {
 
@@ -16,7 +10,7 @@ class Testimonials extends Component {
     setInterval(() => {
       let newState = this.state.id + 1
 
-      if (testimonialsData.length <= newState) {
+      if (recipeDB.testimonialsData.length <= newState) {
         this.setState({id: 0})
       } else {
         this.setState({id: this.state.id + 1})
@@ -26,7 +20,7 @@ class Testimonials extends Component {
 
   render() {
     const {id} = this.state
-    const text = testimonialsData[id]
+    const text = recipeDB.testimonialsData[id]
 
     return (
         <h3>{text}</h3>

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 40px 20px 40px;
+    padding: 40px;
   }
   
   .contentRecipePic {
@@ -11,4 +11,15 @@
 
   .testimonials {
     padding: 40px;
+    background: black;
+    text-align: center;
+  }
+
+  .testimonialsText {
+    color: orangered;
+    font-weight: normal;
+  }
+
+  .contentRecipeText {
+    padding: 0 30px;
   }

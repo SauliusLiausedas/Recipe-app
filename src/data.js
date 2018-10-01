@@ -9,6 +9,12 @@ import imgCurry from './img/curry.jpg'
 import imgLasagne from './img/lasagne.jpg'
 
 const recipeDB = {
+    testimonialsData: [
+        '"Made some really tasty treats from this site. They didn\'t turn out as nice as the pictures though since they are pros and I am not.."',
+        '"This is the greatest recipe website I have ever been to!!! This website is wonderful!!!"',
+        '"I\'ve only recently been introduced to this site, but I really love it."',
+        '"Just makes me hungry looking at all of those photos. I don\'t think people realize what an art form it is to take photos of food, some people somehow make a career of just taking photos of yummy food."'
+    ],  
     meal: [
         {
             name: "Pizza Dough",
