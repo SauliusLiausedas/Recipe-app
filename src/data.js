@@ -17,6 +17,7 @@ const recipeDB = {
     ],  
     meal: [
         {
+            id: 1,
             name: "Pizza Dough",
             ingredients: [
                 "1/2 cups (355 ml) warm water",
@@ -30,6 +31,7 @@ const recipeDB = {
             image: imgPizza
         },
         {
+            id: 2,
             name: "Chicken Casserole",
             ingredients: [
                 "knob of butter",
@@ -45,7 +47,9 @@ const recipeDB = {
             method: "Heat a knob of butter and ½ tbsp rapeseed or olive oil in a large frying pan, cook 1 finely chopped large onion for 8-10 mins until softened and starting to caramelise. Meanwhile, put 1 ½ tbsp flour and a little salt and pepper in a bowl and toss 650g boneless, skinless chicken thigh fillets in it.",
             image: imgChickenCas
         },
-        {  name: "Bombay Chicken",
+        {
+            id: 3,
+            name: "Bombay Chicken",
             ingredients: [
                 "1 small whole chicken",
                 "5 tbsp tikka masala paste",
@@ -58,7 +62,9 @@ const recipeDB = {
             method: "Heat oven to 220C/200C fan/gas 6. Put the chicken on a chopping board and, using your hands, rub the skin generously with half the spice paste. Season well, tie the legs together and set aside. Heat the oil in a large flameproof casserole dish over a medium heat. Add the onion and a good pinch of salt and cook for 5 mins or until beginning to soften. Add the tomatoes, fenugreek seeds, ginger and remaining spice paste, and cook for 3 mins more. Stir through the coconut milk and bring to a simmer. Add the chicken and the potatoes to the dish, and cook in the oven for 20 mins, uncovered.",
             image: imgChickenBom
         },
-        {  name: "Chilli",
+        {
+            id: 4,
+            name: "Chilli",
             ingredients: [
                 "1 tbsp rapeseed oil",
                 "1 large onion",
@@ -70,7 +76,9 @@ const recipeDB = {
             method: "Heat the oil in a heavy-based pan. Cook the onion for 10 mins until softened and starting to caramelise. Add the garlic and spices and cook for a further 1-2 mins. Transfer to a slow cooker, along with the diced vegetables, mince, chopped tomatoes, stock cube and tomato purée. Stir well. Cook on low for 6-7 hours. About half an hour before serving, take off the lid and use a stick blender to blend in the vegetables (if your children aren’t keen to eat veg) or leave chunky. Stir through the lentils and flageolet beans.",
             image: imgChilli
         },
-        {   name: "Burger",
+        {
+            id: 5,
+            name: "Burger",
             ingredients: [
                 "1 chicken breast",
                 "1 tsp chipotle paste",
@@ -84,7 +92,9 @@ const recipeDB = {
             method: "Put the chicken breast between two pieces of cling film and bash with a rolling pin or pan to about 1cm thick. Mix the chipotle paste with half the lime juice and spread over the chicken.Heat a griddle pan over a high heat. Once hot, cook the chicken for 3 mins each side until cooked through, adding the cheese for the final 2 mins of cooking. Add the bun, cut-side down, to the griddle pan to toast lightly. Season the chicken.",
             image: imgBurger
         },
-        {   name: "Baked Potato",
+        {
+            id: 6,
+            name: "Baked Potato",
             ingredients: [
                 "4 large baking potatoes",
                 "2 tsp olive oil",
@@ -96,7 +106,9 @@ const recipeDB = {
             method: "Heat oven to 220C/200C fan/gas 7. Rub 2 tsp olive oil over 4 large baking potatoes and put on the top shelf of the oven. Bake for 20 mins, then turn down the oven to 190C/170C fan/gas 5 and bake for 45 mins-1 hr until the skin is crisp and the flesh soft.",
             image: imgPotato
         },
-        {   name: "Crumble",
+        {
+            id: 7,
+            name: "Crumble",
             ingredients: [
                 "500g rhubarb chopped into chunks the length of your thumb",
                 "100g golden caster sugar",
@@ -109,7 +121,9 @@ const recipeDB = {
             method: "Tip 500g thumb-length chunks of rhubarb into a saucepan with 100g golden caster sugar and 3 tbsp port, if using. Cover and simmer on a very low heat for 15 mins, adding more sugar if you want. When soft (but still holding its shape) and sweet enough, pour the rhubarb into a medium baking dish. Heat oven to 200C/180C fan/gas 6.",
             image: imgCrumble
         },
-        {   name: "Curry",
+        {
+            id: 8,
+            name: "Curry",
             ingredients: [
                 "1 large onion",
                 ", roughly chopped",
@@ -125,7 +139,9 @@ const recipeDB = {
             method: "Put 1 roughly chopped large onion, 3 tbsp mild curry paste, a 400g can chopped tomatoes, 2 tsp vegetable bouillon powder, 1 tbsp finely chopped ginger and 1 chopped yellow pepper into the slow cooker pot with a third of a can of water and stir well. Add 2 skinless chicken legs, fat removed, and push them under all the other ingredients so that they are completely submerged. Cover with the lid and chill in the fridge overnight. The next day, cook on Low for 6 hrs until the chicken and vegetables are really tender.",
             image: imgCurry
         },
-        {   name: "Lasagne",
+        {
+            id: 9,
+            name: "Lasagne",
             ingredients: [
                 "250g pack fresh lasagne sheets",
                 "olive oil for greasing",

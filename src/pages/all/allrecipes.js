@@ -39,7 +39,7 @@ class AllRecipes extends Component {
                 <ViewRecipe view={this.state.recipeToShow}/>
                 <div className="boxes">
                     {this.recipeNames.map((name, i) =>
-                        <div key={i} id={name} className="recipe-box" onClick={(e)=>this.viewRecipe(e)}>
+                        <div key={i} id={i} className="recipe-box" onClick={(e)=>this.viewRecipe(e)}>
                             <img className="recipe-img" alt={name} src={this.recipeImg[i]}/>
                             <h2 key={i}>{name}</h2>
                             <em><p>{this.recipeMethod[i].slice(0, 250) + "..."}</p></em>
