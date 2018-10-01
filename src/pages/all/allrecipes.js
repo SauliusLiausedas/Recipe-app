@@ -36,7 +36,7 @@ class AllRecipes extends Component {
         return (
             <div className="allRecipes">
                 {this.showAllRecipes()}
-                <ViewRecipe view={this.state.recipeToShow}/>
+                <ViewRecipe showRecipe={() => {this.recipeToRender()}} view={this.state.recipeToShow}/>
                 <div className="boxes">
                     {this.recipeNames.map((name, i) =>
                         <div key={i} id={i} className="recipe-box" onClick={(e)=>this.viewRecipe(e)}>

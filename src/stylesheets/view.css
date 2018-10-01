@@ -1,12 +1,48 @@
 .popup {
     position: fixed;
     top: 15%;
-    left: 25%;
-    height: 500px;
-    width: 50%;
+    margin: auto;
+    height: auto;
+    width: 70%;
     background-color: rgba(255, 255, 255, 0.95);
+}
+
+h2 {
+    text-align: center;
 }
 
 .invisible {
     visibility: hidden;
+}
+
+.recipeImg {
+    float: left;
+    width: 35%;
+    height: 250px;
+    opacity: 0.8;
+}
+
+.ingredients-ul {
+    max-width: 50%;
+    padding: 0;
+    float: right;
+    margin-right: 50px;
+    /*height: 800px;*/
+    max-height: 800px;
+    /*overflow: scroll;*/
+    /*margin-top: 30px;*/
+}
+
+.ingredients-li {
+    list-style-type: circle;
+    font-size: 1.2em;
+}
+
+.method-text {
+    display: inline-block;
+    padding: 20px;
+    letter-spacing: 0.5px;
+    line-height: 1.1em;
+    -ms-word-break: break-all;
+    word-break: break-word;
 }

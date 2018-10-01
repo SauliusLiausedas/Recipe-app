@@ -18,21 +18,25 @@ class ViewRecipe extends Component {
         }
     }
 
-    componentDidUpdate() {
-        if (this.props.view) {
-            this.recipeToRender(this.props.view)
-        }
-    }
+    // componentDidMount(){
+    //
+    // }
 
     recipeToRender(recipeId) {
-        console.log(recipeId)
-        this.setState({renderView: {
-            id: recipeId,
-            name: recipeDB.meal[recipeId].name,
-            image: recipeDB.meal[recipeId].image,
-            method: recipeDB.meal[recipeId].method,
-            ingredients: recipeDB.meal[recipeId].ingredients
-        }})
+        this.setState({
+            renderView: {
+                id: recipeId,
+                name: recipeDB.meal[recipeId].name,
+                image: recipeDB.meal[recipeId].image,
+                method: recipeDB.meal[recipeId].method,
+                ingredients: recipeDB.meal[recipeId].ingredients
+            }
+        })
+    }
+
+    hideEdit() {
+        this.setState({popup: "popup invisible"})
+        console.log(this.state)
     }
 
     render() {
@@ -44,14 +48,15 @@ class ViewRecipe extends Component {
             )
         } else {
             return (
-
-                <div>
-                    {/*<div onDoubleClick={() => this.recipeToRender(this.props.view)}>*/}
+                <div onClick={() => this.recipeToRender(this.props.view)}>
+                    {/*{this.props.showRecipe(this.props.view)}*/}
                     <div className={this.state.popup}>
-                        {this.state.renderView.ingredients}
-                        <img src={this.state.renderView.image}/>
-                        {this.state.renderView.method}
-                        {this.state.renderView.name}
+                        <h2>{this.state.renderView.name}</h2>
+                        <ul className="ingredients-ul">
+                            {this.state.renderView.ingredients.map((ingredient, i)=> <li key={i} className="ingredients-li">{ingredient} </li> )}
+                        </ul>
+                        <img className="recipeImg" src={this.state.renderView.image}/>
+                        <p className="method-text">{this.state.renderView.method}</p>
                     </div>
                 </div>
             )
