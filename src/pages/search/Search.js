@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../stylesheets/search.css';
 import recipeDB from '../../data.js';
+import AllRecipes from "../all/allrecipes";
 
 class Search extends Component {
 
@@ -8,14 +9,14 @@ class Search extends Component {
         super(props);
 
         this.state = {searchReq : '',
-            searchResult : {}};
+            searchResult : []};
 
-        let tempObj= {};
+        /*let tempObj= {};
         recipeDB.meal.forEach(meal => {
             tempObj[meal.id] = 0;
         });
 
-        this.state.searchResult= tempObj;
+        this.state.searchResult= tempObj;*/
 
 
     }
@@ -40,55 +41,13 @@ class Search extends Component {
         var searchWords= this.state.searchReq.split(' ');
         let searchIndexes= {};
 
-        recipeDB.meal.forEach(meal => {
-            let mealSearchIndex= 0;
-
-            //search index gains
-            const importantWord = 20;
-            const simpleWord = 10;
-            const subsequentWord = 2;
-
-            //get all words into arrays to search through them
-            var importantWords= [];
-            var simpleWords= [];
-            importantWords=meal.name.split(' ');
-            meal.ingredients.forEach(ingredient => simpleWords=simpleWords.concat(ingredient.split(' ')) );
-            simpleWords=simpleWords.concat(meal.method.split(' '));
-
-            searchWords.forEach(searchWord => {
-                var firstTime= true;
-               for(let i= 0; i< importantWords.length; i++){
-                   //lower case for case insensitivity
-                   if(importantWords[i].toLowerCase() === searchWord.toLowerCase()) {
-                       mealSearchIndex+= importantWord;
-                       firstTime=false;
-                       break;
-                   }
-               }
-
-
-               simpleWords.forEach(word => {
-                   if(searchWord.toLowerCase() === word.toLowerCase()){
-                       if(firstTime) mealSearchIndex+= simpleWord;
-                       else mealSearchIndex+= subsequentWord;
-                       firstTime= false;
-                   }
-               });
-            });
-            searchIndexes[meal.id]=mealSearchIndex;
-            //
-             let temp= {...this.state.searchResult};
-             temp[meal.id]= mealSearchIndex;
-             this.setState({temp});
+        let searchResults = recipeDB.meal.filter((meal) => {
+            return meal.name.toLowerCase().indexOf(this.state.searchReq.toLowerCase()) !== -1;
         });
-
 
         //can't figure out how to save/update object data in state
         //does not work either
-        this.setState({searchResult : searchIndexes});
-
-        console.log(searchIndexes)
-        console.log(this.state.searchResult);
+        this.setState({searchResult : searchResults});
     }
 
     onSubmit(){
@@ -101,6 +60,7 @@ class Search extends Component {
             <div className="content">
                 <input value={this.state.searchReq} type="text" onChange={(event)=>this.onKeyTyped(event)} onSubmit={this.onSubmit}/>
                 <button onClick={()=>this.onSubmit()}>Search</button>
+                <AllRecipes searchResult={this.state.searchResult} />
             </div>
         )
     }

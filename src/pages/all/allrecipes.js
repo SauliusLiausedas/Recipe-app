@@ -14,6 +14,21 @@ class AllRecipes extends Component {
         }
     }
 
+    componentWillMount() {
+        if (this.props.searchResult.length){
+            recipeDB.results = this.props.searchResult;
+            this.setState({recipes: recipeDB});
+        } else if (this.props.searchResult) {
+            recipeDB.results = [];
+            this.setState({recipes: recipeDB});
+        }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        recipeDB.results = this.props.searchResult;
+       // this.setState({recipes: recipeDB});
+    }
+
     viewRecipe(e) {
         this.setState({recipeToShow: e.currentTarget.id})
     }
@@ -32,7 +47,7 @@ class AllRecipes extends Component {
                 {this.state.recipeToShow ? (<ViewRecipe view={this.state.recipes.meal[this.state.recipeToShow]} popup={this.state.popup}/>) : ''}
                 {/*{this.props.view ? (<ViewRecipe view={this.state.recipeToShow}/>) : ""}*/}
                 <div className="boxes">
-                    {this.state.recipes.meal.map((mealObj, i) =>
+                    {this.state.recipes[(this.props.searchResult ? 'results' : 'meal')].map((mealObj, i) =>
                         <div key={i} id={i} className="recipe-box" onClick={(e)=>this.viewRecipe(e)}>
                             <img className="recipe-img" alt={mealObj.name} src={mealObj.image}/>
                             <h2 key={i}>{mealObj.name}</h2>
