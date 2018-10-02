@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import recipeDB from '../data.js'
 
+/*
 class Recipes extends Component {
     render() { 
       return (
@@ -39,6 +40,36 @@ class Recipes extends Component {
       )
     }
   }
+*/
 
+class Recipes extends Component {
+    constructor(props) {
+        super()
+        this.recipeNames = []
+        this.recipeIngredients = {}
+        this.recipeMethod = []
+        this.recipeImg = []
+        this.state = {
+            recipes: recipeDB,
+            recipeToShow: ""
+        }
+    }
+
+    render() {
+        return (
+            <div className="allRecipes">
+                <div className="boxes">
+                    {this.state.recipes.meal.map((mealObj, i) =>
+                        <div key={i} className="recipe-box">
+                            <img className="recipe-img" alt={mealObj.name} src={mealObj.image}/>
+                            <h2 key={i}>{mealObj.name}</h2>
+                            <p>{mealObj.method.slice(0, 250) + "..."}</p>
+                        </div>
+                    ).slice(0, 3)}
+                </div>
+            </div>
+        )
+    }
+}
   
   export default Recipes;
