@@ -16,7 +16,7 @@ class Header extends Component {
                       <li className="navListItem"><a className="navListItemLink" href="/all">All Recipes</a></li>
                       <li className="navListItem"><a className="navListItemLink">Edit Recipes</a></li>
                       <li className="navListItem"><a className="navListItemLink">Delete Recipes</a></li>
-                      <li className="navListItem"><a className="navListItemLink">Search</a></li>
+                      <li className="navListItem"><a className="navListItemLink" href="/search">Search</a></li>
                   </ul>
               </nav>
           </div>  
