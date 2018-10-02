@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import '../stylesheets/testimonials.css'
 import recipeDB from '../data.js'
 
+/*
 class Testimonials extends Component {
 
   state = { id: 0 }
@@ -27,5 +28,22 @@ class Testimonials extends Component {
     )
   }
 }
+*/
+
+class Testimonials extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state={testimonial: recipeDB.testimonialsData[Math.floor(Math.random() * recipeDB.testimonialsData.length)]};
+}
+
+  render() {
+    return (
+      <h3>{this.state.testimonial}</h3>
+    );
+  }
+} 
 
 export default Testimonials;
+
+
+ 
