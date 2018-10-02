@@ -48,14 +48,14 @@ class ViewRecipe extends Component {
             )
         } else {
             return (
-                <div onClick={() => this.recipeToRender(this.props.view)}>
+                <div>
                     <div className={this.state.popup}>
-                        <h2>{this.state.renderView.name}</h2>
+                        <h2>{this.props.view.name}</h2>
                         <ul className="ingredients-ul">
-                            {this.state.renderView.ingredients.map((ingredient, i)=> <li key={i} className="ingredients-li">{ingredient} </li> )}
+                            {this.props.view.ingredients.map((ingredient, i)=> <li key={i} className="ingredients-li">{ingredient} </li> )}
                         </ul>
-                        <img className="recipeImg" src={this.state.renderView.image}/>
-                        <p className="method-text">{this.state.renderView.method}</p>
+                        <img className="recipeImg" src={this.props.view.image}/>
+                        <p className="method-text">{this.props.view.method}</p>
                     </div>
                 </div>
             )
