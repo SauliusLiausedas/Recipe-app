@@ -18,48 +18,37 @@ class ViewRecipe extends Component {
         }
     }
 
-    // componentDidMount(){
-    //
+    // recipeToRender(recipeId) {
+    //     this.setState({
+    //         renderView: {
+    //             id: recipeId,
+    //             name: recipeDB.meal[recipeId].name,
+    //             image: recipeDB.meal[recipeId].image,
+    //             method: recipeDB.meal[recipeId].method,
+    //             ingredients: recipeDB.meal[recipeId].ingredients
+    //         }
+    //     })
     // }
 
-    recipeToRender(recipeId) {
-        this.setState({
-            renderView: {
-                id: recipeId,
-                name: recipeDB.meal[recipeId].name,
-                image: recipeDB.meal[recipeId].image,
-                method: recipeDB.meal[recipeId].method,
-                ingredients: recipeDB.meal[recipeId].ingredients
-            }
-        })
-    }
-
-    hideEdit() {
-        this.setState({popup: "popup invisible"})
-        console.log(this.state)
-    }
+    // hideEdit() {
+    //     this.setState({popup: "popup invisible"})
+    // }
 
     render() {
-        if (this.props.view === "") {
-            return(
-            <div>
-
-            </div>
-            )
-        } else {
+        console.log(this.props.popup)
             return (
                 <div>
-                    <div className={this.state.popup}>
+                    <div className={this.state.popup + this.props.popup}>
                         <h2>{this.props.view.name}</h2>
                         <ul className="ingredients-ul">
-                            {this.props.view.ingredients.map((ingredient, i)=> <li key={i} className="ingredients-li">{ingredient} </li> )}
+                            {this.props.view.ingredients.map((ingredient, i) => <li key={i}
+                                                                                    className="ingredients-li">{ingredient} </li>)}
                         </ul>
                         <img className="recipeImg" src={this.props.view.image}/>
                         <p className="method-text">{this.props.view.method}</p>
                     </div>
                 </div>
             )
-        }
     }
 }
 

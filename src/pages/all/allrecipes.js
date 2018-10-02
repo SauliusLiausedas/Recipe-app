@@ -6,13 +6,11 @@ import ViewRecipe from './view.js'
 class AllRecipes extends Component {
     constructor(props) {
         super()
-        this.recipeNames = []
-        this.recipeIngredients = {}
         this.recipeMethod = []
-        this.recipeImg = []
         this.state = {
             recipes: recipeDB,
-            recipeToShow: ""
+            recipeToShow: "",
+            popup: " visible"
         }
     }
 
@@ -20,10 +18,19 @@ class AllRecipes extends Component {
         this.setState({recipeToShow: e.currentTarget.id})
     }
 
+    hideEdit() {
+        if (this.state.popup === " visible") {
+            this.setState({popup: " "})
+        } else {
+            this.setState({popup: " visible"})
+        }
+    }
+
     render() {
         return (
-            <div className="allRecipes">
-                {this.state.recipeToShow ? (<ViewRecipe view={this.state.recipes.meal[this.state.recipeToShow]}/>) : ''}
+            <div className="allRecipes" onClick={()=> (this.hideEdit())}>
+                {this.state.recipeToShow ? (<ViewRecipe view={this.state.recipes.meal[this.state.recipeToShow]} popup={this.state.popup}/>) : ''}
+                {/*{this.props.view ? (<ViewRecipe view={this.state.recipeToShow}/>) : ""}*/}
                 <div className="boxes">
                     {this.state.recipes.meal.map((mealObj, i) =>
                         <div key={i} id={i} className="recipe-box" onClick={(e)=>this.viewRecipe(e)}>
