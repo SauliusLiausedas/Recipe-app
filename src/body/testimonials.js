@@ -33,12 +33,12 @@ class Testimonials extends Component {
 class Testimonials extends React.Component {
   constructor(props) {
     super(props);
-    this.state={testimonial: recipeDB.testimonialsData[Math.floor(Math.random() * recipeDB.testimonialsData.length)]};
+    //this.state={testimonial: recipeDB.testimonialsData[Math.floor(Math.random() * recipeDB.testimonialsData.length)]};
 }
 
   render() {
     return (
-      <h3>{this.state.testimonial}</h3>
+      <h3>{this.props.text}</h3>
     );
   }
 } 
