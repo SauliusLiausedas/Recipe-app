@@ -15,7 +15,7 @@ class AllRecipes extends Component {
     }
 
     componentWillMount() {
-        if (this.props.searchResult.length){
+        if (this.props.searchResult && this.props.searchResult.length){
             recipeDB.results = this.props.searchResult;
             this.setState({recipes: recipeDB});
         } else if (this.props.searchResult) {
@@ -25,9 +25,10 @@ class AllRecipes extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        recipeDB.results = this.props.searchResult;
-       // this.setState({recipes: recipeDB});
+        recipeDB.results = nextProps.searchResult;
+       this.setState({recipes: recipeDB});
     }
+
 
     viewRecipe(e) {
         this.setState({recipeToShow: e.currentTarget.id})
