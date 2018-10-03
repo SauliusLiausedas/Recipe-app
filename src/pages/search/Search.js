@@ -8,8 +8,10 @@ class Search extends Component {
     constructor(props){
         super(props);
 
-        this.state = {searchReq : '',
-            searchResult : []};
+        this.state = {
+            searchReq : '',
+            searchResult : [],
+        };
 
         /*let tempObj= {};
         recipeDB.meal.forEach(meal => {
@@ -52,14 +54,13 @@ class Search extends Component {
 
     onSubmit(){
         this.computeSearchIndexes();
-
     }
 
     render() {
         return (
             <div className="content">
-                <input value={this.state.searchReq} type="text" onChange={(event)=>this.onKeyTyped(event)} onSubmit={this.onSubmit}/>
-                <button onClick={()=>this.onSubmit()}>Search</button>
+                <input value={this.state.searchReq} type="text" onChange={(event) => this.onKeyTyped(event)}/>
+                <button onClick={() => this.onSubmit()}>Search</button>
                 <AllRecipes searchResult={this.state.searchResult} />
             </div>
         )

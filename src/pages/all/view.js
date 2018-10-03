@@ -35,7 +35,6 @@ class ViewRecipe extends Component {
     // }
 
     render() {
-        console.log(this.props.popup)
             return (
                 <div>
                     <div className={this.state.popup + this.props.popup}>

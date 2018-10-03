@@ -16,7 +16,7 @@ class Testimonials extends Component {
       } else {
         this.setState({id: this.state.id + 1})
       }
-    }, 5000)
+   h }, 5000)
   }
 
   render() {
@@ -33,12 +33,12 @@ class Testimonials extends Component {
 class Testimonials extends React.Component {
   constructor(props) {
     super(props);
-    //this.state={testimonial: recipeDB.testimonialsData[Math.floor(Math.random() * recipeDB.testimonialsData.length)]};
+    // this.state={testimonial: recipeDB.testimonialsData[Math.floor(Math.random() * recipeDB.testimonialsData.length)]};
 }
 
   render() {
     return (
-      <h3>{this.props.text}</h3>
+      <h3>{this.props.someTxt}</h3>
     );
   }
 } 
