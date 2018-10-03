@@ -3,7 +3,6 @@ import recipeDB from '../../data.js'
 import '../../stylesheets/allrecipes.css'
 import ViewRecipe from './view.js'
 import SearchBar from './searchBar.js'
-import Items from './items.js'
 
 class AllRecipes extends Component {
     constructor(props) {
