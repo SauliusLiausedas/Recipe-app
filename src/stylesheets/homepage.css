@@ -1,12 +1,18 @@
 .contentRecipe {
     display: flex;
-    justify-content: center;
     align-items: center;
     padding: 40px;
+    text-align: left;
   }
   
   .contentRecipePic {
     padding: 0 30px;
+    min-width: 500px;
+    min-height: 454px;
+  }
+
+  .contentRecipeTextTitle {
+    text-align: left;
   }
 
   .testimonials {
@@ -18,8 +24,4 @@
   .testimonialsText {
     color: orangered;
     font-weight: normal;
-  }
-
-  .contentRecipeText {
-    padding: 0 30px;
   }

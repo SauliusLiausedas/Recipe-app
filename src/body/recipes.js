@@ -43,33 +43,35 @@ class Recipes extends Component {
 */
 
 class Recipes extends Component {
-    constructor(props) {
+    constructor() {
         super()
-        this.recipeNames = []
-        this.recipeIngredients = {}
+        /* this.recipeNames = []
+        this.recipeIngredients = []
         this.recipeMethod = []
-        this.recipeImg = []
+        this.recipeImg = [] */
         this.state = {
-            recipes: recipeDB,
-            recipeToShow: ""
+            recipes: recipeDB
         }
     }
 
     render() {
         return (
-            <div className="allRecipes">
-                <div className="boxes">
-                    {this.state.recipes.meal.map((mealObj, i) =>
-                        <div key={i} className="recipe-box">
-                            <img className="recipe-img" alt={mealObj.name} src={mealObj.image}/>
-                            <h2 key={i}>{mealObj.name}</h2>
+            <div>
+                {this.state.recipes.meal.map(mealObj =>
+                    <div className="contentRecipe">
+                        <img className="contentRecipePic" alt="recipePic" src={mealObj.image}/>
+                        <div>
+                            <h2 className="contentRecipeTextTitle">{mealObj.name}</h2>
+                            <ul>
+                                {mealObj.ingredients.map(item => <li>{item}</li>)} 
+                            </ul>
                             <p>{mealObj.method.slice(0, 250) + "..."}</p>
                         </div>
-                    ).slice(0, 3)}
-                </div>
+                    </div>
+                ).slice(0, 3)}
             </div>
         )
     }
 }
-  
+
   export default Recipes;

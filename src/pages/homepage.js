@@ -4,23 +4,21 @@ import Testimonials from '../body/testimonials.js';
 import Recipes from '../body/recipes.js';
 import recipeDB from '../data.js'
 
-// let getRandomTestimonial = () => {
-//     return recipeDB.testimonialsData[Math.floor(Math.random() * recipeDB.testimonialsData.length)]
-// }
-
 class HomePage extends Component {
-    state = {};
-    constructor () {
-        super();
+    constructor() {
+        super()
+        this.state = {
+            someText: this.getRandomTestimonial()
+        };
         setInterval(()=>{
             this.setState({someText: this.getRandomTestimonial() });
         }, 3000)
     }
 
-    componentWillMount () {
+ /*   componentWillMount () {
         this.setState({someText: this.getRandomTestimonial() });
     }
-
+*/
     getRandomTestimonial = () => {
         return recipeDB.testimonialsData[Math.floor(Math.random() * recipeDB.testimonialsData.length)]
     }
