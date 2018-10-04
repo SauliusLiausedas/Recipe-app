@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../../stylesheets/view.css'
-import recipeDB from '../../data.js'
+
 
 class ViewRecipe extends Component {
     constructor(props) {
@@ -23,10 +23,10 @@ class ViewRecipe extends Component {
     //     this.setState({
     //         renderView: {
     //             id: recipeId,
-    //             name: recipeDB.meal[recipeId].name,
-    //             image: recipeDB.meal[recipeId].image,
-    //             method: recipeDB.meal[recipeId].method,
-    //             ingredients: recipeDB.meal[recipeId].ingredients
+    //             name: window.recipeDB.meal[recipeId].name,
+    //             image: window.recipeDB.meal[recipeId].image,
+    //             method: window.recipeDB.meal[recipeId].method,
+    //             ingredients: window.recipeDB.meal[recipeId].ingredients
     //         }
     //     })
     // }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../../stylesheets/search.css';
-import recipeDB from '../../data.js';
 import AllRecipes from "../all/allrecipes";
 
 class Search extends Component {
@@ -15,7 +14,6 @@ class Search extends Component {
 
     }
 
-
     onKeyTyped(e){
         //save input to a variable
         this.setState({searchReq : e.target.value});
@@ -25,7 +23,7 @@ class Search extends Component {
     computeSearchIndexes(){
         let searchResults;
         if(this.state.searchReq) {
-            searchResults = recipeDB.meal.filter((meal) => {
+            searchResults = window.recipeDB.meal.filter((meal) => {
                 return meal.name.toLowerCase().indexOf(this.state.searchReq.toLowerCase()) !== -1;
             });
         }else {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import recipeDB from '../../data.js'
 import '../../stylesheets/allrecipes.css'
 import ViewRecipe from './view.js'
 
@@ -9,7 +8,7 @@ class AllRecipes extends Component {
         this.popup = React.createRef()
         this.recipeMethod = []
         this.state = {
-            recipes: recipeDB,
+            recipes: window.recipeDB,
             recipeToShow: "",
             popup: " visible"
         }
@@ -17,17 +16,17 @@ class AllRecipes extends Component {
 
     componentWillMount() {
         if (this.props.searchResult && this.props.searchResult.length){
-            recipeDB.results = this.props.searchResult;
-            this.setState({recipes: recipeDB});
+            window.recipeDB.results = this.props.searchResult;
+            this.setState({recipes: window.recipeDB});
         } else if (this.props.searchResult) {
-            recipeDB.results = [];
-            this.setState({recipes: recipeDB});
+            window.recipeDB.results = [];
+            this.setState({recipes: window.recipeDB});
         }
     }
 
     componentWillReceiveProps(nextProps) {
-        recipeDB.results = nextProps.searchResult;
-       this.setState({recipes: recipeDB});
+        window.recipeDB.results = nextProps.searchResult;
+       this.setState({recipes: window.recipeDB});
     }
 
 

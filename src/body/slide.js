@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../stylesheets/slide.css'
 // import Popup from './popup.js'
-import recipeDB from '../data.js'
+import window.recipeDB from '../data.js'
 import Ingredients from './ingredients.js'
 
 class Slide extends Component {
@@ -11,7 +11,7 @@ class Slide extends Component {
         // this.ingredientsList = React.createRef()
         this.state = {
             slideRecipe: 0,
-            recipes: recipeDB,
+            recipes: window.recipeDB,
             full: "recipeMethod",
             edit: false,
         }

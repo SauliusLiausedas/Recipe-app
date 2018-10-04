@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import '../stylesheets/homepage.css'
 import Testimonials from '../body/testimonials.js';
 import Recipes from '../body/recipes.js';
-import recipeDB from '../data.js'
 
 class HomePage extends Component {
     constructor() {
@@ -20,7 +19,7 @@ class HomePage extends Component {
     }
 */
     getRandomTestimonial = () => {
-        return recipeDB.testimonialsData[Math.floor(Math.random() * recipeDB.testimonialsData.length)]
+        return window.recipeDB.testimonialsData[Math.floor(Math.random() * window.recipeDB.testimonialsData.length)]
     }
 
     render() {
