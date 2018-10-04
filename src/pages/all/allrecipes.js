@@ -6,6 +6,7 @@ import ViewRecipe from './view.js'
 class AllRecipes extends Component {
     constructor(props) {
         super()
+        this.popup = React.createRef()
         this.recipeMethod = []
         this.state = {
             recipes: recipeDB,
@@ -44,8 +45,8 @@ class AllRecipes extends Component {
 
     render() {
         return (
-            <div className="allRecipes" onClick={()=> (this.hideEdit())}>
-                {this.state.recipeToShow ? (<ViewRecipe view={this.state.recipes.meal[this.state.recipeToShow]} popup={this.state.popup}/>) : ''}
+            <div className="allRecipes" /*onClick={()=> (this.hideEdit())}*/>
+                {this.state.recipeToShow ? (<ViewRecipe ref={this.popup} view={this.state.recipes.meal[this.state.recipeToShow]} popup={this.state.popup}/>) : ''}
                 {/*{this.props.view ? (<ViewRecipe view={this.state.recipeToShow}/>) : ""}*/}
                 <div className="boxes">
                     {this.state.recipes[(this.props.searchResult ? 'results' : 'meal')].map((mealObj, i) =>

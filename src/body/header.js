@@ -12,7 +12,7 @@ class Header extends Component {
               </header>
               <nav className="navbar">
                   <ul className="navList">
-                      <li className="navListItem"><a className="navListItemLink" href="/home">Home</a></li>
+                      <li className="navListItem"><a className="navListItemLink" href="/">Home</a></li>
                       <li className="navListItem"><a className="navListItemLink" href="/all">All Recipes</a></li>
                       <li className="navListItem"><a className="navListItemLink">Edit Recipes</a></li>
                       <li className="navListItem"><a className="navListItemLink">Delete Recipes</a></li>
