@@ -23,6 +23,7 @@
     height: 250px;
     border-radius: 50px;
     overflow: hidden;
+    cursor: pointer;
 }
 .listItem {
     text-align: center;

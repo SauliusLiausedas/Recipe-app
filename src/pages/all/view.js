@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../../stylesheets/view.css'
 import recipeDB from '../../data.js'
+import Edit from './edit.js'
 
 class ViewRecipe extends Component {
     constructor(props) {
@@ -45,6 +46,7 @@ class ViewRecipe extends Component {
                         </ul>
                         <img className="recipeImg" src={this.props.view.image}/>
                         <p className="method-text">{this.props.view.method}</p>
+                        <Edit />
                     </div>
                 </div>
             )

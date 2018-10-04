@@ -8,7 +8,7 @@ import imgCrumble from './img/crumble.jpg'
 import imgCurry from './img/curry.jpg'
 import imgLasagne from './img/lasagne.jpg'
 
-const recipeDB = {
+window.recipeDB = {
     testimonialsData: [
         '"Made some really tasty treats from this site. They didn\'t turn out as nice as the pictures though since they are pros and I am not.."',
         '"This is the greatest recipe website I have ever been to!!! This website is wonderful!!!"',
@@ -162,4 +162,4 @@ const recipeDB = {
         }]
 }
 
-export default recipeDB
+export default window.recipeDB

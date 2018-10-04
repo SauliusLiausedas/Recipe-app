@@ -1,0 +1,19 @@
+.edit-btn {
+    margin-right: 10%;
+    margin-bottom: 3%;
+    float: right;
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    outline: none;
+    border: 1px solid slategrey;
+    background-color: transparent;
+    color: slategrey;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.edit-btn:hover {
+    border: 3px solid slategrey;
+    cursor: pointer;
+}
