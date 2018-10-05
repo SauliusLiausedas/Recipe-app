@@ -1,26 +1,43 @@
 import React, {Component} from 'react'
 import recipeDB from "../data.js"
+import '../stylesheets/add.css'
 
 class Add extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            newMeal: {
-                id: '',
-                name: '',
-                ingredients: "",
+            newName: {
+                name: ""
+            },
+            newIngredients: {
+                ingredients: ""
+            },
+            newMethod: {
                 method: "",
+            },
+            newImage: {
                 image: "",
-            }
-
-
-        }
+            },
     }
-    addRecipe (e) {
-        e.preventDefault()
-        console.log(this.state.newMeal)
-        recipeDB.meal.push(this.state.newMeal)
-        console.log(recipeDB)
+
+}
+
+
+addRecipe (e) {
+    e.preventDefault();
+
+    this.newMeal = {
+        name: this.state.newName.name,
+        ingredients: this.state.newIngredients.ingredients,
+        method: this.state.newMethod.method,
+        image: this.state.newImage.image,
+    };
+
+    console.log(this.newMeal)
+
+
+    recipeDB.meal.push(this.state.newMeal)
+    console.log(recipeDB)
 
     }
 
@@ -28,31 +45,35 @@ class Add extends Component {
     render () {
         return (
 
-            <form className="form">
-
-                <div className="form-group">
-
-                    <input className="form-control" type="text" placeholder="name" name="name"
-                           onChange={(e) => this.setState({newMeal: {name: e.target.value}})} ></input>
-                </div>
-                <div className="form-group">
-                    <input className="form-control" type="text" placeholder="ingredients" name="ingredients"
-                           onChange={(e) => this.setState({newMeal: {ingredients: e.target.value}})}></input>
-                </div>
-                <div className="form-group">
-                    <input className="form-control" name="method" type="text" placeholder="method"
-                           onChange={(e) => this.setState({newMeal: {method: e.target.value}})}></input>
-                </div>
-                <div className="form-group">
-                    <input className="form-control" name="image" type="text" placeholder="image"
-                           onChange={(e) => this.setState({newMeal: {image: e.target.value}})}/>
-                </div>
-                <div className="form-group">
-
-
-                    <button onClick={(e) => this.addRecipe(e)} >Submit!</button>
-                </div>
-            </form >
+        <form className="form">
+            <ul>
+                <li>
+                    <label htmlFor="name">Recipe name!</label>
+                    <input type="text" name="name"
+                           onChange={(e) => this.setState({newName: {name: e.target.value}})} ></input>
+                        <span>Enter your recipe NAME</span>
+                </li>
+                <li>
+                    <label htmlFor="ingredients">Ingredients</label>
+                    <input type="text" name="ingredients"
+                           onChange={(e) => this.setState({newIngredients: {ingredients: e.target.value}})}></input>
+                        <span>Enter all ingredients</span>
+                </li>
+                <li>
+                    <label htmlFor="method">Method</label>
+                    <input type="text" name="method" onChange={(e) => this.setState({newMethod: {method: e.target.value}})}></input>
+                    <span>Write cooking method</span>
+                </li>
+                <li>
+                    <label htmlFor="url">Image URL or Base64(prefered)</label>
+                    <input type="text" name="url" onChange={(e) => this.setState({newImage: {image: e.target.value}})}></input>
+                    <span>Your picture goes here!</span>
+                </li>
+                <li>
+                    <input type="submit" value="Submit!" onClick={(e) => this.addRecipe(e)}></input>
+                </li>
+            </ul>
+        </form>
         )
     }
 }
