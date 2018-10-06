@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from 'react-router-dom'
 import '../stylesheets/header.css'
 import logo from '../img/logo.png';
 
@@ -12,11 +13,10 @@ class Header extends Component {
               </header>
               <nav className="navbar">
                   <ul className="navList">
-                      <li className="navListItem"><a className="navListItemLink" href="/">Home</a></li>
-                      <li className="navListItem"><a className="navListItemLink" href="/all">All Recipes</a></li>
-                      <li className="navListItem"><a className="navListItemLink">Edit Recipes</a></li>
-                      <li className="navListItem"><a className="navListItemLink">Delete Recipes</a></li>
-                      <li className="navListItem"><a className="navListItemLink" href="/search">Search</a></li>
+                      <li className="navListItem"><Link to="/" className="navListItemLink">Home</Link></li>
+                      <li className="navListItem"><Link to="/all" className="navListItemLink">All Recipes</Link></li>
+                      <li className="navListItem"><Link to="/search" className="navListItemLink">Search</Link></li>
+                      <li className="navListItem"><Link to="/add" className="navListItemLink">Add Recipe</Link></li>
                   </ul>
               </nav>
           </div>  

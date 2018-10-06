@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './stylesheets/App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-// import Slideshow from './body/slideshow.js'
 import Header from './body/header.js'
 import AllRecipes from './pages/all/allrecipes.js'
 import Search from './pages/search/Search.js'

@@ -19,7 +19,7 @@ let setState = ()  => {
         ],
         meal: [
             {
-                id: 1,
+                id: 0,
                 name: "Pizza Dough",
                 ingredients: [
                     "1/2 cups (355 ml) warm water",
@@ -33,7 +33,7 @@ let setState = ()  => {
                 image: imgPizza
             },
             {
-                id: 2,
+                id: 1,
                 name: "Chicken Casserole",
                 ingredients: [
                     "knob of butter",
@@ -50,7 +50,7 @@ let setState = ()  => {
                 image: imgChickenCas
             },
             {
-                id: 3,
+                id: 2,
                 name: "Bombay Chicken",
                 ingredients: [
                     "1 small whole chicken",
@@ -65,7 +65,7 @@ let setState = ()  => {
                 image: imgChickenBom
             },
             {
-                id: 4,
+                id: 3,
                 name: "Chilli",
                 ingredients: [
                     "1 tbsp rapeseed oil",
@@ -79,7 +79,7 @@ let setState = ()  => {
                 image: imgChilli
             },
             {
-                id: 5,
+                id: 4,
                 name: "Burger",
                 ingredients: [
                     "1 chicken breast",
@@ -95,7 +95,7 @@ let setState = ()  => {
                 image: imgBurger
             },
             {
-                id: 6,
+                id: 5,
                 name: "Baked Potato",
                 ingredients: [
                     "4 large baking potatoes",
@@ -109,7 +109,7 @@ let setState = ()  => {
                 image: imgPotato
             },
             {
-                id: 7,
+                id: 6,
                 name: "Crumble",
                 ingredients: [
                     "500g rhubarb chopped into chunks the length of your thumb",
@@ -124,11 +124,10 @@ let setState = ()  => {
                 image: imgCrumble
             },
             {
-                id: 8,
+                id: 7,
                 name: "Curry",
                 ingredients: [
-                    "1 large onion",
-                    ", roughly chopped",
+                    "1 large onion, roughly chopped",
                     "3 tbsp mild curry paste",
                     "400g can chopped tomatoes",
                     "2 tsp vegetable bouillon powder",
@@ -142,7 +141,7 @@ let setState = ()  => {
                 image: imgCurry
             },
             {
-                id: 9,
+                id: 8,
                 name: "Lasagne",
                 ingredients: [
                     "250g pack fresh lasagne sheets",

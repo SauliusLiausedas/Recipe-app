@@ -3,14 +3,12 @@ import '../../stylesheets/allrecipes.css'
 import ViewRecipe from './view.js'
 
 class AllRecipes extends Component {
-    constructor(props) {
+    constructor() {
         super()
-        this.popup = React.createRef()
         this.recipeMethod = []
         this.state = {
             recipes: window.recipeDB,
             recipeToShow: "",
-            popup: " visible"
         }
     }
 
@@ -35,18 +33,13 @@ class AllRecipes extends Component {
     }
 
     hideEdit() {
-        if (this.state.popup === " visible") {
-            this.setState({popup: " "})
-        } else {
-            this.setState({popup: " visible"})
-        }
+
     }
 
     render() {
         return (
-            <div className="allRecipes" /*onClick={()=> (this.hideEdit())}*/>
-                {this.state.recipeToShow ? (<ViewRecipe ref={this.popup} view={this.state.recipes.meal[this.state.recipeToShow]} popup={this.state.popup}/>) : ''}
-                {/*{this.props.view ? (<ViewRecipe view={this.state.recipeToShow}/>) : ""}*/}
+            <div className="allRecipes">
+                {this.state.recipeToShow ? (<ViewRecipe onClosePopup={() => {this.setState({recipeToShow: ""})}} view={this.state.recipes.meal[this.state.recipeToShow]}/>) : ''}
                 <div className="boxes">
                     {this.state.recipes[(this.props.searchResult ? 'results' : 'meal')].map((mealObj, i) =>
                         <div key={i} id={i} className="recipe-box" onClick={(e)=>this.viewRecipe(e)}>

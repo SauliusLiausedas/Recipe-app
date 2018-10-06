@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/App.js" line="8" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/src/App.js" line="7" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd9634a8-3ad0-461f-ba38-caaf79a59b45" name="Default Changelist" comment="Make edit work, edit most warnings.">
+    <list default="true" id="bd9634a8-3ad0-461f-ba38-caaf79a59b45" name="Default Changelist" comment="Popup now closes, moving between tabs don't refresh so data is always there, added delete recipe.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/body/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/body/header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/body/recipes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/body/recipes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/body/testimonials.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/body/testimonials.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/all/allrecipes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/all/allrecipes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/all/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/all/view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stylesheets/testimonials.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/testimonials.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stylesheets/view.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/view.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,39 +28,39 @@
     <session id="-1095824925">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="24" />
-          <entry key="js" value="58" />
+          <entry key="css" value="29" />
+          <entry key="js" value="72" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="24" />
-          <entry key="JavaScript" value="58" />
+          <entry key="CSS" value="29" />
+          <entry key="JavaScript" value="72" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="7048" />
-          <entry key="js" value="26640" />
-          <entry key="txt" value="131" />
+          <entry key="css" value="7941" />
+          <entry key="js" value="27908" />
+          <entry key="txt" value="375" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="7048" />
-          <entry key="JavaScript" value="26640" />
-          <entry key="PLAIN_TEXT" value="131" />
+          <entry key="CSS" value="7941" />
+          <entry key="JavaScript" value="27908" />
+          <entry key="PLAIN_TEXT" value="375" />
         </counts>
       </usages-collector>
     </session>
@@ -86,10 +90,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/all/allrecipes.js">
+        <entry file="file://$PROJECT_DIR$/src/pages/all/view.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-286">
-              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+            <state relative-caret-position="158">
+              <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/homepage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -98,52 +111,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/body/testimonials.js">
+        <entry file="file://$PROJECT_DIR$/src/data.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="12" selection-start-column="12" selection-end-column="12" />
+            <state relative-caret-position="4264">
+              <caret line="164" column="1" selection-start-line="164" selection-start-column="1" selection-end-line="164" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/all/view.js">
+        <entry file="file://$PROJECT_DIR$/src/stylesheets/view.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-              <folding>
-                <element signature="e#183#220#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/body/recipes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/data.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="188">
+              <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -152,22 +135,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>app</find>
-      <find>appear</find>
-      <find>recipeSlide</find>
-      <find>&lt;p</find>
-      <find>Metho</find>
-      <find>full</find>
-      <find>Recipies</find>
-      <find>recipies</find>
-      <find>clear</find>
-      <find>startED</find>
-      <find>.map</find>
-      <find>doub</find>
       <find>startE</find>
       <find>change</find>
       <find>changeSlide</find>
-      <find>id</find>
       <find>ref</find>
       <find>props</find>
       <find>viewR</find>
@@ -182,6 +152,19 @@
       <find>editRecipeElements</find>
       <find>rando</find>
       <find>getRend</find>
+      <find>this.pop</find>
+      <find>img</find>
+      <find>chilli</find>
+      <find>curry</find>
+      <find>componentWillUn</find>
+      <find>popu</find>
+      <find>popup</find>
+      <find>someAr</find>
+      <find>exit</find>
+      <find>delet</find>
+      <find>edit</find>
+      <find>id</find>
+      <find>delete</find>
     </findStrings>
     <replaceStrings>
       <replace>recipes</replace>
@@ -214,22 +197,23 @@
         <option value="$PROJECT_DIR$/src/router.js" />
         <option value="$PROJECT_DIR$/src/pages/all/allrecipies.js" />
         <option value="$PROJECT_DIR$/src/pages/error.js" />
-        <option value="$PROJECT_DIR$/src/body/header.js" />
         <option value="$PROJECT_DIR$/src/stylesheets/slideshow.css" />
         <option value="$PROJECT_DIR$/src/body/ingredients.js" />
         <option value="$PROJECT_DIR$/src/body/slide.js" />
         <option value="$PROJECT_DIR$/src/stylesheets/slide.css" />
         <option value="$PROJECT_DIR$/src/stylesheets/App.css" />
         <option value="$PROJECT_DIR$/src/stylesheets/allrecipes.css" />
-        <option value="$PROJECT_DIR$/src/stylesheets/view.css" />
-        <option value="$PROJECT_DIR$/src/data.js" />
         <option value="$PROJECT_DIR$/src/pages/homepage.js" />
         <option value="$PROJECT_DIR$/src/pages/search/Search.js" />
-        <option value="$PROJECT_DIR$/src/pages/all/allrecipes.js" />
         <option value="$PROJECT_DIR$/src/body/testimonials.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/body/recipes.js" />
+        <option value="$PROJECT_DIR$/src/stylesheets/testimonials.css" />
+        <option value="$PROJECT_DIR$/src/pages/all/allrecipes.js" />
+        <option value="$PROJECT_DIR$/src/data.js" />
+        <option value="$PROJECT_DIR$/src/body/header.js" />
         <option value="$PROJECT_DIR$/src/pages/all/view.js" />
+        <option value="$PROJECT_DIR$/src/stylesheets/view.css" />
       </list>
     </option>
   </component>
@@ -242,10 +226,515 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/functions/node_modules" />
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
+      <path value="$PROJECT_DIR$/functions/node_modules/@firebase/app-types/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@firebase/app/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@firebase/database-types/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@firebase/database/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@firebase/logger/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@firebase/util/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@google-cloud/common/node_modules/retry-request/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@google-cloud/common/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@google-cloud/firestore/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@google-cloud/projectify/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@google-cloud/storage/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@grpc/proto-loader/node_modules/@types/node/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@grpc/proto-loader/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@mrmlnc/readdir-enhanced/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@nodelib/fs.stat/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@protobufjs/aspromise/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@protobufjs/base64/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@protobufjs/codegen/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@protobufjs/eventemitter/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@protobufjs/fetch/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@protobufjs/float/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@protobufjs/inquire/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@protobufjs/path/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@protobufjs/pool/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@protobufjs/utf8/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@types/body-parser/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@types/caseless/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@types/connect/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@types/cors/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@types/events/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@types/express-serve-static-core/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@types/express/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@types/form-data/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@types/google-cloud__storage/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@types/jsonwebtoken/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@types/lodash/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@types/long/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@types/mime/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@types/node/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@types/range-parser/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@types/request/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@types/serve-static/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/@types/tough-cookie/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/accepts/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/acorn-es7-plugin/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/acorn-es7-plugin/test/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/acorn/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/ajv/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/ansi-regex/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/arr-diff/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/arr-flatten/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/arr-union/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/array-filter/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/array-flatten/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/array-union/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/array-uniq/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/array-unique/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/arrify/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/ascli/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/asn1/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/assert-plus/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/assign-symbols/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/async/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/asynckit/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/atob/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/aws-sign2/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/aws4/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/axios/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/balanced-match/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/base/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/base/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/base/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/base/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/base/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/bcrypt-pbkdf/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/body-parser/node_modules/qs/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/body-parser/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/brace-expansion/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/braces/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/braces/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/buffer-equal-constant-time/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/buffer-from/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/bun/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/bytebuffer/node_modules/long/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/bytebuffer/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/bytes/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/cache-base/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/call-me-maybe/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/call-signature/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/camelcase/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/capture-stack-trace/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/caseless/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/class-utils/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/class-utils/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/cliui/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/co/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/code-point-at/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/collection-visit/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/colour/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/combined-stream/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/component-emitter/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/compressible/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/concat-map/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/concat-stream/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/concat-stream/node_modules/readable-stream/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/concat-stream/node_modules/string_decoder/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/concat-stream/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/configstore/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/content-disposition/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/content-type/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/cookie-signature/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/cookie/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/copy-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/core-js/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/core-util-is/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/cors/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/create-error-class/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/crypto-random-string/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/dashdash/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/decamelize/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/decode-uri-component/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/deep-equal/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/define-properties/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/define-property/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/define-property/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/define-property/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/delayed-stream/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/depd/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/destroy/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/diff-match-patch/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/dir-glob/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/dom-storage/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/dot-prop/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/duplexify/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/duplexify/node_modules/readable-stream/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/duplexify/node_modules/string_decoder/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/duplexify/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/eastasianwidth/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/ecc-jsbn/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/ecdsa-sig-formatter/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/ee-first/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/empower-core/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/empower/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/encodeurl/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/end-of-stream/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/ent/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/escape-html/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/espurify/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/estraverse/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/etag/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/expand-brackets/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/expand-brackets/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/expand-brackets/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/express/node_modules/qs/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/express/node_modules/safe-buffer/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/express/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/extend-shallow/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/extend/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/extglob/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/extglob/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/extglob/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/extglob/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/extglob/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/extglob/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/extsprintf/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/fast-deep-equal/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/fast-glob/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/fast-json-stable-stringify/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/faye-websocket/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/fill-range/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/fill-range/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/finalhandler/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/firebase-admin/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/firebase-functions/node_modules/jsonwebtoken/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/firebase-functions/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/firebase-functions/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/follow-redirects/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/follow-redirects/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/for-in/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/forever-agent/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/form-data/node_modules/combined-stream/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/form-data/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/forwarded/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/fragment-cache/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/fresh/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/fs.realpath/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/functional-red-black-tree/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/gcp-metadata/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/gcs-resumable-upload/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/get-value/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/getpass/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/glob-parent/node_modules/is-glob/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/glob-parent/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/glob-to-regexp/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/globby/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/google-auth-library/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/google-auto-auth/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/google-gax/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/google-p12-pem/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/google-proto-files/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/ansi-regex/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/aproba/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/are-we-there-yet/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/balanced-match/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/brace-expansion/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/code-point-at/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/concat-map/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/console-control-strings/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/core-util-is/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/deep-extend/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/delegates/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/detect-libc/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/fs-minipass/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/fs.realpath/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/gauge/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/has-unicode/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/iconv-lite/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/ignore-walk/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/inflight/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/is-fullwidth-code-point/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/minipass/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/minizlib/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/mkdirp/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/needle/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/node-pre-gyp/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/nopt/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/npm-bundled/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/npm-packlist/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/npmlog/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/number-is-nan/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/object-assign/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/once/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/os-homedir/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/os-tmpdir/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/osenv/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/path-is-absolute/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/process-nextick-args/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/protobufjs/examples/protoify/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/protobufjs/examples/websocket/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/protobufjs/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/rc/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/readable-stream/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/rimraf/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/safe-buffer/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/safer-buffer/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/sax/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/semver/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/set-blocking/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/signal-exit/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/string-width/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/string_decoder/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/strip-ansi/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/strip-json-comments/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/tar/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/util-deprecate/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/wide-align/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/wrappy/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/node_modules/yallist/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/grpc/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/gtoken/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/har-schema/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/har-validator/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/has-value/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/has-values/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/has-values/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/hash-stream-validation/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/http-errors/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/http-parser-js/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/http-signature/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/iconv-lite/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/ignore/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/imurmurhash/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/indexof/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/inflight/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/invert-kv/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/ipaddr.js/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is-accessor-descriptor/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is-buffer/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is-data-descriptor/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is-descriptor/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is-extglob/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is-fullwidth-code-point/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is-glob/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is-number/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is-number/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is-obj/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is-plain-object/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is-stream-ended/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is-typedarray/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is-windows/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/is/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/isobject/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/isstream/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/jsbn/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/json-schema-traverse/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/json-schema/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/json-stringify-safe/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/jsonwebtoken/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/jsprim/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/jwa/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/jws/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/lcid/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/lodash.includes/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/lodash.isboolean/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/lodash.isinteger/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/lodash.isnumber/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/lodash.isplainobject/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/lodash.isstring/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/lodash.merge/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/lodash.once/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/lodash/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/log-driver/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/long/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/make-dir/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/map-cache/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/map-visit/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/media-typer/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/merge-descriptors/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/merge2/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/methmeth/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/methods/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/micromatch/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/mime-db/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/mime-types/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/mime/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/mixin-deep/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/mixin-deep/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/modelo/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/nan/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/nan/tools/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/nanomatch/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/negotiator/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/node-forge/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/number-is-nan/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/oauth-sign/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/object-assign/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/object-copy/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/object-copy/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/object-copy/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/object-keys/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/object-visit/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/object.pick/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/on-finished/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/once/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/optjs/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/os-locale/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/parseurl/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/pascalcase/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/path-dirname/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/path-is-absolute/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/path-to-regexp/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/path-type/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/performance-now/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/pify/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/posix-character-classes/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/power-assert-context-formatter/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/power-assert-context-reducer-ast/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/power-assert-context-traversal/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/power-assert-formatter/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/power-assert-renderer-assertion/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/power-assert-renderer-base/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/power-assert-renderer-comparison/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/power-assert-renderer-diagram/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/power-assert-renderer-file/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/power-assert-util-string-width/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/power-assert/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/process-nextick-args/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/protobufjs/cli/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/protobufjs/node_modules/@types/node/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/protobufjs/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/proxy-addr/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/pseudomap/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/psl/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/pump/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/pumpify/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/punycode/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/qs/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/range-parser/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/raw-body/node_modules/depd/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/raw-body/node_modules/http-errors/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/raw-body/node_modules/setprototypeof/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/raw-body/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/readable-stream/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/regex-not/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/repeat-element/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/repeat-string/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/request/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/resolve-url/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/ret/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/retry-axios/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/retry-request/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/safe-buffer/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/safe-regex/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/safer-buffer/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/send/node_modules/mime/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/send/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/serve-static/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/set-value/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/set-value/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/setprototypeof/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/signal-exit/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/slash/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/snakeize/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/snapdragon-node/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/snapdragon-node/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/snapdragon-node/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/snapdragon-node/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/snapdragon-node/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/snapdragon-util/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/snapdragon-util/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/snapdragon/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/snapdragon/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/snapdragon/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/source-map-resolve/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/source-map-url/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/split-array-stream/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/split-string/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/sshpk/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/static-extend/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/static-extend/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/statuses/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/stream-events/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/stream-shift/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/string-format-obj/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/string-width/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/string_decoder/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/stringifier/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/strip-ansi/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/stubs/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/through2/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/through2/node_modules/readable-stream/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/through2/node_modules/string_decoder/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/through2/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/to-object-path/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/to-object-path/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/to-regex-range/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/to-regex/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/tough-cookie/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/traverse/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/tslib/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/tunnel-agent/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/tweetnacl/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/type-is/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/type-name/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/typedarray/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/union-value/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/union-value/node_modules/set-value/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/union-value/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/unique-string/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/universal-deep-strict-equal/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/unpipe/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/unset-value/node_modules/has-value/node_modules/isobject/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/unset-value/node_modules/has-value/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/unset-value/node_modules/has-values/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/unset-value/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/unset-value/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/urix/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/use/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/util-deprecate/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/utils-merge/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/uuid/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/vary/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/verror/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/websocket-driver/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/websocket-extensions/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/window-size/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/wrap-ansi/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/wrappy/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/write-file-atomic/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/xdg-basedir/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/xmlhttprequest/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/xtend/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/y18n/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/yallist/package.json" />
+      <path value="$PROJECT_DIR$/functions/node_modules/yargs/package.json" />
+      <path value="$PROJECT_DIR$/functions/package.json" />
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
@@ -261,7 +750,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -280,13 +768,41 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="body" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="recipe-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="recipe-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="recipe-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="recipe-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="all" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="recipe-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="recipe-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="search" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="recipe-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="recipe-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="homepage&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/homepage.js&#10;edit&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/edit.js&#10;header&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/body/header.js&#10;data&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/data.js&#10;data.ks&#9;null&#9;null&#10;view&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/view.js&#10;test&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/body/testimonials.js&#10;home&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/homepage.js&#10;recipes&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/allrecipes.css&#10;search&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/searchBar.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../recipe-project" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
@@ -295,857 +811,6 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Saulius\Desktop\Programavimas\Baltic Talents\recipe-app\src\stylesheets" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/App.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/body/header.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/body/recipes.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/data.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/pages/all/allrecipes.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/pages/all/view.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/pages/search/Search.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/stylesheets/allrecipes.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/stylesheets/view.css</PATH>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/pages/all/edit.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/pages/all/searchBar.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/stylesheets/edit.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/stylesheets/searchBar.css</PATH>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1174,6 +839,7 @@
       <workItem from="1538300346898" duration="3297000" />
       <workItem from="1538324082311" duration="31225000" />
       <workItem from="1538417767206" duration="3625000" />
+      <workItem from="1538826491467" duration="7124000" />
     </task>
     <task id="LOCAL-00001" summary="Starting page for all recipes">
       <created>1538263779529</created>
@@ -1196,11 +862,27 @@
       <option name="project" value="LOCAL" />
       <updated>1538406836778</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Make edit work, edit most warnings.">
+      <created>1538821331659</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1538821331659</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110267000" />
+    <option name="totallyTimeSpent" value="117436000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -1210,10 +892,9 @@
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.13474241" />
-      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.3299566" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.2170767" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.3299566" />
-      <window_info anchor="bottom" id="Version Control" order="2" weight="0.41416568" />
+      <window_info anchor="bottom" id="Version Control" order="2" weight="0.4138929" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.3299566" />
@@ -1221,7 +902,8 @@
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.3299566" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.3299566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1284,7 +966,8 @@
     <MESSAGE value="Make edit work" />
     <MESSAGE value="Make edit work, edit all warnings." />
     <MESSAGE value="Make edit work, edit most warnings." />
-    <option name="LAST_COMMIT_MESSAGE" value="Make edit work, edit most warnings." />
+    <MESSAGE value="Popup now closes, moving between tabs don't refresh so data is always there, added delete recipe." />
+    <option name="LAST_COMMIT_MESSAGE" value="Popup now closes, moving between tabs don't refresh so data is always there, added delete recipe." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/react/index.js">
@@ -1315,9 +998,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/router.js" />
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/stylesheets/slideshow.css">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1336,16 +1016,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
           <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stylesheets/testimonials.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/body/header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="56" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -1376,30 +1046,10 @@
     <entry file="file://$PROJECT_DIR$/src/App.test.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/all/searchBar.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/error.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/search/Search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-128">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/homepage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1420,44 +1070,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stylesheets/allrecipes.css">
+    <entry file="file://$PROJECT_DIR$/src/pages/all/searchBar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stylesheets/view.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/all/edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="5" lean-forward="true" selection-end-line="15" selection-end-column="19" />
+        <state>
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/all/allrecipes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-286">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        <state relative-caret-position="334">
+          <caret line="47" column="82" selection-start-line="47" selection-start-column="82" selection-end-line="47" selection-end-column="82" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
@@ -1466,7 +1091,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/body/testimonials.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="-702">
           <caret column="12" selection-start-column="12" selection-end-column="12" />
         </state>
       </provider>
@@ -1474,24 +1099,92 @@
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stylesheets/allrecipes.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/search/Search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stylesheets/testimonials.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/body/recipes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="27" column="16" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/all/edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
           <folding>
-            <element signature="e#183#220#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/body/recipes.js">
+    <entry file="file://$PROJECT_DIR$/src/body/header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        <state relative-caret-position="156">
+          <caret line="18" column="104" selection-start-line="18" selection-start-column="104" selection-end-line="18" selection-end-column="104" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/all/view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        <state relative-caret-position="158">
+          <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/homepage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4264">
+          <caret line="164" column="1" selection-start-line="164" selection-start-column="1" selection-end-line="164" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stylesheets/view.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
         </state>
       </provider>
     </entry>

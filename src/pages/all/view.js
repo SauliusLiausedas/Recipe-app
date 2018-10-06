@@ -19,22 +19,6 @@ class ViewRecipe extends Component {
         }
     }
 
-    // recipeToRender(recipeId) {
-    //     this.setState({
-    //         renderView: {
-    //             id: recipeId,
-    //             name: window.recipeDB.meal[recipeId].name,
-    //             image: window.recipeDB.meal[recipeId].image,
-    //             method: window.recipeDB.meal[recipeId].method,
-    //             ingredients: window.recipeDB.meal[recipeId].ingredients
-    //         }
-    //     })
-    // }
-
-    // hideEdit() {
-    //     this.setState({popup: "popup invisible"})
-    // }
-
     editRecipe() {
         if (this.state.edit === false) {
             this.setState({edit: true})
@@ -44,15 +28,29 @@ class ViewRecipe extends Component {
     }
 
     editRecipeIngredients(e) {
-        // console.log(e.target.id)
-        window.recipeDB.meal[this.props.view.id-1].ingredients[e.target.id] = e.target.value
+        window.recipeDB.meal[this.props.view.id].ingredients[e.target.id] = e.target.value
     }
 
     editRecipeElements(e) {
         if (e.target.id === 'name') {
-            window.recipeDB.meal[this.props.view.id - 1].name = e.target.value
+            window.recipeDB.meal[this.props.view.id].name = e.target.value
         } else if (e.target.id === 'method') {
-            window.recipeDB.meal[this.props.view.id - 1].method = e.target.value
+            window.recipeDB.meal[this.props.view.id].method = e.target.value
+        }
+    }
+
+    deleteRecipe() {
+        let confirmation = window.confirm("Are you sure?")
+        if (confirmation) {
+            window.recipeDB.meal.splice(this.props.view.id, 1)
+            this.props.onClosePopup("")
+            for (let i = 0; i < window.recipeDB.meal.length; i++) {
+                if (window.recipeDB.meal[i].id !== i) {
+                    window.recipeDB.meal[i].id = i
+                }
+            }
+        } else {
+            return false
         }
     }
 
@@ -60,16 +58,18 @@ class ViewRecipe extends Component {
         if (this.state.edit === false) {
             return (
                 <div>
-                    <div className={this.state.popup + this.props.popup}>
+                    <div className="popup">
+                        <button className="exit btn" onClick={() => this.props.onClosePopup("")}> X </button>
                         <h2>{this.props.view.name}</h2>
                         <ul className="ingredients-ul">
-                            {this.props.view.ingredients.map((ingredient, i) => <li key={i}
-                                                                                    className="ingredients-li">{ingredient} </li>)}
+                            {this.props.view.ingredients.map((ingredient, i) =><li key={i}
+                                                                                        className="ingredients-li">{ingredient} </li>)}
                         </ul>
                         <img alt={this.props.view.name} className="recipeImg" src={this.props.view.image}/>
                         <p className="method-text">{this.props.view.method}</p>
                         <div className="edit-btn-div">
-                            <button className="edit-btn" onClick={() => this.editRecipe()}>Edit</button>
+                            <button className="delete btn" onClick={()=> this.deleteRecipe()}>Delete</button>
+                            <button className="edit btn" onClick={() => this.editRecipe()}>Edit</button>
                         </div>
                     </div>
                 </div>
@@ -77,16 +77,16 @@ class ViewRecipe extends Component {
         } else {
             return(
                 <div>
-                    <div className={this.state.popup + this.props.popup}>
+                    <div className="popup">
                         <input className="recipeName" id="name" defaultValue={this.props.view.name} onChange={(e)=> this.editRecipeElements(e)}/>
                         <ul className="ingredients-ul">
-                            {this.props.view.ingredients.map((ingredient, i) => <li className="ingredients-li" key={i}><input id={i}
+                            {this.props.view.ingredients.map((ingredient, i) => <li className="ingredients-li" key={i}><input className="ingredients-li-input" id={i}
                                 onChange={(e)=> this.editRecipeIngredients(e)} defaultValue={ingredient}/></li>)}
                         </ul>
                         <img alt={this.props.view.name} className="recipeImg" src={this.props.view.image}/>
                         <textarea className="method-textarea" id="method" defaultValue={this.props.view.method} onChange={(e)=> this.editRecipeElements(e)} />
                         <div className="edit-btn-div">
-                            <button className="edit-btn" onClick={()=> this.editRecipe()}>{this.state.edit ? 'Save' : 'Edit'}</button>
+                            <button className="edit btn" onClick={()=> this.editRecipe()}>{this.state.edit ? 'Save' : 'Edit'}</button>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 
 class Recipes extends Component {
-    kintamasis = '';
 
     constructor() {
         super()
