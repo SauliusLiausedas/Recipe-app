@@ -20,8 +20,8 @@ class App extends Component {
                         <Header />
                         <Switch>
                             {/*<Route path="/" component={ Homepage } exact/>*/}
-                            <Route path="/all" component={ AllRecipes } />
                             <Route path="/" component={ HomePage }  exact/>
+                            <Route path="/all" component={ AllRecipes } />
                             <Route path="/search" component={ Search } />
                             <Route component={ Error } />
                         </Switch>

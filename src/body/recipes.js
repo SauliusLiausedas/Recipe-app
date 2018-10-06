@@ -12,7 +12,7 @@ class Recipes extends Component {
         this.myIndexesToShow = [];
         for (let i = 0; i < 3; i++) {
             let myNewRandomNumber = Math.floor(Math.random() * (this.state.recipes.meal.length - 1));
-            let isMyRandomNumberInRandomArray = this.myIndexesToShow.indexOf(myNewRandomNumber) !== -1
+            let isMyRandomNumberInRandomArray = this.myIndexesToShow.indexOf(myNewRandomNumber) !== -1;
             if (isMyRandomNumberInRandomArray) {
                 i--;
             } else {
@@ -30,31 +30,22 @@ class Recipes extends Component {
         document.getElementById('kazkoksId');
     }
 
-    test() {
-        console.log(this.kintamasis);
-    }
-
-    componentWillMount() {
-        console.log(this.kintamasis);
-    }
-
 
     getRandomObjects() {
         return this.state.recipes.meal.filter((mealObj, index) => {
-                let myRandomNr = Math.floor(Math.random() * this.state.recipes.meal.length);
-                console.log(this.myIndexesToShow);
                 return this.myIndexesToShow.indexOf(index) !== -1
             }
         )
     }
 
-    getRender(mealObj) {
-        return (<div className="contentRecipe">
-            <img className="contentRecipePic" alt="recipePic" src={mealObj.image}/>
+    getRender(mealObj, i) {
+        return (
+            <div key={i} className="contentRecipe">
+            <img className="contentRecipePic" alt={mealObj.name} src={mealObj.image}/>
             <div>
                 <h2 className="contentRecipeTextTitle">{mealObj.name}</h2>
                 <ul>
-                    {mealObj.ingredients.map(item => <li>{item}</li>)}
+                    {mealObj.ingredients.map((item,i) => <li key={i}>{item}</li>)}
                 </ul>
                 <p>{mealObj.method.slice(0, 250) + "..."}</p>
             </div>
@@ -65,7 +56,7 @@ class Recipes extends Component {
         return (
             <div >
                 {(() => {
-                    return this.getRandomObjects().map(mealObj => this.getRender(mealObj))
+                    return this.getRandomObjects().map((mealObj, i) => this.getRender(mealObj, i))
                 })()}
             </div>
         )
