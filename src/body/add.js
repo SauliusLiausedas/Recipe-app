@@ -18,9 +18,8 @@ class Add extends Component {
             newImage: {
                 image: "",
             },
+        }
     }
-
-}
 
 
 addRecipe (e) {
@@ -35,12 +34,11 @@ addRecipe (e) {
 
     console.log(this.newMeal)
 
+    recipeDB.meal.push(this.newMeal)
 
-    recipeDB.meal.push(this.state.newMeal)
     console.log(recipeDB)
 
-    }
-
+    };
 
     render () {
         return (

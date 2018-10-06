@@ -7,6 +7,7 @@ import imgPotato from './img/potato.jpg'
 import imgCrumble from './img/crumble.jpg'
 import imgCurry from './img/curry.jpg'
 import imgLasagne from './img/lasagne.jpg'
+import Add from "./body/add.js"
 
 const recipeDB = {
     testimonialsData: [
