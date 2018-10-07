@@ -1,21 +1,12 @@
 import React, { Component } from 'react'
 import '../../stylesheets/view.css'
 
-
 class ViewRecipe extends Component {
     constructor() {
         super()
         this.state = {
             edit: false,
-            popup: "popup",
-            renderView: {
-                id: "",
-                name: "",
-                image: "",
-                method: "",
-                ingredients: []
-            },
-
+            ingredients: [],
         }
     }
 
@@ -36,7 +27,21 @@ class ViewRecipe extends Component {
             window.recipeDB.meal[this.props.view.id].name = e.target.value
         } else if (e.target.id === 'method') {
             window.recipeDB.meal[this.props.view.id].method = e.target.value
+        } else if (e.target.id === 'image') {
+            window.recipeDB.meal[this.props.view.id].image = e.target.value
+            console.log(this.props.view.image)
         }
+    }
+
+    createNewInput() {
+        window.recipeDB.meal[this.props.view.id].ingredients = window.recipeDB.meal[this.props.view.id].ingredients.concat([''])
+        this.setState({ingredients: this.state.ingredients.concat([''])})
+    }
+
+    deleteIngredient(e) {
+        // let ingredient = window.recipeDB.meal[this.props.view.id].ingredients.splice(e.target.id, 1)
+        window.recipeDB.meal[this.props.view.id].ingredients.splice(e.target.id, 1)
+        this.setState({ingredients: window.recipeDB.meal[this.props.view.id].ingredients})
     }
 
     deleteRecipe() {
@@ -52,6 +57,10 @@ class ViewRecipe extends Component {
         } else {
             return false
         }
+    }
+
+    componentWillMount() {
+        this.setState({ingredients: window.recipeDB.meal[this.props.view.id].ingredients})
     }
 
     render() {
@@ -79,11 +88,13 @@ class ViewRecipe extends Component {
                 <div>
                     <div className="popup">
                         <input className="recipeName" id="name" defaultValue={this.props.view.name} onChange={(e)=> this.editRecipeElements(e)}/>
-                        <ul className="ingredients-ul">
+                        <ul id="listOfIngredientsInputs" className="ingredients-ul">
                             {this.props.view.ingredients.map((ingredient, i) => <li className="ingredients-li" key={i}><input className="ingredients-li-input" id={i}
-                                onChange={(e)=> this.editRecipeIngredients(e)} defaultValue={ingredient}/></li>)}
+                                onChange={(e)=> this.editRecipeIngredients(e)} placeholder={ingredient}/><button id={i} className="addRemButton" onClick={(e)=> this.deleteIngredient(e)}>-</button></li>)}
+                            <p className="ingredients-li right"> Add new ingredient <button className="addRemButton" onClick={()=> this.createNewInput()}>+</button></p>
                         </ul>
                         <img alt={this.props.view.name} className="recipeImg" src={this.props.view.image}/>
+                        <input className="ingredients-li-input url" onChange={(e)=> this.editRecipeElements(e)} id="image" placeholder="Add image URL" />
                         <textarea className="method-textarea" id="method" defaultValue={this.props.view.method} onChange={(e)=> this.editRecipeElements(e)} />
                         <div className="edit-btn-div">
                             <button className="edit btn" onClick={()=> this.editRecipe()}>{this.state.edit ? 'Save' : 'Edit'}</button>

@@ -17,6 +17,7 @@ h2 {
     width: 35%;
     height: 250px;
     margin-left: 5%;
+    margin-top: 30px;
     opacity: 0.8;
     vertical-align: middle;
 }
@@ -43,7 +44,6 @@ h2 {
     padding: 20px;
     letter-spacing: 0.5px;
     line-height: 1.1em;
-    word-break: break-all;
     word-break: break-word;
 }
 
@@ -95,12 +95,17 @@ h2 {
     height: auto;
     width: 95%;
     font-size: 1.5em;
-    margin-top: 300px;
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 
 .ingredients-li-input {
-font-size: 1em;
+    font-size: 1em;
+    border-radius: 5px;
+    width: 500px;
+    border: 1px solid slategrey;
+    padding: 3px;
+    margin-top: 3px;
 }
 
 .exit {
@@ -115,3 +120,23 @@ font-size: 1em;
     font-size: 1.5em;
     background-color: transparent;
 }
+
+.url {
+    margin-top: 2.5%;
+    height: 30px;
+}
+
+.addRemButton {
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: transparent;
+    outline: none;
+    font-size: 1.3em;
+}
+
+.right {
+    margin-left: 46.5%;
+}
+
