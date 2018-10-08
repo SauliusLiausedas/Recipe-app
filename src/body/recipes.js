@@ -1,18 +1,18 @@
 import React, {Component} from 'react'
 
 class Recipes extends Component {
-    kintamasis = '';
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             recipes: window.recipeDB
         }
 
         this.myIndexesToShow = [];
-        for (let i = 0; i < 3; i++) {
+        let randomNumber = Math.floor(Math.random() * 9);
+        for (let i = 0; i < randomNumber; i++) {
             let myNewRandomNumber = Math.floor(Math.random() * (this.state.recipes.meal.length - 1));
-            let isMyRandomNumberInRandomArray = this.myIndexesToShow.indexOf(myNewRandomNumber) !== -1
+            let isMyRandomNumberInRandomArray = this.myIndexesToShow.indexOf(myNewRandomNumber) !== -1;
             if (isMyRandomNumberInRandomArray) {
                 i--;
             } else {
@@ -20,6 +20,9 @@ class Recipes extends Component {
             }
         }
 
+        this.getRandomObjects = this.getRandomObjects.bind(this);
+        this.getRender = this.getRender.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     shouldComponentUpdate() {
@@ -30,43 +33,45 @@ class Recipes extends Component {
         document.getElementById('kazkoksId');
     }
 
-    test() {
-        console.log(this.kintamasis);
-    }
-
-    componentWillMount() {
-        console.log(this.kintamasis);
-    }
-
 
     getRandomObjects() {
         return this.state.recipes.meal.filter((mealObj, index) => {
-                let myRandomNr = Math.floor(Math.random() * this.state.recipes.meal.length);
-                console.log(this.myIndexesToShow);
                 return this.myIndexesToShow.indexOf(index) !== -1
             }
         )
     }
 
-    getRender(mealObj) {
-        return (<div className="contentRecipe">
-            <img className="contentRecipePic" alt="recipePic" src={mealObj.image}/>
+    getRender(mealObj, i) {
+        return (
+            <div key={i} className="contentRecipe">
+            <img className="contentRecipePic" alt={mealObj.name} src={mealObj.image}/>
             <div>
                 <h2 className="contentRecipeTextTitle">{mealObj.name}</h2>
                 <ul>
-                    {mealObj.ingredients.map(item => <li>{item}</li>)}
+                    {mealObj.ingredients.map((item,i) => <li key={i}>{item}</li>)}
                 </ul>
                 <p>{mealObj.method.slice(0, 250) + "..."}</p>
             </div>
         </div>)
     }
 
+    handleClick() {
+        this.setState({
+            recipes: this.getRandomObjects().map((mealObj, i) => this.getRender(mealObj, i))
+        })
+    }
+
     render() {
         return (
             <div >
-                {(() => {
-                    return this.getRandomObjects().map(mealObj => this.getRender(mealObj))
-                })()}
+                <button onClick={this.handleClick}>
+                    Recipes: {this.myIndexesToShow.length}
+                </button>
+                <div>
+                    {(() => {
+                        return this.getRandomObjects().map((mealObj, i) => this.getRender(mealObj, i))
+                    })()}
+                </div>
             </div>
         )
     }

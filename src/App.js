@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './stylesheets/App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-// import Slideshow from './body/slideshow.js'
 import Header from './body/header.js'
 import AllRecipes from './pages/all/allrecipes.js'
 import Search from './pages/search/Search.js'
@@ -20,8 +19,8 @@ class App extends Component {
                         <Header />
                         <Switch>
                             {/*<Route path="/" component={ Homepage } exact/>*/}
-                            <Route path="/all" component={ AllRecipes } />
                             <Route path="/" component={ HomePage }  exact/>
+                            <Route path="/all" component={ AllRecipes } />
                             <Route path="/search" component={ Search } />
                             <Route component={ Error } />
                         </Switch>
