@@ -2,14 +2,16 @@ import React, {Component} from 'react'
 
 class Recipes extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            recipes: window.recipeDB
+            recipes: window.recipeDB,
+            antraste: 'Labadiena'
         }
 
         this.myIndexesToShow = [];
-        for (let i = 0; i < 3; i++) {
+        let randomNumber = Math.floor(Math.random() * 9);
+        for (let i = 0; i < randomNumber; i++) {
             let myNewRandomNumber = Math.floor(Math.random() * (this.state.recipes.meal.length - 1));
             let isMyRandomNumberInRandomArray = this.myIndexesToShow.indexOf(myNewRandomNumber) !== -1;
             if (isMyRandomNumberInRandomArray) {
@@ -19,6 +21,10 @@ class Recipes extends Component {
             }
         }
 
+        this.getRandomObjects = this.getRandomObjects.bind(this);
+        this.getRender = this.getRender.bind(this);
+//        this.showNewRender = this.showNewRender.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     shouldComponentUpdate() {
@@ -29,7 +35,12 @@ class Recipes extends Component {
         document.getElementById('kazkoksId');
     }
 
-
+//    componentWillMount() {
+//        this.setState({
+//            recipes: this.getRandomObjects()
+//        })
+//    }
+        
     getRandomObjects() {
         return this.state.recipes.meal.filter((mealObj, index) => {
                 return this.myIndexesToShow.indexOf(index) !== -1
@@ -51,12 +62,35 @@ class Recipes extends Component {
         </div>)
     }
 
+    handleClick() {
+
+        // this.setState({
+        //     recipes: this.getRandomObjects().map((mealObj, i) => this.getRender(mealObj, i))
+        // })
+
+        console.log('veikia')
+        this.setState({antraste: 'Visogero'})
+    }
+
+    showNewRender(){
+        return this.getRandomObjects().map((mealObj, i) => this.getRender(mealObj, i))
+    }
+
     render() {
         return (
-            <div >
+            <div>
                 {(() => {
                     return this.getRandomObjects().map((mealObj, i) => this.getRender(mealObj, i))
                 })()}
+                <button onClick={this.handleClick}>
+                    Recipes: {this.myIndexesToShow.length}
+                </button>
+                <button onClick={this.handleClick()}>
+                    Recipes: {this.myIndexesToShow.length}
+                </button>
+                <h1>{this.state.antraste}</h1>
+                <div></div>
+                    {this.showNewRender()}
             </div>
         )
     }
