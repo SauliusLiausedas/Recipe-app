@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../stylesheets/search.css';
 import AllRecipes from "../all/allrecipes";
+import {getAllRecipes} from "../../services/getRecipesService"
 
 class Search extends Component {
 
@@ -21,16 +22,19 @@ class Search extends Component {
 
 
     computeSearchIndexes(){
-        let searchResults;
-        if(this.state.searchReq) {
-            searchResults = window.recipeDB.meal.filter((meal) => {
-                return meal.name.toLowerCase().indexOf(this.state.searchReq.toLowerCase()) !== -1;
-            });
-        }else {
-            searchResults = [];
-        }
+        getAllRecipes().then(recipes => {
+            let searchResults;
+            if(this.state.searchReq) {
 
-        this.setState({searchResult : searchResults});
+                searchResults = recipes.meal.filter((meal) => {
+                    return meal.name.toLowerCase().indexOf(this.state.searchReq.toLowerCase()) !== -1;
+                });
+            }else {
+                searchResults = [];
+            }
+            console.log(this.setState);
+            this.setState({searchResult : searchResults});
+        });
     }
 
     onSubmit(){
