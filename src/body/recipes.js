@@ -5,7 +5,8 @@ class Recipes extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            recipes: window.recipeDB
+            recipes: window.recipeDB,
+            antraste: 'Labadiena'
         }
 
         this.myIndexesToShow = [];
@@ -22,6 +23,7 @@ class Recipes extends Component {
 
         this.getRandomObjects = this.getRandomObjects.bind(this);
         this.getRender = this.getRender.bind(this);
+//        this.showNewRender = this.showNewRender.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -33,7 +35,12 @@ class Recipes extends Component {
         document.getElementById('kazkoksId');
     }
 
-
+//    componentWillMount() {
+//        this.setState({
+//            recipes: this.getRandomObjects()
+//        })
+//    }
+        
     getRandomObjects() {
         return this.state.recipes.meal.filter((mealObj, index) => {
                 return this.myIndexesToShow.indexOf(index) !== -1
@@ -56,14 +63,24 @@ class Recipes extends Component {
     }
 
     handleClick() {
+<<<<<<< Updated upstream
         this.setState({
             recipes: this.getRandomObjects().map((mealObj, i) => this.getRender(mealObj, i))
         })
+=======
+        console.log('veikia')
+        this.setState({antraste: 'Visogero'})
+    }
+
+    showNewRender(){
+        return this.getRandomObjects().map((mealObj, i) => this.getRender(mealObj, i))
+>>>>>>> Stashed changes
     }
 
     render() {
         return (
             <div >
+<<<<<<< Updated upstream
                 <button onClick={this.handleClick}>
                     Recipes: {this.myIndexesToShow.length}
                 </button>
@@ -71,6 +88,14 @@ class Recipes extends Component {
                     {(() => {
                         return this.getRandomObjects().map((mealObj, i) => this.getRender(mealObj, i))
                     })()}
+=======
+                <button onClick={this.handleClick()}>
+                    Recipes: {this.myIndexesToShow.length}
+                </button>
+                <h1>{this.state.antraste}</h1>
+                <div>
+                    {this.showNewRender()}
+>>>>>>> Stashed changes
                 </div>
             </div>
         )
