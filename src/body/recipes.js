@@ -2,37 +2,37 @@ import React, {Component} from 'react'
 
 class Recipes extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            recipes: window.recipeDB
+            recipes: window.recipeDB,
+            recipesId: []
         }
 
-        this.myIndexesToShow = [];
-        for (let i = 0; i < 3; i++) {
+        this.state.recipesId = this.getMyIndexesToShow();
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    getMyIndexesToShow() {
+        let myIndexesToShow = [];
+        let randomNumber = Math.floor(Math.random() * 9);
+        for (let i = 0; i < randomNumber; i++) {
             let myNewRandomNumber = Math.floor(Math.random() * (this.state.recipes.meal.length - 1));
-            let isMyRandomNumberInRandomArray = this.myIndexesToShow.indexOf(myNewRandomNumber) !== -1;
+            let isMyRandomNumberInRandomArray = myIndexesToShow.indexOf(myNewRandomNumber) !== -1;
             if (isMyRandomNumberInRandomArray) {
                 i--;
             } else {
-                this.myIndexesToShow.push(myNewRandomNumber);
+                myIndexesToShow.push(myNewRandomNumber);
             }
         }
-
+        
+        return myIndexesToShow;
     }
-
-    shouldComponentUpdate() {
-        return false;
-    }
-
-    componentDidMount() {
-        document.getElementById('kazkoksId');
-    }
-
-
+      
     getRandomObjects() {
         return this.state.recipes.meal.filter((mealObj, index) => {
-                return this.myIndexesToShow.indexOf(index) !== -1
+                return this.state.recipesId.indexOf(index) !== -1
             }
         )
     }
@@ -51,12 +51,25 @@ class Recipes extends Component {
         </div>)
     }
 
+    showNewRender(){
+        return this.getRandomObjects().map((mealObj, i) => this.getRender(mealObj, i));
+    }
+
+    handleClick() {
+        this.setState({
+          recipesId: this.getMyIndexesToShow()
+        });
+      }
+      
     render() {
         return (
-            <div >
-                {(() => {
-                    return this.getRandomObjects().map((mealObj, i) => this.getRender(mealObj, i))
-                })()}
+            <div>
+                <button onClick={this.handleClick}>
+                    Recipes: {this.state.recipesId.length}
+                </button>
+                <div>
+                    {this.showNewRender()}
+                </div>
             </div>
         )
     }

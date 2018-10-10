@@ -30,9 +30,31 @@ class Testimonials extends Component {
 */
 
 class Testimonials extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+        someText: ''
+    };
+  }
+
+
+  componentWillMount () {
+    this.setState({someText: this.getRandomTestimonial()})
+  }
+
+  componentDidMount(){
+    setInterval(()=>{
+      this.setState({someText: this.getRandomTestimonial()});
+    }, 3000)
+  }
+
+  getRandomTestimonial = () => {
+    return window.recipeDB.testimonialsData[Math.floor(Math.random() * window.recipeDB.testimonialsData.length)]
+  }
+
   render() {
     return (
-      <h3>{this.props.text}</h3>
+      <h3>{this.getRandomTestimonial()}</h3>
     );
   }
 } 
