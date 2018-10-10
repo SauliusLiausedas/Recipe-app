@@ -16,9 +16,9 @@ class Recipes extends Component {
 
     getMyIndexesToShow() {
         let myIndexesToShow = [];
-        let randomNumber = Math.floor(Math.random() * 9);
+        let randomNumber = Math.floor((Math.random() * 9)+1);
         for (let i = 0; i < randomNumber; i++) {
-            let myNewRandomNumber = Math.floor(Math.random() * (this.state.recipes.meal.length - 1));
+            let myNewRandomNumber = Math.floor(Math.random() * (this.state.recipes.meal.length));
             let isMyRandomNumberInRandomArray = myIndexesToShow.indexOf(myNewRandomNumber) !== -1;
             if (isMyRandomNumberInRandomArray) {
                 i--;
@@ -55,6 +55,14 @@ class Recipes extends Component {
         return this.getRandomObjects().map((mealObj, i) => this.getRender(mealObj, i));
     }
 
+    shuffle(a) {
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
+
     handleClick() {
         this.setState({
           recipesId: this.getMyIndexesToShow()
@@ -68,7 +76,7 @@ class Recipes extends Component {
                     Recipes: {this.state.recipesId.length}
                 </button>
                 <div>
-                    {this.showNewRender()}
+                    {this.shuffle(this.showNewRender())}
                 </div>
             </div>
         )
