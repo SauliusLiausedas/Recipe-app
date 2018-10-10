@@ -1,17 +1,30 @@
 import React, { Component } from 'react'
 import '../../stylesheets/allrecipes.css'
 import ViewRecipe from './view.js'
+import {getAllRecipes} from "../../services/getRecipesService";
 
 class AllRecipes extends Component {
     constructor() {
         super()
-        this.recipeMethod = []
+        this.recipeMethod = [];
+
+
+        //placeholder before actual data loads
         this.state = {
-            recipes: window.recipeDB,
+            recipes: {meal : []},
             recipeToShow: "",
-        }
+        };
+
+        getAllRecipes().then(recipes => {
+            this.setState({
+                recipes: recipes,
+                recipeToShow: "",
+            });
+        });
     }
 
+    // I decided to not refactor these two methods because here
+    // window.recipeDB serves only as a variable for storing
     componentWillMount() {
         if (this.props.searchResult && this.props.searchResult.length){
             window.recipeDB.results = this.props.searchResult;

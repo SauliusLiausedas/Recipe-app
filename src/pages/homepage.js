@@ -2,15 +2,19 @@ import React, { Component } from 'react'
 import '../stylesheets/homepage.css'
 import Testimonials from '../body/testimonials.js';
 import Recipes from '../body/recipes.js';
+import {getAllRecipes} from "../services/getRecipesService";
 
 class HomePage extends Component {
     constructor() {
         super()
         this.state = {
-            someText: this.getRandomTestimonial()
+            someText: ""
         };
+
+        this.setRandomTestimonial();
+
         setInterval(()=>{
-            this.setState({someText: this.getRandomTestimonial() });
+            this.setRandomTestimonial();
         }, 3000)
     }
 
@@ -18,8 +22,10 @@ class HomePage extends Component {
         this.setState({someText: this.getRandomTestimonial() });
     }
 */
-    getRandomTestimonial = () => {
-        return window.recipeDB.testimonialsData[Math.floor(Math.random() * window.recipeDB.testimonialsData.length)]
+    setRandomTestimonial (){
+        getAllRecipes().then(recipes =>{
+            this.setState({someText : recipes.testimonialsData[Math.floor(Math.random() * window.recipeDB.testimonialsData.length)]});
+        });
     }
 
     render() {
