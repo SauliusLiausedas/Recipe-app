@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../../stylesheets/view.css'
-import { getRecipeById } from '../../services/getRecipesService.js'
+import { getRecipeById } from '../../api/getRecipesApi.js'
 
 class ViewRecipe extends Component {
     constructor() {

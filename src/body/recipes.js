@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {getAllRecipes, getRecipeById } from "../services/getRecipesService";
+import {getAllRecipes, getRecipeById } from "../api/getRecipesApi";
 
 class Recipes extends Component {
 

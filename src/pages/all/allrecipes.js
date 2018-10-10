@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../../stylesheets/allrecipes.css'
 import ViewRecipe from './view.js'
-import {getAllRecipes, getRecipeById} from "../../services/getRecipesService"
+import {getAllRecipes, getRecipeById} from "../../api/getRecipesApi"
 
 class AllRecipes extends Component {
     constructor() {
@@ -53,9 +53,9 @@ class AllRecipes extends Component {
                     <div className="boxes">
                         {this.state.recipes[(this.props.searchResult ? 'results' : 'meal')].map((mealObj, i) =>
                             <div key={i} id={i} className="recipe-box" onClick={(e) => this.viewRecipe(e)}>
-                                <img className="recipe-img" alt={mealObj.name} src={mealObj.image}/>
+                                <img className="recipe-img" alt={mealObj.name} src={mealObj.strMealThumb}/>
                                 <h2 key={i}>{mealObj.name}</h2>
-                                <em><p>{mealObj.method.slice(0, 250) + "..."}</p></em>
+                                <em><p>{console.log(mealObj)}{mealObj.strInstructions.slice(0, 250) + "..."}</p></em>
                             </div>
                         )}
                     </div>

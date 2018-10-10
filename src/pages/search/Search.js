@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../stylesheets/search.css';
 import AllRecipes from "../all/allrecipes";
-import {getAllRecipes} from "../../services/getRecipesService"
+import {getAllRecipes} from "../../api/getRecipesApi"
 
 class Search extends Component {
 

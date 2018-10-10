@@ -7,7 +7,7 @@ import Search from './pages/search/Search.js'
 import HomePage from './pages/homepage.js'
 import Error from './pages/error.js'
 // import setState from './data.js'
-import {getAllRecipes, getRecipeById} from './services/getRecipesService'
+import {getAllRecipes, getRecipeById} from './api/getRecipesApi'
 
 // setState();
 
