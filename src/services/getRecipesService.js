@@ -1,5 +1,5 @@
-export function getAllRecipes () {
-    console.log('getAllRecipes');
+export function getDB () {
+    console.log('getDB');
     return new Promise (resolve=>{
         setTimeout(function(){
             resolve(window.recipeDB)
@@ -10,7 +10,7 @@ export function getAllRecipes () {
 // returns a meal, which is apparently not an object, thus it is
 // a copy of the meal, not a reference to the orginal one and
 // by changing the copy the original won't change
-// so use this ONLY FOR READING, use getAllRecipes() for writing
+// so use this ONLY FOR READING, use getDB() for writing
 export function getRecipeById (id) {
     console.log('getRecipeById');
     return new Promise (resolve=>{

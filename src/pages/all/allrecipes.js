@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../../stylesheets/allrecipes.css'
 import ViewRecipe from './view.js'
-import {getAllRecipes} from "../../services/getRecipesService";
+import {getDB} from "../../services/getRecipesService";
 
 class AllRecipes extends Component {
     constructor() {
@@ -15,9 +15,10 @@ class AllRecipes extends Component {
             recipeToShow: "",
         };
 
-        getAllRecipes().then(recipes => {
+        getDB().then(db => {
+
             this.setState({
-                recipes: recipes,
+                recipes: db,
                 recipeToShow: "",
             });
         });

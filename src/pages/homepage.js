@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import '../stylesheets/homepage.css'
 import Testimonials from '../body/testimonials.js';
 import Recipes from '../body/recipes.js';
-import {getAllRecipes} from "../services/getRecipesService";
+import {getDB} from "../services/getRecipesService";
 
 class HomePage extends Component {
     constructor() {
@@ -23,8 +23,8 @@ class HomePage extends Component {
     }
 */
     setRandomTestimonial (){
-        getAllRecipes().then(recipes =>{
-            this.setState({someText : recipes.testimonialsData[Math.floor(Math.random() * window.recipeDB.testimonialsData.length)]});
+        getDB().then(db =>{
+            this.setState({someText : db.testimonialsData[Math.floor(Math.random() * window.recipeDB.testimonialsData.length)]});
         });
     }
 

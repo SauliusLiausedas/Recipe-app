@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../stylesheets/search.css';
 import AllRecipes from "../all/allrecipes";
-import {getAllRecipes} from "../../services/getRecipesService"
+import {getDB} from "../../services/getRecipesService"
 
 class Search extends Component {
 
@@ -22,11 +22,11 @@ class Search extends Component {
 
 
     computeSearchIndexes(){
-        getAllRecipes().then(recipes => {
+        getDB().then(db => {
             let searchResults;
             if(this.state.searchReq) {
 
-                searchResults = recipes.meal.filter((meal) => {
+                searchResults = db.meal.filter((meal) => {
                     return meal.name.toLowerCase().indexOf(this.state.searchReq.toLowerCase()) !== -1;
                 });
             }else {

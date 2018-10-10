@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import '../../stylesheets/view.css'
-import {getAllRecipes, getRecipeById} from "../../services/getRecipesService";
+import {getDB, getRecipeById} from "../../services/getRecipesService";
 
 class ViewRecipe extends Component {
     constructor() {
         super()
         this.state = {
             edit: false,
-            ingredients: [""]
+            ingredients: []
         }
 
     }
@@ -23,6 +23,7 @@ class ViewRecipe extends Component {
     editRecipeIngredients(e) {
         const id= e.target.id;
         const value= e.target.value;
+        const propsId= this.props.view.id;
 
         // cant use getRecipeById because we need to save changes.
         // see more verbose notes in getRecipesService.js
@@ -31,8 +32,8 @@ class ViewRecipe extends Component {
         //     recipe.ingredients[id] = value;
         // });
 
-        getAllRecipes().then(recipes => {
-            recipes[this.props.view.id].ingredients[id] = value;
+        getDB().then(db => {
+            db.meal[propsId].ingredients[id] = value;
         });
 
         // window.recipeDB.meal[this.props.view.id].ingredients[e.target.id] = e.target.value
@@ -56,13 +57,13 @@ class ViewRecipe extends Component {
         //     }
         // });
 
-        getAllRecipes().then(recipes =>{
+        getDB().then(db =>{
             if (id === 'name') {
-                        recipes.meal[this.props.view.id].name = value;
+                        db.meal[this.props.view.id].name = value;
                     } else if (id === 'method') {
-                        recipes.meal[this.props.view.id].method = value;
+                        db.meal[this.props.view.id].method = value;
                     } else if (id === 'image') {
-                        recipes.meal[this.props.view.id].image = value;
+                        db.meal[this.props.view.id].image = value;
                         console.log(this.props.view.image)
                     }
         });
@@ -78,13 +79,13 @@ class ViewRecipe extends Component {
     }
 
     createNewInput() {
-        getAllRecipes().then(recipes => {
+        getDB().then(db => {
 
         });
         //can't use getRecipeById here either
-        getAllRecipes().then(recipes => {
-            recipes .meal[this.props.view.id].ingredients = recipes .meal[this.props.view.id].ingredients.concat([''])
-            this.setState({ingredients: this.state.ingredients.concat([''])})
+        getDB().then(db => {
+            db.meal[this.props.view.id].ingredients = db.meal[this.props.view.id].ingredients.concat([''])
+            this.setState({ingredients: this.state.ingredients})
         });
 
         // window.recipeDB.meal[this.props.view.id].ingredients = window.recipeDB.meal[this.props.view.id].ingredients.concat([''])
@@ -94,9 +95,9 @@ class ViewRecipe extends Component {
     deleteIngredient(e) {
         const id= e.target.id;
         //can't use getRecipeById here either
-        getAllRecipes().then(recipes => {
-            recipes.meal[this.props.view.id].ingredients.splice(id, 1)
-            this.setState({ingredients: recipes.meal[this.props.view.id].ingredients})
+        getDB().then(db => {
+            db[this.props.view.id].ingredients.splice(id, 1)
+            this.setState({ingredients: db.meal[this.props.view.id].ingredients})
         });
 
         //// let ingredient = window.recipeDB.meal[this.props.view.id].ingredients.splice(e.target.id, 1)
@@ -107,12 +108,12 @@ class ViewRecipe extends Component {
     deleteRecipe() {
         let confirmation = window.confirm("Are you sure?")
         if (confirmation) {
-            getAllRecipes().then(recipes => {
-                recipes.meal.splice(this.props.view.id, 1)
+            getDB().then(db => {
+                db.meal.splice(this.props.view.id, 1)
                 this.props.onClosePopup("")
-                for (let i = 0; i < recipes.meal.length; i++) {
-                    if (recipes.meal[i].id !== i) {
-                        recipes.meal[i].id = i
+                for (let i = 0; i < db.meal.length; i++) {
+                    if (db.meal[i].id !== i) {
+                        db.meal[i].id = i
                     }
                 }
             });

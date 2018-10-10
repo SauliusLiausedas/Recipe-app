@@ -7,11 +7,11 @@ import Search from './pages/search/Search.js'
 import HomePage from './pages/homepage.js'
 import Error from './pages/error.js'
 import setState from './data.js'
-import {getAllRecipes, getRecipeById} from './services/getRecipesService'
+import {getDB, getRecipeById} from './services/getRecipesService'
 
 setState();
 
-getAllRecipes();
+getDB();
 
 getRecipeById();
 
