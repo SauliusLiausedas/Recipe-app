@@ -6,10 +6,10 @@ import AllRecipes from './pages/all/allrecipes.js'
 import Search from './pages/search/Search.js'
 import HomePage from './pages/homepage.js'
 import Error from './pages/error.js'
-import setState from './data.js'
+// import setState from './data.js'
 import {getAllRecipes, getRecipeById} from './services/getRecipesService'
 
-setState();
+// setState();
 
 getAllRecipes();
 
