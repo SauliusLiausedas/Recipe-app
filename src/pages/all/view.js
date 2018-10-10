@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import '../../stylesheets/view.css'
+import {getAllRecipes, getRecipeById} from "../../services/getRecipesService";
 
 class ViewRecipe extends Component {
     constructor() {
         super()
         this.state = {
             edit: false,
-            ingredients: [],
+            ingredients: [""]
         }
+
     }
 
     editRecipe() {
@@ -19,48 +21,118 @@ class ViewRecipe extends Component {
     }
 
     editRecipeIngredients(e) {
-        window.recipeDB.meal[this.props.view.id].ingredients[e.target.id] = e.target.value
+        const id= e.target.id;
+        const value= e.target.value;
+
+        // cant use getRecipeById because we need to save changes.
+        // see more verbose notes in getRecipesService.js
+
+        // getRecipeById(id).then(recipe => {
+        //     recipe.ingredients[id] = value;
+        // });
+
+        getAllRecipes().then(recipes => {
+            recipes[this.props.view.id].ingredients[id] = value;
+        });
+
+        // window.recipeDB.meal[this.props.view.id].ingredients[e.target.id] = e.target.value
     }
 
+
     editRecipeElements(e) {
-        if (e.target.id === 'name') {
-            window.recipeDB.meal[this.props.view.id].name = e.target.value
-        } else if (e.target.id === 'method') {
-            window.recipeDB.meal[this.props.view.id].method = e.target.value
-        } else if (e.target.id === 'image') {
-            window.recipeDB.meal[this.props.view.id].image = e.target.value
-            console.log(this.props.view.image)
-        }
+        const id= e.target.id;
+        const value= e.target.value;
+
+        //can't use getRecipeById here either
+
+        // getRecipeById(id).then(recipe => {
+        //     if (id === 'name') {
+        //         recipe.name = value;
+        //     } else if (id === 'method') {
+        //         recipe.method = value;
+        //     } else if (id === 'image') {
+        //         recipe.image = value;
+        //         console.log(this.props.view.image)
+        //     }
+        // });
+
+        getAllRecipes().then(recipes =>{
+            if (id === 'name') {
+                        recipes.meal[this.props.view.id].name = value;
+                    } else if (id === 'method') {
+                        recipes.meal[this.props.view.id].method = value;
+                    } else if (id === 'image') {
+                        recipes.meal[this.props.view.id].image = value;
+                        console.log(this.props.view.image)
+                    }
+        });
+
+        // if (e.target.id === 'name') {s
+        //     window.recipeDB.meal[this.props.view.id].name = e.target.value
+        // } else if (e.target.id === 'method') {
+        //     window.recipeDB.meal[this.props.view.id].method = e.target.value
+        // } else if (e.target.id === 'image') {
+        //     window.recipeDB.meal[this.props.view.id].image = e.target.value
+        //     console.log(this.props.view.image)
+        // }
     }
 
     createNewInput() {
-        window.recipeDB.meal[this.props.view.id].ingredients = window.recipeDB.meal[this.props.view.id].ingredients.concat([''])
-        this.setState({ingredients: this.state.ingredients.concat([''])})
+        getAllRecipes().then(recipes => {
+
+        });
+        //can't use getRecipeById here either
+        getAllRecipes().then(recipes => {
+            recipes .meal[this.props.view.id].ingredients = recipes .meal[this.props.view.id].ingredients.concat([''])
+            this.setState({ingredients: this.state.ingredients.concat([''])})
+        });
+
+        // window.recipeDB.meal[this.props.view.id].ingredients = window.recipeDB.meal[this.props.view.id].ingredients.concat([''])
+        // this.setState({ingredients: this.state.ingredients.concat([''])})
     }
 
     deleteIngredient(e) {
-        // let ingredient = window.recipeDB.meal[this.props.view.id].ingredients.splice(e.target.id, 1)
-        window.recipeDB.meal[this.props.view.id].ingredients.splice(e.target.id, 1)
-        this.setState({ingredients: window.recipeDB.meal[this.props.view.id].ingredients})
+        const id= e.target.id;
+        //can't use getRecipeById here either
+        getAllRecipes().then(recipes => {
+            recipes.meal[this.props.view.id].ingredients.splice(id, 1)
+            this.setState({ingredients: recipes.meal[this.props.view.id].ingredients})
+        });
+
+        //// let ingredient = window.recipeDB.meal[this.props.view.id].ingredients.splice(e.target.id, 1)
+        // window.recipeDB.meal[this.props.view.id].ingredients.splice(e.target.id, 1)
+        // this.setState({ingredients: window.recipeDB.meal[this.props.view.id].ingredients})
     }
 
     deleteRecipe() {
         let confirmation = window.confirm("Are you sure?")
         if (confirmation) {
-            window.recipeDB.meal.splice(this.props.view.id, 1)
-            this.props.onClosePopup("")
-            for (let i = 0; i < window.recipeDB.meal.length; i++) {
-                if (window.recipeDB.meal[i].id !== i) {
-                    window.recipeDB.meal[i].id = i
+            getAllRecipes().then(recipes => {
+                recipes.meal.splice(this.props.view.id, 1)
+                this.props.onClosePopup("")
+                for (let i = 0; i < recipes.meal.length; i++) {
+                    if (recipes.meal[i].id !== i) {
+                        recipes.meal[i].id = i
+                    }
                 }
-            }
+            });
+            // window.recipeDB.meal.splice(this.props.view.id, 1)
+            // this.props.onClosePopup("")
+            // for (let i = 0; i < window.recipeDB.meal.length; i++) {
+            //     if (window.recipeDB.meal[i].id !== i) {
+            //         window.recipeDB.meal[i].id = i
+            //     }
+            // }
         } else {
             return false
         }
     }
 
     componentWillMount() {
-        this.setState({ingredients: window.recipeDB.meal[this.props.view.id].ingredients})
+        getRecipeById(this.props.view.id).then(recipe => {
+            this.setState({ingredients: recipe.ingredients});
+        });
+        // this.setState({ingredients: window.recipeDB.meal[this.props.view.id].ingredients})
     }
 
     render() {
