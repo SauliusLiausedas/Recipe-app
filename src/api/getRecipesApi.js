@@ -1,6 +1,7 @@
 import setState from '../data.js'
 const RANDOM_RECIPES_GEN = 'https://www.themealdb.com/api/json/v1/1/random.php';
 const LATEST_RECIPES_GEN = 'https://www.themealdb.com/api/json/v1/1/latest.php';
+const SEARCH_BY_NAME = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 setState()
 
 /*
@@ -32,6 +33,15 @@ function getDataPromise() {
         }).then(function(data) {
         return data;
     });
+}
+
+export function searchByName (name){
+    return fetch(SEARCH_BY_NAME+name)
+        .then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            return data;
+        });
 }
 
 /*

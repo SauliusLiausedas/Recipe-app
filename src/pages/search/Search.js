@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../stylesheets/search.css';
 import AllRecipes from "../all/allrecipes";
-import {getAllRecipes} from "../../api/getRecipesApi"
+import {getAllRecipes, searchByName} from "../../api/getRecipesApi"
 
 class Search extends Component {
 
@@ -38,10 +38,12 @@ class Search extends Component {
     }
 
     onSubmit(){
-        this.computeSearchIndexes();
+        searchByName(this.state.searchReq).then(data=>{
+            this.setState({searchResult: data.meals});
+        })
     }
 
-    render() {
+    renderRecipes() {
         return (
             <div className="content">
                 <input value={this.state.searchReq} type="text" onChange={(event) => this.onKeyTyped(event)}/>
@@ -49,6 +51,10 @@ class Search extends Component {
                 <AllRecipes searchResult={this.state.searchResult} />
             </div>
         )
+    }
+
+    render() {
+        return this.renderRecipes()
     }
 }
 
