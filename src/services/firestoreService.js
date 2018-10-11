@@ -8,7 +8,7 @@ export default class {
     static initVal = '';
     static db;
 
-    static init(val) {
+    static init() {
         this.db = window.firebase.firestore();
     }
 

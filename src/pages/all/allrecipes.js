@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import '../../stylesheets/allrecipes.css'
 import ViewRecipe from './view.js'
 import {getAllRecipes} from "../../api/getRecipesApi"
+import firestore from '../../services/firestoreService'
 
 class AllRecipes extends Component {
     constructor() {
@@ -9,11 +10,14 @@ class AllRecipes extends Component {
         this.recipeMethod = []
         this.allRecipes = {results: []}
         this.recipeToView = ""
-        getAllRecipes().then(recipes => {
-            this.allRecipes = recipes
-            this.allRecipes.results = []
-            this.setState({recipes: this.allRecipes})
-        })
+        // getAllRecipes().then(recipes => {
+        //     this.allRecipes = recipes
+        //     this.allRecipes.results = []
+        //     this.setState({recipes: this.allRecipes})
+        // })
+        firestore.getCollection('recipes').then((data)=>{
+            console.log(data);
+        });
         this.state = {
             recipes: "",
             recipeToShow: "",
@@ -67,7 +71,7 @@ class AllRecipes extends Component {
 
     render() {
         if (this.state.recipes) {
-            return this.renderAllRecipies()
+            return <div>Loading</div>
         } else {
             return <div>Loading</div>
         }

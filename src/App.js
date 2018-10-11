@@ -6,7 +6,10 @@ import AllRecipes from './pages/all/allrecipes.js'
 import Search from './pages/search/Search.js'
 import HomePage from './pages/homepage.js'
 import Error from './pages/error.js'
+import firestore from './services/firestoreService'
 // import setState from './data.js'
+
+firestore.init();
 
 class App extends Component {
     render() {
