@@ -8,6 +8,7 @@ import HomePage from './pages/homepage.js'
 import Error from './pages/error.js'
 import setState from './data.js'
 import {getAllRecipes, getRecipeById} from './services/getRecipesService'
+import Add from './pages/all/add.js'
 
 setState();
 
@@ -27,6 +28,7 @@ class App extends Component {
                             <Route path="/" component={ HomePage }  exact/>
                             <Route path="/all" component={ AllRecipes } />
                             <Route path="/search" component={ Search } />
+                            <Route path="/add" component={ Add } />
                             <Route component={ Error } />
                         </Switch>
                     </div>
