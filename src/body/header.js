@@ -6,7 +6,7 @@ import logo from '../img/logo.png';
 class Header extends Component {
     render() {
         return(
-          <div>
+          <div className="headerAll">
               <header className="header">
                 <img src={logo} className="logo" alt="logo"/>
                 <h1 className="title">Hell's Kitchen Recipes</h1>
@@ -16,7 +16,7 @@ class Header extends Component {
                       <li className="navListItem"><Link to="/" className="navListItemLink">Home</Link></li>
                       <li className="navListItem"><Link to="/all" className="navListItemLink">All Recipes</Link></li>
                       <li className="navListItem"><Link to="/search" className="navListItemLink">Search</Link></li>
-                      <li className="navListItem"><Link to="/add" className="navListItemLink">Add Recipe</Link></li>
+                      <li className="navListItem"><Link to="/categories" className="navListItemLink">Categories</Link></li>
                   </ul>
               </nav>
           </div>  

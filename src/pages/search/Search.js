@@ -20,23 +20,6 @@ class Search extends Component {
         this.setState({searchReq : e.target.value});
     }
 
-
-    computeSearchIndexes(){
-        getAllRecipes().then(recipes => {
-            let searchResults;
-            if(this.state.searchReq) {
-
-                searchResults = recipes.meal.filter((meal) => {
-                    return meal.name.toLowerCase().indexOf(this.state.searchReq.toLowerCase()) !== -1;
-                });
-            }else {
-                searchResults = [];
-            }
-            console.log(this.setState);
-            this.setState({searchResult : searchResults});
-        });
-    }
-
     onSubmit(){
         searchByName(this.state.searchReq).then(data=>{
             this.setState({searchResult: data.meals});

@@ -1,0 +1,23 @@
+.categoryMeals {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: 30px;
+    grid-row-gap: 50px;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    background-color: rgb(250, 250, 255);
+    padding: 30px;
+    min-height: 500px;
+}
+.categoryMealImg {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+}
+.categoryMealImg:hover {
+
+}
+.categoryMealName {
+    font-size: 1.3em;
+}
