@@ -19,8 +19,8 @@ class App extends Component {
                             {/*<Route path="/" component={ Homepage } exact/>*/}
                             <Route path="/" component={ HomePage }  exact/>
                             <Route path="/all" component={ AllRecipes } />
-                            <Route path="/search" component={ Search } />
-                            <Route path="/categories" component={ Categories }/>
+                            <Route path="/search" exact component={ Search } />
+                            <Route path="/categories" exact component={ Categories }/>
                             <Route component={ Error } />
                         </Switch>
                     </div>
