@@ -71,4 +71,3 @@ export function getRecipeById (id) {
         }, 100*Math.random())
     })
 }
-

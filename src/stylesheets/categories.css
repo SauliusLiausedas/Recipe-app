@@ -1,0 +1,16 @@
+.categoryBox {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    text-align: left;
+  }
+  
+  .categoryPic {
+    padding: 0 30px;
+    max-width: 250px;
+    max-height: 227px;
+  }
+
+  .categoryTitle {
+    text-align: left;
+  }
