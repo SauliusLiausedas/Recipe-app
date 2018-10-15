@@ -3,6 +3,7 @@ import '../../stylesheets/allrecipes.css'
 import ViewRecipe from './view.js'
 import {getAllRecipes} from "../../api/getRecipesApi"
 import firestore from '../../services/firestoreService'
+import imgChickenCas from "../../img/chickenCas.jpg";
 
 class AllRecipes extends Component {
     constructor() {
@@ -15,23 +16,16 @@ class AllRecipes extends Component {
         //     this.allRecipes.results = []
         //     this.setState({recipes: this.allRecipes})
         // })
+
         firestore.getCollection('recipes').then((data)=>{
-            console.log(data);
         });
+        firestore.getCollectionDoc().then((data) => {
+        })
+
         this.state = {
             recipes: "",
             recipeToShow: "",
         }
-    }
-
-    componentWillMount() {
-        // if (this.props.searchResult && this.props.searchResult.length){
-        //     this.allRecipes = this.props.searchResult;
-        //     this.setState({recipes: this.allRecipes});
-        // } else if (this.props.searchResult) {
-        //     this.allRecipes.results = [];
-        //     this.setState({recipes: this.allRecipes});
-        // }
     }
 
     componentWillReceiveProps(nextProps) {
@@ -69,11 +63,33 @@ class AllRecipes extends Component {
         )
     }
 
+    addData() {
+
+        getAllRecipes().then(data => {
+            firestore.createNewRecipe(data)
+        })
+
+    }
+
+    updateData() {
+        firestore.addNewRecipes()
+    }
+
+    updateRecipe() {
+        firestore.getCollectionDoc()
+    }
+
     render() {
         if (this.state.recipes) {
             return <div>Loading</div>
         } else {
-            return <div>Loading</div>
+            return(
+                <div>
+                    <button onClick={() => this.addData()}>ADD DATA TO DB</button>
+                    <button onClick={() => this.updateData()}>UPDATE DATA</button>
+                    <button onClick={() => this.updateRecipe()}>UPDATE DATA</button>
+                </div>
+            )
         }
     }
 }

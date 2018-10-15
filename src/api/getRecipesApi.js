@@ -8,8 +8,6 @@ setState()
 * Method to get randomized meals
 * */
 export function getAllRecipes () {
-    //TODO implement
-    // console.log('getAllRecipes');
     return new Promise (resolve=>{
         let dataArray = [];
         for (let i = 0; i < 10; i++){

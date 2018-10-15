@@ -10,6 +10,7 @@ export default class {
 
     static init() {
         this.db = window.firebase.firestore();
+        console.log(window.firebase)
     }
 
     static getCollection(collection) {
@@ -18,14 +19,42 @@ export default class {
                 const data = [];
                 querySnapshot.forEach((doc) => {
                     data.push({data: doc.data(), id: doc.id});
+                    // console.log(doc.id)
                 });
                 resolve(data);
             });
         });
     }
+    static updateRecipe() {
+        this.db.collection('recipes').doc('2sMNxhVXyPHNyJ2VtSBs').set({
+
+            }
+        )
+    }
+    static addNewRecipes() {
+        this.db.collection('recipes').doc('2sMNxhVXyPHNyJ2VtSBs').update({
+            cookingTime: 11111
+        })
+    }
 
     static updateRecipe() {
+        var recipeRef = this.db.collection('recipes').where('name', '==', 'Sandwich')
+        recipeRef.update()
+    }
 
+    static getCollectionDoc() {
+        return new Promise(resolve => {
+            this.db.collection('recipes').doc('kbYRMIVgNBd2RImUk0ON').get().then(data => {
+                if(data.exists) {
+                    console.log("Document data:", data)
+                } else {
+                    console.log("No such document")
+                }
+            }).catch((err)=> {
+                console.log('Error: ', err)
+            })
+            resolve('lel')
+        })
     }
 
     static createNewRecipe(data) {
