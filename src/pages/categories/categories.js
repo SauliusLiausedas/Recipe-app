@@ -19,6 +19,17 @@ class Categories extends Component {
         })
     }
 
+    componentWillReceiveProps() {
+        debugger;
+        this.resetComponent();
+    }
+
+    resetComponent() {
+        this.setState({
+            selected: ""
+        });
+    }
+
     render() {
         if(this.state.categories) {
             if(this.state.selected) {

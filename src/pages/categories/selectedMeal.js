@@ -14,7 +14,8 @@ class SelectedMeal extends Component {
 
     componentWillMount() {
         getById(this.props.id).then(meal => {
-            this.setState({mealById: meal.meals})
+            this.setState({mealById: meal.meals});
+            this.getIngredients();
         })
     }
 
@@ -23,17 +24,21 @@ class SelectedMeal extends Component {
             for (let i = 1; i < 21; i++) {
                 if(this.state.mealById[0]['strIngredient'+i] && this.state.mealById[0]['strMeasure'+i]) {
                     let ingredientToPush = [this.state.mealById[0]['strMeasure'+i], this.state.mealById[0]['strIngredient' + i]].join(" ")
-                    this.state.ingredients.push(ingredientToPush)
+                    this.state.ingredients.push(ingredientToPush);
                 }
             }
             if(this.state.ingredients.length > 12) {
                 this.setState({ingredientsClass: 'overflowHide'})
             }
         }
+        this.repaint();
+    }
+
+    repaint () {
+        this.setState({});
     }
 
     render() {
-        this.getIngredients()
         if(this.state.mealById[0]){
             return(
                 <div className="viewMeal">
