@@ -3,6 +3,8 @@ import '../../stylesheets/categories.css'
 import AllCategories from './allCategories.js'
 import SelectedCategory from './selectedCategory.js'
 import { getCategories } from '../../api/getRecipesApi.js'
+import {Route} from "react-router-dom";
+
 
 class Categories extends Component {
     constructor() {
@@ -19,9 +21,13 @@ class Categories extends Component {
         })
     }
 
-    componentWillReceiveProps() {
+    componentWillReceiveProps(nextProps) {
         debugger;
-        this.resetComponent();
+        if (nextProps.match && nextProps.match.params  && nextProps.match.params.category){
+            this.setState({selected: nextProps.match.params.category});
+        } else {
+            this.resetComponent();
+        }
     }
 
     resetComponent() {

@@ -20,6 +20,8 @@ class App extends Component {
                             <Route path="/" component={ HomePage }  exact/>
                             <Route path="/all" component={ AllRecipes } />
                             <Route path="/search" exact component={ Search } />
+                            <Route path="/categories/:category/:id" exact component={ Categories }/>
+                            <Route path="/categories/:category" exact component={ Categories }/>
                             <Route path="/categories" exact component={ Categories }/>
                             <Route component={ Error } />
                         </Switch>
