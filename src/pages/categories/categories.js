@@ -3,6 +3,7 @@ import '../../stylesheets/categories.css'
 import AllCategories from './allCategories.js'
 import SelectedCategory from './selectedCategory.js'
 import { getCategories } from '../../api/getRecipesApi.js'
+import {Link} from "react-router-dom";
 
 class Categories extends Component {
     constructor() {
@@ -20,7 +21,6 @@ class Categories extends Component {
     }
 
     componentWillReceiveProps() {
-        debugger;
         this.resetComponent();
     }
 
@@ -32,19 +32,11 @@ class Categories extends Component {
 
     render() {
         if(this.state.categories) {
-            if(this.state.selected) {
-                return (
-                    <div className="categories">
-                        <SelectedCategory selected={this.state.selected}/>
-                    </div>
-                )
-            } else {
-                return(
-                    <div className="categories">
-                        <AllCategories selectCategory={selected => this.setState({selected: selected})} categories={this.state.categories}/>
-                    </div>
-                )
-            }
+            return(
+                <div className="categories">
+                    <AllCategories selectCategory={selected => this.setState({selected: selected})} categories={this.state.categories}/>
+                </div>
+            )
         } else {
             return(
                 <div className="categories">

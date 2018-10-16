@@ -5,26 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd9634a8-3ad0-461f-ba38-caaf79a59b45" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/categories/allCategories.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/categories/categories.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/categories/selectedCategory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/categories/selectedMeal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stylesheets/allCategories.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stylesheets/categories.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stylesheets/selectedCategory.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stylesheets/selectedMeal.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/getRecipesApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/getRecipesApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/body/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/body/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/body/recipes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/body/recipes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/all/allrecipes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/all/allrecipes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/search/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/allrecipes.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/allrecipes.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/categories/allCategories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/categories/allCategories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/categories/categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/categories/categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/categories/selectedCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/categories/selectedCategory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/categories/selectedMeal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/categories/selectedMeal.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -53,31 +39,31 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="54" />
+          <entry key="css" value="55" />
           <entry key="html" value="1" />
-          <entry key="js" value="117" />
+          <entry key="js" value="128" />
           <entry key="ts" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="54" />
+          <entry key="CSS" value="55" />
           <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="117" />
+          <entry key="JavaScript" value="128" />
           <entry key="TypeScript" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="11608" />
-          <entry key="js" value="47049" />
+          <entry key="js" value="50289" />
           <entry key="txt" value="375" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="11608" />
-          <entry key="JavaScript" value="47049" />
+          <entry key="JavaScript" value="50289" />
           <entry key="PLAIN_TEXT" value="375" />
         </counts>
       </usages-collector>
@@ -108,58 +94,43 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/all/allrecipes.js">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="51" column="100" selection-start-line="51" selection-start-column="88" selection-end-line="51" selection-end-column="100" />
+            <state relative-caret-position="-286">
+              <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/categories/selectedCategory.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="514">
+              <caret line="31" column="116" lean-forward="true" selection-start-line="31" selection-start-column="116" selection-end-line="31" selection-end-column="116" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#0#40#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/stylesheets/selectedMeal.css">
+        <entry file="file://$PROJECT_DIR$/src/pages/categories/selectedMeal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="5" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/stylesheets/selectedCategory.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="10" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/stylesheets/categories.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+            <state relative-caret-position="324">
+              <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/stylesheets/allCategories.css">
+        <entry file="file://$PROJECT_DIR$/src/pages/categories/allCategories.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/categories/categories.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+            <state relative-caret-position="364">
+              <caret line="36" column="79" selection-start-line="36" selection-start-column="79" selection-end-line="36" selection-end-column="79" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -171,17 +142,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>allrecipe</find>
-      <find>allreci</find>
-      <find>recipe-box</find>
-      <find>sear</find>
-      <find>state</find>
-      <find>show</find>
-      <find>categoryObj</find>
-      <find>GET CATE</find>
-      <find>getByCate</find>
-      <find>getBy</find>
-      <find>props.</find>
       <find>selected</find>
       <find>this.props</find>
       <find>b</find>
@@ -197,10 +157,21 @@
       <find>getMy</find>
       <find>conos</find>
       <find>console.l</find>
-      <find>mealById</find>
       <find>ingredients.map</find>
       <find>ingredients</find>
       <find>recipesId</find>
+      <find>debu</find>
+      <find>selecte</find>
+      <find>selectedCate</find>
+      <find>Selec</find>
+      <find>props</find>
+      <find>selectedCategoryMeals</find>
+      <find>selectedMealId</find>
+      <find>mealById</find>
+      <find>this.props.id</find>
+      <find>console.log</find>
+      <find>Link to=</find>
+      <find>Link</find>
     </findStrings>
     <replaceStrings>
       <replace>Recipes</replace>
@@ -218,7 +189,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="firestore" />
       </map>
     </option>
   </component>
@@ -250,21 +221,21 @@
         <option value="$PROJECT_DIR$/src/stylesheets/allrecipes.css" />
         <option value="$PROJECT_DIR$/src/pages/search/Search.js" />
         <option value="$PROJECT_DIR$/src/pages/categories.js" />
-        <option value="$PROJECT_DIR$/src/pages/categories/allCategories.js" />
-        <option value="$PROJECT_DIR$/src/pages/categories/selectedCategory.js" />
         <option value="$PROJECT_DIR$/src/body/header.js" />
         <option value="$PROJECT_DIR$/src/stylesheets/header.css" />
         <option value="$PROJECT_DIR$/src/testselectedMeal.js" />
-        <option value="$PROJECT_DIR$/src/pages/categories/selectedMeal.js" />
         <option value="$PROJECT_DIR$/src/stylesheets/selectedMeal.css" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/api/getRecipesApi.js" />
         <option value="$PROJECT_DIR$/src/body/recipes.js" />
         <option value="$PROJECT_DIR$/src/stylesheets/homepage.css" />
         <option value="$PROJECT_DIR$/src/stylesheets/selectedCategory.css" />
-        <option value="$PROJECT_DIR$/src/pages/categories/categories.js" />
         <option value="$PROJECT_DIR$/src/stylesheets/categories.css" />
         <option value="$PROJECT_DIR$/src/stylesheets/allCategories.css" />
+        <option value="$PROJECT_DIR$/src/pages/categories/categories.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/pages/categories/selectedCategory.js" />
+        <option value="$PROJECT_DIR$/src/pages/categories/selectedMeal.js" />
+        <option value="$PROJECT_DIR$/src/pages/categories/allCategories.js" />
       </list>
     </option>
   </component>
@@ -298,6 +269,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -332,13 +304,6 @@
               <item name="recipe-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="categories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="recipe-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="recipe-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="search" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -351,12 +316,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="categories&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/categories.js&#10;recipes.css&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/allrecipes.css&#10;alre&#9;null&#9;null&#10;home&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/homepage.js&#10;allre&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/allrecipes.js&#10;allrec&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/allrecipes.js&#10;selected&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/testselectedMeal.js&#10;header&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/header.css&#10;selectedMeal&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/selectedMeal.css&#10;allCate&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/allCategories.css&#10;firestor&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/services/firestoreService.js&#10;recipes&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/body/recipes.js&#10;recipes.js&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/services/getRecipesService.js&#10;view&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/view.css&#10;test.js&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/test.js&#10;homepage&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/homepage.js&#10;edit&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/edit.js&#10;data&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/data.js&#10;data.ks&#9;null&#9;null&#10;test&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/body/testimonials.js&#10;search&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/searchBar.js" />
+    <property name="SearchEverywhereHistoryKey" value="allca&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/allCategories.js&#10;selected&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedMeal.js&#10;header&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/body/header.js&#10;he&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/body/header.js&#10;sele&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedMeal.js&#10;cate&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/categories.js&#10;app&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/App.js&#10;selec&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedMeal.js&#10;categories&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/categories.js&#10;recipes.css&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/allrecipes.css&#10;alre&#9;null&#9;null&#10;home&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/homepage.js&#10;allre&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/allrecipes.js&#10;allrec&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/allrecipes.js&#10;selectedMeal&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/selectedMeal.css&#10;allCate&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/allCategories.css&#10;firestor&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/services/firestoreService.js&#10;recipes&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/body/recipes.js&#10;recipes.js&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/services/getRecipesService.js&#10;view&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/view.css&#10;test.js&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/test.js&#10;homepage&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/homepage.js&#10;edit&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/edit.js&#10;data&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/data.js&#10;data.ks&#9;null&#9;null&#10;test&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/body/testimonials.js&#10;search&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/searchBar.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../recipe-project" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
@@ -442,7 +406,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176508000" />
+    <option name="totallyTimeSpent" value="186026000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -460,8 +424,8 @@
       <window_info id="npm" order="0" side_tool="true" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.13474241" />
-      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.3299566" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.13474241" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.3299566" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.4138929" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
@@ -665,16 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/firestoreService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/all/view.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -686,19 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="25" column="10" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="25" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/categories/allCategories.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -709,57 +650,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/body/header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stylesheets/header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/testselectedMeal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="12" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/categories/selectedCategory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="35" column="44" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/testselectedMeal.js" />
     <entry file="file://$PROJECT_DIR$/src/pages/homepage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -788,9 +683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="31" column="54" lean-forward="true" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -801,40 +693,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/categories/selectedMeal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-364">
-          <caret line="20" selection-start-line="20" selection-end-line="32" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/all/allrecipes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="51" column="100" selection-start-line="51" selection-start-column="88" selection-end-line="51" selection-end-column="100" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/stylesheets/selectedMeal.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
           <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/categories/categories.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -856,6 +718,87 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/firestoreService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stylesheets/header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/body/header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-312">
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/categories/categories.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/all/allrecipes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="51" column="45" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-286">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/categories/selectedMeal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/categories/selectedCategory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="31" column="116" lean-forward="true" selection-start-line="31" selection-start-column="116" selection-end-line="31" selection-end-column="116" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/categories/allCategories.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="36" column="79" selection-start-line="36" selection-start-column="79" selection-end-line="36" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
