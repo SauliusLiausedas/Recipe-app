@@ -13,7 +13,8 @@ class SelectedMeal extends Component {
     }
 
     componentWillMount() {
-        getById(this.props.id).then(meal => {
+        let id = this.props && this.props.match && this.props.match.params && this.props.match.params.id || '';
+        getById(id).then(meal => {
             this.setState({mealById: meal.meals});
             this.getIngredients();
         })

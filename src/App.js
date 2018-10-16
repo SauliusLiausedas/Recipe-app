@@ -7,8 +7,8 @@ import Search from './pages/search/Search.js'
 import HomePage from './pages/homepage.js'
 import Error from './pages/error.js'
 import Categories from './pages/categories/categories.js'
-import SelectedCategory from "./pages/categories/allCategories";
-import SelectedMeal from "./pages/categories/allCategories";
+import SelectedCategory from "./pages/categories/selectedCategory";
+import SelectedMeal from "./pages/categories/selectedMeal";
 
 class App extends Component {
     render() {
@@ -23,8 +23,8 @@ class App extends Component {
                             <Route path="/all" component={ AllRecipes } />
                             <Route path="/search" exact component={ Search } />
                             <Route path="/categories" exact component={ Categories }/>
-                            <Route path="/categories/:category" component={ SelectedCategory } />
-                            <Route path="/categories/:category/:id" component={ SelectedMeal } />
+                            <Route path="/categories/:category" exact  component={ SelectedCategory } />
+                            <Route path="/categories/:category/:id" exact component={ SelectedMeal } />
                             <Route component={ Error } />
                         </Switch>
                     </div>

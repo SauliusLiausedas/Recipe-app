@@ -14,9 +14,14 @@ class SelectedCategory extends Component {
     }
 
     componentWillMount() {
-        getByCategory(this.props.selected).then(categories => {
-            this.setState({selectedCategoryMeals: categories.meals})
-        })
+        let category = this.props && this.props.match && this.props.match.params && this.props.match.params.category || '';
+        if (category){
+            getByCategory(category).then(categories => {
+                this.setState({selectedCategoryMeals: categories.meals})
+            })
+        } else {
+            //TODO implement error handling or something to show
+        }
     }
 
     render() {
