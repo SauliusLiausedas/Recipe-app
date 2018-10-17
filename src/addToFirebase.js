@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import './stylesheets/App.css';
 import fs from './firestoreservice'
-import { getRandomRecipes} from "./api/getRecipesApi";
+import { getRandomRecipes, getCategories } from "./api/getRecipesApi";
 
 class AddToFirebase extends Component {
-
+    constructor() {
+        super()
+        this.state = {categories: ''}
+}
     addToFirebase () {
         console.log('add to firebase');
         getRandomRecipes(1).then((data)=>{
@@ -16,10 +19,23 @@ class AddToFirebase extends Component {
         });
     }
 
+    addCategoriesToFirebase() {
+        getCategories().then(categories => {
+            let categoriesToAdd
+            let categoriesAll
+            let categoryData
+            categories.categories.map(category => {
+                // console.log(category.idCategory)
+                    fs.createNewCategory(category, category.strCategory)
+                })
+        })
+    }
+
     render() {
         return (
             <div className="App">
-                <button onClick={this.addToFirebase}>Add to firebase from mealDB</button>
+                <button onClick={() => this.addToFirebase()}>Add to firebase from mealDB</button>
+                <button onClick={this.addCategoriesToFirebase}>Add Categories to Firebase </button>
             </div>
         );
     }
