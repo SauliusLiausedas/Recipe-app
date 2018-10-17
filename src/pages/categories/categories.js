@@ -7,11 +7,18 @@ import {Route} from "react-router-dom";
 
 
 class Categories extends Component {
-    constructor() {
+    constructor(props) {
         super()
         this.state = {
             categories: "",
             selected: ""
+        }
+
+        if(props.match.params.id) this.mealId= props.match.params.id;
+        else this. mealId = -1;
+
+        if(props.match.params.category){
+         this.state['selected'] = props.match.params.category;
         }
     }
 
@@ -22,7 +29,7 @@ class Categories extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        debugger;
+        // debugger;
         if (nextProps.match && nextProps.match.params  && nextProps.match.params.category){
             this.setState({selected: nextProps.match.params.category});
         } else {
@@ -41,7 +48,7 @@ class Categories extends Component {
             if(this.state.selected) {
                 return (
                     <div className="categories">
-                        <SelectedCategory selected={this.state.selected}/>
+                        <SelectedCategory selected={this.state.selected} mealId={this.mealId}/>
                     </div>
                 )
             } else {

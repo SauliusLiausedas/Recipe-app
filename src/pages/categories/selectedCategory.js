@@ -5,11 +5,15 @@ import SelectedMeal from './selectedMeal.js'
 import {Link} from "react-router-dom";
 
 class SelectedCategory extends Component {
-    constructor() {
+    constructor(props) {
         super()
          this.state = {
             selectedCategoryMeals: [],
              selectedMealId: ""
+         }
+
+         if(props.mealId >= 0){
+             this.state['selectedMealId'] = props.mealId;
          }
     }
 
@@ -36,7 +40,7 @@ class SelectedCategory extends Component {
                     <div className="categoryMeals">
                         {this.state.selectedCategoryMeals.map((mealObj,i) => {
                             return(
-                                <Link to="/categories/chicken/1213" className="navListItemLink">
+                                <Link to={"/categories/" + this.props.selected.toLowerCase() + "/" + mealObj.idMeal} className="navListItemLink">
                                     <div className="categoryMealBox" id={mealObj.idMeal} key={i}>
                                         <h1 className="categoryMealName">{mealObj.strMeal}</h1>
                                         <img className="categoryMealImg" onClick={(e) => this.viewMealById(e)} alt={mealObj.strMeal} src={mealObj.strMealThumb} />
