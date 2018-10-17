@@ -1,59 +1,47 @@
 import React, { Component } from 'react'
 import '../stylesheets/categories.css'
-const RECIPE_CATEGORIES = 'https://www.themealdb.com/api/json/v1/1/categories.php';
-const FILTER_BY_CATEGORY = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=';
+import AllCategories from './allcategories.js'
+import { getCategories } from '../api/getRecipesApi.js'
 
 class Categories extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
-            itemsList: []
+            categoriesList: [],
+            selectedCategory: ''
         };
-
-        this.handleClick = this.handleClick.bind(this);
     }
 
 componentWillMount() {
-    fetch(RECIPE_CATEGORIES)
-    .then(categories => {
-        return categories.json();
-    }).then(data => {
-        let allCategories = data.categories.map((obj, i) => {
-            return(
-                <div key={i} className="categoryBox">
-                    <h2 key={i} className="categoryTitle">{obj.strCategory}</h2>
-                    <img className="categoryPic" alt={obj.strCategoryThumb} src={obj.strCategoryThumb}/>
-                    <button onClick={this.handleClick}>Recipes</button>
-                </div>
-            )
-        })
-        this.setState({itemsList: allCategories})
+    getCategories().then(data => {
+        this.setState({categoriesList: data.categories})
     })
+}    
+
+componentWillReceiveProps() {
+    this.resetComponent();
 }
 
-handleClick(strCategory){
-    fetch(FILTER_BY_CATEGORY+strCategory)
-    .then(meals => {
-        return meals.json();
-    }).then(data => {
-        let allMeals = data.meals.map((obj, i) => {
-            return(
-                <div key={i} className="categoryBox">
-                    <h2 key={i} className="categoryTitle">{obj.strMeal}</h2>
-                    <img className="categoryPic" alt={obj.strMealThumb} src={obj.strMealThumb}/>
-                </div>
-            )
-        })
-        this.setState({itemsList: allMeals})
+resetComponent() {
+    this.setState({
+        selectedCategory: ''
     })
 }
 
 render() {
-    return(
-        <div>
-            {this.state.itemsList}
-        </div>
-    )
+    if (this.state.categoriesList) {
+        return(
+            <div>
+                <AllCategories selectCategory={selectedCategory => this.setState({selectedCategory: selectedCategory})} categories={this.state.categoriesList} />
+            </div>
+        )
+    } else {
+        return(
+            <div>
+                <h1>Nieko</h1>
+            </div>
+        )
+    }
 }
 
 }

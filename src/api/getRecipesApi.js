@@ -2,6 +2,9 @@ import setState from '../data.js'
 const RANDOM_RECIPES_GEN = 'https://www.themealdb.com/api/json/v1/1/random.php';
 const LATEST_RECIPES_GEN = 'https://www.themealdb.com/api/json/v1/1/latest.php';
 const SEARCH_BY_NAME = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
+const RECIPE_CATEGORIES = 'https://www.themealdb.com/api/json/v1/1/categories.php';
+const FILTER_BY_CATEGORY = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=';
+const SELECTED_MEAL = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
 setState()
 
 /*
@@ -70,4 +73,34 @@ export function getRecipeById (id) {
             resolve(window.recipeDB.meal[id])
         }, 100*Math.random())
     })
+}
+
+// Recipe Categories
+export function getCategories() {
+    return fetch(RECIPE_CATEGORIES)
+        .then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            return data;
+        });
+}
+
+// Filter by Category
+export function getMealsByCategory(category) {
+    return fetch(FILTER_BY_CATEGORY+category)
+        .then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            return data;
+        });
+}
+
+// Selected Meal
+export function getMealById(id) {
+    return fetch(SELECTED_MEAL+id)
+        .then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            return (data)
+        });
 }

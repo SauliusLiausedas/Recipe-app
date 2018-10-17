@@ -7,6 +7,8 @@ import Search from './pages/search/Search.js'
 import HomePage from './pages/homepage.js'
 import Error from './pages/error.js'
 import Categories from './pages/categories.js'
+import SelectedCategory from './pages/selectedcategory.js'
+import SelectedMeal from './pages/selectedmeal.js'
 // import setState from './data.js'
 
 class App extends Component {
@@ -21,7 +23,9 @@ class App extends Component {
                             <Route path="/" component={ HomePage }  exact/>
                             <Route path="/all" component={ AllRecipes } />
                             <Route path="/search" component={ Search } />
-                            <Route path="/categories" component= { Categories } />
+                            <Route path="/categories" exact component= { Categories } />
+                            <Route path="/categories/:category" exact component={ SelectedCategory } />
+                            <Route path="/categories/:category/:id" exact component={ SelectedMeal } />
                             <Route component={ Error } />
                         </Switch>
                     </div>
