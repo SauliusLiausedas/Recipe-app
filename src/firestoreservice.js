@@ -9,6 +9,7 @@ export default class {
 
     static init() {
         this.db = window.firebase.firestore();
+        this.db.settings({ timestampsInSnapshots: true});
         console.log(window.firebase)
     }
 
@@ -65,9 +66,9 @@ export default class {
     * */
     static createNewRecipe(data) {
         return new Promise(resolve => {
-            this.db.collection("recipes").add(data)
+            this.db.collection("recipes").doc(data.idMeal).set(data)
                 .then(function (docRef) {
-                    console.log("Document written with ID: ", docRef.id);
+                    //console.log("Document written with ID: ", docRef.id);
                     resolve(docRef);
                 })
                 .catch(function (error) {
