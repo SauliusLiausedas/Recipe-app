@@ -7,7 +7,7 @@ class Recipes extends Component {
     constructor(props) {
         super(props)
         fs.getCollection('recipesFromCategories').then(meals=> {
-            this.setState({allRecipes: meals})
+            this.generateRecipes(meals);
         })
         this.state = {
             allRecipes: '',
@@ -21,17 +21,19 @@ class Recipes extends Component {
 
     }
 
-    generateRecipes() {
-        if(this.state.allRecipes) {
+    componentDidMount () {
+
+    }
+
+    generateRecipes(meals) {
             let random = Math.floor(Math.random() * 10) + 1
             let mealArr = []
             for (let i = 0; i < random; i++) {
-                let randomFromArray = Math.floor(Math.random() * this.state.allRecipes.length)
-                mealArr.push(this.state.allRecipes[randomFromArray])
+                let randomFromArray = Math.floor(Math.random() * meals.length)
+                mealArr.push(meals[randomFromArray])
             }
-            this.setState({recipesToShow: mealArr})
-            this.setState({recipesId: random})
-        }
+            this.setState({recipesToShow: mealArr, recipesId: random})
+
     }
 
     render() {
@@ -56,7 +58,6 @@ class Recipes extends Component {
         } else {
             return (
                 <div>
-                    {this.generateRecipes()}
                     Loading...
                 </div>
             )
