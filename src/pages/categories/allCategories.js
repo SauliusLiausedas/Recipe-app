@@ -22,9 +22,8 @@ class AllCategories extends Component {
                         {this.props.categories.map((categoryObj, i) =>
                             <div onClick={(e) => this.setState({selected: e.target.alt})} key={i}>
                                 <h1>{categoryObj.strCategory}</h1>
-                                <Link to={'/categories/' + this.state.selected}>
+                                <Link to={'/categories/' + categoryObj.strCategory}>
                                     <img className="allCatImg"
-                                         onClick={(e) => this.props.selectCategory(e.target.alt)}
                                          alt={categoryObj.strCategory}
                                          src={categoryObj.strCategoryThumb}/>
                                 </Link>

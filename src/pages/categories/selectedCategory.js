@@ -36,11 +36,11 @@ class SelectedCategory extends Component {
                          {this.state.selectedCategoryMeals.map((mealObj, i) => {
                              return (
                                  <div className="categoryMealBox" id={mealObj.idMeal} key={i}>
+                                     {console.log(this.props.match)}
                                      <h1 className="categoryMealName">{mealObj.strMeal}</h1>
                                      <Link
-                                         to={'/categories/' + this.props.selected + '/' + this.state.selectedMealId}><img
+                                         to={this.props.match.url + '/' + mealObj.idMeal}><img
                                          className="categoryMealImg"
-                                         onClick={(e) => this.setState({selectedMealId: e.target.id})}
                                          alt={mealObj.strMeal} id={mealObj.idMeal}
                                          src={mealObj.strMealThumb}/></Link>
                                  </div>
@@ -50,7 +50,6 @@ class SelectedCategory extends Component {
                      </div>
                  )
              } else {
-                 window.location.pathname = '/categories/'+this.props.selected+'/'+this.state.selectedMealId
                 return <SelectedMeal id={this.state.selectedMealId}/>
              }
         } else {
