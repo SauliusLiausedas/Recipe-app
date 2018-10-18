@@ -24,6 +24,10 @@ class SelectedCategory extends Component {
         }
     }
 
+    changeURL() {
+        console.log(this.props.match)
+    }
+
     render() {
          if (this.state.selectedCategoryMeals) {
              if (!this.state.selectedMealId){
@@ -46,11 +50,16 @@ class SelectedCategory extends Component {
                      </div>
                  )
              } else {
-                window.location.pathname = '/categories/'+this.props.selected+'/'+this.state.selectedMealId
+                 window.location.pathname = '/categories/'+this.props.selected+'/'+this.state.selectedMealId
                 return <SelectedMeal id={this.state.selectedMealId}/>
              }
         } else {
-            return <div> neveikia </div>
+            return (
+                 <div>
+                     {this.changeURL()}
+                     Loading...
+                 </div>
+             )
         }
     }
 }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './stylesheets/App.css';
 import fs from './firestoreservice'
-import { getRandomRecipes, getCategories } from "./api/getRecipesApi";
+import {getRandomRecipes, getCategories, getByCategory, getById} from "./api/getRecipesApi";
 
 class AddToFirebase extends Component {
     constructor() {
@@ -19,13 +19,23 @@ class AddToFirebase extends Component {
         });
     }
 
+    addRecipesFromCategories() {
+        getCategories().then(categories => {
+            categories.categories.map(category => {
+                getByCategory(category.strCategory).then(recipes => {
+                    recipes.meals.map(meal => {
+                        getById(meal.idMeal).then(meal => {
+                            fs.createRecipesFromCategories(meal.meals[0], meal.meals[0].strMeal)
+                        })
+                    })
+                })
+            })
+        })
+    }
+
     addCategoriesToFirebase() {
         getCategories().then(categories => {
-            let categoriesToAdd
-            let categoriesAll
-            let categoryData
             categories.categories.map(category => {
-                // console.log(category.idCategory)
                     fs.createNewCategory(category, category.strCategory)
                 })
         })
@@ -34,8 +44,9 @@ class AddToFirebase extends Component {
     render() {
         return (
             <div className="App">
-                <button onClick={() => this.addToFirebase()}>Add to firebase from mealDB</button>
-                <button onClick={this.addCategoriesToFirebase}>Add Categories to Firebase </button>
+                <button disabled onClick={() => this.addToFirebase()}>Add to firebase from mealDB</button>
+                <button disabled onClick={this.addCategoriesToFirebase}>Add Categories to Firebase </button>
+                <button disabled onClick={this.addRecipesFromCategories}>Add Recipes From Categories to Firebase </button>
             </div>
         );
     }

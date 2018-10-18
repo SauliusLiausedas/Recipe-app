@@ -88,5 +88,18 @@ export default class {
                 });
         });
     }
+    //Method To add Recipes to Db
+    static createRecipesFromCategories(data, mealId) {
+        return new Promise(resolve => {
+            this.db.collection("recipesFromCategories").doc(mealId).set(data)
+                .then(function (docRef) {
+                    console.log("Document written with Name: ", mealId);
+                    resolve(docRef);
+                })
+                .catch(function (error) {
+                    console.error("Error adding document: ", error);
+                });
+        });
+    }
 
 }
