@@ -12,6 +12,8 @@ export default class {
         console.log(window.firebase)
     }
 
+    static manoduomenys = {};
+
     /*
     * This should return all recipes
     * */

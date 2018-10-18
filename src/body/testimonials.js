@@ -38,21 +38,18 @@ class Testimonials extends React.Component {
         someText: ''
     };
 
-      const firestore = firebase.firestore();
-      const settings = { timestampsInSnapshots: true};
-      firestore.settings(settings);
-
       debugger;
   }
 
 
   componentWillMount () {
-    this.setState({someText: this.getRandomTestimonial()})
+    this.setState({someText: this.getRandomTestimonial2()})
   }
 
   componentDidMount(){
     setInterval(()=>{
-      this.setState({someText: this.getRandomTestimonial()});
+        this.getRandomTestimonial2()
+      this.setState({});
     }, 3000)
   }
 
@@ -62,16 +59,15 @@ class Testimonials extends React.Component {
         return testimonials[Math.floor(Math.random() *testimonials.length)].data.testimonial;
     }
 
-    getRandomTestimonial2() {
+    getRandomTestimonial2 () {
         fs.getCollection('testimonials').then(testimonials => {
-            return testimonials[Math.floor(Math.random() *testimonials.length)].data.testimonial;
+            this.state.someText =  testimonials[Math.floor(Math.random() *testimonials.length)].data.testimonial;
         })
-
     }
 
   render() {
     return (
-      <h3>{this.getRandomTestimonial()}</h3>
+      <h3>{this.state.someText}</h3>
     );
   }
 } 
