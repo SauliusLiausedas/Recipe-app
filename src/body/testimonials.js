@@ -69,7 +69,6 @@ class Testimonials extends React.Component {
 
     }
 
-
   render() {
     return (
       <h3>{this.getRandomTestimonial()}</h3>
