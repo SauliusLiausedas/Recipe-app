@@ -1,5 +1,7 @@
 import React from 'react'
 import '../stylesheets/testimonials.css'
+import  {getRandomTestimonial} from '../api/firebaseApi.js';
+import fs from "../firestoreservice";
 
 /*
 class Testimonials extends Component {
@@ -35,6 +37,12 @@ class Testimonials extends React.Component {
     this.state = {
         someText: ''
     };
+
+      const firestore = firebase.firestore();
+      const settings = { timestampsInSnapshots: true};
+      firestore.settings(settings);
+
+      debugger;
   }
 
 
@@ -48,9 +56,19 @@ class Testimonials extends React.Component {
     }, 3000)
   }
 
-  getRandomTestimonial = () => {
-    return window.recipeDB.testimonialsData[Math.floor(Math.random() * window.recipeDB.testimonialsData.length)]
-  }
+    async getRandomTestimonial() {
+        let testimonials =  await fs.getCollection('testimonials');
+        debugger;
+        return testimonials[Math.floor(Math.random() *testimonials.length)].data.testimonial;
+    }
+
+    getRandomTestimonial2() {
+        fs.getCollection('testimonials').then(testimonials => {
+            return testimonials[Math.floor(Math.random() *testimonials.length)].data.testimonial;
+        })
+
+    }
+
 
   render() {
     return (
