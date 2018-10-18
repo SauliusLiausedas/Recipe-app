@@ -73,11 +73,11 @@ export default class {
                 });
         });
     }
-    static createNewCategory(data, mealId) {
+    static createNewCategory(data) {
         return new Promise(resolve => {
-            this.db.collection("categories").doc(mealId).set(data)
+            this.db.collection("categories").doc(data.strCategory).set(data)
                 .then(function (docRef) {
-                    console.log("Document written with Name: ", mealId);
+                    console.log("Document written with ID: ", data.strCategory);
                     resolve(docRef);
             })
             .catch(function (error) {

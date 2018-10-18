@@ -21,11 +21,10 @@ class AllCategories extends Component {
                 return (
                     <div className="categoryBox">
                         {this.props.categories.map((categoryObj, i) =>
-                            <div onClick={(e)=>this.setState({selected: e.target.alt})} key={i}>
+                            <div onClick={(e) => this.setState({selected: e.target.alt})} key={i}>
                                 <h2 className="categoryTitle">{categoryObj.strCategory}</h2>
-                                <Link to={'/categories/' + this.state.selected}>
-                                    <img className="categoryPic" 
-                                        onClick={(e) => this.props.selectCategory(e.target.alt)}
+                                <Link to={'/categories/' + categoryObj.strCategory}>
+                                    <img className="categoryPic"  
                                         alt={categoryObj.strCategory} 
                                         src={categoryObj.strCategoryThumb}/>
                                 </Link>
@@ -34,15 +33,13 @@ class AllCategories extends Component {
                     </div>
                 )
             } else {
-                if (window.location.pathname.split('/')[3]) {
-                    return <SelectedMeal id={window.location.pathname.split('/')[3]} />
-                } else {
-                    let path = this.props.location.pathname.split('/')[2]
-                    return <div><SelectedCategory selected={path} /></div>
-                }
+
             }
-        } 
+        } else {
+            
+        }
     }
+     
 }
 
 export default AllCategories;

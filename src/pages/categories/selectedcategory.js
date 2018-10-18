@@ -33,7 +33,7 @@ class SelectedCategory extends Component {
                             return(
                                 <div id={mealObj.idMeal} key={i}>
                                     <h2 className="categoryTitle">{mealObj.strMeal}</h2>
-                                    <Link to={'/categories/' + this.props.selected + '/' + this.state.selectedMealId}>
+                                    <Link to={this.props.match.url + '/' + mealObj.idMeal}>
                                         <img className="categoryPic"
                                             onClick={(e) => this.setState({selectedMealId: e.target.id})}
                                             alt={mealObj.strMeal} id={mealObj.idMeal}
@@ -46,11 +46,12 @@ class SelectedCategory extends Component {
                     </div>
                 )
             } else {
-                window.location.pathname = '/categories/' + this.props.selected + '/' + this.state.selectedMealId
                 return <SelectedMeal id={this.state.selectedMealId}/>
             }
         } else {
-            return <h1>testas II</h1>
+            return (
+                <h1>testas II</h1>
+            )
         }
     }
  

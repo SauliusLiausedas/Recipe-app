@@ -6,13 +6,11 @@ import {getAllRecipes} from "../../api/getRecipesApi"
 class AllRecipes extends Component {
     constructor() {
         super()
-        this.recipeMethod = []
         this.allRecipes = {results: []}
-        this.recipeToView = ""
         getAllRecipes().then(recipes => {
             this.allRecipes = recipes
             this.allRecipes.results = []
-            this.setState({recipes: this.allRecipes})
+            this.setState({recipes: recipes})
         })
         this.state = {
             recipes: "",
@@ -21,21 +19,17 @@ class AllRecipes extends Component {
     }
 
     componentWillMount() {
-        // if (this.props.searchResult && this.props.searchResult.length){
-        //     this.allRecipes = this.props.searchResult;
-        //     this.setState({recipes: this.allRecipes});
-        // } else if (this.props.searchResult) {
-        //     this.allRecipes.results = [];
-        //     this.setState({recipes: this.allRecipes});
-        // }
+
     }
 
     componentWillReceiveProps(nextProps) {
-        this.setState({
-            recipes: {
+        if (nextProps.searchResult) {
+            this.setState({
+                recipes: {
                     results: nextProps.searchResult
                 }
-        });
+            });
+        }
     }
 
     viewRecipe(e) {
@@ -56,8 +50,8 @@ class AllRecipes extends Component {
                     {this.state.recipes[(this.props.searchResult ? 'results' : 'meal')].map((mealObj, i) =>
                         <div key={i} id={i} className="recipe-box" onClick={(e) => this.viewRecipe(e)}>
                             <img className="recipe-img" alt={mealObj.name} src={mealObj.strMealThumb}/>
-                            <h2 key={i}>{mealObj.name}</h2>
-                            <em><p>{console.log(mealObj)}{mealObj.strInstructions.slice(0, 250) + "..."}</p></em>
+                            <h2 key={i}>{mealObj.strMeal}</h2>
+                            <em><p>{mealObj.strInstructions.slice(0, 250) + "..."}</p></em>
                         </div>
                     )}
                 </div>

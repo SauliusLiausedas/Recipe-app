@@ -19,23 +19,21 @@ class AddToFirebase extends Component {
         });
     }
 
-    addCategoriesToFirebase() {
-        getCategories().then(categories => {
-            let categoriesToAdd
-            let categoriesAll
-            let categoryData
-            categories.categories.map(category => {
-                // console.log(category.idCategory)
-                    fs.createNewCategory(category, category.strCategory)
-                })
-        })
+    addCategoryToFirebase() {
+        getCategories().then((data) => {
+            data.categories.forEach((category) => fs.createNewCategory(category));
+        });
+        
+        fs.getCollection('categories').then((data)=>{
+            console.log(data);
+        });
     }
 
     render() {
         return (
             <div className="App">
                 <button onClick={() => this.addToFirebase()}>Add to firebase from mealDB</button>
-                <button onClick={this.addCategoriesToFirebase}>Add Categories to Firebase </button>
+                <button onClick={this.addCategoryToFirebase}>Add Categories to Firebase </button>
             </div>
         );
     }

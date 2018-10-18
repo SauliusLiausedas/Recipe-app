@@ -32,7 +32,7 @@ render() {
     if (this.state.categories) {
         return(
             <div>
-                <AllCategories selectCategory={selected => this.setState({selected: selected})} categories={this.state.categories} />
+                <AllCategories categories={this.state.categories} />
             </div>
         )
     } else {

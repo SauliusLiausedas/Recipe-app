@@ -7,8 +7,8 @@
   
   .contentRecipePic {
     padding: 0 30px;
-    min-width: 500px;
-    min-height: 454px;
+    max-width: 500px;
+    max-height: 454px;
   }
 
   .contentRecipeTextTitle {
