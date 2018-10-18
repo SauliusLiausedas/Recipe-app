@@ -13,6 +13,7 @@ class SelectedMeal extends Component {
     }
 
     componentWillMount() {
+        console.log(this.props)
         getById(this.props.id).then(meal => {
             this.setState({mealById: meal.meals});
             this.getIngredients();
@@ -42,6 +43,7 @@ class SelectedMeal extends Component {
         if(this.state.mealById){
             return(
                 <div className="viewMeal">
+                    {console.log(this.props.router)}
                     {this.state.mealById.map((mealObj, i) => {
                         return(
                             <div>

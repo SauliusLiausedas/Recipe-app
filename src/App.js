@@ -24,7 +24,7 @@ class App extends Component {
                             <Route path="/search" exact component={ Search } />
                             <Route path="/categories" exact component={ Categories }/>
                             <Route path="/categories/:category" component={ SelectedCategory } />
-                            <Route path="/categories/:category/:id" component={ SelectedMeal } />
+                            <Route path="/categories/:category/:id" component={ Categories } />
                             <Route component={ Error } />
                         </Switch>
                     </div>

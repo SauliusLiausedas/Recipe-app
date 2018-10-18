@@ -10,6 +10,10 @@ class AllCategories extends Component {
         this.state = {selected: ''}
     }
 
+    componentWillMount() {
+        console.log(this.props)
+    }
+
     render() {
         if(this.props.categories) {
             if(!this.state.selected) {
@@ -29,15 +33,7 @@ class AllCategories extends Component {
                     </div>
                 )
             } else {
-                window.location.pathname = '/categories/'+this.state.selected
                 return <SelectedCategory selected={this.state.selected}/>
-            }
-        } else {
-            if(window.location.pathname.split('/')[3]){
-                return <SelectedMeal id={window.location.pathname.split('/')[3]}/>
-            } else {
-                let path = this.props.location.pathname.split('/')[2]
-                return <div><SelectedCategory selected={path}/></div>
             }
         }
     }
