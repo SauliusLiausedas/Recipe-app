@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
-import '../stylesheets/categories.css'
+import '../../stylesheets/categories.css'
 import AllCategories from './allcategories.js'
-import { getCategories } from '../api/getRecipesApi.js'
+import { getCategories } from '../../api/getRecipesApi.js'
 
 class Categories extends Component {
     constructor() {
         super();
         this.state = {
-            categoriesList: [],
-            selectedCategory: ''
+            categories: "",
+            selected: ""
         };
     }
 
 componentWillMount() {
-    getCategories().then(data => {
-        this.setState({categoriesList: data.categories})
+    getCategories().then(categories => {
+        this.setState({categories: categories.categories})
     })
 }    
 
@@ -24,21 +24,21 @@ componentWillReceiveProps() {
 
 resetComponent() {
     this.setState({
-        selectedCategory: ''
-    })
+        selected: ""
+    });
 }
 
 render() {
-    if (this.state.categoriesList) {
+    if (this.state.categories) {
         return(
             <div>
-                <AllCategories selectCategory={selectedCategory => this.setState({selectedCategory: selectedCategory})} categories={this.state.categoriesList} />
+                <AllCategories selectCategory={selected => this.setState({selected: selected})} categories={this.state.categories} />
             </div>
         )
     } else {
         return(
             <div>
-                <h1>Nieko</h1>
+                <h1>Error</h1>
             </div>
         )
     }

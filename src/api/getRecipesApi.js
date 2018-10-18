@@ -11,8 +11,6 @@ setState()
 * Method to get randomized meals
 * */
 export function getAllRecipes () {
-    //TODO implement
-    // console.log('getAllRecipes');
     return new Promise (resolve=>{
         let dataArray = [];
         for (let i = 0; i < 10; i++){
@@ -27,7 +25,28 @@ export function getAllRecipes () {
     });
 }
 
-//TODO Search meal by name from https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
+// Method to get random number of random recipes
+
+export function getRandomRecipes(random) {
+    return new Promise (resolve=>{
+        let dataArray = [];
+        for (let i = 0; i < random; i++){
+            dataArray.push(getDataPromise());
+        }
+        Promise.all(dataArray).then((response)=>{
+
+            resolve({
+                meal: response.map(myObj=>{
+                    return(
+                        myObj.meals[0]
+                    )
+                })
+            });
+        });
+    });
+}
+
+// Helper function for random recipe generator
 
 function getDataPromise() {
     return fetch(RANDOM_RECIPES_GEN)
@@ -38,12 +57,47 @@ function getDataPromise() {
     });
 }
 
+// Method to get recipes by name in search
+
 export function searchByName (name){
     return fetch(SEARCH_BY_NAME+name)
         .then(function(response) {
             return response.json();
         }).then(function(data) {
             return data;
+        });
+}
+
+// Method to get Categories
+
+export function getCategories() {
+    return fetch(RECIPE_CATEGORIES)
+        .then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            return data;
+        });
+}
+
+// Method to get recipes by categories
+
+export function getMealsByCategory(category) {
+    return fetch(FILTER_BY_CATEGORY+category)
+        .then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            return data;
+        });
+}
+
+// Method to get recipes by ID's from categories
+
+export function getMealById(id) {
+    return fetch(SELECTED_MEAL+id)
+        .then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            return (data)
         });
 }
 
@@ -64,43 +118,10 @@ export function searchByName (name){
 }*/
 
 
-
 export function getRecipeById (id) {
-    //TODO implement
-    // console.log('getRecipeById');
     return new Promise (resolve=> {
         setTimeout(function(){
             resolve(window.recipeDB.meal[id])
         }, 100*Math.random())
     })
-}
-
-// Recipe Categories
-export function getCategories() {
-    return fetch(RECIPE_CATEGORIES)
-        .then(function(response) {
-            return response.json();
-        }).then(function(data) {
-            return data;
-        });
-}
-
-// Filter by Category
-export function getMealsByCategory(category) {
-    return fetch(FILTER_BY_CATEGORY+category)
-        .then(function(response) {
-            return response.json();
-        }).then(function(data) {
-            return data;
-        });
-}
-
-// Selected Meal
-export function getMealById(id) {
-    return fetch(SELECTED_MEAL+id)
-        .then(function(response) {
-            return response.json();
-        }).then(function(data) {
-            return (data)
-        });
 }

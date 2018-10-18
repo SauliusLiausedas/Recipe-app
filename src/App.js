@@ -6,10 +6,14 @@ import AllRecipes from './pages/all/allrecipes.js'
 import Search from './pages/search/Search.js'
 import HomePage from './pages/homepage.js'
 import Error from './pages/error.js'
-import Categories from './pages/categories.js'
-import SelectedCategory from './pages/selectedcategory.js'
-import SelectedMeal from './pages/selectedmeal.js'
+import Categories from './pages/categories/categories.js'
+import SelectedCategory from './pages/categories/selectedcategory.js'
+import SelectedMeal from './pages/categories/selectedmeal.js'
+import AddToFirebase from './addToFirebase';
+import fs from './firestoreservice'
 // import setState from './data.js'
+
+fs.init();
 
 class App extends Component {
     render() {
@@ -26,6 +30,7 @@ class App extends Component {
                             <Route path="/categories" exact component= { Categories } />
                             <Route path="/categories/:category" exact component={ SelectedCategory } />
                             <Route path="/categories/:category/:id" exact component={ SelectedMeal } />
+                            <Route path="/addtofirebase" exact component={ AddToFirebase } />
                             <Route component={ Error } />
                         </Switch>
                     </div>

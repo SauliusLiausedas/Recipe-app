@@ -1,23 +1,31 @@
 import React, { Component } from 'react'
-import '../stylesheets/categories.css'
-import { getMealById } from '../api/getRecipesApi.js'
+import '../../stylesheets/categories.css'
+import { getMealById } from '../../api/getRecipesApi.js'
 
 class SelectedMeal extends Component {
     constructor() {
         super();
         this.state = {
-            mealbyId: '',
-            ingredients: []
+            mealById: ""
         };
     }
 
     componentWillMount() {
         let id = this.props && this.props.match && this.props.match.params && this.props.match.params.id || '';
-        getMealById(id).then(data => {
-            this.setState({mealbyId: data.meals});
-//            this.getIngredients();
+        getMealById(id).then(meal => {
+            this.setState({mealbyId: meal.meals});
+            this.getIngredients();
         })
     }
+
+    getIngredients() {
+        this.repaint();
+    }
+
+    repaint() {
+        this.setState({});
+    }
+
 /*
     getIngredients() {
         if(this.state.mealById[0]) {
@@ -46,12 +54,6 @@ class SelectedMeal extends Component {
                         return(
                             <div>
                                 <h2 className="categoryTitle">{mealObj.strMeal}</h2>
-                                <ul className={this.state.ingredientsClass}>{this.state.ingredients.map((ingredient, i) => { 
-                                    return (
-                                        <li className={"ingredientsList"} key={i}>{ingredient}</li>
-                                    )
-                                })}
-                                </ul>
                                 <img className="categoryPic" alt={mealObj.strMeal} src={mealObj.strMealThumb}/>
                                 <p>{mealObj.strInstructions}</p>
                             </div>
