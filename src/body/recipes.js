@@ -6,9 +6,10 @@ class Recipes extends Component {
 
     constructor(props) {
         super(props)
-        fs.getCollection('recipesFromCategories').then(meals=> {
-            this.generateRecipes(meals);
-        })
+        // fs.getCollection('recipesFromCategories').then(meals=> {
+        //     this.generateRecipes(meals);
+        // })
+        this.initRecipes();
         this.state = {
             allRecipes: '',
             recipesToShow: "",
@@ -25,14 +26,21 @@ class Recipes extends Component {
 
     }
 
-    generateRecipes(meals) {
-            let random = Math.floor(Math.random() * 10) + 1
-            let mealArr = []
-            for (let i = 0; i < random; i++) {
-                let randomFromArray = Math.floor(Math.random() * meals.length)
-                mealArr.push(meals[randomFromArray])
-            }
-            this.setState({recipesToShow: mealArr, recipesId: random})
+    generateNewRecipes () {
+        this.setState({recipesToShow: ""});
+        this.initRecipes();
+    }
+
+    async initRecipes() {
+        let meals= await fs.getCollection('recipesFromCategories');
+
+        let random = Math.floor(Math.random() * 10) + 1
+        let mealArr = []
+        for (let i = 0; i < random; i++) {
+            let randomFromArray = Math.floor(Math.random() * meals.length)
+            mealArr.push(meals[randomFromArray])
+        }
+        this.setState({recipesToShow: mealArr, recipesId: random})
 
     }
 
@@ -41,7 +49,7 @@ class Recipes extends Component {
             return (
                 <div>
 
-                    <button className="recipeButton" onClick={() => this.generateRecipes()}>Now showing {this.state.recipesId} recipes</button>
+                    <button className="recipeButton" onClick={() => this.generateNewRecipes()}>Now showing {this.state.recipesId} recipes</button>
                     {this.state.recipesToShow.map((mealObj ,i) => {
                         return(
                         <div key={i} className="contentRecipe">
