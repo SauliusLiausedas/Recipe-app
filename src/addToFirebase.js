@@ -9,7 +9,6 @@ class AddToFirebase extends Component {
         this.state = {categories: ''}
 }
     addToFirebase () {
-        console.log('add to firebase');
         getRandomRecipes(1).then((data)=>{
             fs.createNewRecipe(data.meal[0]);
         });
@@ -22,9 +21,9 @@ class AddToFirebase extends Component {
     addRecipesFromCategories() {
         getCategories().then(categories => {
             categories.categories.map(category => {
-                getByCategory(category.strCategory).then(recipes => {
+                return getByCategory(category.strCategory).then(recipes => {
                     recipes.meals.map(meal => {
-                        getById(meal.idMeal).then(meal => {
+                        return getById(meal.idMeal).then(meal => {
                             fs.createRecipesFromCategories(meal.meals[0], meal.meals[0].strMeal)
                         })
                     })
@@ -36,7 +35,7 @@ class AddToFirebase extends Component {
     addCategoriesToFirebase() {
         getCategories().then(categories => {
             categories.categories.map(category => {
-                    fs.createNewCategory(category, category.strCategory)
+                    return fs.createNewCategory(category, category.strCategory)
                 })
         })
     }

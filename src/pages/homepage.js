@@ -11,8 +11,10 @@ class HomePage extends Component {
  
     render() {
         return (
-            <div className="content">
-                <Recipes />
+            <div>
+                <div className="content">
+                    <Recipes />
+                </div>
                 <div className="testimonials">
                     <h2 className="testimonialsText">Testimonials:</h2>
                     <Testimonials />

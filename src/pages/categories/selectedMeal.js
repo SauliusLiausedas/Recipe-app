@@ -13,7 +13,7 @@ class SelectedMeal extends Component {
     }
 
     componentWillMount() {
-        let id = this.props && this.props.match && this.props.match.params && this.props.match.params.id || '';
+        let id = (this.props && this.props.match && this.props.match.params && this.props.match.params.id) || '';
         getById(id).then(meal => {
             this.setState({mealById: meal.meals});
             this.getIngredients();
@@ -45,7 +45,7 @@ class SelectedMeal extends Component {
                 <div className="viewMeal">
                     {this.state.mealById.map((mealObj, i) => {
                         return(
-                            <div>
+                            <div key={i}>
                                 <div className="mealViewGrid">
                                     <div className="viewRight">
                                         <h2 className="ingredients">Ingredients</h2>
@@ -66,9 +66,9 @@ class SelectedMeal extends Component {
                 </div>
             )
         } else {
-            return (
-                <div>
-                    NERA
+            return(
+                <div className="preloader-div">
+                    <img alt="Preloader" className="preloader" src="https://cdn.dribbble.com/users/645440/screenshots/3266490/loader-2_food.gif"/>
                 </div>
             )
         }

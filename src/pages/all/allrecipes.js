@@ -18,10 +18,6 @@ class AllRecipes extends Component {
         }
     }
 
-    componentWillMount() {
-
-    }
-
     componentWillReceiveProps(nextProps) {
         if (nextProps.searchResult) {
             this.setState({
@@ -32,15 +28,7 @@ class AllRecipes extends Component {
         }
     }
 
-    viewRecipe(e) {
-        // getRecipeById(e.currentTarget.id).then(recipe=> {
-        //     this.recipeToView = recipe
-        //     this.setState({recipeToShow: this.recipeToView})
-        // })
-        console.log(e);
-    }
-
-    renderAllRecipies (){
+    renderAllRecipes (){
         return (
             <div className="allRecipes">
                 {this.state.recipeToShow ? (<ViewRecipe onClosePopup={() => {
@@ -48,7 +36,7 @@ class AllRecipes extends Component {
                 }} view={this.state.recipeToShow}/>) : ''}
                 <div className="boxes">
                     {this.state.recipes[(this.props.searchResult ? 'results' : 'meal')].map((mealObj, i) =>
-                        <div key={i} id={i} className="recipe-box" onClick={(e) => this.viewRecipe(e)}>
+                        <div key={i} id={i} className="recipe-box">
                             <img className="recipe-img" alt={mealObj.name} src={mealObj.strMealThumb}/>
                             <h2 className="mealName" key={i}>{mealObj.strMeal}</h2>
                             <em><p>{mealObj.strInstructions.slice(0, 250) + "..."}</p></em>
@@ -61,9 +49,13 @@ class AllRecipes extends Component {
 
     render() {
         if (this.state.recipes) {
-            return this.renderAllRecipies()
+            return this.renderAllRecipes()
         } else {
-            return <div>Loading</div>
+            return(
+                <div className="preloader-div">
+                    <img alt="Preloader" className="preloader" src="https://cdn.dribbble.com/users/645440/screenshots/3266490/loader-2_food.gif"/>
+                </div>
+            )
         }
     }
 }

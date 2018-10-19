@@ -1,3 +1,11 @@
 /* html {
     background-color: rgba(0, 0, 0, 0.9);
 } */
+
+.preloader {
+    margin: auto;
+    opacity: 0.5;
+}
+.preloader-div {
+    text-align: center;
+}

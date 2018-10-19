@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import '../../stylesheets/categories.css'
 import AllCategories from './allCategories.js'
-import SelectedCategory from './selectedCategory.js'
 import { getCategories } from '../../api/getRecipesApi.js'
-import {Link} from "react-router-dom";
 
 class Categories extends Component {
     constructor() {
@@ -14,7 +12,7 @@ class Categories extends Component {
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         getCategories().then(categories => {
             this.setState({categories: categories.categories})
         })
@@ -39,8 +37,8 @@ class Categories extends Component {
             )
         } else {
             return(
-                <div className="categories">
-                    <h1> Categories of meals</h1>
+                <div className="preloader-div">
+                    <img alt="Preloader" className="preloader" src="https://cdn.dribbble.com/users/645440/screenshots/3266490/loader-2_food.gif"/>
                 </div>
             )
         }

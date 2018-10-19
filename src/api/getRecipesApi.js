@@ -1,6 +1,5 @@
 import setState from '../data.js'
 const RANDOM_RECIPES_GEN = 'https://www.themealdb.com/api/json/v1/1/random.php';
-const LATEST_RECIPES_GEN = 'https://www.themealdb.com/api/json/v1/1/latest.php';
 const SEARCH_BY_NAME = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 const GET_CATEGORIES = 'https://www.themealdb.com/api/json/v1/1/categories.php';
 const GET_CATEGORY_ITEMS = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=';

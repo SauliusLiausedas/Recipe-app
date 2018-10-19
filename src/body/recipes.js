@@ -1,15 +1,10 @@
 import React, {Component} from 'react'
-import { getRandomRecipes} from "../api/getRecipesApi";
 import fs from '../firestoreservice.js'
 
 class Recipes extends Component {
 
-    constructor(props) {
-        super(props)
-        // fs.getCollection('recipesFromCategories').then(meals=> {
-        //     this.generateRecipes(meals);
-        // })
-        this.initRecipes();
+    constructor() {
+        super()
         this.state = {
             allRecipes: '',
             recipesToShow: "",
@@ -19,11 +14,7 @@ class Recipes extends Component {
     }
 
     componentWillMount() {
-
-    }
-
-    componentDidMount () {
-
+        this.initRecipes();
     }
 
     generateNewRecipes () {
@@ -32,7 +23,7 @@ class Recipes extends Component {
     }
 
     async initRecipes() {
-        let meals= await fs.getCollection('recipesFromCategories');
+        let meals= await fs.getCollection('recipes');
 
         let random = Math.floor(Math.random() * 10) + 1
         let mealArr = []
@@ -65,8 +56,8 @@ class Recipes extends Component {
             )
         } else {
             return (
-                <div>
-                    Loading...
+                <div className={this.state.loader}>
+                    <img alt="Preloader" className="preloader" src="https://cdn.dribbble.com/users/645440/screenshots/3266490/loader-2_food.gif"/>
                 </div>
             )
         }
