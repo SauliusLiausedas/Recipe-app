@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../stylesheets/search.css';
 import AllRecipes from "../all/allrecipes";
-import { searchByName } from "../../api/getRecipesApi"
+import fs from "../../firestoreservice"
 
 class Search extends Component {
 
@@ -10,7 +10,7 @@ class Search extends Component {
 
         this.state = {
             searchReq : '',
-            searchResult : [],
+            searchResult : '',
         };
 
     }
@@ -21,8 +21,9 @@ class Search extends Component {
     }
 
     onSubmit(){
-        searchByName(this.state.searchReq).then(data=>{
-            this.setState({searchResult: data.meals});
+        fs.getRecipesByName(this.state.searchReq).then(data=>{
+            console.log(data)
+            this.setState({searchResult: data});
         })
     }
 
@@ -31,7 +32,9 @@ class Search extends Component {
             <div className="content">
                 <input value={this.state.searchReq} type="text" onChange={(event) => this.onKeyTyped(event)}/>
                 <button onClick={() => this.onSubmit()}>Search</button>
-                <AllRecipes searchResult={this.state.searchResult} />
+                <div className="allRecipes">
+                    <AllRecipes searchResult={this.state.searchResult} />
+                </div>
             </div>
         )
     }

@@ -1,21 +1,26 @@
 import React, {Component} from 'react'
 import '../../stylesheets/allrecipes.css'
 import ViewRecipe from './view.js'
-import {getAllRecipes} from "../../api/getRecipesApi"
+import fs from '../../firestoreservice'
 
 class AllRecipes extends Component {
     constructor() {
         super()
-        this.allRecipes = {results: []}
-        getAllRecipes().then(recipes => {
-            this.allRecipes = recipes
-            this.allRecipes.results = []
-            this.setState({recipes: recipes})
-        })
+        // this.allRecipes = {results: []}
+        // getAllRecipes().then(recipes => {
+        //     this.allRecipes.results = []
+            // this.setState({recipes: recipes})
+        // })
         this.state = {
             recipes: "",
             recipeToShow: "",
         }
+    }
+
+    componentWillMount() {
+        fs.getCollection('recipes').then(recipes => {
+            this.setState({recipes: recipes})
+        })
     }
 
     componentWillReceiveProps(nextProps) {
@@ -35,13 +40,21 @@ class AllRecipes extends Component {
                     this.setState({recipeToShow: ""})
                 }} view={this.state.recipeToShow}/>) : ''}
                 <div className="boxes">
-                    {this.state.recipes[(this.props.searchResult ? 'results' : 'meal')].map((mealObj, i) =>
-                        <div key={i} id={i} className="recipe-box">
-                            <img className="recipe-img" alt={mealObj.name} src={mealObj.strMealThumb}/>
-                            <h2 className="mealName" key={i}>{mealObj.strMeal}</h2>
-                            <em><p>{mealObj.strInstructions.slice(0, 250) + "..."}</p></em>
-                        </div>
-                    )}
+                    {this.props.searchResult ?
+                        this.props.searchResult.map((mealObj, i) =>
+                                <div key={i} id={i} className="recipe-box">
+                                    <img className="recipe-img" alt={mealObj.data.strMeal} src={mealObj.data.strMealThumb}/>
+                                    <h2 className="mealName" key={i}>{mealObj.data.strMeal}</h2>
+                                    <em><p>{mealObj.data.strInstructions.slice(0, 250) + "..."}</p></em>
+                                </div>
+                    )
+                        :
+                            this.state.recipes.map((mealObj, i) =>
+                                <div key={i} id={i} className="recipe-box">
+                                    <img className="recipe-img" alt={mealObj.data.strMeal} src={mealObj.data.strMealThumb}/>
+                                    <h2 className="mealName" key={i}>{mealObj.data.strMeal}</h2>
+                                    <em><p>{mealObj.data.strInstructions.slice(0, 250) + "..."}</p></em>
+                                </div>)}
                 </div>
             </div>
         )

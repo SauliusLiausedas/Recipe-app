@@ -15,13 +15,13 @@ class AllCategories extends Component {
                     <div className="allCategories">
                         {this.props.categories.map((categoryObj, i) =>
                             <div key={i}>
-                                <h1>{categoryObj.strCategory}</h1>
-                                <Link to={'/categories/' + categoryObj.strCategory}>
+                                <h1>{categoryObj.data.strCategory}</h1>
+                                <Link to={'/categories/' + categoryObj.data.strCategory}>
                                     <img className="allCatImg"
-                                         alt={categoryObj.strCategory}
-                                         src={categoryObj.strCategoryThumb}/>
+                                         alt={categoryObj.data.strCategory}
+                                         src={categoryObj.data.strCategoryThumb}/>
                                 </Link>
-                                <p className="categoryDescription">{categoryObj.strCategoryDescription.slice(0, 250) + "..."}</p>
+                                <p className="categoryDescription">{categoryObj.data.strCategoryDescription.slice(0, 250) + "..."}</p>
                             </div>
                         )}
                     </div>

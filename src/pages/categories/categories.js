@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../../stylesheets/categories.css'
 import AllCategories from './allCategories.js'
-import { getCategories } from '../../api/getRecipesApi.js'
+import fs from '../../firestoreservice'
 
 class Categories extends Component {
     constructor() {
@@ -13,9 +13,10 @@ class Categories extends Component {
     }
 
     componentDidMount() {
-        getCategories().then(categories => {
-            this.setState({categories: categories.categories})
+        fs.getCollection('categories').then(category => {
+            this.setState({categories: category})
         })
+
     }
 
     componentWillReceiveProps() {

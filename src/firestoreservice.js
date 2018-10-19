@@ -13,7 +13,7 @@ export default class {
     }
 
     /*
-    * This should return all recipes
+    * This should return all collection
     * */
     static getCollection(collection) {
         return new Promise(resolve => {
@@ -21,6 +21,53 @@ export default class {
                 const data = [];
                 querySnapshot.forEach((doc) => {
                     data.push({data: doc.data(), id: doc.id});
+                });
+                resolve(data);
+            });
+        });
+    }
+
+    // Method to search recipes by name
+
+    static getRecipesByName(name) {
+        return new Promise(resolve => {
+            this.db.collection('recipes').get().then((querySnapshot) => {
+                const data = [];
+                querySnapshot.forEach((doc) => {
+                    if(doc.data().strMeal.toLowerCase().includes(name.toLowerCase()))
+                        data.push({data: doc.data(), id: doc.id});
+                });
+                resolve(data);
+            });
+        });
+    }
+
+    // Method to search recipes by name
+
+    static getRecipesByCategory(name) {
+        return new Promise(resolve => {
+            this.db.collection('recipes').get().then((querySnapshot) => {
+                const data = [];
+                querySnapshot.forEach((doc) => {
+                    if(doc.data().strCategory === name) {
+                        data.push({data: doc.data(), id: doc.id});
+                    }
+                });
+                resolve(data);
+            });
+        });
+    }
+
+    // Method to search meals by ID
+
+    static getRecipesById(id) {
+        return new Promise(resolve => {
+            this.db.collection('recipes').get().then((querySnapshot) => {
+                const data = [];
+                querySnapshot.forEach((doc) => {
+                    if(doc.data().idMeal === id) {
+                        data.push({data: doc.data(), id: doc.id});
+                    }
                 });
                 resolve(data);
             });
