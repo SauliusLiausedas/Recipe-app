@@ -24,6 +24,10 @@ class SelectedCategory extends Component {
         }
     }
 
+    changeURL() {
+        console.log(this.props.match)
+    }
+
     render() {
         if (this.state.selectedCategoryMeals) {
             if (!this.state.selectedMealId) {
@@ -32,10 +36,10 @@ class SelectedCategory extends Component {
                         {this.state.selectedCategoryMeals.map((mealObj, i) => {
                             return(
                                 <div id={mealObj.idMeal} key={i}>
+                                    {console.log(this.props.match)}
                                     <h2 className="categoryTitle">{mealObj.strMeal}</h2>
                                     <Link to={this.props.match.url + '/' + mealObj.idMeal}>
                                         <img className="categoryPic"
-                                            onClick={(e) => this.setState({selectedMealId: e.target.id})}
                                             alt={mealObj.strMeal} id={mealObj.idMeal}
                                             src={mealObj.strMealThumb}/>
                                     </Link>
@@ -50,7 +54,10 @@ class SelectedCategory extends Component {
             }
         } else {
             return (
-                <h1>testas II</h1>
+                <div>
+                    {this.changeURL()}
+                    Loading...
+                </div>
             )
         }
     }
