@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../../stylesheets/view.css'
-import { getRecipeById } from '../../api/getRecipesApi.js'
+import fs from '../../firestoreservice'
 
 class ViewRecipe extends Component {
     constructor() {
@@ -62,7 +62,7 @@ class ViewRecipe extends Component {
     }
 
     componentWillMount() {
-        getRecipeById(this.props.view).then(recipe=> {
+        fs.getRecipeById(this.props.view).then(recipe=> {
             this.recipeById = recipe
         })
         this.setState({ingredients: this.recipeById.ingredients})

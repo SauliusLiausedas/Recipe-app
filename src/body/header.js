@@ -14,7 +14,7 @@ class Header extends Component {
               <nav className="navbar">
                   <ul className="navList">
                       <li className="navListItem"><Link to="/" className="navListItemLink">Home</Link></li>
-                      <li className="navListItem"><Link to="/all" className="navListItemLink">All Recipes</Link></li>
+                      <li className="navListItem"><Link to="/all/1" className="navListItemLink">All Recipes</Link></li>
                       <li className="navListItem"><Link to="/search" className="navListItemLink">Search</Link></li>
                       <li className="navListItem"><Link to="/categories" className="navListItemLink">Categories</Link></li>
                       <li className="navListItem"><Link to="/addtofirebase" className="navListItemLink">Add to firebase</Link></li>

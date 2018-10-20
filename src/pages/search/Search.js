@@ -9,8 +9,10 @@ class Search extends Component {
         super(props);
 
         this.state = {
-            searchReq : '',
-            searchResult : '',
+            searchReq: '',
+            searchResult: '',
+            noData: '',
+            cssClass: ''
         };
 
     }
@@ -22,18 +24,21 @@ class Search extends Component {
 
     onSubmit(){
         fs.getRecipesByName(this.state.searchReq).then(data=>{
-            console.log(data)
-            this.setState({searchResult: data});
+            if(data) {
+                this.setState({searchResult: data, cssClass: ' wide'});
+            } else if(data === []) {
+                this.setState({noData: 'Could not find things that you searched for :('})
+            }
         })
     }
 
     renderRecipes() {
         return (
-            <div className="content">
-                <input value={this.state.searchReq} type="text" onChange={(event) => this.onKeyTyped(event)}/>
-                <button onClick={() => this.onSubmit()}>Search</button>
+            <div className={'content' + this.state.cssClass}>
+                <input className="searchInput" value={this.state.searchReq} type="text" onChange={(event) => this.onKeyTyped(event)}/><br/>
+                <button className="recipeButton searchBtn" autoFocus onClick={() => this.onSubmit()}>Search</button>
                 <div className="allRecipes">
-                    <AllRecipes searchResult={this.state.searchResult} />
+                    <AllRecipes search={true} searchResult={this.state.searchResult} />
                 </div>
             </div>
         )

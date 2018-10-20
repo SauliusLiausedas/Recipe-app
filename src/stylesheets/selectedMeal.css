@@ -41,6 +41,9 @@
     font-family: Alegreya SC, serif;
     text-align: left;
 }
+.ingredientss-ul {
+    max-height: 500px;
+}
 .ingredientsList {
     font-family: Alegreya SC, serif;
     list-style-type: square;

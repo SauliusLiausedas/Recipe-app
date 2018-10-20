@@ -60,7 +60,7 @@ export default class {
 
     // Method to search meals by ID
 
-    static getRecipesById(id) {
+    static getRecipeById(id) {
         return new Promise(resolve => {
             this.db.collection('recipes').get().then((querySnapshot) => {
                 const data = [];

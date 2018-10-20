@@ -41,6 +41,6 @@
 
   .recipeButton:hover {
     cursor: pointer;
-    box-shadow: 0px -3px 2px 2px slategrey;
+    box-shadow: 0px 0px 2px 2px slategrey;
     transition: all 500ms;
   }

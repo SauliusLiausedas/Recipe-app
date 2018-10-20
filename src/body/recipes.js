@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from 'react-router-dom'
 import fs from '../firestoreservice.js'
 
 class Recipes extends Component {
@@ -44,7 +45,7 @@ class Recipes extends Component {
                     {this.state.recipesToShow.map((mealObj ,i) => {
                         return(
                         <div key={i} className="contentRecipe">
-                            <img className="contentRecipePic" alt={mealObj.data.strMeal} src={mealObj.data.strMealThumb}/>
+                            <Link to={'/categories/' + mealObj.data.strCategory + '/' + mealObj.data.idMeal}><img className="contentRecipePic" alt={mealObj.data.strMeal} src={mealObj.data.strMealThumb}/></Link>
                         <div>
                             <h2 className="contentRecipeTextTitle">{mealObj.data.strMeal}</h2>
                             <p>{mealObj.data.strInstructions.slice(0, 250) + "..."}</p>

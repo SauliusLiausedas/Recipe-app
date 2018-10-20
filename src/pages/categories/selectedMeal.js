@@ -14,7 +14,7 @@ class SelectedMeal extends Component {
 
     componentWillMount() {
         let id = (this.props && this.props.match && this.props.match.params && this.props.match.params.id) || '';
-        fs.getRecipesById(id).then(meal => {
+        fs.getRecipeById(id).then(meal => {
             this.setState({mealById: meal});
             this.getIngredients();
         })
@@ -27,7 +27,7 @@ class SelectedMeal extends Component {
                     this.state.ingredients.push(ingredientToPush);
                 }
             }
-            if(this.state.ingredients.length > 12) {
+            if(this.state.ingredients.length > 15) {
                 this.setState({ingredientsClass: ' overflowHide'})
             }
         this.repaint();
@@ -47,7 +47,7 @@ class SelectedMeal extends Component {
                                 <div className="mealViewGrid">
                                     <div className="viewRight">
                                         <h2 className="ingredients">Ingredients</h2>
-                                        <ul className={this.state.ingredientsClass}>{this.state.ingredients.map((ingredient, i) => { return(<li className={"ingredientsList"} key={i}>{ingredient}</li>)})}</ul>
+                                        <ul className={'ingredientss-ul' + this.state.ingredientsClass}>{this.state.ingredients.map((ingredient, i) => { return(<li className={"ingredientsList"} key={i}>{ingredient}</li>)})}</ul>
                                     </div>
                                     <div className="viewLeft">
                                         <h1 className="name">{mealObj.data.strMeal}</h1>
