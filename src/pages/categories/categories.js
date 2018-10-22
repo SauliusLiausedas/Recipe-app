@@ -3,14 +3,22 @@ import '../../stylesheets/categories.css'
 import AllCategories from './allCategories.js'
 import SelectedCategory from './selectedCategory.js'
 import { getCategories } from '../../api/getRecipesApi.js'
-import {Link} from "react-router-dom";
+import {Route} from "react-router-dom";
+
 
 class Categories extends Component {
-    constructor() {
+    constructor(props) {
         super()
         this.state = {
             categories: "",
             selected: ""
+        }
+
+        if(props.match.params.id) this.mealId= props.match.params.id;
+        else this. mealId = -1;
+
+        if(props.match.params.category){
+         this.state['selected'] = props.match.params.category;
         }
     }
 
@@ -20,8 +28,13 @@ class Categories extends Component {
         })
     }
 
-    componentWillReceiveProps() {
-        this.resetComponent();
+    componentWillReceiveProps(nextProps) {
+        // debugger;
+        if (nextProps.match && nextProps.match.params  && nextProps.match.params.category){
+            this.setState({selected: nextProps.match.params.category});
+        } else {
+            this.resetComponent();
+        }
     }
 
     resetComponent() {
@@ -32,11 +45,19 @@ class Categories extends Component {
 
     render() {
         if(this.state.categories) {
-            return(
-                <div className="categories">
-                    <AllCategories selectCategory={selected => this.setState({selected: selected})} categories={this.state.categories}/>
-                </div>
-            )
+            if(this.state.selected) {
+                return (
+                    <div className="categories">
+                        <SelectedCategory selected={this.state.selected} mealId={this.mealId}/>
+                    </div>
+                )
+            } else {
+                return(
+                    <div className="categories">
+                        <AllCategories selectCategory={selected => this.setState({selected: selected})} categories={this.state.categories}/>
+                    </div>
+                )
+            }
         } else {
             return(
                 <div className="categories">

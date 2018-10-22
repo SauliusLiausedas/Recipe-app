@@ -5,52 +5,59 @@ import SelectedMeal from './selectedMeal.js'
 import {Link} from "react-router-dom";
 
 class SelectedCategory extends Component {
-    constructor() {
+    constructor(props) {
         super()
          this.state = {
-                selectedCategoryMeals: '',
+            selectedCategoryMeals: [],
              selectedMealId: ""
+         }
+
+         if(props.mealId >= 0){
+             this.state['selectedMealId'] = props.mealId;
          }
     }
 
     componentWillMount() {
-        let category = this.props && this.props.match && this.props.match.params && this.props.match.params.category || '';
-        if (category){
-            getByCategory(category).then(categories => {
-                this.setState({selectedCategoryMeals: categories.meals})
-            })
-        } else {
-            //TODO implement error handling or something to show
-        }
+        getByCategory(this.props.selected).then(categories => {
+            this.setState({selectedCategoryMeals: categories.meals})
+        })
+    }
+
+    viewMealById(e) {
+        this.setState({selectedMealId: e.currentTarget.parentNode.id})
     }
 
     render() {
-         if (this.state.selectedCategoryMeals) {
-             if (!this.state.selectedMealId){
-                 return (
-                     <div className="categoryMeals">
-                         {this.state.selectedCategoryMeals.map((mealObj, i) => {
-                             return (
-                                 <div className="categoryMealBox" id={mealObj.idMeal} key={i}>
-                                     <h1 className="categoryMealName">{mealObj.strMeal}</h1>
-                                     <Link
-                                         to={'/categories/' + this.props.selected + '/' + this.state.selectedMealId}><img
-                                         className="categoryMealImg"
-                                         onClick={(e) => this.setState({selectedMealId: e.target.id})}
-                                         alt={mealObj.strMeal} id={mealObj.idMeal}
-                                         src={mealObj.strMealThumb}/></Link>
-                                 </div>
-                             )
-                         })
-                         }
-                     </div>
-                 )
-             } else {
-                window.location.pathname = '/categories/'+this.props.selected+'/'+this.state.selectedMealId
-                return <SelectedMeal id={this.state.selectedMealId}/>
-             }
+        if(this.state.selectedCategoryMeals[0]) {
+            if(this.state.selectedMealId) {
+                return (
+                    <div>
+                        <SelectedMeal id={this.state.selectedMealId}/>
+                    </div>
+                )
+            } else {
+                return (
+                    <div className="categoryMeals">
+                        {this.state.selectedCategoryMeals.map((mealObj,i) => {
+                            return(
+                                <Link to={"/categories/" + this.props.selected.toLowerCase() + "/" + mealObj.idMeal} className="navListItemLink">
+                                    <div className="categoryMealBox" id={mealObj.idMeal} key={i}>
+                                        <h1 className="categoryMealName">{mealObj.strMeal}</h1>
+                                        <img className="categoryMealImg" onClick={(e) => this.viewMealById(e)} alt={mealObj.strMeal} src={mealObj.strMealThumb} />
+                                    </div>
+                                </Link>
+                            )
+                        })
+                        }
+                    </div>
+                )
+            }
         } else {
-            return <div> neveikia </div>
+            return (
+                <div>
+                    Loading
+                </div>
+            )
         }
     }
 }

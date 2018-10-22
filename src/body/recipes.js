@@ -1,39 +1,62 @@
 import React, {Component} from 'react'
 import { getRandomRecipes} from "../api/getRecipesApi";
+import fs from '../firestoreservice.js'
 
 class Recipes extends Component {
 
     constructor(props) {
         super(props)
-        let random = Math.floor(Math.random() * 10)
-        getRandomRecipes(random).then(recipes => this.setState({recipes: recipes}))
+        // fs.getCollection('recipesFromCategories').then(meals=> {
+        //     this.generateRecipes(meals);
+        // })
+        this.initRecipes();
         this.state = {
-            recipes: "",
-            recipesId: random,
+            allRecipes: '',
+            recipesToShow: "",
+            recipesId: "",
             ingredients: ""
         }
     }
 
-    generateRecipes() {
-        let random = Math.floor(Math.random() * 10)
-        getRandomRecipes(random).then(recipes => {
-            this.setState({recipes: recipes})
-        })
-        this.setState({recipesId: random})
+    componentWillMount() {
+
+    }
+
+    componentDidMount () {
+
+    }
+
+    generateNewRecipes () {
+        this.setState({recipesToShow: ""});
+        this.initRecipes();
+    }
+
+    async initRecipes() {
+        let meals= await fs.getCollection('recipesFromCategories');
+
+        let random = Math.floor(Math.random() * 10) + 1
+        let mealArr = []
+        for (let i = 0; i < random; i++) {
+            let randomFromArray = Math.floor(Math.random() * meals.length)
+            mealArr.push(meals[randomFromArray])
+        }
+        this.setState({recipesToShow: mealArr, recipesId: random})
+
     }
 
     render() {
-        if (this.state.recipes.meal) {
+        if (this.state.recipesToShow) {
             return (
                 <div>
-                    <button className="recipeButton" onClick={() => this.generateRecipes()}>Now showing {this.state.recipesId} recipes</button>
-                    {this.state.recipes.meal.map((mealObj,i) => {
+
+                    <button className="recipeButton" onClick={() => this.generateNewRecipes()}>Now showing {this.state.recipesId} recipes</button>
+                    {this.state.recipesToShow.map((mealObj ,i) => {
                         return(
                         <div key={i} className="contentRecipe">
-                            <img className="contentRecipePic" alt={mealObj.strMeal} src={mealObj.strMealThumb}/>
+                            <img className="contentRecipePic" alt={mealObj.data.strMeal} src={mealObj.data.strMealThumb}/>
                         <div>
-                            <h2 className="contentRecipeTextTitle">{mealObj.strMeal}</h2>
-                            <p>{mealObj.strInstructions.slice(0, 250) + "..."}</p>
+                            <h2 className="contentRecipeTextTitle">{mealObj.data.strMeal}</h2>
+                            <p>{mealObj.data.strInstructions.slice(0, 250) + "..."}</p>
                         </div>
                         </div>
                         )
@@ -43,7 +66,7 @@ class Recipes extends Component {
         } else {
             return (
                 <div>
-                   Loading
+                    Loading...
                 </div>
             )
         }

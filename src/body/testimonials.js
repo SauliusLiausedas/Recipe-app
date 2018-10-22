@@ -43,23 +43,18 @@ class Testimonials extends React.Component {
 
 
   componentWillMount () {
-    this.setState({someText: this.getRandomTestimonial2()})
+    this.setState({someText: this.setRandomTestimonial()})
   }
 
   componentDidMount(){
     setInterval(()=>{
-        this.getRandomTestimonial2()
+        this.setRandomTestimonial()
       this.setState({});
     }, 3000)
   }
 
-    async getRandomTestimonial() {
-        let testimonials =  await fs.getCollection('testimonials');
-        debugger;
-        return testimonials[Math.floor(Math.random() *testimonials.length)].data.testimonial;
-    }
 
-    getRandomTestimonial2 () {
+    setRandomTestimonial () {
         fs.getCollection('testimonials').then(testimonials => {
             this.state.someText =  testimonials[Math.floor(Math.random() *testimonials.length)].data.testimonial;
         })
