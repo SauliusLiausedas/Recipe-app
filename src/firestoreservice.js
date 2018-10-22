@@ -9,6 +9,7 @@ export default class {
 
     static init() {
         this.db = window.firebase.firestore();
+        this.db.settings({ timestampsInSnapshots: true});
         console.log(window.firebase)
     }
 

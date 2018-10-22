@@ -3,6 +3,7 @@ import { getByCategory } from '../../api/getRecipesApi.js'
 import '../../stylesheets/selectedCategory.css'
 import SelectedMeal from './selectedMeal.js'
 import {Link} from "react-router-dom";
+import {getFbMealsByCategories} from "../../api/firebaseApi";
 
 class SelectedCategory extends Component {
     constructor(props) {
@@ -18,9 +19,14 @@ class SelectedCategory extends Component {
     }
 
     componentWillMount() {
-        getByCategory(this.props.selected).then(categories => {
-            this.setState({selectedCategoryMeals: categories.meals})
+        getFbMealsByCategories(this.props.selected).then(categories => {
+            this.setState({selectedCategoryMeals: categories});
         })
+
+        // getByCategory(this.props.selected).then(categories => {
+        //     console.log(categories);
+        //     this.setState({selectedCategoryMeals: categories.meals})
+        // })
     }
 
     viewMealById(e) {

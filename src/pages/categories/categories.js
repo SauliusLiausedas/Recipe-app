@@ -4,6 +4,7 @@ import AllCategories from './allCategories.js'
 import SelectedCategory from './selectedCategory.js'
 import { getCategories } from '../../api/getRecipesApi.js'
 import {Route} from "react-router-dom";
+import {getFirebaseCategories} from "../../api/firebaseApi";
 
 
 class Categories extends Component {
@@ -23,8 +24,8 @@ class Categories extends Component {
     }
 
     componentWillMount() {
-        getCategories().then(categories => {
-            this.setState({categories: categories.categories})
+        getFirebaseCategories().then(categories => {
+            this.setState({categories: categories})
         })
     }
 
