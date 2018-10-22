@@ -1,26 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/App.js" line="7" mnemonic="1" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd9634a8-3ad0-461f-ba38-caaf79a59b45" name="Default Changelist" comment="Add pagination to AllRecipes">
+    <list default="true" id="bd9634a8-3ad0-461f-ba38-caaf79a59b45" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/body/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/body/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/body/recipes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/body/recipes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/firestoreservice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/firestoreservice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/all/allrecipes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/all/allrecipes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/all/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/all/view.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/categories/selectedMeal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/categories/selectedMeal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/search/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/allrecipes.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/allrecipes.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/homepage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/selectedMeal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/selectedMeal.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,23 +19,24 @@
     <session id="-1095824925">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="14" />
+          <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="3" />
-          <entry key="project.open.time.7" value="3" />
+          <entry key="project.open.time.7" value="4" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="74" />
           <entry key="html" value="5" />
-          <entry key="js" value="219" />
+          <entry key="js" value="223" />
           <entry key="json" value="1" />
           <entry key="ts" value="1" />
         </counts>
@@ -61,7 +46,7 @@
           <entry key="CSS" value="74" />
           <entry key="HTML" value="5" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="219" />
+          <entry key="JavaScript" value="223" />
           <entry key="TypeScript" value="1" />
         </counts>
       </usages-collector>
@@ -69,16 +54,16 @@
         <counts>
           <entry key="css" value="13777" />
           <entry key="html" value="2" />
-          <entry key="js" value="62539" />
-          <entry key="txt" value="600" />
+          <entry key="js" value="62970" />
+          <entry key="txt" value="615" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="13777" />
           <entry key="HTML" value="2" />
-          <entry key="JavaScript" value="62539" />
-          <entry key="PLAIN_TEXT" value="600" />
+          <entry key="JavaScript" value="62970" />
+          <entry key="PLAIN_TEXT" value="615" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -112,24 +97,12 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/all/allrecipes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/categories/allCategories.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+            <state relative-caret-position="112">
+              <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -150,10 +123,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/stylesheets/allrecipes.css">
+        <entry file="file://$PROJECT_DIR$/src/pages/search/Search.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="58" column="1" lean-forward="true" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
+            <state relative-caret-position="-6">
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/firestoreservice.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -162,10 +144,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>results</find>
-      <find>.results</find>
-      <find>result</find>
-      <find>this</find>
       <find>searchResult</find>
       <find>searchByName</find>
       <find>categoryObj</find>
@@ -192,6 +170,10 @@
       <find>e</find>
       <find>onClic</find>
       <find>isActive</find>
+      <find>console.</find>
+      <find>console.l</find>
+      <find>Id</find>
+      <find>this.state.recipes</find>
     </findStrings>
     <replaceStrings>
       <replace>Recipes</replace>
@@ -250,7 +232,6 @@
         <option value="$PROJECT_DIR$/src/pages/categories/allCategories.js" />
         <option value="$PROJECT_DIR$/src/pages/categories/categories.js" />
         <option value="$PROJECT_DIR$/src/pages/categories/selectedCategory.js" />
-        <option value="$PROJECT_DIR$/src/firestoreservice.js" />
         <option value="$PROJECT_DIR$/src/stylesheets/selectedMeal.css" />
         <option value="$PROJECT_DIR$/src/pages/all/view.js" />
         <option value="$PROJECT_DIR$/src/pages/categories/selectedMeal.js" />
@@ -265,6 +246,7 @@
         <option value="$PROJECT_DIR$/src/stylesheets/allrecipes.css" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/body/header.js" />
+        <option value="$PROJECT_DIR$/src/firestoreservice.js" />
         <option value="$PROJECT_DIR$/src/pages/all/allrecipes.js" />
       </list>
     </option>
@@ -337,9 +319,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="header&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/body/header.js&#10;index&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/public/index.html&#10;selectedCate&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedCategory.js&#10;Link&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/node_modules/react-router-dom/Link.js&#10;app&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/App.js&#10;selected&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedMeal.js&#10;allcate&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/allCategories.js&#10;app.css&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/App.css&#10;allre&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/allrecipes.css&#10;allR&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/allrecipes.css&#10;home&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/homepage.css&#10;allrecipes&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/allrecipes.css&#10;search.css&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/search.css&#10;recipes&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/body/recipes.js&#10;add&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/addToFirebase.js&#10;inde&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/index.js&#10;searc&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/search/Search.js&#10;Selecte&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedMeal.js&#10;allC&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/allCategories.js&#10;firest&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/firestoreservice.js&#10;selecte&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/selectedMeal.css&#10;fire&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/firestoreservice.js&#10;view.js&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/view.js&#10;sele&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedCategory.js&#10;allr&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/allrecipes.js&#10;allca&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/allCategories.js&#10;categories&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/categories.js&#10;search&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/search/Search.js&#10;root&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/node_modules/npm/lib/root.js&#10;allrec&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/allrecipes.js&#10;getr&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/api/getRecipesApi.js&#10;addTo&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/addToFirebase.js&#10;selectedMeal&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedMeal.js&#10;selectedme&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedMeal.js&#10;homepage.css&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/homepage.css&#10;testimon&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/body/testimonials.js&#10;allCate&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/allCategories.js&#10;categor&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/categories.js&#10;ALLRECIP&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/allrecipes.css&#10;recipes.css&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/allrecipes.css&#10;allCa&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/allCategories.js&#10;all&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/allCategories.js&#10;he&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/body/header.js&#10;cate&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/categories.js&#10;selec&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedMeal.js&#10;alre&#9;null&#9;null&#10;firestor&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/services/firestoreService.js&#10;recipes.js&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/services/getRecipesService.js&#10;view&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/view.css&#10;test.js&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/test.js" />
+    <property name="SearchEverywhereHistoryKey" value="select&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedCategory.js&#10;search&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/search/Search.js&#10;f&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/firestoreservice.js&#10;header&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/body/header.js&#10;index&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/public/index.html&#10;selectedCate&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedCategory.js&#10;Link&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/node_modules/react-router-dom/Link.js&#10;app&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/App.js&#10;selected&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedMeal.js&#10;allcate&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/allCategories.js&#10;app.css&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/App.css&#10;allre&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/allrecipes.css&#10;allR&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/allrecipes.css&#10;home&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/homepage.css&#10;allrecipes&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/allrecipes.css&#10;search.css&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/search.css&#10;recipes&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/body/recipes.js&#10;add&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/addToFirebase.js&#10;inde&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/index.js&#10;searc&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/search/Search.js&#10;Selecte&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedMeal.js&#10;allC&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/allCategories.js&#10;firest&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/firestoreservice.js&#10;selecte&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/selectedMeal.css&#10;fire&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/firestoreservice.js&#10;view.js&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/view.js&#10;sele&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedCategory.js&#10;allr&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/allrecipes.js&#10;allca&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/allCategories.js&#10;categories&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/categories.js&#10;root&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/node_modules/npm/lib/root.js&#10;allrec&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/allrecipes.js&#10;getr&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/api/getRecipesApi.js&#10;addTo&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/addToFirebase.js&#10;selectedMeal&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedMeal.js&#10;selectedme&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedMeal.js&#10;homepage.css&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/homepage.css&#10;testimon&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/body/testimonials.js&#10;allCate&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/allCategories.js&#10;categor&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/categories.js&#10;ALLRECIP&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/allrecipes.css&#10;recipes.css&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/allrecipes.css&#10;allCa&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/allCategories.js&#10;all&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/allCategories.js&#10;he&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/body/header.js&#10;cate&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/categories.js&#10;selec&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedMeal.js&#10;alre&#9;null&#9;null&#10;firestor&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/services/firestoreService.js&#10;recipes.js&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/services/getRecipesService.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../recipe-project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
@@ -383,7 +365,9 @@
       <workItem from="1538923389225" duration="4742000" />
       <workItem from="1539172009224" duration="9582000" />
       <workItem from="1539280335172" duration="29120000" />
-      <workItem from="1539960794055" duration="45482000" />
+      <workItem from="1539960794055" duration="45823000" />
+      <workItem from="1540139526009" duration="474000" />
+      <workItem from="1540219410412" duration="2421000" />
     </task>
     <task id="LOCAL-00001" summary="Starting page for all recipes">
       <created>1538263779529</created>
@@ -441,11 +425,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539978929519</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add pagination to AllRecipes">
+      <created>1540046246481</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1540046246481</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241382000" />
+    <option name="totallyTimeSpent" value="244618000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -464,7 +455,7 @@
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.13474241" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.4993395" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4993395" weight="0.06512301" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5006605" side_tool="true" weight="0.3299566" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.4138929" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
@@ -512,7 +503,23 @@
           <value>
             <State>
               <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
+                <collection>
+                  <UserGroup>
+                    <option name="users">
+                      <list>
+                        <option value="me" />
+                      </list>
+                    </option>
+                  </UserGroup>
+                  <UserGroup>
+                    <option name="users">
+                      <list>
+                        <option value="Maksim Filatov" />
+                        <option value="FilMaskim" />
+                      </list>
+                    </option>
+                  </UserGroup>
+                </collection>
               </option>
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection />
@@ -544,7 +551,8 @@
     <MESSAGE value="Added preloader" />
     <MESSAGE value="Add preloader, rid of warnings, make footer sticky in homepage" />
     <MESSAGE value="Make all data come from Firebase" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make all data come from Firebase" />
+    <MESSAGE value="Add pagination to AllRecipes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add pagination to AllRecipes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -681,9 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
           <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -722,9 +727,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="17" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -739,9 +741,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
           <caret line="23" column="69" selection-start-line="23" selection-start-column="69" selection-end-line="23" selection-end-column="69" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -750,9 +749,6 @@
         <state relative-caret-position="257">
           <caret line="46" column="24" lean-forward="true" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="32" />
           <caret line="47" column="24" lean-forward="true" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -784,26 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/search/Search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/firestoreservice.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="62" column="24" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="24" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/body/recipes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-872">
@@ -832,41 +808,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="49" column="189" selection-start-line="49" selection-start-column="189" selection-end-line="49" selection-end-column="189" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react-router-dom/Link.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/categories/allCategories.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/categories/selectedCategory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="35" column="61" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stylesheets/allrecipes.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="58" column="1" lean-forward="true" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -889,13 +835,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/categories/allCategories.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stylesheets/allrecipes.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/search/Search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/all/allrecipes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        <state relative-caret-position="112">
+          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/categories/selectedCategory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="35" column="61" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/firestoreservice.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
         </state>
       </provider>
     </entry>

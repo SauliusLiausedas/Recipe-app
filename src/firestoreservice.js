@@ -73,6 +73,20 @@ export default class {
             });
         });
     }
+    // Method to get number recipes by Id
+    static getRecipesById(quantity, id) {
+        return new Promise(resolve => {
+            this.db.collection('recipes').get().then((querySnapshot) => {
+                const data = [];
+                querySnapshot.forEach((doc) => {
+                    if(doc.data().idMeal === id) {
+                        data.push({data: doc.data(), id: doc.id});
+                    }
+                });
+                resolve(data);
+            });
+        });
+    }
 
     static updateRecipe() {
 
