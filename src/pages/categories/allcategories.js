@@ -1,18 +1,11 @@
 import React, { Component } from 'react'
 import '../../stylesheets/categories.css'
 import { Link } from 'react-router-dom'
-import SelectedCategory from './selectedcategory.js'
-import SelectedMeal from './selectedmeal.js'
-
 
 class AllCategories extends Component {
     constructor() {
         super()
         this.state = {selected: ''}
-    }
-
-    componentWillMount() {
-        console.log(this.props);
     }
 
     render() {
@@ -22,11 +15,11 @@ class AllCategories extends Component {
                     <div>
                         {this.props.categories.map((categoryObj, i) =>
                             <div className="categoryBox" onClick={(e) => this.setState({selected: e.target.alt})} key={i}>
-                                <h2 className="categoryTitle">{categoryObj.strCategory}</h2>
-                                <Link to={'/categories/' + categoryObj.strCategory}>
+                                <h2 className="categoryTitle">{categoryObj.data.strCategory}</h2>
+                                <Link to={'/categories/' + categoryObj.data.strCategory}>
                                     <img className="categoryPic"  
                                         alt={categoryObj.strCategory} 
-                                        src={categoryObj.strCategoryThumb}/>
+                                        src={categoryObj.data.strCategoryThumb}/>
                                 </Link>
                             </div>
                         )}

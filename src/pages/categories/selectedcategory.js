@@ -3,6 +3,7 @@ import '../../stylesheets/categories.css'
 import { Link } from 'react-router-dom'
 import SelectedMeal from './selectedmeal.js'
 import { getMealsByCategory } from '../../api/getRecipesApi.js'
+// import fs from '../../firestoreService.js'
 
 class SelectedCategory extends Component {
     constructor() {
@@ -16,16 +17,12 @@ class SelectedCategory extends Component {
     componentWillMount() {
         let category = this.props && this.props.match && this.props.match.params && this.props.match.params.category || '';
         if (category) {
-            getMealsByCategory(category).then(categories => {
-                this.setState({selectedCategoryMeals: categories.meals})
+            getMealsByCategory(category).then(data => {
+                this.setState({selectedCategoryMeals: data.meals})
             })
         } else {
 
         }
-    }
-
-    changeURL() {
-        console.log(this.props.match)
     }
 
     render() {
@@ -54,7 +51,6 @@ class SelectedCategory extends Component {
         } else {
             return (
                 <div>
-                    {this.changeURL()}
                     Loading...
                 </div>
             )

@@ -1,20 +1,14 @@
 import React, {Component} from 'react'
-import ViewRecipe from './view.js'
-import {getAllRecipes} from "../../api/getRecipesApi"
+// import {getAllRecipes} from "../../api/getRecipesApi"
 import '../../stylesheets/homepage.css'
+import fs from '../../firestoreService.js'
 
 class AllRecipes extends Component {
     constructor() {
         super()
-        this.allRecipes = {results: []}
-        getAllRecipes().then(recipes => {
-            this.allRecipes = recipes
-            this.allRecipes.results = []
-            this.setState({recipes: recipes})
-        })
+        this.initRecipes();
         this.state = {
-            recipes: "",
-            recipeToShow: ""
+            recipes: ""
         }
     }
 
@@ -22,38 +16,27 @@ class AllRecipes extends Component {
 
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.searchResult) {
-            this.setState({
-                recipes: {
-                    results: nextProps.searchResult
-                }
-            });
+    async initRecipes() {
+        let recipesFromFS = await fs.getCollection('recipes');
+        let recipesArray = []
+        for (let i=0; i<10; i++) {
+            let randomFromArray = Math.floor(Math.random() * recipesFromFS.length)
+            recipesArray.push(recipesFromFS[randomFromArray])
         }
-    }
-
-    viewRecipe(e) {
-        // getRecipeById(e.currentTarget.id).then(recipe=> {
-        //     this.recipeToView = recipe
-        //     this.setState({recipeToShow: this.recipeToView})
-        // })
-        console.log(e);
+        this.setState({recipes: recipesArray})
     }
 
     renderAllRecipies (){
         return (
             <div>
-                {this.state.recipeToShow ? (<ViewRecipe onClosePopup={() => {
-                    this.setState({recipeToShow: ""})
-                }} view={this.state.recipeToShow}/>) : ''}
                 <div>
-                    {this.state.recipes[(this.props.searchResult ? 'results' : 'meal')].map((mealObj, i) =>
-                        <div className="recipeBox" key={i} id={i} onClick={(e) => this.viewRecipe(e)}>
-                            <img className="recipePic" alt={mealObj.name} src={mealObj.strMealThumb}/>
+                    {this.state.recipes.map((mealObj, i) =>
+                        <div className="recipeBox" key={i} id={i}>
+                            <img className="recipePic" alt={mealObj.name} src={mealObj.data.strMealThumb}/>
                             <div>
-                                <h2 className="recipeTitle" key={i}>{mealObj.strMeal}</h2>
-                                <h4>Category: {mealObj.strCategory}</h4>
-                                <p>{mealObj.strInstructions}</p>
+                                <h2 className="recipeTitle" key={i}>{mealObj.data.strMeal}</h2>
+                                <h4>Category: {mealObj.data.strCategory}</h4>
+                                <p>{mealObj.data.strInstructions}</p>
                             </div>
                         </div>
                     )}

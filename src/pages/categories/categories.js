@@ -1,23 +1,31 @@
 import React, { Component } from 'react'
 import '../../stylesheets/categories.css'
 import AllCategories from './allcategories.js'
-import { getCategories } from '../../api/getRecipesApi.js'
+import fs from '../../firestoreService.js'
+// import { getCategories } from "../../api/getRecipesApi";
 
 class Categories extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        this.initCategories();
         this.state = {
             categories: "",
             selected: ""
         };
     }
 
+async initCategories() {
+    let categories = await fs.getCollection('categories') 
+    this.setState({categories: categories})
+}
+
+/*
 componentWillMount() {
-    getCategories().then(categories => {
-        this.setState({categories: categories.categories})
+    getCategories().then(data => {
+        this.setState({categories: data.categories})
     })
 }    
-
+*/
 componentWillReceiveProps() {
     this.resetComponent();
 }
@@ -38,7 +46,7 @@ render() {
     } else {
         return(
             <div>
-                <h1>Error</h1>
+                <h1>Loading</h1>
             </div>
         )
     }
