@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import '../../stylesheets/categories.css'
 import { Link } from 'react-router-dom'
 import SelectedMeal from './selectedmeal.js'
-import { getMealsByCategory } from '../../api/getRecipesApi.js'
-// import fs from '../../firestoreService.js'
+// import { getMealsByCategory } from '../../api/getRecipesApi.js'
+import fs from '../../firestoreService.js'
 
 class SelectedCategory extends Component {
     constructor() {
@@ -17,12 +17,18 @@ class SelectedCategory extends Component {
     componentWillMount() {
         let category = this.props && this.props.match && this.props.match.params && this.props.match.params.category || '';
         if (category) {
-            getMealsByCategory(category).then(data => {
-                this.setState({selectedCategoryMeals: data.meals})
-            })
+            this.getMealsByCategory();
+//            getMealsByCategory(category).then(data => {
+//                this.setState({selectedCategoryMeals: data.meals})
+//            })
         } else {
 
         }
+    }
+
+    getMealsByCategory() {
+        let mealsByCategory = fs.getCollection('recipesFromCategories') 
+        this.setState({selectedCategoryMeals: mealsByCategory})
     }
 
     render() {
