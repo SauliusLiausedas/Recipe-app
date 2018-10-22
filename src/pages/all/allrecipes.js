@@ -3,7 +3,6 @@ import '../../stylesheets/allrecipes.css'
 import ViewRecipe from './view.js'
 import fs from '../../firestoreservice'
 import { Link } from 'react-router-dom'
-// import Error from '../../pages/error'
 
 class AllRecipes extends Component {
     constructor() {
@@ -21,6 +20,21 @@ class AllRecipes extends Component {
         if(page) {
             this.setState({currentPage: page})
             this.changePage(page)
+            fs.getCollection('recipes').then(recipes => {
+                this.setState({
+                    recipes: recipes,
+                })
+            })
+            // const recipesArray = []
+            // for (let i=0; i<this.state.recipesPerPage; i++){
+            //     fs.getRecipeById(page*i).then(recipe => {
+            //         recipesArray.push(recipe)
+            //     })
+            // }
+            // this.setState(recipesArray)
+        } else {
+            this.setState({currentPage: 1})
+            this.changePage(1)
             fs.getCollection('recipes').then(recipes => {
                 this.setState({
                     recipes: recipes,
@@ -72,6 +86,7 @@ class AllRecipes extends Component {
                     this.setState({recipeToShow: ""})
                 }} view={this.state.recipeToShow}/>) : ''}
                 <div className="boxes">
+                    {console.log('!!!')}
                     {this.props.search ?
                         this.props.searchResult ?
                             this.props.searchResult.map((mealObj, i) => {
