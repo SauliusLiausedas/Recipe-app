@@ -21,11 +21,18 @@ class AllRecipes extends Component {
         if(page) {
             this.setState({currentPage: page})
             this.changePage(page)
-            fs.getCollection('recipes').then(recipes => {
-                this.setState({
-                    recipes: recipes,
+            let localRecipes= localStorage.getItem('recipes');
+            if(!localRecipes){
+                fs.getCollection('recipes').then(recipes => {
+                    localStorage.setItem('recipes', JSON.stringify(recipes));
+                    this.setState({
+                        recipes: recipes,
+                    })
                 })
-            })
+            } else {
+                this.setState({recipes : JSON.parse(localRecipes)});
+            }
+
         }
     }
 
