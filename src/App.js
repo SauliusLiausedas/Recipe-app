@@ -10,7 +10,7 @@ import Categories from './pages/categories/categories.js'
 import SelectedCategory from './pages/categories/selectedcategory.js'
 import SelectedMeal from './pages/categories/selectedmeal.js'
 import AddToFirebase from './addToFirebase';
-import fs from './firestoreservice.js'
+import fs from './firestoreService'
 // import setState from './data.js'
 
 fs.init();

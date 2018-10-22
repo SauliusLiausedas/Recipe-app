@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import '../../stylesheets/allrecipes.css'
 import ViewRecipe from './view.js'
 import {getAllRecipes} from "../../api/getRecipesApi"
+import '../../stylesheets/homepage.css'
 
 class AllRecipes extends Component {
     constructor() {
@@ -14,7 +14,7 @@ class AllRecipes extends Component {
         })
         this.state = {
             recipes: "",
-            recipeToShow: "",
+            recipeToShow: ""
         }
     }
 
@@ -42,16 +42,19 @@ class AllRecipes extends Component {
 
     renderAllRecipies (){
         return (
-            <div className="allRecipes">
+            <div>
                 {this.state.recipeToShow ? (<ViewRecipe onClosePopup={() => {
                     this.setState({recipeToShow: ""})
                 }} view={this.state.recipeToShow}/>) : ''}
-                <div className="boxes">
+                <div>
                     {this.state.recipes[(this.props.searchResult ? 'results' : 'meal')].map((mealObj, i) =>
-                        <div key={i} id={i} className="recipe-box" onClick={(e) => this.viewRecipe(e)}>
-                            <img className="recipe-img" alt={mealObj.name} src={mealObj.strMealThumb}/>
-                            <h2 key={i}>{mealObj.strMeal}</h2>
-                            <em><p>{mealObj.strInstructions.slice(0, 250) + "..."}</p></em>
+                        <div className="recipeBox" key={i} id={i} onClick={(e) => this.viewRecipe(e)}>
+                            <img className="recipePic" alt={mealObj.name} src={mealObj.strMealThumb}/>
+                            <div>
+                                <h2 className="recipeTitle" key={i}>{mealObj.strMeal}</h2>
+                                <h4>Category: {mealObj.strCategory}</h4>
+                                <p>{mealObj.strInstructions}</p>
+                            </div>
                         </div>
                     )}
                 </div>

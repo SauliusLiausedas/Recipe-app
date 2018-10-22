@@ -19,9 +19,9 @@ class AllCategories extends Component {
         if (this.props.categories) {
             if (!this.state.selected) {
                 return (
-                    <div className="categoryBox">
+                    <div>
                         {this.props.categories.map((categoryObj, i) =>
-                            <div onClick={(e) => this.setState({selected: e.target.alt})} key={i}>
+                            <div className="categoryBox" onClick={(e) => this.setState({selected: e.target.alt})} key={i}>
                                 <h2 className="categoryTitle">{categoryObj.strCategory}</h2>
                                 <Link to={'/categories/' + categoryObj.strCategory}>
                                     <img className="categoryPic"  

@@ -32,12 +32,11 @@ class SelectedCategory extends Component {
         if (this.state.selectedCategoryMeals) {
             if (!this.state.selectedMealId) {
                 return (
-                    <div className="categoryBox">
+                    <div>
                         {this.state.selectedCategoryMeals.map((mealObj, i) => {
                             return(
-                                <div id={mealObj.idMeal} key={i}>
-                                    {console.log(this.props.match)}
-                                    <h2 className="categoryTitle">{mealObj.strMeal}</h2>
+                                <div className="categoryBox" id={mealObj.idMeal} key={i}>
+                                    <h3 className="categoryTitle">{mealObj.strMeal}</h3>
                                     <Link to={this.props.match.url + '/' + mealObj.idMeal}>
                                         <img className="categoryPic"
                                             alt={mealObj.strMeal} id={mealObj.idMeal}

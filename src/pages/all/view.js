@@ -77,7 +77,7 @@ class ViewRecipe extends Component {
                         <h2>{this.props.view.name}</h2>
                         <ul className="ingredients-ul">
                             {this.props.view.ingredients.map((ingredient, i) =><li key={i}
-                                                                                        className="ingredients-li">{ingredient} </li>)}
+                            className="ingredients-li">{ingredient} </li>)}
                         </ul>
                         <img alt={this.props.view.name} className="recipeImg" src={this.props.view.image}/>
                         <p className="method-text">{this.props.view.method}</p>

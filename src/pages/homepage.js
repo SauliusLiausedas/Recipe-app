@@ -4,17 +4,13 @@ import Testimonials from '../body/testimonials.js';
 import Recipes from '../body/recipes.js';
 
 class HomePage extends Component {
-
-//    handleClick() {
-//        alert('testas');
-//    }
  
     render() {
         return (
             <div className="content">
                 <Recipes />
                 <div className="testimonials">
-                    <h2 className="testimonialsText">Testimonials:</h2>
+                    <h2 className="testimonialsTitle">Testimonials:</h2>
                     <Testimonials />
                 </div>
             </div>

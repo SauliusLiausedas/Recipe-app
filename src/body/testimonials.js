@@ -1,6 +1,5 @@
 import React from 'react'
-import '../stylesheets/testimonials.css'
-import fs from '../firestoreservice.js'
+import fs from '../firestoreService.js'
 
 class Testimonials extends React.Component {
   constructor() {

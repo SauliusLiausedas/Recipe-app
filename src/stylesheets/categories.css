@@ -1,8 +1,6 @@
 .categoryBox {
-    display: flex;
-    align-items: center;
-    padding: 40px;
-    text-align: left;
+    display: inline-block;
+    padding: 20px;
   }
   
   .categoryPic {
@@ -12,5 +10,6 @@
   }
 
   .categoryTitle {
-    text-align: left;
+    text-align: center;
+    color: slategrey;
   }

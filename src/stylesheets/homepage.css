@@ -1,17 +1,16 @@
-.contentRecipe {
+.recipeBox {
     display: flex;
-    align-items: center;
     padding: 40px;
     text-align: left;
   }
   
-  .contentRecipePic {
+  .recipePic {
     padding: 0 30px;
     max-width: 500px;
     max-height: 454px;
   }
 
-  .contentRecipeTextTitle {
+  .recipeTitle {
     text-align: left;
   }
 
@@ -19,9 +18,11 @@
     padding: 40px;
     background: black;
     text-align: center;
+    color: slategrey;
   }
 
-  .testimonialsText {
+  .testimonialsTitle {
     color: orangered;
     font-weight: normal;
   }
+
