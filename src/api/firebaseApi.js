@@ -18,3 +18,15 @@ export async function getFbMealById(id) {
     let meals = await fs.getCollection("recipes");
     return meals.map(meal => meal.data).find(meal => meal.idMeal === id);
 }
+
+export async function searchFbMeal (query) {
+    let meals = await fs.getCollection("recipes");
+    meals= meals.map (meal => meal.data);
+
+
+    meals.forEach(meal => {
+        let searchScore= 0;
+
+        // if(meal)
+    });
+}
