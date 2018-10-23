@@ -22,7 +22,7 @@ class AllRecipes extends Component {
             this.setState({currentPage: page})
             this.changePage(page)
             let localRecipes= localStorage.getItem('recipes');
-            if(!localRecipes){
+            if(true){
                 fs.getCollection('recipes').then(recipes => {
                     localStorage.setItem('recipes', JSON.stringify(recipes));
                     this.setState({

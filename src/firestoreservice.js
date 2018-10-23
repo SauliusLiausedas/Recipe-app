@@ -17,10 +17,22 @@ export default class {
     * */
     static getCollection(collection) {
         return new Promise(resolve => {
-            this.db.collection(collection).get().then((querySnapshot) => {
+            this.db.collection(collection).where('idMeal','==','52870').limit(10).get().then((querySnapshot) => {
                 const data = [];
+                const docData = [];
                 querySnapshot.forEach((doc) => {
                     data.push({data: doc.data(), id: doc.id});
+                    docData.push({doc: doc});
+                });
+                console.log(docData[docData.length-1].doc);
+                this.db.collection(collection).startAfter(docData[docData.length-1].doc).limit(10).get().then((querySnapshot) => {
+                    const data = [];
+                    const docData = [];
+                    querySnapshot.forEach((doc) => {
+                        data.push({data: doc.data(), id: doc.id});
+                        docData.push({doc: doc});
+                    });
+                    console.log(data);
                 });
                 resolve(data);
             });
