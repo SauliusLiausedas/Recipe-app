@@ -36,6 +36,15 @@ class AllRecipes extends Component {
         }
     }
 
+    showNext () {
+        fs.getCollectionPage('recipes', ++this.state.currentPage).then(recipes => {
+            this.setState({
+                recipes: recipes,
+            })
+        })
+        // this.setState({currentPage: Math.ceil(this.state.recipes.length / this.state.recipesPerPage)});
+    }
+
     makePaginationControl() {
         let pageNumbers = []
         for (let i = 1; i <= Math.ceil(this.state.recipes.length / this.state.recipesPerPage); i++) {
@@ -61,10 +70,10 @@ class AllRecipes extends Component {
                 <Link className="pageNumbers" to={'/all/1'}><li className="pageNumbers" onClick={() => this.setState({currentPage: 1})}> &#8810; </li></Link>
                 {pageNumbers.map(number => {
                 return(
-                    <Link key={number} className="pageNumbers" to={'/all/' + number}><li className={'pageNumbers ' + this.isActive(number)} key={number} id={number} onClick={(e) => this.changePage(e.target.id)}>{number}</li></Link>
+                    <Link key={number} className="pageNumbers" to={'/all/' + number}><li className={'pageNumbers ' + this.isActive(number)} key={number} id={number} onClick={(e) => this.changePage(e.target.id)}>{this.state.currentPage}</li></Link>
                 )
             })}
-                <Link className="pageNumbers" to={'/all/'+Math.ceil(this.state.recipes.length / this.state.recipesPerPage)}><li className="pageNumbers" onClick={() => this.setState({currentPage: Math.ceil(this.state.recipes.length / this.state.recipesPerPage)})}> &#8811; </li></Link>
+                <Link className="pageNumbers" to={'/all/'+(this.state.currentPage+1)}><li className="pageNumbers" onClick={this.showNext.bind(this)}> &#8811; </li></Link>
             </ul>
         )
     }
@@ -72,7 +81,7 @@ class AllRecipes extends Component {
     renderAllRecipes (){
         const indexOfLastRecipe = this.state.currentPage * this.state.recipesPerPage
         const indexOfFirstRecipe = indexOfLastRecipe - this.state.recipesPerPage
-        const currentRecipes = this.state.recipes.slice(indexOfFirstRecipe, indexOfLastRecipe)
+        const currentRecipes = this.state.recipes
         return (
             <div className="allRecipes">
                 {this.state.recipeToShow ? (<ViewRecipe onClosePopup={() => {

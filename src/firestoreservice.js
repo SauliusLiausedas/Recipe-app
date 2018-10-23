@@ -6,6 +6,7 @@
 * */
 export default class {
     static db;
+    static lastRecipeDoc;
 
     static init() {
         this.db = window.firebase.firestore();
@@ -15,29 +16,54 @@ export default class {
     /*
     * This should return all collection
     * */
-    static getCollection(collection) {
+    static async getCollection(collection) {
+        let collectionLength = await this.getCollectionLength(collection);
+        let page1 = await this.getCollectionPage(collection);
+        return page1;
+    }
+
+    static getCollectionLength (collection) {
+        return this.db.collection(collection).get().then((querySnapshot) => {
+            console.log(querySnapshot);
+            return querySnapshot.docs.length;
+        })
+    }
+
+    static getCollectionPage(collection, page = 1) {
+        let query = null;
+        if (page === 1) {
+            query = this.db.collection(collection).limit(10).get();
+        } else if (page > 1) {
+            query = this.db.collection(collection).startAfter(this.lastRecipeDoc).limit(10).get()
+        }
+
         return new Promise(resolve => {
-            this.db.collection(collection).where('idMeal','==','52870').limit(10).get().then((querySnapshot) => {
+            query.then((querySnapshot) => {
                 const data = [];
-                const docData = [];
+                //const docData = [];
                 querySnapshot.forEach((doc) => {
                     data.push({data: doc.data(), id: doc.id});
-                    docData.push({doc: doc});
+                    //docData.push({doc: doc});
                 });
-                console.log(docData[docData.length-1].doc);
-                this.db.collection(collection).startAfter(docData[docData.length-1].doc).limit(10).get().then((querySnapshot) => {
-                    const data = [];
-                    const docData = [];
-                    querySnapshot.forEach((doc) => {
-                        data.push({data: doc.data(), id: doc.id});
-                        docData.push({doc: doc});
-                    });
-                    console.log(data);
-                });
+                this.lastRecipeDoc = querySnapshot.docs[querySnapshot.docs.length-1];
                 resolve(data);
             });
         });
+
+        /*console.log(docData[docData.length-1].doc);
+        this.db.collection(collection).startAfter(docData[docData.length-1].doc).limit(10).get().then((querySnapshot) => {
+            const data = [];
+            const docData = [];
+            querySnapshot.forEach((doc) => {
+                data.push({data: doc.data(), id: doc.id});
+                docData.push({doc: doc});
+            });
+            console.log(data);
+        });*/
     }
+
+
+
 
     // Method to search recipes by name
 

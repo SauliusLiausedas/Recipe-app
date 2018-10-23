@@ -24,7 +24,7 @@ class Recipes extends Component {
     }
 
     async initRecipes() {
-        let meals= await fs.getCollection('recipes');
+        let meals = await fs.getCollection('recipes');
 
         let random = Math.floor(Math.random() * 10) + 1
         let mealArr = []
