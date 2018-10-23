@@ -14,11 +14,20 @@ class SelectedCategory extends Component {
     }
 
     componentWillMount() {
-        let category = (this.props && this.props.match && this.props.match.params && this.props.match.params.category) || '';
-        if (category){
-            fs.getRecipesByCategory(category).then(category => {
-                this.setState({selectedCategoryMeals: category})
-            })
+        let categoryName = (this.props && this.props.match && this.props.match.params && this.props.match.params.category) || '';
+        if (categoryName){
+            let toStorage = ''
+            let local = localStorage.getItem(categoryName)
+            if(local) {
+                this.setState({selectedCategoryMeals: JSON.parse(local)})
+            } else {
+                fs.getRecipesByCategory(categoryName).then(category => {
+                    this.setState({selectedCategoryMeals: category})
+                    toStorage = category
+                    toStorage = JSON.stringify(toStorage)
+                    localStorage.setItem(categoryName, toStorage)
+                })
+            }
         } else {
             return <Error/>
         }

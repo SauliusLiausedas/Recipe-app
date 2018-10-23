@@ -4,6 +4,8 @@ import ViewRecipe from './view.js'
 import fs from '../../firestoreservice'
 import { Link } from 'react-router-dom'
 
+
+
 class AllRecipes extends Component {
     constructor() {
         super()
@@ -17,14 +19,23 @@ class AllRecipes extends Component {
 
     componentWillMount() {
         let page = (this.props && this.props.match && this.props.match.params && this.props.match.params.page) || '';
+        let toStorage = ''
         if(page) {
             this.setState({currentPage: page})
             this.changePage(page)
-            fs.getCollection('recipes').then(recipes => {
-                this.setState({
-                    recipes: recipes,
-                })
-            })
+            let local = localStorage.getItem("recipes")
+                if(local) {
+                    this.setState({recipes: JSON.parse(local)})
+                } else {
+                    fs.getCollection('recipes').then(recipes => {
+                        this.setState({
+                            recipes: recipes,
+                        })
+                        toStorage = recipes
+                        toStorage = JSON.stringify(toStorage)
+                        localStorage.setItem('recipes', toStorage)
+                    })
+                }
             // const recipesArray = []
             // for (let i=0; i<this.state.recipesPerPage; i++){
             //     fs.getRecipeById(page*i).then(recipe => {
@@ -39,6 +50,9 @@ class AllRecipes extends Component {
                 this.setState({
                     recipes: recipes,
                 })
+                toStorage = recipes
+                toStorage = JSON.stringify(toStorage)
+                localStorage.setItem('recipes', toStorage)
             })
         }
     }
@@ -86,7 +100,6 @@ class AllRecipes extends Component {
                     this.setState({recipeToShow: ""})
                 }} view={this.state.recipeToShow}/>) : ''}
                 <div className="boxes">
-                    {console.log('!!!')}
                     {this.props.search ?
                         this.props.searchResult ?
                             this.props.searchResult.map((mealObj, i) => {

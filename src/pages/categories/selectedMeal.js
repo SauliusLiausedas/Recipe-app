@@ -14,10 +14,25 @@ class SelectedMeal extends Component {
 
     componentWillMount() {
         let id = (this.props && this.props.match && this.props.match.params && this.props.match.params.id) || '';
-        fs.getRecipeById(id).then(meal => {
-            this.setState({mealById: meal});
-            this.getIngredients();
-        })
+        let toStorage = ''
+        let local = localStorage.getItem(id)
+        if (local) {
+            this.setState({mealById: JSON.parse(local)})
+        } else {
+            fs.getRecipeById(id).then(meal => {
+                this.setState({mealById: meal});
+                toStorage = meal
+                toStorage = JSON.stringify(toStorage)
+                localStorage.setItem(id, toStorage)
+                this.getIngredients()
+            })
+        }
+    }
+
+    componentDidMount() {
+        if(this.state.mealById) {
+            this.getIngredients()
+        }
     }
 
     getIngredients() {

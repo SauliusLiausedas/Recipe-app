@@ -13,10 +13,18 @@ class Categories extends Component {
     }
 
     componentDidMount() {
-        fs.getCollection('categories').then(category => {
-            this.setState({categories: category})
-        })
-
+        let local = localStorage.getItem('categories')
+        let toStorage = ''
+        if(local) {
+            this.setState({categories: JSON.parse(local)})
+        } else {
+            fs.getCollection('categories').then(category => {
+                this.setState({categories: category})
+                toStorage = category
+                toStorage = JSON.stringify(toStorage)
+                localStorage.setItem('categories', toStorage)
+            })
+        }
     }
 
     componentWillReceiveProps() {
