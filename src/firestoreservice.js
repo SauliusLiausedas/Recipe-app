@@ -32,6 +32,8 @@ export default class {
     static getCollectionPage(collection, page = 1) {
         let query = null;
         if (page === 1) {
+            //example for search query
+            //query = this.db.collection(collection).where('keywords', 'array-contains', 'bean').limit(10).get();
             query = this.db.collection(collection).limit(10).get();
         } else if (page > 1) {
             query = this.db.collection(collection).orderBy('strMeal').startAfter(this.lastRecipeDoc.id).limit(10).get()
@@ -45,6 +47,7 @@ export default class {
                     data.push({data: doc.data(), id: doc.id});
                     //docData.push({doc: doc});
                 });
+                console.log(data);
                 this.lastRecipeDoc = querySnapshot.docs[querySnapshot.docs.length-1];
                 resolve(data);
             });
