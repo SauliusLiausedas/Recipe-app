@@ -17,7 +17,7 @@ export default class {
     * This should return all collection
     * */
     static async getCollection(collection) {
-        let collectionLength = await this.getCollectionLength(collection);
+        //let collectionLength = await this.getCollectionLength(collection);
         let page1 = await this.getCollectionPage(collection);
         return page1;
     }
@@ -34,7 +34,7 @@ export default class {
         if (page === 1) {
             query = this.db.collection(collection).limit(10).get();
         } else if (page > 1) {
-            query = this.db.collection(collection).startAfter(this.lastRecipeDoc).limit(10).get()
+            query = this.db.collection(collection).orderBy('strMeal').startAfter(this.lastRecipeDoc.id).limit(10).get()
         }
 
         return new Promise(resolve => {
