@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../../stylesheets/categories.css'
-import { getMealById } from '../../api/getRecipesApi.js'
+import fs from '../../firestoreService.js'
+// import { getMealById } from '../../api/getRecipesApi.js'
 
 class SelectedMeal extends Component {
     constructor() {
@@ -12,18 +13,17 @@ class SelectedMeal extends Component {
 
     componentWillMount() {
         let id = this.props && this.props.match && this.props.match.params && this.props.match.params.id || '';
-        getMealById(id).then(meal => {
-            this.setState({mealById: meal.meals});
-            this.getIngredients();
-        })
-    }
-
-    getIngredients() {
-        this.repaint();
-    }
-
-    repaint() {
-        this.setState({});
+        let localId = localStorage.getItem(id);
+        if (!localId) {
+            fs.getRecipeById(id).then(data => {
+                localStorage.setItem(id, JSON.stringify(data));
+                this.setState({
+                    mealById: data
+                })
+            }) 
+        } else {
+            this.setState({mealById: JSON.parse(localId)})
+        }
     }
 
 /*
@@ -46,6 +46,19 @@ class SelectedMeal extends Component {
         this.setState({});
     }
 */
+
+makeContentEditable() {
+    this.setState({edit: true})
+}
+
+getIngredients () {
+    if (this.state.edit) {
+        return (<div>Edit enabled</div>)
+    } else {
+        return (<div>Kodas ingredientams gauti</div>)
+    }
+}
+
     render() {
         if(this.state.mealById) {
             return (
@@ -53,11 +66,13 @@ class SelectedMeal extends Component {
                     {this.state.mealById.map((mealObj, i) => {
                         return(
                             <div className="recipeBox">
-                                <img className="recipePic" alt={mealObj.strMeal} src={mealObj.strMealThumb}/>
+                                <img className="recipePic" alt={mealObj.data.strMeal} src={mealObj.data.strMealThumb}/>
                                 <div>
-                                    <h2 className="recipeTitle">{mealObj.strMeal}</h2>
-                                    <h4>Category: {mealObj.strCategory}</h4>                             
-                                    <p>{mealObj.strInstructions}</p>
+                                    <h2 className="recipeTitle">{mealObj.data.strMeal}</h2>
+                                    <h4>Category: {mealObj.data.strCategory}</h4>                             
+                                    <p>{mealObj.data.strInstructions}</p>
+                                    {this.getIngredients}
+                                    <button onClick={this.makeContentEditable.bind(this)}>EDIT</button>
                                 </div>
                             </div>
                         )

@@ -7,19 +7,31 @@ import fs from '../../firestoreService.js'
 class Categories extends Component {
     constructor(props) {
         super(props);
-        this.initCategories();
         this.state = {
             categories: "",
             selected: ""
         };
     }
 
-async initCategories() {
-    let categories = await fs.getCollection('categories') 
-    this.setState({categories: categories})
+componentDidMount() {
+    let localCategories = localStorage.getItem('categories');
+    if(!localCategories) {
+        fs.getCollection('categories').then(data => {
+            localStorage.setItem('categories', JSON.stringify(data));
+            this.setState({
+                categories: data
+            })
+        }) 
+    } else {
+        this.setState({categories: JSON.parse(localCategories)})
+    }
 }
+    
 
-/*
+/* 
+
+senas kodas:
+
 componentWillMount() {
     getCategories().then(data => {
         this.setState({categories: data.categories})

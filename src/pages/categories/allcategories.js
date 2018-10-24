@@ -18,7 +18,7 @@ class AllCategories extends Component {
                                 <h2 className="categoryTitle">{categoryObj.data.strCategory}</h2>
                                 <Link to={'/categories/' + categoryObj.data.strCategory}>
                                     <img className="categoryPic"  
-                                        alt={categoryObj.strCategory} 
+                                        alt={categoryObj.data.strCategory} 
                                         src={categoryObj.data.strCategoryThumb}/>
                                 </Link>
                             </div>
