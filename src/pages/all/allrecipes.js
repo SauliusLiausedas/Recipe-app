@@ -23,10 +23,12 @@ class AllRecipes extends Component {
             this.changePage(page)
             let localRecipes= localStorage.getItem('recipes');
             if(true){
+                this.setState({loading: true});
                 fs.getCollection('recipes').then(recipes => {
                     localStorage.setItem('recipes', JSON.stringify(recipes));
                     this.setState({
                         recipes: recipes,
+                        loading: false
                     })
                 })
             } else {
@@ -134,7 +136,7 @@ class AllRecipes extends Component {
     }
 
     render() {
-        if (this.state.recipes) {
+        if (!this.state.loading) {
             return(
                 this.renderAllRecipes()
             )

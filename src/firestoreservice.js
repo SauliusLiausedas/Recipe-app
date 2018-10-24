@@ -72,10 +72,12 @@ export default class {
 
     static getRecipesByName(name) {
         return new Promise(resolve => {
-            this.db.collection('recipes').get().then((querySnapshot) => {
+            //let query = this.db.collection('recipes').where('keywords', 'array-contains', name).limit(10).get();
+            let query = this.db.collection('recipes').where('keyWords', 'array-contains', name).limit(10).get();
+            query.then((querySnapshot) => {
                 const data = [];
                 querySnapshot.forEach((doc) => {
-                    if(doc.data().strMeal.toLowerCase().includes(name.toLowerCase()))
+                   // if(doc.data().strMeal.toLowerCase().includes(name.toLowerCase()))
                         data.push({data: doc.data(), id: doc.id});
                 });
                 resolve(data);
