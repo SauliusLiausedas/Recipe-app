@@ -42,12 +42,9 @@
     text-align: left;
 }
 .ingredientss-ul {
-    width: 50%;
     max-height: 500px;
-    padding: 5px;
 }
 .ingredientsList {
-    width: 300px;
     font-family: Alegreya SC, serif;
     list-style-type: square;
     font-size: 1.2em;
@@ -55,11 +52,4 @@
 }
 .overflowHide {
     overflow: scroll;
-}
-.measures-ingredients {
-    display: grid;
-    grid-template-columns: auto auto;
-}
-.measuresList {
-    width: 100px;
 }

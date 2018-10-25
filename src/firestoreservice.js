@@ -22,6 +22,8 @@ export default class {
         return page1;
     }
 
+
+
     static getCollectionLength (collection) {
         return this.db.collection(collection).get().then((querySnapshot) => {
             console.log(querySnapshot);
@@ -131,8 +133,20 @@ export default class {
         });
     }
 
-    static updateRecipe() {
-
+    /*
+    * Update new recipes
+    * */
+    static updateRecipe(data) {
+        return new Promise(resolve => {
+            this.db.collection("recipes").doc(data.idMeal).set(data)
+                .then(function (docRef) {
+                    console.log("Document written with ID: ", data.idMeal);
+                    resolve(docRef);
+                })
+                .catch(function (error) {
+                    console.error("Error adding document: ", error);
+                });
+        });
     }
 
     /*

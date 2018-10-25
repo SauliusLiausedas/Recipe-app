@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../../stylesheets/selectedMeal.css'
+import MealEdit from './mealEdit'
 import fs from '../../firestoreservice'
 
 class SelectedMeal extends Component {
@@ -8,7 +9,8 @@ class SelectedMeal extends Component {
         this.state = {
             mealById: "",
             ingredients: [],
-            ingredientsClass: ''
+            ingredientsClass: '',
+            measures: []
         }
     }
 
@@ -24,7 +26,9 @@ class SelectedMeal extends Component {
             for (let i = 1; i < 21; i++) {
                 if(this.state.mealById[0].data['strIngredient'+i] && this.state.mealById[0].data['strMeasure'+i]) {
                     let ingredientToPush = [this.state.mealById[0].data['strMeasure'+i], this.state.mealById[0].data['strIngredient' + i]].join(" ")
-                    this.state.ingredients.push(ingredientToPush);
+                    let measureToPush = [this.state.mealById[0].data['strMeasure'+i]]
+                    this.state.ingredients.push(ingredientToPush)
+                    this.state.measures.push(measureToPush)
                 }
             }
             if(this.state.ingredients.length > 15) {
@@ -37,54 +41,9 @@ class SelectedMeal extends Component {
         this.setState({});
     }
 
-    enableEdit() {
-        this.setState({edit: !this.state.edit})
-    }
-
-    getIngredientsElement () {
-        if (this.state.edit){
-            return (<div>edit enabled</div>)
-
-        } else {
-            return (<div><ul className={'ingredientss-ul' + this.state.ingredientsClass}>{this.state.ingredients.map((ingredient, i) => { return(<li className={"ingredientsList"} key={i}>{ingredient}</li>)})}</ul></div>);
-        }
-    }
-
-    getEditButtonValue () {
-        if (this.state.edit){
-            return 'Cancel'
-        } else {
-            return 'Edit'
-        }
-    }
-
     render() {
         if(this.state.mealById){
-            return(
-                <div className="viewMeal">
-                    {this.state.mealById.map((mealObj, i) => {
-                        return(
-                            <div key={i}>
-                                <div className="mealViewGrid">
-                                    <div className="viewRight">
-                                        <h2 className="ingredients">Ingredients</h2>
-                                        {this.getIngredientsElement.bind(this)()}
-                                    </div>
-                                    <div className="viewLeft">
-                                        <button onClick={this.enableEdit.bind(this)}>{this.getEditButtonValue.bind(this)()}</button>
-                                        <h1 className="name">{mealObj.data.strMeal}</h1>
-                                        <img alt={mealObj.data.strMeal} className="mealImage" src={mealObj.data.strMealThumb} />
-                                        <em><h3 className="category">{mealObj.data.strCategory} category</h3></em>
-                                    </div>
-                                    <div>
-                                        <p className="instructions">{mealObj.data.strInstructions}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        )
-                    })}
-                </div>
-            )
+            return <MealEdit mealById={this.state.mealById} measures={this.state.measures} ingredients={this.state.ingredients} ingredientsClass={this.state.ingredientsClass}/>
         } else {
             return(
                 <div className="preloader-div">
