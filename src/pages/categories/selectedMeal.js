@@ -10,6 +10,7 @@ class SelectedMeal extends Component {
             ingredients: [],
             ingredientsClass: '',
             measures: []
+
         }
     }
 
@@ -22,7 +23,6 @@ class SelectedMeal extends Component {
                 this.setIngredientValue(key, meal, 'strMeasure', 'measures');
             })
             this.setState({mealById: meal});
-            //this.generateIngredients();
         })
     }
 
@@ -30,23 +30,6 @@ class SelectedMeal extends Component {
         if (key.indexOf(value) !== -1){
             this.state[arrayVal].push(meal[0].data[key]);
         }
-    }
-
-    generateIngredients() {
-            for (let i = 1; i < 21; i++) {
-                if(this.state.mealById[0].data['strIngredient'+i] && this.state.mealById[0].data['strMeasure'+i]) {
-                    let ingredientToPush = [this.state.mealById[0].data['strMeasure'+i], this.state.mealById[0].data['strIngredient' + i]].join(" ")
-                    this.state.ingredients.push(ingredientToPush);
-                }
-            }
-            if(this.state.ingredients.length > 15) {
-                this.setState({ingredientsClass: ' overflowHide'})
-            }
-        this.repaint();
-    }
-
-    repaint () {
-        this.setState({});
     }
 
     enableEdit() {
