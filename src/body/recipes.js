@@ -40,7 +40,6 @@ class Recipes extends Component {
         if (this.state.recipesToShow) {
             return (
                 <div>
-                    Ingredients
                     <button className="recipeButton" onClick={() => this.generateNewRecipes()}>Now showing {this.state.recipesId} recipes</button>
                     {this.state.recipesToShow.map((mealObj ,i) => {
                         return(
