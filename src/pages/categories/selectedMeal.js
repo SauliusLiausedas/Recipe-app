@@ -8,16 +8,28 @@ class SelectedMeal extends Component {
         this.state = {
             mealById: "",
             ingredients: [],
-            ingredientsClass: ''
+            ingredientsClass: '',
+            measures: []
         }
     }
 
     componentWillMount() {
         let id = (this.props && this.props.match && this.props.match.params && this.props.match.params.id) || '';
         fs.getRecipeById(id).then(meal => {
+
+            let correctKeys = Object.keys(meal[0].data).filter((key)=>{
+                this.setIngredientValue(key, meal, 'strIngredient', 'ingredients');
+                this.setIngredientValue(key, meal, 'strMeasure', 'measures');
+            })
             this.setState({mealById: meal});
-            this.generateIngredients();
+            //this.generateIngredients();
         })
+    }
+
+    setIngredientValue(key, meal, value, arrayVal) {
+        if (key.indexOf(value) !== -1){
+            this.state[arrayVal].push(meal[0].data[key]);
+        }
     }
 
     generateIngredients() {
