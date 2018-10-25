@@ -35,12 +35,20 @@ class SelectedMeal extends Component {
         this.setState({edit: !this.state.edit})
     }
 
+    ingredientHandleChange (e, i) {
+        this.state.ingredients[i] = e.target.value;
+        this.setState({});
+    }
+
     getIngredientsElement () {
         if (this.state.edit){
             return (<div>
                 <ul className={'ingredientss-ul' + this.state.ingredientsClass}>
                     {this.state.ingredients.map((ingredient, i) => { return(
-                        <li className={"ingredientsList"} key={i}><input value={ingredient} onChange={(e)=>{this.state.ingredients[i] = e.target.value; this.setState({})}} /></li>
+                        <li className={"ingredientsList"} key={i}>
+                            <input value={ingredient}
+                                   onChange={(e) => this.ingredientHandleChange(e, i)} />
+                        </li>
                     )})}
                 </ul>
             </div>)
