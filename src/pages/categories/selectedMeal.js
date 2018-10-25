@@ -15,14 +15,25 @@ class SelectedMeal extends Component {
 
     componentWillMount() {
         let id = (this.props && this.props.match && this.props.match.params && this.props.match.params.id) || '';
-        fs.getRecipeById(id).then(meal => {
-
-            let correctKeys = Object.keys(meal[0].data).filter((key)=>{
+        let myMeal = localStorage.getItem('meal');
+        if (myMeal){
+            let meal = JSON.parse(myMeal);
+            Object.keys(meal[0].data).filter((key)=>{
                 this.setIngredientValue(key, meal, 'strIngredient', 'ingredients');
                 this.setIngredientValue(key, meal, 'strMeasure', 'measures');
             })
             this.setState({mealById: meal});
-        })
+        } else {
+            fs.getRecipeById(id).then(meal => {
+                localStorage.setItem('meal', JSON.stringify(meal));
+                Object.keys(meal[0].data).filter((key)=>{
+                    this.setIngredientValue(key, meal, 'strIngredient', 'ingredients');
+                    this.setIngredientValue(key, meal, 'strMeasure', 'measures');
+                })
+                this.setState({mealById: meal});
+            })
+        }
+
     }
 
     setIngredientValue(key, meal, value, arrayVal) {
@@ -57,6 +68,7 @@ class SelectedMeal extends Component {
             return <div>
                 <ul className={'ingredientss-ul' + this.state.ingredientsClass}>
                     {this.state.ingredients.map((ingredient, i) => { return(
+                        //
                         <li className={"ingredientsList"} key={i}>{ingredient}</li>
                     )})}
                 </ul>
