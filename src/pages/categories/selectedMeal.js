@@ -10,7 +10,6 @@ class SelectedMeal extends Component {
             ingredients: [],
             ingredientsClass: '',
             measures: []
-
         }
     }
 
@@ -38,10 +37,22 @@ class SelectedMeal extends Component {
 
     getIngredientsElement () {
         if (this.state.edit){
-            return (<div><ul className={'ingredientss-ul' + this.state.ingredientsClass}>{this.state.ingredients.map((ingredient, i) => { return(<li className={"ingredientsList"} key={i}><input value={ingredient} onChange={(e)=>{this.state.ingredients[i] = e.target.value; this.setState({})}} /></li>)})}</ul></div>)
+            return (<div>
+                <ul className={'ingredientss-ul' + this.state.ingredientsClass}>
+                    {this.state.ingredients.map((ingredient, i) => { return(
+                        <li className={"ingredientsList"} key={i}><input value={ingredient} onChange={(e)=>{this.state.ingredients[i] = e.target.value; this.setState({})}} /></li>
+                    )})}
+                </ul>
+            </div>)
 
         } else {
-            return (<div><ul className={'ingredientss-ul' + this.state.ingredientsClass}>{this.state.ingredients.map((ingredient, i) => { return(<li className={"ingredientsList"} key={i}>{ingredient}</li>)})}</ul></div>);
+            return <div>
+                <ul className={'ingredientss-ul' + this.state.ingredientsClass}>
+                    {this.state.ingredients.map((ingredient, i) => { return(
+                        <li className={"ingredientsList"} key={i}>{ingredient}</li>
+                    )})}
+                </ul>
+            </div>;
         }
     }
 
