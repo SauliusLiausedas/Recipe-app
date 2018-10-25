@@ -18,22 +18,22 @@ class SelectedMeal extends Component {
         let myMeal = localStorage.getItem('meal');
         if (myMeal){
             let meal = JSON.parse(myMeal);
-            Object.keys(meal[0].data).filter((key)=>{
-                this.setIngredientValue(key, meal, 'strIngredient', 'ingredients');
-                this.setIngredientValue(key, meal, 'strMeasure', 'measures');
-            })
-            this.setState({mealById: meal});
+            this.setStateData(meal);
         } else {
             fs.getRecipeById(id).then(meal => {
                 localStorage.setItem('meal', JSON.stringify(meal));
-                Object.keys(meal[0].data).filter((key)=>{
-                    this.setIngredientValue(key, meal, 'strIngredient', 'ingredients');
-                    this.setIngredientValue(key, meal, 'strMeasure', 'measures');
-                })
-                this.setState({mealById: meal});
+                this.setStateData(meal);
             })
         }
 
+    }
+
+    setStateData(meal) {
+        Object.keys(meal[0].data).filter((key)=>{
+            this.setIngredientValue(key, meal, 'strIngredient', 'ingredients');
+            this.setIngredientValue(key, meal, 'strMeasure', 'measures');
+        })
+        this.setState({mealById: meal});
     }
 
     setIngredientValue(key, meal, value, arrayVal) {
