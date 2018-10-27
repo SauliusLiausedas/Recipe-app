@@ -95,7 +95,7 @@ class AllRecipes extends Component {
                             this.props.searchResult.map((mealObj, i) => {
                             return(
                                 <div key={i} id={i} className="recipe-box">
-                                    <Link to={'/categories/' + mealObj.data.strCategory + '/' + mealObj.data.idMeal}>
+                                    <Link to={'/categories/' + mealObj.data.strCategory + '/' + mealObj.data.id}>
                                         <img className="recipe-img" alt={mealObj.data.strMeal} src={mealObj.data.strMealThumb}/>
                                     </Link>
                                     <h2 className="mealName" key={i}>{mealObj.data.strMeal}</h2>
@@ -109,7 +109,7 @@ class AllRecipes extends Component {
                         currentRecipes.map((mealObj, i) => {
                                 return(
                                     <div key={i} id={i} className="recipe-box">
-                                        <Link to={'/categories/' + mealObj.data.strCategory + '/' + mealObj.data.idMeal}>
+                                        <Link to={'/categories/' + mealObj.data.strCategory + '/' + mealObj.data.id}>
                                             <img className="recipe-img" alt={mealObj.data.strMeal} src={mealObj.data.strMealThumb}/>
                                         </Link>
                                         <h2 className="mealName" key={i}>{mealObj.data.strMeal}</h2>

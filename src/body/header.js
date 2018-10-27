@@ -18,6 +18,7 @@ class Header extends Component {
                       <li className="navListItem"><Link to="/search" className="navListItemLink">Search</Link></li>
                       <li className="navListItem"><Link to="/categories" className="navListItemLink">Categories</Link></li>
                       <li className="navListItem"><Link to="/addtofirebase" className="navListItemLink">Add to firebase</Link></li>
+                      <li className="navListItem"><Link to="/add" className="navListItemLink">Add recipe</Link></li>
                   </ul>
               </nav>
           </div>  

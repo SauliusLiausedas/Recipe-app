@@ -49,7 +49,6 @@ export default class {
                     data.push({data: doc.data(), id: doc.id});
                     //docData.push({doc: doc});
                 });
-                console.log(data);
                 this.lastRecipeDoc = querySnapshot.docs[querySnapshot.docs.length-1];
                 resolve(data);
             });
@@ -68,7 +67,19 @@ export default class {
     }
 
 
+    //Method to get all Data from Categories collection
 
+    static getCategories() {
+        return new Promise(resolve => {
+            this.db.collection('categories').get().then((snapShot) => {
+                const data = []
+                snapShot.forEach((doc) => {
+                    data.push(doc.data().strCategory)
+                })
+                resolve(data)
+            })
+        })
+    }
 
     // Method to search recipes by name
 
@@ -110,7 +121,7 @@ export default class {
             this.db.collection('recipes').get().then((querySnapshot) => {
                 const data = [];
                 querySnapshot.forEach((doc) => {
-                    if(doc.data().idMeal === id) {
+                    if(doc.data().id === id) {
                         data.push({data: doc.data(), id: doc.id});
                     }
                 });
@@ -124,7 +135,7 @@ export default class {
             this.db.collection('recipes').get().then((querySnapshot) => {
                 const data = [];
                 querySnapshot.forEach((doc) => {
-                    if(doc.data().idMeal === id) {
+                    if(doc.data().id === id) {
                         data.push({data: doc.data(), id: doc.id});
                     }
                 });
@@ -138,9 +149,9 @@ export default class {
     * */
     static updateRecipe(data) {
         return new Promise(resolve => {
-            this.db.collection("recipes").doc(data.idMeal).set(data)
+            this.db.collection("recipes").doc(data.strMeal).set(data)
                 .then(function (docRef) {
-                    console.log("Document written with ID: ", data.idMeal);
+                    console.log("Document written with ID: ", data.id);
                     resolve(docRef);
                 })
                 .catch(function (error) {
@@ -154,10 +165,11 @@ export default class {
     * @param data object which contains all recipe data
     * */
     static createNewRecipe(data) {
+        console.log(data)
         return new Promise(resolve => {
-            this.db.collection("recipes").doc(data.idMeal).set(data)
+            this.db.collection("recipes").doc(data.strMeal).set(data)
                 .then(function (docRef) {
-                    console.log("Document written with ID: ", data.idMeal);
+                    console.log("Document written with ID: ", data.strMeal);
                     resolve(docRef);
                 })
                 .catch(function (error) {
@@ -172,6 +184,53 @@ export default class {
             this.db.collection("recipes").doc(mealId).set(data)
                 .then(function (docRef) {
                     console.log("Document written with Name: ", mealId);
+                    resolve(docRef);
+                })
+                .catch(function (error) {
+                    console.error("Error adding document: ", error);
+                });
+        });
+    }
+
+    //Method to get length of recipe DB
+    static getCount() {
+        return new Promise(resolve => {
+            let data;
+            this.db.collection('recipeCount').get().then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        data = doc.data()
+                    });
+                    resolve(data)
+                })
+                .catch(error => {
+                  console.log(error)
+                });
+        });
+    }
+
+    //
+
+    static getCollectionFull(collection) {
+        return new Promise(resolve => {
+            const data = [];
+            this.db.collection(collection).get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    data.push(doc.data())
+                });
+                resolve(data)
+            })
+                .catch(error => {
+                    console.log(error)
+                })
+        })
+    }
+
+    //Method to update recipe counter
+    static updateRecipeCounter(data) {
+        return new Promise(resolve => {
+            this.db.collection("recipeCount").doc('count').set(data)
+                .then(function (docRef) {
+                    console.log('Number of recipes in DB is now: ', data)
                     resolve(docRef);
                 })
                 .catch(function (error) {

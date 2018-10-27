@@ -13,10 +13,9 @@ class Categories extends Component {
     }
 
     componentDidMount() {
-        fs.getCollection('categories').then(category => {
+        fs.getCollectionFull('categories').then(category => {
             this.setState({categories: category})
         })
-
     }
 
     componentWillReceiveProps() {

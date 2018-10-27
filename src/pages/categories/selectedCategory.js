@@ -9,7 +9,6 @@ class SelectedCategory extends Component {
         super()
          this.state = {
              selectedCategoryMeals: '',
-             selectedMealId: ""
          }
     }
 
@@ -30,12 +29,12 @@ class SelectedCategory extends Component {
                  <div className="categoryMeals">
                      {this.state.selectedCategoryMeals.map((mealObj, i) => {
                          return (
-                             <div className="categoryMealBox" id={mealObj.data.idMeal} key={i}>
+                             <div className="categoryMealBox" id={mealObj.data.id} key={i}>
                                  <h1 className="categoryMealName">{mealObj.data.strMeal}</h1>
                                  <Link
-                                     to={this.props.match.url + '/' + mealObj.data.idMeal}><img
+                                     to={this.props.match.url + '/' + mealObj.data.id}><img
                                      className="categoryMealImg"
-                                     alt={mealObj.data.strMeal} id={mealObj.data.idMeal}
+                                     alt={mealObj.data.strMeal} id={mealObj.data.id}
                                      src={mealObj.data.strMealThumb}/></Link>
                              </div>
                          )})

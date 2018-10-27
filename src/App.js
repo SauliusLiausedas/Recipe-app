@@ -10,6 +10,7 @@ import Categories from './pages/categories/categories.js'
 import SelectedCategory from "./pages/categories/selectedCategory";
 import SelectedMeal from "./pages/categories/selectedMeal";
 import AddToFirebase from "./addToFirebase";
+import AddRecipe from "./pages/addRecipe"
 import fs from "./firestoreservice"
 
 fs.init();
@@ -31,6 +32,7 @@ class App extends Component {
                             <Route path="/categories/:category" exact  component={ SelectedCategory } />
                             <Route path="/categories/:category/:id" exact component={ SelectedMeal } />
                             <Route path="/addtofirebase" exact component={ AddToFirebase } />
+                            <Route path="/add" exact component={ AddRecipe } />
                             <Route component={ Error } />
                         </Switch>
                     </div>

@@ -5,13 +5,9 @@
     padding: 30px;
     min-height: 500px;
 }
-.name {
-    text-align: left;
-    margin: 0;
-}
 .mealViewGrid {
     display: grid;
-    grid-template-columns: 30% 28% 38%;
+    grid-template-columns: 30% 28% 35%;
     grid-column-gap: 3%;
     width: 100%
 }
@@ -22,6 +18,7 @@
     text-align: right;
 }
 .mealImage {
+    margin-top: 30px;
     width: 90%;
     height: auto;
     border-radius: 75px;
@@ -31,23 +28,26 @@
     font-family: Alegreya SC, serif;
     text-align: center;
     padding: 20px 10px;
-    /*border: 2px solid rgb(205, 205, 255);*/
+    margin-top: 30px;
     border-radius: 15px;
-    border-left: none;
-    border-right: none;
-    box-shadow: -3px 0 0 5px rgb(235, 235, 255);
+    box-shadow: 0px 0 0 5px rgb(235, 235, 255);
 }
 .ingredients {
+    margin: 0;
     font-family: Alegreya SC, serif;
-    text-align: left;
+    outline: none;
+}
+.ingredients:focus {
+    background-color: rgba(200, 200, 255, 0.3);
 }
 .ingredientss-ul {
-    width: 50%;
+    width: 100%;
     max-height: 500px;
     padding: 5px;
+    margin-top: 25px;
 }
 .ingredientsList {
-    width: 300px;
+    width: 100%;
     font-family: Alegreya SC, serif;
     list-style-type: square;
     font-size: 1.2em;
@@ -56,10 +56,39 @@
 .overflowHide {
     overflow: scroll;
 }
-.measures-ingredients {
+.editIngredients {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 3px;
 }
-.measuresList {
-    width: 100px;
+.addRecipeCategory {
+    float: right;
+    margin: 3% 0;
+}
+.addInputWidth {
+    width: 99%;
+}
+.addIngredientButton {
+    margin: 15px 0;
+    float: right;
+    width: 100%;
+    border-radius: 100px;
+}
+.removeIngredientButton {
+    margin: 0;
+    width: 100%;
+}
+textarea {
+    resize: none;
+    outline: none;
+}
+textarea:focus {
+    box-shadow: 0 0 5px 10px rgb(205, 205, 235);
+}
+.selectField {
+    cursor: pointer;
+    font-family: Alegreya SC, serif;
+    margin: 3% 0;
+    width: 100%;
+    font-size: 1em;
 }

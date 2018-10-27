@@ -1,49 +1,47 @@
 import React, { Component } from 'react'
 import '../../stylesheets/selectedMeal.css'
 import fs from '../../firestoreservice'
+import { Link } from 'react-router-dom'
 
 class SelectedMeal extends Component {
     constructor(){
         super()
+        this.recipeToEdit = {}
+        this.ingredientsToEdit = []
+        this.measuresToEdit = []
         this.state = {
             mealById: "",
             ingredients: [],
-            ingredientsClass: '',
             measures: [],
-            allIngredients: []
         }
     }
 
     componentWillMount() {
         let id = (this.props && this.props.match && this.props.match.params && this.props.match.params.id) || '';
-        let myMeal = localStorage.getItem('meal');
-        let allIngredients = []
-        if (myMeal){
-            let meal = JSON.parse(myMeal);
-            Object.keys(meal[0].data).filter((key)=>{
-                this.setIngredientValue(key, meal, 'strIngredient', 'ingredients');
-                this.setIngredientValue(key, meal, 'strMeasure', 'measures');
-            })
-            this.setState({mealById: meal});
-            for(let i=0; i<this.state.ingredients.length; i++) {
-                allIngredients.push(this.state.measures[i] + this.state.ingredients[i])
-            }
-            this.setState({allIngredients: allIngredients})
-        } else {
-            fs.getRecipeById(id).then(meal => {
-                localStorage.setItem('meal', JSON.stringify(meal));
+        id = parseInt(id)
+        // let myMeal = localStorage.getItem('meal');
+        // if (myMeal){
+        //     let meal = JSON.parse(myMeal);
+        //     Object.keys(meal[0].data).filter((key)=>{
+        //         this.setIngredientValue(key, meal, 'strIngredient', 'ingredients');
+        //         this.setIngredientValue(key, meal, 'strMeasure', 'measures');
+        //     })
+        //     this.setState({mealById: meal});
+        //     for(let i=0; i<this.state.ingredients.length; i++) {
+        //         allIngredients.push(this.state.measures[i] + this.state.ingredients[i])
+        //     }
+        //     this.setState({allIngredients: allIngredients})
+        // } else {
+            fs.getRecipeById(id).then(meal =>{
+                // localStorage.setItem('meal', JSON.stringify(meal));
+                console.log(meal)
                 Object.keys(meal[0].data).filter((key)=>{
                     this.setIngredientValue(key, meal, 'strIngredient', 'ingredients');
                     this.setIngredientValue(key, meal, 'strMeasure', 'measures');
                 })
                 this.setState({mealById: meal});
-                for(let i=0; i<this.state.ingredients.length; i++) {
-                    allIngredients.push(this.state.measures[i] + this.state.ingredients[i])
-                }
-                this.setState({allIngredients: allIngredients})
             })
-        }
-
+        // }
     }
 
     setIngredientValue(key, meal, value, arrayVal) {
@@ -54,42 +52,75 @@ class SelectedMeal extends Component {
 
     enableEdit() {
         this.setState({edit: !this.state.edit})
+        if(this.state.edit) {
+            this.recipeToEdit = []
+            this.state.ingredients = this.arrayClone(this.ingredientsToEdit)
+            this.state.measures = this.arrayClone(this.measuresToEdit)
+        } else {
+            this.recipeToEdit = this.arrayClone(this.state.mealById)
+            this.ingredientsToEdit = this.arrayClone(this.state.ingredients)
+            this.measuresToEdit = this.arrayClone(this.state.measures)
+        }
+    }
+
+    arrayClone(arr) {
+        return JSON.parse(JSON.stringify(arr));
+    }
+
+    instructionsHandleChange(e) {
+        this.recipeToEdit[0].data.strInstructions = e.target.value
     }
 
     ingredientHandleChange (e, i, stateValue) {
+        if(stateValue === 'ingredients') {
+            this.recipeToEdit[0].data['strIngredient' + (i + 1)] = e.target.value
+        } else if(stateValue === 'measures') {
+            this.recipeToEdit[0].data['strMeasure' + (i + 1)] = e.target.value
+        }
         this.state[stateValue][i] = e.target.value;
-        this.setState({});
     }
 
     getIngredientsElement () {
         if (this.state.edit){
             return (<div>
-                <ul className={'ingredientss-ul' + this.state.ingredientsClass}>
+                <ul className={'ingredientss-ul'}>
                     {this.state.ingredients.map((ingredient, i) => { return(
-                        <li className={"ingredientsList"} key={i}>
-                            <input value={this.state.measures[i]}
+                        <li className={"ingredientsList editIngredients"} key={i}>
+                            <input className={"ingredients width"} defaultValue={this.state.measures[i]}
                                    onChange={(e) => this.ingredientHandleChange(e, i, 'measures')} />
-                            <input value={ingredient}
+                            <input className={"ingredients width"} defaultValue={ingredient}
                                    onChange={(e) => this.ingredientHandleChange(e, i, 'ingredients')} />
+                            <button className="edit btn addIngredientButton removeIngredientButton" onClick={() => this.addFields(false)}>-</button>
                         </li>
                     )})}
-                    {this.state.measures.map((measure, i) => { return(
-                        <li className={"ingredientsList"} key={i}>
-                            <input value={measure}
-                                   onChange={(e) => this.ingredientHandleChange(e, i)} />
-                        </li>
-                    )})}
+                    <button className="edit btn addIngredientButton" onClick={() => this.addFields(true)}>+</button>
                 </ul>
             </div>)
 
         } else {
             return <div>
-                <ul className={'ingredientss-ul' + this.state.ingredientsClass}>
+                <ul className={'ingredientss-ul'}>
                     {this.state.ingredients.map((ingredient, i) => { return(
                         <li className={"ingredientsList"} key={i}>{this.state.measures[i]} {ingredient}</li>
                     )})}
                 </ul>
             </div>;
+        }
+    }
+
+    // getNameElement(mealObj) {
+    //     if(this.state.edit) {
+    //         return <input className="ingredients" defaultValue={mealObj.data.strMeal}></input>
+    //     } else {
+    //         return <h2 className="ingredients">{mealObj.data.strMeal}</h2>
+    //     }
+    // }
+
+    getInstructionsElement(mealObj) {
+        if (this.state.edit) {
+            return <textarea onChange={(e) => this.instructionsHandleChange(e)} className="instructions" rows="25" cols="50">{mealObj.data.strInstructions}</textarea>
+        } else {
+            return <p className="instructions">{mealObj.data.strInstructions}</p>
         }
     }
 
@@ -101,6 +132,41 @@ class SelectedMeal extends Component {
         }
     }
 
+    getAddSaveButton() {
+        if (this.state.edit) {
+            return (<button className="edit btn" onClick={() => this.saveAddButton()}>{this.getSaveButtonValue()}</button>)
+        } else {
+            return (<Link to={'/add'}><button className="edit btn" onClick={() => this.saveAddButton()}>{this.getSaveButtonValue()}</button></Link>)
+        }
+    }
+
+    getSaveButtonValue() {
+        if (this.state.edit){
+            return 'Save'
+        } else {
+            return 'Add Recipe'
+        }
+    }
+
+    saveAddButton() {
+        if(this.state.edit){
+            this.saveRecipe()
+        } else {
+            this.addRecipe()
+        }
+    }
+
+    addRecipe() {
+
+    }
+
+    saveRecipe() {
+        this.state.mealById = this.arrayClone(this.recipeToEdit)
+        fs.createNewRecipe(this.recipeToEdit[0].data)
+        this.setState({edit: false})
+        this.recipeToEdit = []
+    }
+
     render() {
         if(this.state.mealById){
             return(
@@ -109,18 +175,21 @@ class SelectedMeal extends Component {
                         return(
                             <div key={i}>
                                 <div className="mealViewGrid">
-                                    <div className="viewRight">
+                                    <div>
                                         <h2 className="ingredients">Ingredients</h2>
-                                        {this.getIngredientsElement.bind(this)()}
-                                    </div>
-                                    <div className="viewLeft">
-                                        <button onClick={this.enableEdit.bind(this)}>{this.getEditButtonValue.bind(this)()}</button>
-                                        <h1 className="name">{mealObj.data.strMeal}</h1>
-                                        <img alt={mealObj.data.strMeal} className="mealImage" src={mealObj.data.strMealThumb} />
-                                        <em><h3 className="category">{mealObj.data.strCategory} category</h3></em>
+                                        {this.getIngredientsElement()}
                                     </div>
                                     <div>
-                                        <p className="instructions">{mealObj.data.strInstructions}</p>
+                                        {/*{this.getNameElement(mealObj)}*/}
+                                        <h2 className="ingredients">{mealObj.data.strMeal}</h2>
+                                        <img alt={mealObj.data.strMeal} className="mealImage" src={mealObj.data.strMealThumb} />
+                                        <em><h3 className="category">{mealObj.data.strCategory} category</h3></em>
+                                        <button className="edit btn" onClick={this.enableEdit.bind(this)}>{this.getEditButtonValue.bind(this)()}</button>
+                                        {this.getAddSaveButton()}
+                                    </div>
+                                    <div>
+                                        <h2 className="ingredients">Instructions</h2>
+                                        {this.getInstructionsElement(mealObj)}
                                     </div>
                                 </div>
                             </div>
