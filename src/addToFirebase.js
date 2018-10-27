@@ -18,6 +18,21 @@ class AddToFirebase extends Component {
         });
     }
 
+    addKeyWordsToFirebase() {
+        let allRecipes = []
+        let recipeKeyWords = ''
+        fs.getAllRecipesFromDB().then(recipes => {
+            allRecipes = recipes
+            allRecipes.map(data => {
+                recipeKeyWords = data.data.strMeal.toLowerCase().split(' ')
+                data.data.keyWords = recipeKeyWords
+            })
+            allRecipes.map(recipe => {
+                fs.createRecipe(recipe.data)
+            })
+        })
+    }
+
     addRecipesFromCategories() {
         getCategories().then(categories => {
             categories.categories.map(category => {
@@ -40,12 +55,15 @@ class AddToFirebase extends Component {
         })
     }
 
+
+
     render() {
         return (
             <div className="App">
                 <button disabled onClick={() => this.addToFirebase()}>Add to firebase from mealDB</button>
                 <button disabled onClick={this.addCategoriesToFirebase}>Add Categories to Firebase </button>
                 <button disabled onClick={this.addRecipesFromCategories}>Add Recipes From Categories to Firebase </button>
+                <button disabled onClick={this.addKeyWordsToFirebase}>Add Recipes From Categories to Firebase </button>
             </div>
         );
     }

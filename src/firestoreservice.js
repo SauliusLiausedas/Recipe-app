@@ -7,6 +7,8 @@
 export default class {
     static db;
     static lastRecipeDoc;
+    static lastSearchDoc = [];
+    static firstSearchDoc = [];
 
     static init() {
         this.db = window.firebase.firestore();
@@ -81,17 +83,79 @@ export default class {
         })
     }
 
-    // Method to search recipes by name
+    // Method to search recipes by name for search
 
-    static getRecipesByName(name) {
+    // static getRecipesByName(name) {
+    //     return new Promise(resolve => {
+    //         let query = this.db.collection('recipes').where('keyWords', 'array-contains', name).limit(9).get();
+    //         query.then((querySnapshot) => {
+    //             const data = [];
+    //             querySnapshot.forEach((docs) => {
+    //                 data.push({data: docs.data(), id: docs.id});
+    //                 this.lastSearchDoc = {data: docs.data(), id: docs.id}
+    //             });
+    //             console.log(this.lastSearchDoc)
+    //             resolve(data);
+    //         });
+    //     });
+    // }
+
+    // Method to search by name and load every page
+
+    static searchRecipesByName(name, page=1, dir) {
+        if(page <= 1) {
+            return new Promise(resolve => {
+                let query = this.db.collection('recipes').where('keyWords', 'array-contains', name.toLowerCase()).orderBy('strMeal').limit(9).get();
+                query.then((querySnapshot) => {
+                    const data = [];
+                    querySnapshot.forEach((docs) => {
+                        data.push({data: docs.data(), id: docs.id});
+                    });
+                    // this.lastSearchDoc = {page1: querySnapshot.docs[querySnapshot.docs.length-1]}
+                    this.lastSearchDoc['page1'] = querySnapshot.docs[querySnapshot.docs.length-1]
+                    resolve(data);
+                });
+            });
+        } else {
+            if(dir === 'right') {
+                return new Promise(resolve => {
+                    let query = this.db.collection('recipes').where('keyWords', 'array-contains', name).orderBy('strMeal').startAfter(this.lastSearchDoc['page'+(page-1)].id).limit(9).get();
+                    query.then((querySnapshot) => {
+                        const data = [];
+                        querySnapshot.forEach((docs) => {
+                            data.push({data: docs.data(), id: docs.id});
+                        });
+                        this.lastSearchDoc['page'+page] = querySnapshot.docs[querySnapshot.docs.length-1]
+                        this.firstSearchDoc['page'+page] = querySnapshot.docs[0]
+                        resolve(data);
+                    });
+                });
+            } else {
+                return new Promise(resolve => {
+                    let query = this.db.collection('recipes').where('keyWords', 'array-contains', name).orderBy('strMeal').startAfter(this.firstSearchDoc['page' + (page)].id).limit(9).get();
+                    query.then((querySnapshot) => {
+                        const data = [];
+                        querySnapshot.forEach((docs) => {
+                            data.push({data: docs.data(), id: docs.id});
+                        });
+                        this.lastSearchDoc['page' + page] = querySnapshot.docs[querySnapshot.docs.length - 1]
+                        this.firstSearchDoc['page' + page] = querySnapshot.docs[0]
+                        resolve(data);
+                    });
+                });
+            }
+        }
+
+    }
+
+    // GET ALL RECIPES
+
+    static getAllRecipesFromDB() {
         return new Promise(resolve => {
-            //let query = this.db.collection('recipes').where('keywords', 'array-contains', name).limit(10).get();
-            let query = this.db.collection('recipes').where('keyWords', 'array-contains', name).limit(10).get();
-            query.then((querySnapshot) => {
+            this.db.collection('recipes').get().then((querySnapshot) => {
                 const data = [];
-                querySnapshot.forEach((doc) => {
-                   // if(doc.data().strMeal.toLowerCase().includes(name.toLowerCase()))
-                        data.push({data: doc.data(), id: doc.id});
+                querySnapshot.forEach((docs) => {
+                    data.push({data: docs.data(), id: docs.id});
                 });
                 resolve(data);
             });
@@ -147,7 +211,7 @@ export default class {
     /*
     * Update new recipes
     * */
-    static updateRecipe(data) {
+    static createRecipe(data) {
         return new Promise(resolve => {
             this.db.collection("recipes").doc(data.strMeal).set(data)
                 .then(function (docRef) {
@@ -222,6 +286,38 @@ export default class {
                 .catch(error => {
                     console.log(error)
                 })
+        })
+    }
+
+    // Get quantity of recipes by ID (allrecipes)
+
+    static getNumberOfRecipesById(quantity, page) {
+        return new Promise(resolve => {
+            if(page == 1) {
+            const data = [];
+               let query = this.db.collection('recipes').limit(quantity).get()
+               query.then((querySnapshot) => {
+                   querySnapshot.forEach((doc) => {
+                       data.push(doc.data())
+                   })
+                   resolve(data)
+               })
+               .catch(error => {
+                   console.log(error)
+               })
+            } else {
+                const data = []
+                let query = this.db.collection('recipes').where('id', '>', ((page * quantity) - (quantity+1))).limit(quantity).get()
+                query.then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        data.push(doc.data())
+                    })
+                    resolve(data)
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+            }
         })
     }
 

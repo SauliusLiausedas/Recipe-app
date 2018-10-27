@@ -25,9 +25,9 @@ class App extends Component {
                         <Switch>
                             {/*<Route path="/" component={ Homepage } exact/>*/}
                             <Route path="/" component={ HomePage }  exact/>
-                            <Route path="/all" exact component={ AllRecipes } />
                             <Route path="/all/:page" exact component={ AllRecipes } />
                             <Route path="/search" exact component={ Search } />
+                            <Route path="/search/:searchWord/:page" exact component={ Search } />
                             <Route path="/categories" exact component={ Categories }/>
                             <Route path="/categories/:category" exact  component={ SelectedCategory } />
                             <Route path="/categories/:category/:id" exact component={ SelectedMeal } />

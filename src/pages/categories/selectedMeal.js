@@ -34,7 +34,6 @@ class SelectedMeal extends Component {
         // } else {
             fs.getRecipeById(id).then(meal =>{
                 // localStorage.setItem('meal', JSON.stringify(meal));
-                console.log(meal)
                 Object.keys(meal[0].data).filter((key)=>{
                     this.setIngredientValue(key, meal, 'strIngredient', 'ingredients');
                     this.setIngredientValue(key, meal, 'strMeasure', 'measures');

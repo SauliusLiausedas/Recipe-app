@@ -108,14 +108,12 @@ class AddRecipe extends Component {
 
     saveRecipe() {
         let makeSure = this.checkIfEmpty()
-        console.log(this.props)
         if(makeSure) {
             this.recipeToAdd.keyWords = this.recipeToAdd.strMeal.toLowerCase().split(' ')
             fs.getCount().then(count => {
                 let recipeCount = count.count
                 this.recipeToAdd.id = recipeCount
-                console.log(this.recipeToAdd)
-                fs.updateRecipe(this.recipeToAdd)
+                fs.createRecipe(this.recipeToAdd)
                 let data = {count: count.count+1}
                 fs.updateRecipeCounter(data)
                 window.location.replace('/categories/'+this.recipeToAdd.strCategory+'/'+this.recipeToAdd.id)
@@ -154,7 +152,6 @@ class AddRecipe extends Component {
     }
 
     render() {
-        console.log(this.state)
         return(
             <div className="viewMeal">
                 <div>
