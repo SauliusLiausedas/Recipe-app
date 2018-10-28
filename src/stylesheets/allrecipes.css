@@ -36,6 +36,7 @@
 }
 .pageNumbers-ul {
     width: 65%;
+    font-size: 1.5em;
     text-align: center;
     display: inline-block;
     background-color: rgb(250, 250, 255);
@@ -44,14 +45,15 @@
     padding-bottom: 15px;
     user-select: none;
 }
+a {
+    text-decoration: none;
+}
 .pageNumbers {
     display: inline;
-    margin: 0 10px;
+    margin: 0;
+    padding: 15px;
     text-decoration: none;
     color: black;
-}
-.pageNumbers:hover {
-    cursor: pointer;
 }
 .active {
     font-weight: bold;

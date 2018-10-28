@@ -1,5 +1,6 @@
 .content {
     min-height: 500px;
+    margin: 0;
 }
 .contentRecipe {
     display: flex;

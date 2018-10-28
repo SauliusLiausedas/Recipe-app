@@ -51,7 +51,7 @@ class AllRecipes extends Component {
                 <Link className="pageNumbers" to={'/all/1'}><li className="pageNumbers" id={1} onClick={(e) => this.renderPageRecipes(e.target.id)}> &#8810; </li></Link>
                 {pageNumbers.map(number => {
                 return(
-                    <Link key={number} className="pageNumbers" to={'/all/' + number}><li className={'pageNumbers ' + this.isActive(number)} key={number} id={number} onClick={(e) => this.renderPageRecipes(e.target.id)}>{number}</li></Link>
+                    <Link key={number}  to={'/all/' + number}><li className={'pageNumbers ' + this.isActive(number)} id={number} onClick={(e) => this.renderPageRecipes(e.target.id)} key={number}>{number}</li></Link>
                 )
             })}
                 <Link className="pageNumbers" to={'/all/'+(Math.ceil(this.state.recipesTotal/this.state.recipesPerPage))}><li id={Math.ceil(this.state.recipesTotal / this.state.recipesPerPage)} onClick={(e) => this.renderPageRecipes(e.target.id)} className="pageNumbers"> &#8811; </li></Link>

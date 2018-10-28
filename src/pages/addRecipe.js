@@ -23,7 +23,6 @@ class AddRecipe extends Component {
     }
 
     componentWillMount() {
-        const categoryNames = []
         fs.getCollectionFull('categories').then(category => {
             this.setState({categories: category})
         })
@@ -77,6 +76,8 @@ class AddRecipe extends Component {
                     })
                     .catch(error =>{
                         console.log(error)
+                        this.recipeToAdd.strMealThumb = this.url
+                        this.setState({imageURL: this.url})
                     })
                 break
             case 'recipeInstructions':
@@ -116,10 +117,9 @@ class AddRecipe extends Component {
                 fs.createRecipe(this.recipeToAdd)
                 let data = {count: count.count+1}
                 fs.updateRecipeCounter(data)
-                window.location.replace('/categories/'+this.recipeToAdd.strCategory+'/'+this.recipeToAdd.id)
+                this.props.history.push('/categories/'+this.recipeToAdd.strCategory+'/'+this.recipeToAdd.id)
             })
         }
-
     }
 
     checkIfEmpty() {
@@ -161,7 +161,7 @@ class AddRecipe extends Component {
                             <ul className={'ingredientss-ul'}>
                                 {this.state.ingredients.map((ingredient, i) => { return(
                                     <li className={"ingredientsList editIngredients"} key={i}>
-                                        <input id={'measure'} name={"strMesure"+(i+1)} onChange={(e) => this.handleChange(e)} className={"ingredients"} placeholder={this.state.measures[i]}/>
+                                        <input id={'measure'} name={"strMeasure"+(i+1)} onChange={(e) => this.handleChange(e)} className={"ingredients"} placeholder={this.state.measures[i]}/>
                                         <input id={'ingredient'} name={"strIngredient"+(i+1)} onChange={(e) => this.handleChange(e)} className={"ingredients"} placeholder={ingredient}/>
                                         <button className="edit btn addIngredientButton removeIngredientButton" onClick={() => this.addFields(false)}>-</button>
                                     </li>
@@ -169,9 +169,9 @@ class AddRecipe extends Component {
                                 <button className="edit btn addIngredientButton" onClick={() => this.addFields(true)}>+</button>
                             </ul>
                         </div>
-                        <div>
+                        <div className="center">
                             <input className="ingredients addInputWidth" id="recipeName" onChange={(e) => this.handleChange(e)} placeholder="Recipe Name" />
-                            <img alt="Add Picture" className="mealImage" src={this.state.imageURL} />
+                            <img alt="Add Picture" className="mealImage addImage" src={this.state.imageURL} />
                             <input type="url"
                                    onChange={(e) => this.handleChange(e)}
                                    id="recipeImage"

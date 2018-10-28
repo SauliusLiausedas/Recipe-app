@@ -293,9 +293,9 @@ export default class {
 
     static getNumberOfRecipesById(quantity, page) {
         return new Promise(resolve => {
-            if(page == 1) {
+            if(page === 1) {
             const data = [];
-               let query = this.db.collection('recipes').limit(quantity).get()
+               let query = this.db.collection('recipes').orderBy('id').limit(quantity).get()
                query.then((querySnapshot) => {
                    querySnapshot.forEach((doc) => {
                        data.push(doc.data())
@@ -307,7 +307,7 @@ export default class {
                })
             } else {
                 const data = []
-                let query = this.db.collection('recipes').where('id', '>', ((page * quantity) - (quantity+1))).limit(quantity).get()
+                let query = this.db.collection('recipes').where('id', '>', ((page * quantity) - (quantity+1))).orderBy('id').limit(quantity).get()
                 query.then((querySnapshot) => {
                     querySnapshot.forEach((doc) => {
                         data.push(doc.data())
