@@ -3,7 +3,6 @@ import '../../stylesheets/allrecipes.css'
 import SearchPage from '../search/searchPage'
 import fs from '../../firestoreservice'
 import { Link } from 'react-router-dom'
-// import Error from '../../pages/error'
 
 class AllRecipes extends Component {
     constructor() {
@@ -22,50 +21,9 @@ class AllRecipes extends Component {
             this.setState({loading: true})
             fs.getCount().then(recipeCount => {
                 this.setState({recipesTotal: recipeCount.count})
-                this.changePage(page)
+                this.renderPageRecipes(page)
             })
         }
-
-    //         let localRecipes= localStorage.getItem('recipes');
-    //         if (!localRecipes){
-    //             this.setState({loading: true});
-    //             fs.getCollectionFull('recipes').then(recipes => {
-    //                 localStorage.setItem('recipes', JSON.stringify(recipes));
-    //                 this.setState({
-    //                     recipes: recipes,
-    //                     loading: false
-    //                 })
-    //             })
-    //         } else {
-    //             fs.getCount().then(recipeCount => {
-    //                 if(JSON.parse(localRecipes).length === recipeCount.count) {
-    //                     let recipesState = JSON.parse(localRecipes)
-    //                     this.setState({recipes : recipesState, recipesTotal: recipeCount.count})
-    //                 } else {
-    //                     this.setState({loading: true});
-    //                     fs.getCollectionFull('recipes').then(recipes => {
-    //                         localStorage.setItem('recipes', JSON.stringify(recipes));
-    //                         this.setState({
-    //                             recipes: recipes.data,
-    //                             loading: false
-    //                         })
-    //                         console.log(this.state.recipes)
-    //                     })
-    //                 }
-    //             })
-    //         }
-    //
-    //     }
-    // }
-
-    // showNext () {
-    //     fs.getCollectionPage('recipes', ++this.state.currentPage).then(recipes => {
-    //         this.setState({
-    //             recipes: recipes,
-    //         })
-    //     })
-    //     // this.setState({currentPage: Math.ceil(this.state.recipes.length / this.state.recipesPerPage)});
-    // }
 
     makePaginationControl() {
         let pageNumbers = []
@@ -87,17 +45,33 @@ class AllRecipes extends Component {
         } else {
             pageNumbers = pageNumbers.splice(pageNumbers.length-5)
         }
+
         return (
             <ul className="pageNumbers-ul">
-                <Link className="pageNumbers" to={'/all/1'}><li className="pageNumbers" id={1} onClick={(e) => this.changePage(e.target.id)}> &#8810; </li></Link>
+                <Link className="pageNumbers" to={'/all/1'}><li className="pageNumbers" id={1} onClick={(e) => this.renderPageRecipes(e.target.id)}> &#8810; </li></Link>
                 {pageNumbers.map(number => {
                 return(
-                    <Link key={number} className="pageNumbers" to={'/all/' + number}><li className={'pageNumbers ' + this.isActive(number)} key={number} id={number} onClick={(e) => this.changePage(e.target.id)}>{number}</li></Link>
+                    <Link key={number} className="pageNumbers" to={'/all/' + number}><li className={'pageNumbers ' + this.isActive(number)} key={number} id={number} onClick={(e) => this.renderPageRecipes(e.target.id)}>{number}</li></Link>
                 )
             })}
-                <Link className="pageNumbers" to={'/all/'+(Math.ceil(this.state.recipesTotal/this.state.recipesPerPage))}><li id={Math.ceil(this.state.recipesTotal / this.state.recipesPerPage)} onClick={(e) => this.changePage(e.target.id)} className="pageNumbers"> &#8811; </li></Link>
+                <Link className="pageNumbers" to={'/all/'+(Math.ceil(this.state.recipesTotal/this.state.recipesPerPage))}><li id={Math.ceil(this.state.recipesTotal / this.state.recipesPerPage)} onClick={(e) => this.renderPageRecipes(e.target.id)} className="pageNumbers"> &#8811; </li></Link>
             </ul>
         )
+    }
+
+    isActive(id) {
+        return ((id === this.state.currentPage) ? 'active' : '')
+    }
+
+    renderPageRecipes(e) {
+        this.setState({loading: true})
+        fs.getNumberOfRecipesById(this.state.recipesPerPage, e).then(recipes => {
+            this.setState({
+                recipes: recipes,
+                currentPage: Number(e),
+                loading: false
+            })
+        })
     }
 
     renderAllRecipes (){
@@ -106,45 +80,23 @@ class AllRecipes extends Component {
                 <div className="boxes">
                     {this.props.search ?
                         <SearchPage searchResult={this.props.searchResult}/>
-                    :
+                        :
                         this.state.recipes.map((mealObj, i) => {
-                                return(
-                                    <div key={i} id={i} className="recipe-box">
-                                        <Link to={'/categories/' + mealObj.strCategory + '/' + mealObj.id}>
-                                            <img className="recipe-img" alt={mealObj.strMeal} src={mealObj.strMealThumb}/>
-                                        </Link>
-                                        <h2 className="mealName" key={i}>{mealObj.strMeal}</h2>
-                                        <em><p>{mealObj.strInstructions.slice(0, 250) + "..."}</p></em>
-                                    </div>
-                                )
-                            })
-                        }
+                            return(
+                                <div key={i} id={i} className="recipe-box">
+                                    <Link to={'/categories/' + mealObj.strCategory + '/' + mealObj.id}>
+                                        <img className="recipe-img" alt={mealObj.strMeal} src={mealObj.strMealThumb}/>
+                                    </Link>
+                                    <h2 className="mealName" key={i}>{mealObj.strMeal}</h2>
+                                    <em><p>{mealObj.strInstructions.slice(0, 250) + "..."}</p></em>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
                 {!this.props.search ? this.makePaginationControl() : ''}
             </div>
         )
-    }
-
-    isActive(id) {
-        return ((id === this.state.currentPage) ? 'active' : '')
-    }
-
-    changePage(e) {
-        this.setState({
-            loading: true,
-        })
-        this.renderPageRecipes(e)
-        this.isActive(e)
-    }
-
-    renderPageRecipes(e) {
-        fs.getNumberOfRecipesById(this.state.recipesPerPage, e).then(recipes => {
-            this.setState({
-                recipes: recipes,
-                currentPage: Number(e),
-                loading: false
-            })
-        })
     }
 
     render() {

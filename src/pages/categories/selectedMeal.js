@@ -19,28 +19,13 @@ class SelectedMeal extends Component {
     componentWillMount() {
         let id = (this.props && this.props.match && this.props.match.params && this.props.match.params.id) || '';
         id = parseInt(id)
-        // let myMeal = localStorage.getItem('meal');
-        // if (myMeal){
-        //     let meal = JSON.parse(myMeal);
-        //     Object.keys(meal[0].data).filter((key)=>{
-        //         this.setIngredientValue(key, meal, 'strIngredient', 'ingredients');
-        //         this.setIngredientValue(key, meal, 'strMeasure', 'measures');
-        //     })
-        //     this.setState({mealById: meal});
-        //     for(let i=0; i<this.state.ingredients.length; i++) {
-        //         allIngredients.push(this.state.measures[i] + this.state.ingredients[i])
-        //     }
-        //     this.setState({allIngredients: allIngredients})
-        // } else {
-            fs.getRecipeById(id).then(meal =>{
-                // localStorage.setItem('meal', JSON.stringify(meal));
-                Object.keys(meal[0].data).filter((key)=>{
-                    this.setIngredientValue(key, meal, 'strIngredient', 'ingredients');
-                    this.setIngredientValue(key, meal, 'strMeasure', 'measures');
-                })
-                this.setState({mealById: meal});
+        fs.getRecipeById(id).then(meal =>{
+            Object.keys(meal[0].data).filter((key)=>{
+                this.setIngredientValue(key, meal, 'strIngredient', 'ingredients');
+                this.setIngredientValue(key, meal, 'strMeasure', 'measures');
             })
-        // }
+            this.setState({mealById: meal});
+        })
     }
 
     setIngredientValue(key, meal, value, arrayVal) {
