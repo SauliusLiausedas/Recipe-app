@@ -8,7 +8,7 @@ class HomePage extends Component {
 //    handleClick() {
 //        alert('testas');
 //    }
- 
+
     render() {
         return (
             <div>

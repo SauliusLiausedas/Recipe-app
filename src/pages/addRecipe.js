@@ -16,7 +16,7 @@ class AddRecipe extends Component {
         }
         this.state = {
             categories: [],
-            imageURL: "https://png.icons8.com/small/1600/add-camera.png",
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png",
             ingredients: ['Add ingredient', 'Add ingredient', 'Add ingredient'],
             measures: ['Add measure unit', 'Add measure unit', 'Add measure unit'],
         }

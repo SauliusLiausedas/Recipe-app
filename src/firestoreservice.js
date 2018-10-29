@@ -33,6 +33,35 @@ export default class {
         })
     }
 
+    // Method to get random number of random recipes
+    // ------------------------------------------------
+    static async getRandomRecipe(recipeCount, quantity) {
+        let data = []
+        for(let i=0; i<quantity; i++) {
+            let randomRecipe = Math.floor(Math.random() * recipeCount)
+            await this.generateRandomRecipe(randomRecipe).then(recipe=> {
+                if(!data.includes.recipe) {
+                    data.push(recipe)
+                } else {
+                    i--
+                }
+            })
+        }
+        return data
+    }
+
+    static generateRandomRecipe(randomRecipe) {
+        return new Promise(resolve => {
+            this.db.collection('recipes').where('id', '==', randomRecipe).limit(1).get().then(snap => {
+                snap.forEach(doc => {
+                    resolve(doc.data())
+                })
+            })
+        })
+    }
+    // ------------------------------------------------
+
+
     static getCollectionPage(collection, page = 1) {
         let query = null;
         if (page === 1) {
@@ -70,7 +99,7 @@ export default class {
 
 
     //Method to get all Data from Categories collection
-
+    // ------------------------------------------------
     static getCategories() {
         return new Promise(resolve => {
             this.db.collection('categories').get().then((snapShot) => {
@@ -82,7 +111,7 @@ export default class {
             })
         })
     }
-
+    // ------------------------------------------------
     // Method to search recipes by name for search
 
     // static getRecipesByName(name) {
@@ -100,8 +129,8 @@ export default class {
     //     });
     // }
 
-    // Method to search by name and load every page
-
+    // Method to search by name and load every page with pagination
+    // ------------------------------------------------
     static searchRecipesByName(name, page=1, dir) {
         if(page <= 1) {
             return new Promise(resolve => {
@@ -111,7 +140,8 @@ export default class {
                     querySnapshot.forEach((docs) => {
                         data.push({data: docs.data(), id: docs.id});
                     });
-                    // this.lastSearchDoc = {page1: querySnapshot.docs[querySnapshot.docs.length-1]}
+                    this.firstSearchDoc = []
+                    this.lastSearchDoc = []
                     this.lastSearchDoc['page1'] = querySnapshot.docs[querySnapshot.docs.length-1]
                     resolve(data);
                 });
@@ -147,9 +177,10 @@ export default class {
         }
 
     }
+    // ------------------------------------------------
 
     // GET ALL RECIPES
-
+    // ------------------------------------------------
     static getAllRecipesFromDB() {
         return new Promise(resolve => {
             this.db.collection('recipes').get().then((querySnapshot) => {
@@ -161,9 +192,10 @@ export default class {
             });
         });
     }
+    // ------------------------------------------------
 
     // Method to search recipes by name
-
+    // ------------------------------------------------
     static getRecipesByCategory(name) {
         return new Promise(resolve => {
             this.db.collection('recipes').get().then((querySnapshot) => {
@@ -177,7 +209,7 @@ export default class {
             });
         });
     }
-
+    // ------------------------------------------------
     // Method to search meals by ID
 
     static getRecipeById(id) {
@@ -193,24 +225,9 @@ export default class {
             });
         });
     }
-    // Method to get number recipes by Id
-    static getRecipesById(quantity, id) {
-        return new Promise(resolve => {
-            this.db.collection('recipes').get().then((querySnapshot) => {
-                const data = [];
-                querySnapshot.forEach((doc) => {
-                    if(doc.data().id === id) {
-                        data.push({data: doc.data(), id: doc.id});
-                    }
-                });
-                resolve(data);
-            });
-        });
-    }
 
-    /*
-    * Update new recipes
-    * */
+    // Method to update a recipe
+    // ------------------------------------------------
     static createRecipe(data) {
         return new Promise(resolve => {
             this.db.collection("recipes").doc(data.strMeal).set(data)
@@ -223,6 +240,7 @@ export default class {
                 });
         });
     }
+    // ------------------------------------------------
 
     /*
     * Create new recipes
@@ -256,7 +274,8 @@ export default class {
         });
     }
 
-    //Method to get length of recipe DB
+    //Method to get length of DB collection 'recipes'
+    // ------------------------------------------------
     static getCount() {
         return new Promise(resolve => {
             let data;
@@ -271,9 +290,11 @@ export default class {
                 });
         });
     }
+    // ------------------------------------------------
 
-    //
 
+    // Method to get All Data from random Collection from DB
+    // ------------------------------------------------
     static getCollectionFull(collection) {
         return new Promise(resolve => {
             const data = [];
@@ -289,7 +310,8 @@ export default class {
         })
     }
 
-    // Get quantity of recipes by ID (allrecipes)
+    // Get quantity of recipes by ID (allrecipes) paginated
+    // ------------------------------------------------
 
     static getNumberOfRecipesById(quantity, page) {
         return new Promise(resolve => {
@@ -320,8 +342,10 @@ export default class {
             }
         })
     }
+    // ------------------------------------------------
 
     //Method to update recipe counter
+    // ------------------------------------------------
     static updateRecipeCounter(data) {
         return new Promise(resolve => {
             this.db.collection("recipeCount").doc('count').set(data)
@@ -334,8 +358,10 @@ export default class {
                 });
         });
     }
+    // ------------------------------------------------
 
     //Method to add Categories to DB
+    // ------------------------------------------------
     static createNewCategory(data, mealId) {
         return new Promise(resolve => {
             this.db.collection("categories").doc(mealId).set(data)
@@ -346,6 +372,7 @@ export default class {
                 .catch(function (error) {
                     console.error("Error adding document: ", error);
                 });
-        });
+            });
+        }
     }
-}
+    // ------------------------------------------------
