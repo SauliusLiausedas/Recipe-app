@@ -1,56 +1,116 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import '../../stylesheets/allrecipes.css'
-import ViewRecipe from './view.js'
+import SearchPage from '../search/searchPage'
+import fs from '../../firestoreservice'
+import { Link } from 'react-router-dom'
 
 class AllRecipes extends Component {
     constructor() {
         super()
-        this.recipeMethod = []
         this.state = {
-            recipes: window.recipeDB,
+            recipes: "",
+            recipesTotal: '',
             recipeToShow: "",
+            currentPage: 1,
+            recipesPerPage: 9
         }
     }
 
     componentWillMount() {
-        if (this.props.searchResult && this.props.searchResult.length){
-            window.recipeDB.results = this.props.searchResult;
-            this.setState({recipes: window.recipeDB});
-        } else if (this.props.searchResult) {
-            window.recipeDB.results = [];
-            this.setState({recipes: window.recipeDB});
+        let page = (this.props && this.props.match && this.props.match.params && this.props.match.params.page) || '';
+            this.setState({loading: true})
+            fs.getCount().then(recipeCount => {
+                this.setState({recipesTotal: recipeCount.count})
+                this.renderPageRecipes(page)
+            })
         }
+
+    makePaginationControl() {
+        let pageNumbers = []
+        for (let i = 1; i <= Math.ceil(this.state.recipesTotal / this.state.recipesPerPage); i++) {
+            pageNumbers.push(i);
+        }
+        let pagesBefore = []
+        let pagesAfter = []
+        if(this.state.currentPage < 4) {
+            pageNumbers = pageNumbers.splice(0, 5)
+        } else if (this.state.currentPage > 3 && this.state.currentPage < pageNumbers.length-1) {
+            pagesBefore = pageNumbers.slice(this.state.currentPage-3, this.state.currentPage)
+            pagesAfter = pageNumbers.slice(this.state.currentPage, this.state.currentPage+2)
+            pageNumbers = pagesBefore.concat(pagesAfter)
+        } else if (this.state.currentPage > 3 && this.state.currentPage < pageNumbers.length - 3) {
+            pagesBefore = pageNumbers.slice(this.state.currentPage-2, this.state.currentPage)
+            pagesAfter = pageNumbers.splice(this.state.currentPage, 10)
+            pageNumbers = pagesBefore.concat(pagesAfter)
+        } else {
+            pageNumbers = pageNumbers.splice(pageNumbers.length-5)
+        }
+
+        return (
+            <ul className="pageNumbers-ul">
+                <Link className="pageNumbers" to={'/all/1'}><li className="pageNumbers" id={1} onClick={(e) => this.renderPageRecipes(e.target.id)}> &#8810; </li></Link>
+                {pageNumbers.map(number => {
+                return(
+                    <Link key={number}  to={'/all/' + number}><li className={'pageNumbers ' + this.isActive(number)} id={number} onClick={(e) => this.renderPageRecipes(e.target.id)} key={number}>{number}</li></Link>
+                )
+            })}
+                <Link className="pageNumbers" to={'/all/'+(Math.ceil(this.state.recipesTotal/this.state.recipesPerPage))}><li id={Math.ceil(this.state.recipesTotal / this.state.recipesPerPage)} onClick={(e) => this.renderPageRecipes(e.target.id)} className="pageNumbers"> &#8811; </li></Link>
+            </ul>
+        )
     }
 
-    componentWillReceiveProps(nextProps) {
-        window.recipeDB.results = nextProps.searchResult;
-       this.setState({recipes: window.recipeDB});
+    isActive(id) {
+        return ((id === this.state.currentPage) ? 'active' : '')
     }
 
-
-    viewRecipe(e) {
-        this.setState({recipeToShow: e.currentTarget.id})
+    renderPageRecipes(e) {
+        this.setState({loading: true})
+        fs.getNumberOfRecipesById(this.state.recipesPerPage, e).then(recipes => {
+            this.setState({
+                recipes: recipes,
+                currentPage: Number(e),
+                loading: false
+            })
+        })
     }
 
-    hideEdit() {
-
+    renderAllRecipes (){
+        return (
+            <div className="allRecipes">
+                <div className="boxes">
+                    {this.props.search ?
+                        <SearchPage searchResult={this.props.searchResult}/>
+                        :
+                        this.state.recipes.map((mealObj, i) => {
+                            return(
+                                <div key={i} id={i} className="recipe-box">
+                                    <Link to={'/categories/' + mealObj.strCategory + '/' + mealObj.id}>
+                                        <img className="recipe-img" alt={mealObj.strMeal} src={mealObj.strMealThumb}/>
+                                    </Link>
+                                    <h2 className="mealName" key={i}>{mealObj.strMeal}</h2>
+                                    <em><p>{mealObj.strInstructions.slice(0, 250) + "..."}</p></em>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+                {!this.props.search ? this.makePaginationControl() : ''}
+            </div>
+        )
     }
 
     render() {
-        return (
-            <div className="allRecipes">
-                {this.state.recipeToShow ? (<ViewRecipe onClosePopup={() => {this.setState({recipeToShow: ""})}} view={this.state.recipes.meal[this.state.recipeToShow]}/>) : ''}
-                <div className="boxes">
-                    {this.state.recipes[(this.props.searchResult ? 'results' : 'meal')].map((mealObj, i) =>
-                        <div key={i} id={i} className="recipe-box" onClick={(e)=>this.viewRecipe(e)}>
-                            <img className="recipe-img" alt={mealObj.name} src={mealObj.image}/>
-                            <h2 key={i}>{mealObj.name}</h2>
-                            <em><p>{mealObj.method.slice(0, 250) + "..."}</p></em>
-                        </div>
-                    )}
+        if (!this.state.loading && this.state.recipes) {
+            return(
+                this.renderAllRecipes()
+            )
+        } else {
+            return(
+                <div className="preloader-div">
+                    <img alt="Preloader" className="preloader" src="https://cdn.dribbble.com/users/645440/screenshots/3266490/loader-2_food.gif"/>
                 </div>
-            </div>
-        )
+            )
+        }
     }
 }
 

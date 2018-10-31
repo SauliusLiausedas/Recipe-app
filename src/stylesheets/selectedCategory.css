@@ -1,0 +1,32 @@
+.categoryMeals {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: 15px;
+    grid-row-gap: 30px;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    background-color: rgb(250, 250, 255);
+    padding: 30px;
+    min-height: 500px;
+}
+.categoryMealImg {
+    width: auto;
+    height: 200px;
+    border-radius: 0%;
+    max-width: 270px;
+    overflow: hidden;
+}
+.meal-grid {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+.categoryMealImg:hover {
+
+}
+.categoryMealName {
+    font-size: 1.3em;
+    max-width: 250px;
+    justify-self: center;
+    overflow: hidden;
+}

@@ -8,11 +8,13 @@ class HomePage extends Component {
 //    handleClick() {
 //        alert('testas');
 //    }
- 
+
     render() {
         return (
-            <div className="content">
-                <Recipes />
+            <div>
+                <div className="content">
+                    <Recipes />
+                </div>
                 <div className="testimonials">
                     <h2 className="testimonialsText">Testimonials:</h2>
                     <Testimonials />

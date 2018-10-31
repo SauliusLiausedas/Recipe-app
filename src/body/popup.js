@@ -14,7 +14,6 @@ class Popup extends Component {
     }
 
     showList() {
-        console.log(this.props.value)
         if(this.props.visible) {
             let howMany = this.props.value.children.length-1
             for (let i=0; i<=howMany; i++) {
