@@ -9,7 +9,7 @@ import Error from './pages/error.js'
 import Categories from './pages/categories/categories.js'
 import SelectedCategory from "./pages/categories/selectedCategory";
 import SelectedMeal from "./pages/categories/selectedMeal";
-import AddToFirebase from "./addToFirebase";
+import AddToFirebase from "./addToMongodb";
 import AddRecipe from "./pages/addRecipe"
 import fs from "./firestoreservice"
 
