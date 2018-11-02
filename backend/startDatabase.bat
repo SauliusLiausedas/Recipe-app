@@ -1,0 +1,1 @@
+C:\LearningJS\mongodb\bin\mongod.exe --dbpath C:\LearningJS\mongodata
