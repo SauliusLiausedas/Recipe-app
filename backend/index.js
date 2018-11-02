@@ -9,13 +9,12 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
 }));
 
-// disable browser cors feature
-app.get('/', function (req, res) {
-    res.send('Hello World')
-})
-
 app.post('/insertfrommealdb', function (req, res) {
-    console.log("test");
+    db.collection("recipes").insertOne(req.body).then((res, err)=>{
+        console.log(res);
+        console.log(err);
+        res.send('{success: "success"}')
+    })
 })
 
 app.get('/insert', function (req, res) {
