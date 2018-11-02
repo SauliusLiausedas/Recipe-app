@@ -34,7 +34,7 @@ class AddToMongodb extends Component {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({a: 1, b: 'Textual content'})
+                body: JSON.stringify(data.meal[0])
             }).then(response => response.json()));
 
         });
