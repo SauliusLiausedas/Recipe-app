@@ -17,6 +17,15 @@ app.post('/insertfrommealdb', function (req, res) {
     })
 })
 
+
+app.post('/insertcategories', function (req, res) {
+    db.collection("categories").insertOne(req.body).then((res, err)=>{
+        console.log(res);
+        console.log(err);
+        res.send('{success: "success"}')
+    })
+})
+
 app.get('/insert', function (req, res) {
     db.collection("insert").insertOne({insertColumn: 'asfdsadfasdfasdf'}).then((res, err)=>{
         console.log(res);
