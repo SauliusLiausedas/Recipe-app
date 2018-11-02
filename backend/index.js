@@ -45,6 +45,17 @@ app.get('/get/:some', function (req, res) {
     });
 })
 
+app.get('/getallrecipes', function (req, res) {
+    let param =  req.params.some;///.*m.*/
+    db.collection("recipes").find({}).toArray(function(err, docs) {
+        assert.equal(err, null);
+        console.log("Found the following records");
+        console.log(docs);
+        res.status(200);
+        res.send(JSON.stringify(docs))
+    });
+})
+
 // Connection URL
 const url = 'mongodb://localhost:27017';
 

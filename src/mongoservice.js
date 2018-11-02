@@ -1,0 +1,13 @@
+/*
+* References
+* https://firebase.google.com/docs/web/setup?authuser=0
+* https://firebase.google.com/docs/firestore/quickstart?authuser=0
+* https://firebase.google.com/docs/firestore/query-data/get-data
+* */
+export default class {
+    static getAllRecipes () {
+        //TODO get all recipes from mongodb with fetch
+        fetch('http://localhost:2000/getallrecipes', {
+        }).then(response => console.log(response))
+    }
+}

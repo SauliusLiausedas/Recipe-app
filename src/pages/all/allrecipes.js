@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import '../../stylesheets/allrecipes.css'
 import SearchPage from '../search/searchPage'
-import fs from '../../firestoreservice'
+import mongo from '../../mongoservice'
 import { Link } from 'react-router-dom'
 
 class AllRecipes extends Component {
@@ -19,10 +19,11 @@ class AllRecipes extends Component {
     componentWillMount() {
         let page = (this.props && this.props.match && this.props.match.params && this.props.match.params.page) || '';
             this.setState({loading: true})
-            fs.getCount().then(recipeCount => {
-                this.setState({recipesTotal: recipeCount.count})
-                this.renderPageRecipes(page)
-            })
+            // fs.getCount().then(recipeCount => {
+            //     this.setState({recipesTotal: recipeCount.count})
+            //     this.renderPageRecipes(page)
+            // })
+            mongo.getAllRecipes();
         }
 
     makePaginationControl() {
@@ -65,13 +66,13 @@ class AllRecipes extends Component {
 
     renderPageRecipes(e) {
         this.setState({loading: true})
-        fs.getNumberOfRecipesById(this.state.recipesPerPage, e).then(recipes => {
-            this.setState({
-                recipes: recipes,
-                currentPage: Number(e),
-                loading: false
-            })
-        })
+        // fs.getNumberOfRecipesById(this.state.recipesPerPage, e).then(recipes => {
+        //     this.setState({
+        //         recipes: recipes,
+        //         currentPage: Number(e),
+        //         loading: false
+        //     })
+        // })
     }
 
     renderAllRecipes (){
