@@ -23,7 +23,9 @@ class AllRecipes extends Component {
             //     this.setState({recipesTotal: recipeCount.count})
             //     this.renderPageRecipes(page)
             // })
-            mongo.getAllRecipes();
+            mongo.getAllRecipes().then((data)=>{
+                console.log(data);
+            })
         }
 
     makePaginationControl() {

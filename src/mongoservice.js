@@ -7,7 +7,10 @@
 export default class {
     static getAllRecipes () {
         //TODO get all recipes from mongodb with fetch
-        fetch('http://localhost:2000/getallrecipes', {
-        }).then(response => console.log(response))
+         return fetch('http://localhost:2000/getallrecipes', {
+        }).then(response => {
+            return response.json().then((data=>{
+            return data;
+         }))})
     }
 }
