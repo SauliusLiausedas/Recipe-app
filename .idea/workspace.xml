@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/firestoreservice.js" line="278" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/src/mongoservice.js" line="6" mnemonic="2" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="518cd4c7-a06e-42b8-9af8-c421206b135c" name="Default Changelist" comment="Fix pagination, fix addrecipe redirect">
+    <list default="true" id="518cd4c7-a06e-42b8-9af8-c421206b135c" name="Default Changelist" comment="add missing files">
+      <change afterPath="$PROJECT_DIR$/backend/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/all/allrecipes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/all/allrecipes.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,28 +22,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/body/header.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/addToMongodb.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="68" column="26" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
+            <state relative-caret-position="194">
+              <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -46,29 +33,68 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/data.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="150" column="53" lean-forward="true" selection-start-line="150" selection-start-column="53" selection-end-line="150" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/all/allrecipes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="28" column="73" lean-forward="true" selection-start-line="28" selection-start-column="73" selection-end-line="28" selection-end-column="73" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/firestoreservice.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="280" column="21" lean-forward="true" selection-start-line="280" selection-start-column="21" selection-end-line="280" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mongoservice.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="9" column="58" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+            <state relative-caret-position="176">
+              <caret line="47" column="47" lean-forward="true" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+        <entry file="file://$PROJECT_DIR$/backend/startDatabase.bat">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+            <state>
+              <caret column="20" selection-start-column="20" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -84,16 +110,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>window</find>
-      <find>console.log</find>
-      <find>this.redire</find>
-      <find>grid</find>
-      <find>colum</find>
-      <find>selected</find>
-      <find>getIngre</find>
-      <find>ingredientsList</find>
-      <find>instruc</find>
-      <find>error</find>
       <find>window.co</find>
       <find>recipeCount</find>
       <find>Name</find>
@@ -114,6 +130,16 @@
       <find>add to firebase</find>
       <find>addToFirebase</find>
       <find>add to mongodb</find>
+      <find>Add Categories to Firebase</find>
+      <find>addCategoriesToMongo</find>
+      <find>getCount</find>
+      <find>fs.</find>
+      <find>getAllRecipes</find>
+      <find>renderPageRecipes</find>
+      <find>assert</find>
+      <find>getNumberOfRecipesById</find>
+      <find>this.state.recip</find>
+      <find>getallrecipes</find>
     </findStrings>
     <replaceStrings>
       <replace>Recipes</replace>
@@ -151,8 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/body/slider.js" />
-        <option value="$PROJECT_DIR$/src/body/slideshow.js" />
         <option value="$PROJECT_DIR$/src/stylesheets/popup.css" />
         <option value="$PROJECT_DIR$/src/stylesheets/ingredients.css" />
         <option value="$PROJECT_DIR$/src/router.js" />
@@ -187,7 +211,6 @@
         <option value="$PROJECT_DIR$/src/pages/categories/selectedCategory.js" />
         <option value="$PROJECT_DIR$/src/stylesheets/selectedCategory.css" />
         <option value="$PROJECT_DIR$/src/stylesheets/selectedMeal.css" />
-        <option value="$PROJECT_DIR$/src/pages/all/allrecipes.js" />
         <option value="$PROJECT_DIR$/src/stylesheets/allrecipes.css" />
         <option value="$PROJECT_DIR$/src/pages/homepage.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
@@ -199,9 +222,12 @@
         <option value="$PROJECT_DIR$/src/body/header.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/addToFirebase.js" />
-        <option value="$PROJECT_DIR$/src/addToMongodb.js" />
         <option value="$PROJECT_DIR$/../../mongoStarter/mongostart/index.js" />
+        <option value="$PROJECT_DIR$/src/addToMongodb.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/mongoservice.js" />
         <option value="$PROJECT_DIR$/backend/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/all/allrecipes.js" />
       </list>
     </option>
   </component>
@@ -209,9 +235,10 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="312" />
-    <option name="width" value="980" />
-    <option name="height" value="907" />
+    <option name="x" value="55" />
+    <option name="y" value="-8" />
+    <option name="width" value="1553" />
+    <option name="height" value="916" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -238,6 +265,19 @@
               <item name="Recipe-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Recipe-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Recipe-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Recipe-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Recipe-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="all" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -248,10 +288,13 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="SearchEverywhereHistoryKey" value="allrecipes&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/allrecipes.js&#10;fires&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/firestoreservice.js&#10;search&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/search/Search.js&#10;addre&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/addRecipe.js&#10;hom&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/homepage.css&#10;homepa&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/homepage.js&#10;index&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/public/index.html&#10;recipes&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/body/recipes.js&#10;homepage&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/homepage.js&#10;homepage.cs&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/homepage.css&#10;allRec&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/allrecipes.js&#10;fire&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/firestoreservice.js&#10;selectedMeal&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedMeal.js&#10;selectedCate&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedCategory.js&#10;selected&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/selectedCategory.css&#10;home&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/homepage.js&#10;selecte&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/selectedMeal.css&#10;addRecipe&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/addRecipe.js&#10;allCate&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/allCategories.css&#10;allcate&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/allCategories.js&#10;searc&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/search/Search.js&#10;app.css&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/App.css&#10;firesto&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/firestoreservice.js&#10;allRecipes&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/allrecipes.js&#10;addRec&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/addRecipe.js&#10;app.js&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/App.js&#10;allre&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/allrecipes.js&#10;search.css&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/search.css&#10;add&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/addRecipe.js&#10;addt&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/addToFirebase.js&#10;header&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/body/header.js&#10;updateRec&#9;null&#9;null&#10;ca&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/categories.js&#10;allrec&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/allrecipes.js&#10;categories&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/categories.js&#10;selectedCa&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedCategory.js&#10;firestore&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/firestoreservice.js&#10;select&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedMeal.js&#10;allCa&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/allCategories.js&#10;allreci&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/allrecipes.js&#10;view.js&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/all/view.js&#10;selectedMea&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/selectedMeal.css&#10;view&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/view.css&#10;recipes.css&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/allrecipes.css&#10;index.css&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/index.css&#10;app.cs&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/stylesheets/App.css&#10;selec&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/pages/categories/selectedMeal.js&#10;f&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/firestoreservice.js&#10;Link&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/node_modules/react-router-dom/Link.js&#10;app&#9;FILE&#9;file://C:/Users/Saulius/Desktop/Programavimas/Baltic Talents/recipe-app/src/App.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\LearningJS\paskaitanr_5\Recipe-app\src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Saulius\Desktop\Programavimas\Baltic Talents\recipe-app\src\pages\categories" />
       <recent name="C:\Users\Saulius\Desktop\Programavimas\Baltic Talents\recipe-app\src\stylesheets" />
@@ -405,11 +448,53 @@
       <option name="project" value="LOCAL" />
       <updated>1541176622003</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Fix pagination, fix addrecipe redirect">
+      <created>1541177991674</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1541177991674</updated>
+    </task>
+    <task id="LOCAL-00017" summary="add missing files">
+      <created>1541178365256</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1541178365256</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add missing files">
+      <created>1541180515501</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1541180515501</updated>
+    </task>
+    <task id="LOCAL-00019" summary="modify gitignore">
+      <created>1541180607681</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1541180607681</updated>
+    </task>
+    <task id="LOCAL-00020" summary="add mongo refactoring files">
+      <created>1541181696161</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1541181696161</updated>
+    </task>
+    <task id="LOCAL-00021" summary="add all recipes retrieval for ui">
+      <created>1541434650232</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1541434650232</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="345976000" />
+    <option name="totallyTimeSpent" value="354395000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -428,7 +513,7 @@
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.20169161" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4993395" visible="true" weight="0.3031056" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4993395" visible="true" weight="0.34285715" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5006605" side_tool="true" weight="0.3299566" />
       <window_info anchor="bottom" x="390" y="269" width="756" height="286" id="Version Control" order="2" weight="0.57515526" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
@@ -536,7 +621,11 @@
     <MESSAGE value="Add pagination to search, change allrecipes pagination" />
     <MESSAGE value="Make code cleaner" />
     <MESSAGE value="Fix pagination, fix addrecipe redirect" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix pagination, fix addrecipe redirect" />
+    <MESSAGE value="add missing files" />
+    <MESSAGE value="modify gitignore" />
+    <MESSAGE value="add mongo refactoring files" />
+    <MESSAGE value="add all recipes retrieval for ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="add all recipes retrieval for ui" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -550,39 +639,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/stylesheets/ingredients.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/all/searchBar.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/all/edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4264">
-          <caret line="164" column="1" selection-start-line="164" selection-start-column="1" selection-end-line="164" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stylesheets/test.js" />
-    <entry file="file://$PROJECT_DIR$/src/services/getRecipesService.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/react/cjs/react.development.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="1685" column="9" selection-start-line="1685" selection-start-column="9" selection-end-line="1685" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/testselectedMeal.js" />
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/react.d.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -801,27 +857,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/firestoreservice.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1222">
-          <caret line="142" column="44" selection-start-line="142" selection-start-column="44" selection-end-line="142" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/body/recipes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="31" column="74" selection-start-line="31" selection-start-column="74" selection-end-line="31" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/all/allrecipes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="107" column="12" lean-forward="true" selection-start-line="107" selection-start-column="12" selection-end-line="111" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -863,20 +902,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/assert/assert.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/startDatabase.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/firestoreservice.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="280" column="21" lean-forward="true" selection-start-line="280" selection-start-column="21" selection-end-line="280" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="150" column="53" lean-forward="true" selection-start-line="150" selection-start-column="53" selection-end-line="150" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/addToMongodb.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="68" column="26" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
+        <state relative-caret-position="194">
+          <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/mongoservice.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="58" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        <state relative-caret-position="176">
+          <caret line="47" column="47" lean-forward="true" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/all/allrecipes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="28" column="73" lean-forward="true" selection-start-line="28" selection-start-column="73" selection-end-line="28" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
