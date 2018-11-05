@@ -45,9 +45,9 @@ app.get('/get/:some', function (req, res) {
     });
 })
 
-app.get('/getallrecipes', function (req, res) {
-    let param =  req.params.some;///.*m.*/
-    db.collection("recipes").find({}).toArray(function(err, docs) {
+app.get('/getallrecipes/:itemsPerPage/:pageNumber', function (req, res) {
+    let itemsPerPage =  parseInt(req.params.itemsPerPage);///.*m.*/
+    db.collection("recipes").find({}).limit(itemsPerPage).toArray(function(err, docs) {
         assert.equal(err, null);
         console.log("Found the following records");
         console.log(docs);
