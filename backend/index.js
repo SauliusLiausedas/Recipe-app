@@ -35,8 +35,19 @@ app.get('/insert', function (req, res) {
 })
 
 app.get('/get/:some', function (req, res) {
-    let param =  req.params.some;///.*m.*/
+    let param =  req.params.some;
     db.collection("insert").find({insertColumn: new RegExp(param)}).toArray(function(err, docs) {
+        assert.equal(err, null);
+        console.log("Found the following records");
+        console.log(docs);
+        res.status(200);
+        res.send(JSON.stringify(docs))
+    });
+})
+
+app.get('/searchrecipe/:searchValue', function (req, res) {
+    let searchValue =  req.params.searchValue;
+    db.collection("recipes").find({strInstructions: new RegExp(searchValue)}).toArray(function(err, docs) {
         assert.equal(err, null);
         console.log("Found the following records");
         console.log(docs);

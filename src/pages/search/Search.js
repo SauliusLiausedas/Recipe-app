@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import '../../stylesheets/search.css';
 import AllRecipes from "../all/allrecipes";
 import fs from "../../firestoreservice"
+import mongo from "../../mongoservice"
 
 class Search extends Component {
 
@@ -36,13 +37,18 @@ class Search extends Component {
 
     onSubmit() {
         this.setState({searchWord: this.state.searchReq, page: 1})
-        fs.searchRecipesByName(this.state.searchReq, this.state.page).then(data => {
-            if (data) {
-                this.setState({searchResult: data});
-            } else {
-               console.log("error")
-            }
-        })
+        // fs.searchRecipesByName(this.state.searchReq, this.state.page).then(data => {
+        //     if (data) {
+        //         this.setState({searchResult: data});
+        //     } else {
+        //        console.log("error")
+        //     }
+        // })
+        mongo.getRecipesCount(this.state.searchReq).then((data)=>{
+            console.log(data);
+           this.setState({searchResult: data});
+
+        });
     }
 
     generateSidePageRecipes(name, page, dir) {
