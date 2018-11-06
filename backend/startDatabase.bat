@@ -1,1 +1,1 @@
-C:\LearningJS\mongodb\bin\mongod.exe --dbpath C:\LearningJS\mongodata
+C:\mongodb\bin\mongod.exe --dbpath "C:\Users\Saulius\Desktop\Programavimas\Baltic Talents\recipe-app\backend\db"

@@ -18,15 +18,13 @@ class AllRecipes extends Component {
 
     componentWillMount() {
         let page = (this.props && this.props.match && this.props.match.params && this.props.match.params.page) || '';
-            this.setState({loading: true})
-            // fs.getCount().then(recipeCount => {
-            //     this.setState({recipesTotal: recipeCount.count})
-            //     this.renderPageRecipes(page)
-            // })
-            mongo.getAllRecipes().then((data)=>{
-                console.log(data);
+        this.setState({loading: true})
+        mongo.getCount().then(recipeCount => {
+            mongo.getPageRecipes(this.state.recipesPerPage, id).then((data) => {
+                this.setState({recipesTotal: recipeCount, recipes: data, currentPage: page, loading: false})
             })
-        }
+        })
+    }
 
     makePaginationControl() {
         let pageNumbers = []
@@ -51,7 +49,7 @@ class AllRecipes extends Component {
 
         return (
             <ul className="pageNumbers-ul">
-                <Link className="pageNumbers" to={'/all/1'}><li className="pageNumbers" id={1} onClick={(e) => this.renderPageRecipes(e.target.id)}> &#8810; </li></Link>
+                {this.state.currentPage > 1 ? <Link className="pageNumbers" to={'/all/1'}><li className="pageNumbers" id={1} onClick={(e) => this.renderPageRecipes(e.target.id)}> &#8810; </li></Link> : ''}
                 {pageNumbers.map(number => {
                 return(
                     <Link key={number}  to={'/all/' + number}><li className={'pageNumbers ' + this.isActive(number)} id={number} onClick={(e) => this.renderPageRecipes(e.target.id)} key={number}>{number}</li></Link>
@@ -67,17 +65,17 @@ class AllRecipes extends Component {
     }
 
     renderPageRecipes(e) {
-        this.setState({loading: true})
-        // fs.getNumberOfRecipesById(this.state.recipesPerPage, e).then(recipes => {
-        //     this.setState({
-        //         recipes: recipes,
-        //         currentPage: Number(e),
-        //         loading: false
-        //     })
-        // })
+        this.setState({loading: true, currentPage: Number(e)})
+        mongo.getPageRecipes(this.state.recipesPerPage, (this.state.currentPage)*(this.state.recipesPerPage)).then(recipes => {
+            this.setState({
+                recipes: recipes,
+                loading: false
+            })
+        })
     }
 
     renderAllRecipes (){
+
         return (
             <div className="allRecipes">
                 <div className="boxes">

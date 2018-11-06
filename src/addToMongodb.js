@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './stylesheets/App.css';
 import fs from './firestoreservice'
 import {getByCategory, getById, getCategories, getRandomRecipes} from "./api/getRecipesApi";
+import mongo from './mongoservice'
 
 class AddToMongodb extends Component {
     constructor() {
@@ -67,14 +68,19 @@ class AddToMongodb extends Component {
         })
     }
 
+    getMongoRecipesLength() {
+        mongo.getCount().then(data=> {
+            console.log(data)
+        })
+    }
 
     render() {
         return (
             <div className="App">
                 <button onClick={() => this.addToMongodb()}>Add to mongodb from mealDB</button>
                 <button onClick={this.addCategoriesToMongo}>Add Categories to Firebase</button>
-                <button disabled onClick={this.addRecipesFromCategories}>Add Recipes From Categories to Firebase
-                </button>
+                <button onClick={this.getMongoRecipesLength}>Get recipes collection length from mongoDB</button>
+                <button disabled onClick={this.addRecipesFromCategories}>Add Recipes From Categories to Firebase</button>
                 <button disabled onClick={this.addKeyWordsToFirebase}>Add Recipes From Categories to Firebase</button>
             </div>
         );

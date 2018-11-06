@@ -10,7 +10,15 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 }));
 
 app.post('/insertfrommealdb', function (req, res) {
-    db.collection("recipes").insertOne(req.body).then((res, err)=>{
+    db.collection("recipes").insertMany([req.body], {ordered: false}).then((res, err)=>{
+        console.log(res);
+        console.log(err);
+        res.send('{success: "success"}')
+    })
+})
+
+app.post('/insertcategories', function (req, res) {
+    db.collection("categories").insertOne(req.body).then((res, err)=>{
         console.log(res);
         console.log(err);
         res.send('{success: "success"}')
@@ -56,6 +64,30 @@ app.get('/getallrecipes', function (req, res) {
     });
 })
 
+// Get number of recipes in DB
+
+app.get('/getcount', function (req, res) {
+    db.collection('recipes').count(function (err, docs) {
+        assert.equal(err, null)
+        console.log("There are this number of recipes in collection")
+        console.log(docs)
+        res.status(200)
+        res.send(JSON.stringify(docs))
+    })
+})
+
+    // Get number of recipes from DB
+
+app.get('/getrecipes/:quantity/:id', function(req, res) {
+    let quantity =  parseInt(req.params.quantity);
+    let id =  parseInt(req.params.id);
+    db.collection('recipes').find({}).skip(id).limit(quantity).toArray(function (err, docs) {
+        assert.equal(err, null);
+        res.status(200)
+        res.send(JSON.stringify(docs));
+    })
+})
+
 // Connection URL
 const url = 'mongodb://localhost:27017';
 
@@ -69,7 +101,6 @@ const client = new MongoClient(url);
 client.connect(function(err) {
     assert.equal(null, err);
     console.log("Connected successfully to server");
-
     db = client.db(dbName);
     app.listen(2000)
     //client.close();
