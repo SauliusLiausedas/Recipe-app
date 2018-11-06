@@ -12,22 +12,21 @@ class AllRecipes extends Component {
             recipesTotal: '',
             recipeToShow: "",
             currentPage: 1,
-            recipesPerPage: 9
+            recipesPerPage: 9,
+            recipesLength: 0
         }
     }
 
     componentWillMount() {
         let page = (this.props && this.props.match && this.props.match.params && this.props.match.params.page) || '';
         this.setState({loading: true})
-        // fs.getCount().then(recipeCount => {
-        //     this.setState({recipesTotal: recipeCount.count})
-        //     this.renderPageRecipes(page)
-        // })
 
-        //TODO get count of all recipes
-        //TODO get first 10 recipes ( 10 is veriable which can be changed later)
-        //TODO on pagination button click (number 2) open next 10 recipes
-        mongo.getAllRecipes(5, 1).then((data) => {
+        mongo.getRecipesCount().then((recipesLength)=>{
+            console.log(recipesLength);
+            this.state.recipesLength = recipesLength;
+            this.setState({});
+        });
+        mongo.getAllRecipes(this.state.recipesPerPage, 1).then((data) => {
             this.setState({
                 recipes: data,
                 currentPage: 1,
@@ -37,25 +36,11 @@ class AllRecipes extends Component {
     }
 
     makePaginationControl() {
-        let pageNumbers = []
-        for (let i = 1; i <= Math.ceil(this.state.recipesTotal / this.state.recipesPerPage); i++) {
-            pageNumbers.push(i);
+        let pageNumbers = [];
+        for (let i = 0; i < Math.ceil(this.state.recipesLength/10); i++){
+            pageNumbers.push(i+1);
         }
-        let pagesBefore = []
-        let pagesAfter = []
-        if (this.state.currentPage < 4) {
-            pageNumbers = pageNumbers.splice(0, 5)
-        } else if (this.state.currentPage > 3 && this.state.currentPage < pageNumbers.length - 1) {
-            pagesBefore = pageNumbers.slice(this.state.currentPage - 3, this.state.currentPage)
-            pagesAfter = pageNumbers.slice(this.state.currentPage, this.state.currentPage + 2)
-            pageNumbers = pagesBefore.concat(pagesAfter)
-        } else if (this.state.currentPage > 3 && this.state.currentPage < pageNumbers.length - 3) {
-            pagesBefore = pageNumbers.slice(this.state.currentPage - 2, this.state.currentPage)
-            pagesAfter = pageNumbers.splice(this.state.currentPage, 10)
-            pageNumbers = pagesBefore.concat(pagesAfter)
-        } else {
-            pageNumbers = pageNumbers.splice(pageNumbers.length - 5)
-        }
+
 
         return (
             <ul className="pageNumbers-ul">
@@ -84,15 +69,16 @@ class AllRecipes extends Component {
         return ((id === this.state.currentPage) ? 'active' : '')
     }
 
-    renderPageRecipes(e) {
+    renderPageRecipes(pageNumber) {
         this.setState({loading: true})
-        // fs.getNumberOfRecipesById(this.state.recipesPerPage, e).then(recipes => {
-        //     this.setState({
-        //         recipes: recipes,
-        //         currentPage: Number(e),
-        //         loading: false
-        //     })
-        // })
+
+        mongo.getAllRecipes(this.state.recipesPerPage, Number(pageNumber)).then((data) => {
+            this.setState({
+                recipes: data,
+                currentPage: Number(pageNumber),
+                loading: false
+            })
+        })
     }
 
     renderAllRecipes() {

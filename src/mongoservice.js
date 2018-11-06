@@ -13,4 +13,13 @@ export default class {
             return data;
          }))})
     }
+
+    static getRecipesCount () {
+        //TODO get all recipes from mongodb with fetch
+        return fetch(`http://localhost:2000/getrecipescount/`, {
+        }).then(response => {
+            return response.json().then((data=>{
+                return data;
+            }))})
+    }
 }
