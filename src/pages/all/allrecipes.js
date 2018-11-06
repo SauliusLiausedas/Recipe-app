@@ -27,7 +27,7 @@ class AllRecipes extends Component {
         //TODO get count of all recipes
         //TODO get first 10 recipes ( 10 is veriable which can be changed later)
         //TODO on pagination button click (number 2) open next 10 recipes
-        mongo.getAllRecipes().then((data) => {
+        mongo.getAllRecipes(5, 1).then((data) => {
             this.setState({
                 recipes: data,
                 currentPage: 1,

@@ -5,9 +5,9 @@
 * https://firebase.google.com/docs/firestore/query-data/get-data
 * */
 export default class {
-    static getAllRecipes () {
+    static getAllRecipes (itemsPerPage, page) {
         //TODO get all recipes from mongodb with fetch
-         return fetch('http://localhost:2000/getallrecipes/10/1', {
+         return fetch(`http://localhost:2000/getallrecipes/${itemsPerPage}/${page}`, {
         }).then(response => {
             return response.json().then((data=>{
             return data;

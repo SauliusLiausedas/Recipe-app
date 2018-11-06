@@ -47,13 +47,20 @@ app.get('/get/:some', function (req, res) {
 
 app.get('/getallrecipes/:itemsPerPage/:pageNumber', function (req, res) {
     let itemsPerPage =  parseInt(req.params.itemsPerPage);///.*m.*/
-    db.collection("recipes").find({}).limit(itemsPerPage).toArray(function(err, docs) {
+    let pageNumber = parseInt(req.params.pageNumber);
+    db.collection("recipes").find({}).skip(itemsPerPage*(pageNumber-1)).limit(itemsPerPage).toArray(function(err, docs) {
         assert.equal(err, null);
         console.log("Found the following records");
         console.log(docs);
         res.status(200);
         res.send(JSON.stringify(docs))
     });
+})
+
+app.get('/getrecipescount', function (req, res) {
+    db.collection("recipes").count().then((data)=>{
+        res.send(JSON.stringify(data))
+    })
 })
 
 // Connection URL
