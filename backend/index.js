@@ -18,11 +18,11 @@ app.post('/insertfrommealdb', function (req, res) {
 })
 
 
-app.post('/insertcategories', function (req, res) {
+app.post('/insertcategories', function (req, response) {
     db.collection("categories").insertOne(req.body).then((res, err)=>{
         console.log(res);
         console.log(err);
-        res.send('{success: "success"}')
+        response.send('{success: "success"}')
     })
 })
 
