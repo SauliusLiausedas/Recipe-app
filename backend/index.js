@@ -47,7 +47,8 @@ app.get('/get/:some', function (req, res) {
 
 app.get('/searchrecipe/:searchValue', function (req, res) {
     let searchValue =  req.params.searchValue;
-    db.collection("recipes").find({ $or: [ {strInstructions: new RegExp(searchValue)}, {strMeal: new RegExp('chicken')}]}).toArray(function(err, docs) {
+    let query = { $or: [ {strInstructions: new RegExp(searchValue)}, {strMeal: new RegExp('chicken')}]};
+    db.collection("recipes").find(query).toArray(function(err, docs) {
         assert.equal(err, null);
         console.log("Found the following records");
         console.log(docs);
