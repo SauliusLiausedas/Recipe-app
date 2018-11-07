@@ -37,17 +37,9 @@ class Search extends Component {
 
     onSubmit() {
         this.setState({searchWord: this.state.searchReq, page: 1})
-        // fs.searchRecipesByName(this.state.searchReq, this.state.page).then(data => {
-        //     if (data) {
-        //         this.setState({searchResult: data});
-        //     } else {
-        //        console.log("error")
-        //     }
-        // })
         mongo.getSearchValue(this.state.searchReq).then((data)=>{
             console.log(data);
            this.setState({searchResult: data});
-
         });
     }
 
