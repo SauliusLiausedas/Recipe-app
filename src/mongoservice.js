@@ -17,9 +17,9 @@ export default class {
             }))})
     }
 
-   static getSearchValue (searchValue) {
+   static getSearchValue (searchValue, itemsPerPage, page) {
         //TODO get all recipes from mongodb with fetch
-        return fetch(`http://localhost:2000/searchrecipe/${searchValue}`, {
+        return fetch(`http://localhost:2000/searchrecipe/${searchValue}/${itemsPerPage}/${page}`, {
         }).then(response => {
             return response.json().then((data=>{
                 return data;

@@ -45,15 +45,17 @@ app.get('/get/:some', function (req, res) {
     });
 })
 
-app.get('/searchrecipe/:searchValue', function (req, res) {
+app.get('/searchrecipe/:searchValue/:itemsPerPage/:pageNumber', function (req, res) {
     let searchValue = req.params.searchValue;
+    let itemsPerPage = parseInt(req.params.itemsPerPage);
+    let pageNumber = parseInt(req.params.pageNumber);
     let query = {
         $or: [
             {strInstructions: new RegExp(searchValue)},
             {strMeal: new RegExp('chicken')}
         ]
     };
-    db.collection("recipes").find(query).toArray(function (err, docs) {
+    db.collection("recipes").find(query).skip(itemsPerPage * (pageNumber - 1)).limit(itemsPerPage).toArray(function (err, docs) {
         assert.equal(err, null);
         console.log("Found the following records");
         console.log(docs);

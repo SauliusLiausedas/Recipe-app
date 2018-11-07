@@ -17,33 +17,31 @@ class AllRecipes extends Component {
         }
     }
 
-    componentWillMount() {
+    async componentWillMount() {
         let page = (this.props && this.props.match && this.props.match.params && this.props.match.params.page) || '';
         this.setState({loading: true})
 
-        mongo.getRecipesCount().then((recipesLength)=>{
-            console.log(recipesLength);
-            this.state.recipesLength = recipesLength;
-            this.setState({});
-            mongo.getAllRecipes(this.state.recipesPerPage, 1).then((data) => {
-                this.setState({
-                    recipes: data,
-                    currentPage: 1,
-                    loading: false
-                })
-            })
-        });
-
-
+        let recipesLength = await mongo.getRecipesCount();
+        console.log(recipesLength);
+        this.state.recipesLength = recipesLength;
+        let recipesArray = await mongo.getAllRecipes(this.state.recipesPerPage, 1);
+        this.setState({
+            recipes: recipesArray,
+            currentPage: 1,
+            loading: false
+        })
     }
 
-    makePaginationControl() {
+    createPageNumbers (){
         let pageNumbers = [];
         for (let i = 0; i < Math.ceil(this.state.recipesLength/10); i++){
             pageNumbers.push(i+1);
         }
+        return pageNumbers;
+    }
 
-
+    makePaginationControl() {
+        let pageNumbers = this.createPageNumbers();
         return (
             <ul className="pageNumbers-ul">
                 <Link className="pageNumbers" to={'/all/1'}>
