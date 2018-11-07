@@ -44,7 +44,7 @@ class Search extends Component {
         //        console.log("error")
         //     }
         // })
-        mongo.getRecipesCount(this.state.searchReq).then((data)=>{
+        mongo.getSearchValue(this.state.searchReq).then((data)=>{
             console.log(data);
            this.setState({searchResult: data});
 
