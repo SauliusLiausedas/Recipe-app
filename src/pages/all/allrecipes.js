@@ -25,14 +25,16 @@ class AllRecipes extends Component {
             console.log(recipesLength);
             this.state.recipesLength = recipesLength;
             this.setState({});
-        });
-        mongo.getAllRecipes(this.state.recipesPerPage, 1).then((data) => {
-            this.setState({
-                recipes: data,
-                currentPage: 1,
-                loading: false
+            mongo.getAllRecipes(this.state.recipesPerPage, 1).then((data) => {
+                this.setState({
+                    recipes: data,
+                    currentPage: 1,
+                    loading: false
+                })
             })
-        })
+        });
+
+
     }
 
     makePaginationControl() {
