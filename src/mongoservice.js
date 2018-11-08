@@ -1,6 +1,5 @@
 export default class {
     static getAllRecipes (itemsPerPage, page) {
-        //TODO get all recipes from mongodb with fetch
          return fetch(`http://localhost:2000/getallrecipes/${itemsPerPage}/${page}`, {
         }).then(response => {
             return response.json().then((data=>{
@@ -9,7 +8,6 @@ export default class {
     }
 
     static getRecipesCount () {
-        //TODO get all recipes from mongodb with fetch
         return fetch(`http://localhost:2000/getrecipescount/`, {
         }).then(response => {
             return response.json().then((data=>{
@@ -18,8 +16,22 @@ export default class {
     }
 
    static getSearchValue (searchValue, itemsPerPage, page) {
-        //TODO get all recipes from mongodb with fetch
         return fetch(`http://localhost:2000/searchrecipe/${searchValue}/${itemsPerPage}/${page}`, {
+        }).then(response => {
+            return response.json().then((data=>{
+                return data;
+            }))})
+    }
+
+    static createRecipe (recipe) {
+        console.log(recipe);
+        return fetch(`http://localhost:2000/insertfrommealdb`, {
+            method: 'POST',
+            body: JSON.stringify(recipe),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
         }).then(response => {
             return response.json().then((data=>{
                 return data;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import fs from '../firestoreservice'
+import mongo from '../mongoservice'
 
 class AddRecipe extends Component {
     constructor() {
@@ -107,18 +108,23 @@ class AddRecipe extends Component {
         });
     }
 
-    saveRecipe() {
+    async saveRecipe() {
         let makeSure = this.checkIfEmpty()
         if(makeSure) {
-            this.recipeToAdd.keyWords = this.recipeToAdd.strMeal.toLowerCase().split(' ')
-            fs.getCount().then(count => {
-                let recipeCount = count.count
-                this.recipeToAdd.id = recipeCount
-                fs.createRecipe(this.recipeToAdd)
-                let data = {count: count.count+1}
-                fs.updateRecipeCounter(data)
-                this.props.history.push('/categories/'+this.recipeToAdd.strCategory+'/'+this.recipeToAdd.id)
-            })
+            //this.recipeToAdd.keyWords = this.recipeToAdd.strMeal.toLowerCase().split(' ')
+            // fs.getCount().then(count => {
+            //     let recipeCount = count.count
+            //     this.recipeToAdd.id = recipeCount
+            //
+            //     fs.createRecipe(this.recipeToAdd)
+            //
+            //     let data = {count: count.count+1}
+            //     fs.updateRecipeCounter(data)
+            //     this.props.history.push('/categories/'+this.recipeToAdd.strCategory+'/'+this.recipeToAdd.id)
+            // })
+            //TODO implement recipe adding to back-end
+            await mongo.createRecipe(this.recipeToAdd);
+            //this.props.history.push('/categories/'+this.recipeToAdd.strCategory+'/'+this.recipeToAdd.id)
         }
     }
 
@@ -180,7 +186,7 @@ class AddRecipe extends Component {
                                 {this.getCategoryOptions()}
                             <div>
                                 <button className="edit btn" onClick={() => this.goBack()}>Cancel</button>
-                                <button className="edit btn" onClick={() => this.saveRecipe()}>Save</button>
+                                <button className="edit btn" onClick={() => {this.saveRecipe()}}>Save</button>
                             </div>
                         </div>
                         <div>

@@ -9,11 +9,31 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
 }));
 
-app.post('/insertfrommealdb', function (req, res) {
+app.use((req, res, next) => { //doesn't send response just adjusts it
+
+    res.header("Access-Control-Allow-Origin", "*") //* to give access to any origin
+
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization" //to give access to all the headers provided
+    );
+
+    if(req.method === 'OPTIONS'){
+        res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET'); //to give access to all the methods provided
+        return res.status(200).json({});
+    }
+    next(); //so that other routes can take over
+
+})
+
+app.post('/insertfrommealdb', function (req, response) {
+    if (req.body && !req.body.idMeal){
+        req.body.idMeal = parseInt(Math.random(new Date().getTime())*10000000);
+    }
     db.collection("recipes").insertOne(req.body).then((res, err) => {
-        console.log(res);
+        console.log(response);
         console.log(err);
-        res.send('{success: "success"}')
+        response.send('{success: "success"}')
     })
 })
 
