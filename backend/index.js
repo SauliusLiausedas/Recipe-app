@@ -40,7 +40,7 @@ app.post('/insertfrommealdb', function (req, response) {
 app.put('/updateRecipe', function (req, response) {
     let updatedRecipe = req.body;
     delete updatedRecipe._id;
-    db.collection("recipes").update({idMeal: updatedRecipe.idMeal}, updatedRecipe, {}, function (err, docs) {
+    db.collection("recipes").update({idMeal: updatedRecipe.idMeal}, updatedRecipe, {upsert: true}, function (err, docs) {
         console.log(response);
         console.log(err);
         response.send('{success: "success"}')
@@ -117,6 +117,29 @@ app.get('/getallrecipes/:itemsPerPage/:pageNumber', function (req, res) {
 app.get('/getrecipescount', function (req, res) {
     db.collection("recipes").count().then((data) => {
         res.send(JSON.stringify(data))
+    })
+})
+
+    // METHOD TO GET CATEGORIES
+
+app.get('/getcategories', function(req, res) {
+    db.collection('categories').find({}).toArray(function(err, docs) {
+        console.log('Categories')
+        console.log(docs)
+        res.status(200)
+        res.send(JSON.stringify(docs))
+    })
+})
+    // Method to get category meals
+
+app.get('/getselectedcategory/:category', function(req, res) {
+    let category = req.params.category
+    // db.inventory.find( { status: "A" }, { item: 1, status: 1, _id: 0 } )
+    db.collection('recipes').find({'strCategory' : category}, {idMeal: 1, strMeal: 1, strImage: 1, _id: 0, strCategory: 0, strArea: 0} ).toArray(function(err, docs) {
+        console.log('Categories')
+        console.log(docs)
+        res.status(200)
+        res.send(JSON.stringify(docs))
     })
 })
 

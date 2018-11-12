@@ -22,7 +22,6 @@ class AllRecipes extends Component {
         this.setState({loading: true})
 
         let recipesLength = await mongo.getRecipesCount();
-        console.log(recipesLength);
         this.state.recipesLength = recipesLength;
         let recipesArray = await mongo.getAllRecipes(this.state.recipesPerPage, 1);
         this.setState({

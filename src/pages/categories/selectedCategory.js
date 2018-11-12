@@ -3,6 +3,7 @@ import '../../stylesheets/selectedCategory.css'
 import {Link} from "react-router-dom";
 import Error from "../error";
 import fs from "../../firestoreservice"
+import mongo from '../../mongoservice'
 
 class SelectedCategory extends Component {
     constructor() {
@@ -12,12 +13,11 @@ class SelectedCategory extends Component {
          }
     }
 
-    componentWillMount() {
+    async componentWillMount() {
         let category = (this.props && this.props.match && this.props.match.params && this.props.match.params.category) || '';
         if (category){
-            fs.getRecipesByCategory(category).then(category => {
-                this.setState({selectedCategoryMeals: category})
-            })
+            let categoryObj = await mongo.getCategoryMeals(category)
+            this.setState({selectedCategoryMeals: categoryObj})
         } else {
             return <Error/>
         }
@@ -29,14 +29,14 @@ class SelectedCategory extends Component {
                  <div className="categoryMeals">
                      {this.state.selectedCategoryMeals.map((mealObj, i) => {
                          return (
-                             <div className="categoryMealBox" id={mealObj.data.id} key={i}>
+                             <div className="categoryMealBox" id={mealObj.id} key={i}>
                                  <div className='meal-grid'>
-                                     <h1 className="categoryMealName">{mealObj.data.strMeal}</h1>
-                                     <Link to={this.props.match.url + '/' + mealObj.data.id}>
+                                     <h1 className="categoryMealName">{mealObj.strMeal}</h1>
+                                     <Link to={this.props.match.url + '/' + mealObj.id}>
                                          <img id={'image'+i}
                                          className="categoryMealImg"
-                                         alt={mealObj.data.strMeal} id={mealObj.data.id}
-                                         src={mealObj.data.strMealThumb}/>
+                                         alt={mealObj.strMeal} id={mealObj.id}
+                                         src={mealObj.strMealThumb}/>
                                      </Link>
                                  </div>
                              </div>

@@ -58,4 +58,25 @@ export default class {
         }).then(response => {
             })
     }
+
+    static getAllCategories () {
+        return fetch(`http://localhost:2000/getcategories/`, {
+        }).then(response => {
+            return response.json().then(data=>{
+                console.log(data)
+                return data;
+            })
+        })
+    }
+
+    static getCategoryMeals (category) {
+        return fetch(`http://localhost:2000/getselectedcategory/${category}`, {
+        }).then(response => {
+            return response.json().then(data=>{
+                console.log(data)
+                return data;
+            })
+        })
+    }
+
 }
