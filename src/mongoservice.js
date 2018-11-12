@@ -45,4 +45,17 @@ export default class {
                 return data;
             }))})
     }
+
+    static updateRecipe (recipe) {
+        console.log(recipe);
+        return fetch(`http://localhost:2000/updateRecipe`, {
+            method: 'PUT',
+            body: JSON.stringify(recipe),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then(response => {
+            })
+    }
 }

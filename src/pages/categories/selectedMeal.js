@@ -147,7 +147,8 @@ class SelectedMeal extends Component {
 
     saveRecipe() {
         this.state.mealById = this.arrayClone(this.recipeToEdit)
-        fs.createNewRecipe(this.recipeToEdit[0])
+        //fs.createNewRecipe(this.recipeToEdit[0])
+        mongo.updateRecipe(this.recipeToEdit[0]);
         this.setState({edit: false})
         this.recipeToEdit = []
     }

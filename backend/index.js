@@ -37,6 +37,15 @@ app.post('/insertfrommealdb', function (req, response) {
     })
 })
 
+app.put('/updateRecipe', function (req, response) {
+    let updatedRecipe = req.body;
+    delete updatedRecipe._id;
+    db.collection("recipes").update({idMeal: updatedRecipe.idMeal}, updatedRecipe, {}, function (err, docs) {
+        console.log(response);
+        console.log(err);
+        response.send('{success: "success"}')
+    });
+})
 
 app.post('/insertcategories', function (req, response) {
     db.collection("categories").insertOne(req.body).then((res, err) => {
