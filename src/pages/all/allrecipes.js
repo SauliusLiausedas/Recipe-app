@@ -91,7 +91,7 @@ class AllRecipes extends Component {
                         this.state.recipes.map((mealObj, i) => {
                             return (
                                 <div key={i} id={i} className="recipe-box">
-                                    <Link to={'/categories/' + mealObj.strCategory + '/' + mealObj.id}>
+                                    <Link to={'/categories/' + mealObj.strCategory + '/' + mealObj.idMeal}>
                                         <img className="recipe-img" alt={mealObj.strMeal} src={mealObj.strMealThumb}/>
                                     </Link>
                                     <h2 className="mealName" key={i}>{mealObj.strMeal}</h2>

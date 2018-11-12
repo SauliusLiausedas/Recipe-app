@@ -23,6 +23,14 @@ export default class {
             }))})
     }
 
+    static getRecipeById (id) {
+        return fetch(`http://localhost:2000/getById/${id}`, {
+        }).then(response => {
+            return response.json().then((data=>{
+                return data;
+            }))})
+    }
+
     static createRecipe (recipe) {
         console.log(recipe);
         return fetch(`http://localhost:2000/insertfrommealdb`, {

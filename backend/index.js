@@ -54,6 +54,14 @@ app.get('/insert', function (req, res) {
     res.send('success')
 })
 
+app.get('/getById/:id', function (req, response) {
+    const id = req.params.id;
+    db.collection("recipes").find({idMeal: id}).toArray(function (err, docs) {
+        response.status(200);
+        response.send(JSON.stringify(docs))
+    });
+})
+
 app.get('/get/:some', function (req, res) {
     let param = req.params.some;
     db.collection("insert").find({insertColumn: new RegExp(param)}).find().toArray(function (err, docs) {
@@ -88,6 +96,7 @@ app.get('/getallrecipes/:itemsPerPage/:pageNumber', function (req, res) {
     let itemsPerPage = parseInt(req.params.itemsPerPage);///.*m.*/
     let pageNumber = parseInt(req.params.pageNumber);
     db.collection("recipes").find({}).skip(itemsPerPage * (pageNumber - 1)).limit(itemsPerPage).toArray(function (err, docs) {
+        //db.collection("recipes").update()
         assert.equal(err, null);
         console.log("Found the following records");
         console.log(docs);

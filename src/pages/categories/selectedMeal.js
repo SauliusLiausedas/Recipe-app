@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../../stylesheets/selectedMeal.css'
 import fs from '../../firestoreservice'
+import mongo from '../../mongoservice'
 import { Link } from 'react-router-dom'
 
 class SelectedMeal extends Component {
@@ -19,8 +20,8 @@ class SelectedMeal extends Component {
     componentWillMount() {
         let id = (this.props && this.props.match && this.props.match.params && this.props.match.params.id) || '';
         id = parseInt(id)
-        fs.getRecipeById(id).then(meal =>{
-            Object.keys(meal[0].data).filter((key)=>{
+        mongo.getRecipeById(id).then(meal =>{
+            Object.keys(meal[0]).filter((key)=>{
                 this.setIngredientValue(key, meal, 'strIngredient', 'ingredients');
                 this.setIngredientValue(key, meal, 'strMeasure', 'measures');
             })
@@ -29,8 +30,8 @@ class SelectedMeal extends Component {
     }
 
     setIngredientValue(key, meal, value, arrayVal) {
-        if (key.indexOf(value) !== -1 && meal[0].data[key]){
-            this.state[arrayVal].push(meal[0].data[key]);
+        if (key.indexOf(value) !== -1 && meal[0][key]){
+            this.state[arrayVal].push(meal[0][key]);
         }
     }
 
@@ -52,14 +53,14 @@ class SelectedMeal extends Component {
     }
 
     instructionsHandleChange(e) {
-        this.recipeToEdit[0].data.strInstructions = e.target.value
+        this.recipeToEdit[0].strInstructions = e.target.value
     }
 
     ingredientHandleChange (e, i, stateValue) {
         if(stateValue === 'ingredients') {
-            this.recipeToEdit[0].data['strIngredient' + (i + 1)] = e.target.value
+            this.recipeToEdit[0]['strIngredient' + (i + 1)] = e.target.value
         } else if(stateValue === 'measures') {
-            this.recipeToEdit[0].data['strMeasure' + (i + 1)] = e.target.value
+            this.recipeToEdit[0]['strMeasure' + (i + 1)] = e.target.value
         }
         this.state[stateValue][i] = e.target.value;
     }
@@ -102,9 +103,9 @@ class SelectedMeal extends Component {
 
     getInstructionsElement(mealObj) {
         if (this.state.edit) {
-            return <textarea onChange={(e) => this.instructionsHandleChange(e)} className="instructions" rows="25" cols="50">{mealObj.data.strInstructions}</textarea>
+            return <textarea onChange={(e) => this.instructionsHandleChange(e)} className="instructions" rows="25" cols="50">{mealObj.strInstructions}</textarea>
         } else {
-            return <p className="instructions">{mealObj.data.strInstructions}</p>
+            return <p className="instructions">{mealObj.strInstructions}</p>
         }
     }
 
@@ -146,7 +147,7 @@ class SelectedMeal extends Component {
 
     saveRecipe() {
         this.state.mealById = this.arrayClone(this.recipeToEdit)
-        fs.createNewRecipe(this.recipeToEdit[0].data)
+        fs.createNewRecipe(this.recipeToEdit[0])
         this.setState({edit: false})
         this.recipeToEdit = []
     }
@@ -165,9 +166,9 @@ class SelectedMeal extends Component {
                                     </div>
                                     <div>
                                         {/*{this.getNameElement(mealObj)}*/}
-                                        <h2 className="ingredients">{mealObj.data.strMeal}</h2>
-                                        <img alt={mealObj.data.strMeal} className="mealImage" src={mealObj.data.strMealThumb} />
-                                        <em><h3 className="category">{mealObj.data.strCategory} category</h3></em>
+                                        <h2 className="ingredients">{mealObj.strMeal}</h2>
+                                        <img alt={mealObj.strMeal} className="mealImage" src={mealObj.strMealThumb} />
+                                        <em><h3 className="category">{mealObj.strCategory} category</h3></em>
                                         <button className="edit btn" onClick={this.enableEdit.bind(this)}>{this.getEditButtonValue.bind(this)()}</button>
                                         {this.getAddSaveButton()}
                                     </div>
