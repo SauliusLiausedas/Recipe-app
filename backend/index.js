@@ -72,11 +72,28 @@ app.get('/getById/:id', function (req, response) {
 })
 
 app.get('/getCategories', function (req, response) {
+    let myData = [];
     db.collection("categories").find().toArray(function (err, docs) {
-        response.status(200);
-        response.send(JSON.stringify(docs))
+        //response.status(200);
+        //response.send(JSON.stringify(docs))
+        docs.forEach(async (item)=>{
+            //myData.push()
+            let myResponse = await getOneRequest(item.strCategory);
+            if (myResponse.length){
+                myData.push(myResponse);
+            }
+        })
+
     });
 })
+
+function getOneRequest (strCategorySearchValue) {
+    return new Promise(resolve=>{
+        db.collection("recipes").find({strCategory: strCategorySearchValue}).toArray(function (err, docs) {
+            resolve(docs);
+        });
+    })
+}
 
 app.get('/getRecipesByCategory/:category', function (req, response) {
     let category = req.params.category;
