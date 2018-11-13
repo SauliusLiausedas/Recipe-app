@@ -18,7 +18,7 @@ app.use((req, res, next) => { //doesn't send response just adjusts it
         "Origin, X-Requested-With, Content-Type, Accept, Authorization" //to give access to all the headers provided
     );
 
-    if(req.method === 'OPTIONS'){
+    if (req.method === 'OPTIONS') {
         res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET'); //to give access to all the methods provided
         return res.status(200).json({});
     }
@@ -27,8 +27,8 @@ app.use((req, res, next) => { //doesn't send response just adjusts it
 })
 
 app.post('/insertfrommealdb', function (req, response) {
-    if (req.body && !req.body.idMeal){
-        req.body.idMeal = parseInt(Math.random(new Date().getTime())*10000000);
+    if (req.body && !req.body.idMeal) {
+        req.body.idMeal = parseInt(Math.random(new Date().getTime()) * 10000000);
     }
     db.collection("recipes").insertOne(req.body).then((res, err) => {
         console.log(response);
@@ -72,23 +72,55 @@ app.get('/getById/:id', function (req, response) {
 })
 
 app.get('/getCategories', function (req, response) {
-    let myData = [];
-    db.collection("categories").find().toArray(function (err, docs) {
-        //response.status(200);
-        //response.send(JSON.stringify(docs))
-        docs.forEach(async (item)=>{
-            //myData.push()
-            let myResponse = await getOneRequest(item.strCategory);
-            if (myResponse.length){
-                myData.push(myResponse);
+    var result = db.collection('recipes').aggregate([
+        {
+            $lookup: {
+                from: "categories",
+                localField: "strCategory",
+                foreignField: "strCategory",
+                as: "categories_"
             }
-        })
-
+        },
+        {
+            $group: {_id: null, uniqueValues: {$addToSet: "$strCategory", $addToSet: "$categories_"}}
+        }
+    ]);
+    result.toArray(function (err, docs) {
+        console.log(docs);
+        response.send(JSON.stringify(docs[0].uniqueValues.map((item) => {
+            return {
+                strCategory: item[0].strCategory,
+                strCategoryThumb: item[0].strCategoryThumb,
+                strCategoryDescription: item[0].strCategoryDescription
+            };
+        })));
     });
+    // db.collection('recipes').distinct('strCategory', {}, function(err, docs) {
+    //     console.log(docs);
+    // })
+    /*db.collection("categories").find().toArray(async function (err, docs) {
+        let myData = await asyncMap(docs);
+        console.log(myData);
+        response.status(200);
+        response.send(JSON.stringify(myData))
+    });*/
 })
 
-function getOneRequest (strCategorySearchValue) {
-    return new Promise(resolve=>{
+function asyncMap(docs) {
+    return new Promise(resolve => {
+        Promise.all(docs.map(async (item) => {
+            let myResponse = await getOneRequest(item.strCategory);
+            if (myResponse.length) {
+                return item
+            } else {
+                return false
+            }
+        })).then(data => resolve(data.filter(item => item)))
+    });
+}
+
+function getOneRequest(strCategorySearchValue) {
+    return new Promise(resolve => {
         db.collection("recipes").find({strCategory: strCategorySearchValue}).toArray(function (err, docs) {
             resolve(docs);
         });
