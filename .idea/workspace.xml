@@ -5,12 +5,12 @@
     <bookmark url="file://$PROJECT_DIR$/src/mongoservice.js" line="6" mnemonic="2" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="518cd4c7-a06e-42b8-9af8-c421206b135c" name="Default Changelist" comment="add missing files">
+    <list default="true" id="518cd4c7-a06e-42b8-9af8-c421206b135c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/startDatabase.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/addToMongodb.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/addToMongodb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/body/recipes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/body/recipes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mongoservice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mongoservice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/all/allrecipes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/all/allrecipes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/categories/categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/categories/categories.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/categories/selectedCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/categories/selectedCategory.js" afterDir="false" />
     </list>
@@ -28,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/addToMongodb.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="55" column="44" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
+            <state relative-caret-position="312">
+              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -37,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/categories/categories.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="130">
-              <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -50,10 +50,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/categories/selectedMeal.js">
+        <entry file="file://$PROJECT_DIR$/src/pages/categories/allCategories.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3822">
-              <caret line="151" column="29" selection-start-line="151" selection-start-column="29" selection-end-line="151" selection-end-column="29" />
+            <state relative-caret-position="468">
+              <caret line="21" column="77" selection-start-line="21" selection-start-column="77" selection-end-line="21" selection-end-column="77" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/body/recipes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1373">
+              <caret line="69" column="61" selection-start-line="69" selection-start-column="55" selection-end-line="69" selection-end-column="61" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -61,32 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mongoservice.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="71" column="27" selection-start-line="71" selection-start-column="11" selection-end-line="71" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/categories/selectedCategory.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="38" column="59" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/all/allrecipes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-389">
+              <caret line="63" column="29" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -102,10 +93,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>recipeCount</find>
-      <find>Name</find>
-      <find>pageNumber</find>
-      <find>cursor</find>
       <find>getRecipe</find>
       <find>mealObj.data</find>
       <find>this.state.loader</find>
@@ -132,6 +119,10 @@
       <find>this.state.recip</find>
       <find>getallrecipes</find>
       <find>.data</find>
+      <find>addMeal</find>
+      <find>id</find>
+      <find>slice</find>
+      <find>.slice</find>
     </findStrings>
     <replaceStrings>
       <replace>Recipes</replace>
@@ -151,6 +142,7 @@
       <replace>recipeToAdd</replace>
       <replace>renderPageRecipes</replace>
       <replace>mealObj</replace>
+      <replace>idMe</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\js\paskaitanr_5\Recipe-app\src\pages\all</dir>
@@ -162,7 +154,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="1231" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
   </component>
@@ -204,21 +196,21 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/stylesheets/homepage.css" />
         <option value="$PROJECT_DIR$/src/pages/addRecipe.js" />
-        <option value="$PROJECT_DIR$/src/body/recipes.js" />
         <option value="$PROJECT_DIR$/src/firestoreservice.js" />
         <option value="$PROJECT_DIR$/src/pages/search/Search.js" />
         <option value="$PROJECT_DIR$/src/body/header.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/addToFirebase.js" />
         <option value="$PROJECT_DIR$/../../mongoStarter/mongostart/index.js" />
-        <option value="$PROJECT_DIR$/src/addToMongodb.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/backend/startDatabase_mine.bat" />
         <option value="$PROJECT_DIR$/src/pages/all/allrecipes.js" />
         <option value="$PROJECT_DIR$/src/pages/categories/allCategories.js" />
-        <option value="$PROJECT_DIR$/src/pages/categories/categories.js" />
-        <option value="$PROJECT_DIR$/src/mongoservice.js" />
+        <option value="$PROJECT_DIR$/src/addToMongodb.js" />
         <option value="$PROJECT_DIR$/src/pages/categories/selectedCategory.js" />
+        <option value="$PROJECT_DIR$/src/mongoservice.js" />
+        <option value="$PROJECT_DIR$/src/body/recipes.js" />
+        <option value="$PROJECT_DIR$/src/pages/categories/categories.js" />
         <option value="$PROJECT_DIR$/backend/index.js" />
       </list>
     </option>
@@ -316,7 +308,8 @@
       <workItem from="1540831725410" duration="1785000" />
       <workItem from="1540833543994" duration="1787000" />
       <workItem from="1540835359915" duration="1367000" />
-      <workItem from="1542044627766" duration="1677000" />
+      <workItem from="1542044627766" duration="1787000" />
+      <workItem from="1542122016941" duration="4965000" />
     </task>
     <task id="LOCAL-00001" summary="Starting page for all recipes">
       <created>1538263779529</created>
@@ -465,11 +458,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541434650232</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Get categories from mongoDB">
+      <created>1542052252499</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1542052252499</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="357456000" />
+    <option name="totallyTimeSpent" value="362531000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -481,14 +481,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info id="npm" order="0" side_tool="true" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.20158625" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.4993395" visible="true" weight="0.23430322" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.4993395" visible="true" weight="0.05972435" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5006605" side_tool="true" weight="0.3299566" />
       <window_info anchor="bottom" x="390" y="269" width="756" height="286" id="Version Control" order="2" weight="0.57515526" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
@@ -600,7 +599,8 @@
     <MESSAGE value="modify gitignore" />
     <MESSAGE value="add mongo refactoring files" />
     <MESSAGE value="add all recipes retrieval for ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="add all recipes retrieval for ui" />
+    <MESSAGE value="Get categories from mongoDB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Get categories from mongoDB" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -796,20 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/homepage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/body/recipes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/search/Search.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
@@ -904,30 +890,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/categories/selectedCategory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="41" column="35" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/categories/selectedMeal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3822">
+        <state relative-caret-position="2487">
           <caret line="151" column="29" selection-start-line="151" selection-start-column="29" selection-end-line="151" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/categories/allCategories.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/addToMongodb.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="55" column="44" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -941,27 +917,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/categories/categories.js">
+    <entry file="file://$PROJECT_DIR$/src/pages/homepage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
-          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/addToMongodb.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mongoservice.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="71" column="27" selection-start-line="71" selection-start-column="11" selection-end-line="71" selection-end-column="27" />
+        <state relative-caret-position="-389">
+          <caret line="63" column="29" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/categories/selectedCategory.js">
+    <entry file="file://$PROJECT_DIR$/src/body/recipes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="38" column="59" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
+        <state relative-caret-position="1373">
+          <caret line="69" column="61" selection-start-line="69" selection-start-column="55" selection-end-line="69" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/categories/allCategories.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="21" column="77" selection-start-line="21" selection-start-column="77" selection-end-line="21" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/categories/categories.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

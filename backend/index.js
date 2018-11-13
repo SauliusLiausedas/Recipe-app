@@ -123,20 +123,51 @@ app.get('/getrecipescount', function (req, res) {
     // METHOD TO GET CATEGORIES
 
 app.get('/getcategories', function(req, res) {
-    db.collection('categories').find({}).toArray(function(err, docs) {
-        console.log('Categories')
+    db.collection('categories').find({}).toArray(function (err, docs) {
+        let give = []
+        docs.forEach(async (doc, i) => {
+            //  await db.collection('recipes').find({}).count(function(err, send) {
+            // })
+            let myResponse = await getOneRequest(doc.strCategory)
+            if (myResponse.length) {
+                give.push(myResponse)
+            }
+        })
         console.log(docs)
         res.status(200)
-        res.send(JSON.stringify(docs))
+        res.send(JSON.stringify(give))
     })
 })
+
+function getOneRequest() {
+    return new Promise(resolve => {
+        db.collection('recipes').find({strCategory: doc.strCategory}.toArray(function(err, docs) {
+            resolve(docs)
+        }))
+    })
+}
     // Method to get category meals
 
 app.get('/getselectedcategory/:category', function(req, res) {
     let category = req.params.category
-    // db.inventory.find( { status: "A" }, { item: 1, status: 1, _id: 0 } )
-    db.collection('recipes').find({'strCategory' : category}, {idMeal: 1, strMeal: 1, strImage: 1, _id: 0, strCategory: 0, strArea: 0} ).toArray(function(err, docs) {
-        console.log('Categories')
+// db.inventory.find( { status: "A" }, { item: 1, status: 1, _id: 0 } )
+    let fieldselector = {strCategory: true, idMeal: true, strMeal: true, strMealThumb: true, _id: false}
+    db.collection('recipes').find({'strCategory' : category}).project(fieldselector).toArray(function(err, docs) {
+    console.log('Categories')
+    console.log(docs)
+    res.status(200)
+
+    res.send(JSON.stringify(docs))
+    })
+})
+
+// Get random quantity of random recipes
+
+app.get('/getrandomrecipe/:recipeCount', function(req, res) {
+    recipeToGet = (parseInt(req.params.recipeCount))
+// db.inventory.find( { status: "A" }, { item: 1, status: 1, _id: 0 } )
+    db.collection('recipes').find({}).skip(recipeToGet).limit(1).toArray(function(err, docs) {
+        console.log('recipes')
         console.log(docs)
         res.status(200)
         res.send(JSON.stringify(docs))

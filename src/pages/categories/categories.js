@@ -15,6 +15,7 @@ class Categories extends Component {
 
     async componentDidMount() {
         let categories = await mongo.getAllCategories()
+        console.log(categories)
         this.setState({categories: categories})
         // fs.getCollectionFull('categories').then(category => {
         //     this.setState({categories: category})

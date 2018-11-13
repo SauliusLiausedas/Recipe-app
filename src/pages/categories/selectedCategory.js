@@ -29,13 +29,13 @@ class SelectedCategory extends Component {
                  <div className="categoryMeals">
                      {this.state.selectedCategoryMeals.map((mealObj, i) => {
                          return (
-                             <div className="categoryMealBox" id={mealObj.id} key={i}>
+                             <div className="categoryMealBox" id={mealObj.idMeal} key={i}>
                                  <div className='meal-grid'>
                                      <h1 className="categoryMealName">{mealObj.strMeal}</h1>
-                                     <Link to={this.props.match.url + '/' + mealObj.id}>
+                                     <Link to={this.props.match.url + '/' + mealObj.idMeal}>
                                          <img id={'image'+i}
                                          className="categoryMealImg"
-                                         alt={mealObj.strMeal} id={mealObj.id}
+                                         alt={mealObj.strMeal} id={mealObj.idMeal}
                                          src={mealObj.strMealThumb}/>
                                      </Link>
                                  </div>

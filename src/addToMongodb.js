@@ -18,9 +18,10 @@ class AddToMongodb extends Component {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(data.meal[0])
-            }).then(response => response.json()));
-
-        });
+            }).then(response => {
+                return response
+            }));
+     })
     }
 
     addKeyWordsToFirebase() {

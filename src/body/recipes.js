@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import fs from '../firestoreservice.js'
+import mongo from '../mongoservice'
 
 class Recipes extends Component {
 
@@ -26,13 +27,22 @@ class Recipes extends Component {
 
     async initRecipes() {
         this.setState({loading: true})
-        fs.getCount().then(count => {
-            let recipeCount = Math.floor(Math.random() * count.count)
-            let randomQuantity = Math.floor(Math.random() * 10) + 1
-            fs.getRandomRecipe(recipeCount, randomQuantity).then(data => {
-                this.setState({recipesToShow: data, recipesId: randomQuantity, loading: false})
-            })
+        let randomQuantity = Math.floor(Math.random() * 10) + 1
+        let recipeCount = await mongo.getRecipesCount().then(count => {
+            return Math.floor(Math.random() * count)
         })
+        let data = await mongo.getRandomRecipe(recipeCount, randomQuantity).then(data => {
+            return data
+        })
+        this.setState({recipesToShow: data, recipesId: randomQuantity, loading: false})
+
+        // fs.getCount().then(count => {
+        //     let recipeCount = Math.floor(Math.random() * count.count)
+        //     let randomQuantity = Math.floor(Math.random() * 10) + 1
+        //     fs.getRandomRecipe(recipeCount, randomQuantity).then(data => {
+        //         this.setState({recipesToShow: data, recipesId: randomQuantity, loading: false})
+        //     })
+        // })
         // let meals = await fs.getCollection('recipes');
         //
         // let random = Math.floor(Math.random() * 10) + 1
@@ -46,6 +56,7 @@ class Recipes extends Component {
     }
 
     render() {
+        console.log(this.state)
         if (!this.state.loading) {
             return (
                 <div>
