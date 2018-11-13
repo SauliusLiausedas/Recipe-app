@@ -78,6 +78,16 @@ app.get('/getCategories', function (req, response) {
     });
 })
 
+app.get('/getRecipesByCategory/:category', function (req, response) {
+    let category = req.params.category;
+    let columnSelector = {strMeal: true, strMealThumb: true, idMeal: true};
+    let query = {strCategory: category};
+    db.collection("recipes").find(query).project(columnSelector).toArray(function (err, docs) {
+        response.status(200);
+        response.send(JSON.stringify(docs))
+    });
+})
+
 app.get('/get/:some', function (req, res) {
     let param = req.params.some;
     db.collection("insert").find({insertColumn: new RegExp(param)}).find().toArray(function (err, docs) {

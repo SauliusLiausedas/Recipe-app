@@ -66,4 +66,12 @@ export default class {
                 return data;
             }))})
     }
+
+    static getRecipesByCategory (category) {
+        return fetch(`http://localhost:2000/getRecipesByCategory/${category}`, {
+        }).then(response => {
+            return response.json().then((data=>{
+                return data;
+            }))})
+    }
 }
