@@ -71,6 +71,13 @@ app.get('/getById/:id', function (req, response) {
     });
 })
 
+app.get('/getCategories', function (req, response) {
+    db.collection("categories").find().toArray(function (err, docs) {
+        response.status(200);
+        response.send(JSON.stringify(docs))
+    });
+})
+
 app.get('/get/:some', function (req, res) {
     let param = req.params.some;
     db.collection("insert").find({insertColumn: new RegExp(param)}).find().toArray(function (err, docs) {

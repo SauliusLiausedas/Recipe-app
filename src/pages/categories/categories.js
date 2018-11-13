@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../../stylesheets/categories.css'
 import AllCategories from './allCategories.js'
-import fs from '../../firestoreservice'
+import mongo from '../../mongoservice'
 
 class Categories extends Component {
     constructor() {
@@ -13,7 +13,11 @@ class Categories extends Component {
     }
 
     componentDidMount() {
-        fs.getCollectionFull('categories').then(category => {
+        // fs.getCollectionFull('categories').then(category => {
+        //     this.setState({categories: category})
+        // })
+        //TODO replace with mongodb categories
+        mongo.getCategories().then(category => {
             this.setState({categories: category})
         })
     }

@@ -58,4 +58,12 @@ export default class {
         }).then(response => {
             })
     }
+
+    static getCategories () {
+        return fetch(`http://localhost:2000/getCategories/`, {
+        }).then(response => {
+            return response.json().then((data=>{
+                return data;
+            }))})
+    }
 }
