@@ -2,6 +2,7 @@ const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 var express = require('express')
 var app = express()
+var helper = require('./helper');
 var db = null;
 var bodyParser = require('body-parser')
 app.use(bodyParser.json());       // to support JSON-encoded bodies
@@ -72,60 +73,37 @@ app.get('/getById/:id', function (req, response) {
 })
 
 app.get('/getCategories', function (req, response) {
-    var result = db.collection('recipes').aggregate([
-        {
-            $lookup: {
-                from: "categories",
-                localField: "strCategory",
-                foreignField: "strCategory",
-                as: "categories_"
-            }
-        },
-        {
-            $group: {_id: null, uniqueValues: {$addToSet: "$strCategory", $addToSet: "$categories_"}}
-        }
-    ]);
-    result.toArray(function (err, docs) {
-        console.log(docs);
-        response.send(JSON.stringify(docs[0].uniqueValues.map((item) => {
-            return {
-                strCategory: item[0].strCategory,
-                strCategoryThumb: item[0].strCategoryThumb,
-                strCategoryDescription: item[0].strCategoryDescription
-            };
-        })));
-    });
-    // db.collection('recipes').distinct('strCategory', {}, function(err, docs) {
+    // var result = db.collection('recipes').aggregate([
+    //     {
+    //         $lookup: {
+    //             from: "categories",
+    //             localField: "strCategory",
+    //             foreignField: "strCategory",
+    //             as: "categories_"
+    //         }
+    //     },
+    //     {
+    //         $group: {_id: null, uniqueValues: {$addToSet: "$strCategory", $addToSet: "$categories_"}}
+    //     }
+    // ]);
+    // result.toArray(function (err, docs) {
     //     console.log(docs);
-    // })
-    /*db.collection("categories").find().toArray(async function (err, docs) {
-        let myData = await asyncMap(docs);
+    //     response.send(JSON.stringify(docs[0].uniqueValues.map((item) => {
+    //         return {
+    //             strCategory: item[0].strCategory,
+    //             strCategoryThumb: item[0].strCategoryThumb,
+    //             strCategoryDescription: item[0].strCategoryDescription
+    //         };
+    //     })));
+    // });
+
+    db.collection("categories").find().toArray(async function (err, docs) {
+        let myData = await helper.asyncMap(docs, db);
         console.log(myData);
         response.status(200);
         response.send(JSON.stringify(myData))
-    });*/
-})
-
-function asyncMap(docs) {
-    return new Promise(resolve => {
-        Promise.all(docs.map(async (item) => {
-            let myResponse = await getOneRequest(item.strCategory);
-            if (myResponse.length) {
-                return item
-            } else {
-                return false
-            }
-        })).then(data => resolve(data.filter(item => item)))
     });
-}
-
-function getOneRequest(strCategorySearchValue) {
-    return new Promise(resolve => {
-        db.collection("recipes").find({strCategory: strCategorySearchValue}).toArray(function (err, docs) {
-            resolve(docs);
-        });
-    })
-}
+})
 
 app.get('/getRecipesByCategory/:category', function (req, response) {
     let category = req.params.category;
