@@ -58,4 +58,19 @@ export default class {
         }).then(response => {
             })
     }
+
+    static async getRandomRecipe(recipeCount, randomQuantity) {
+        const recipes = []
+        for (let i=0; i<randomQuantity; i++) {
+            let recipeToGet = Math.floor(Math.random() * recipeCount)
+            let recipe = await fetch(`http://localhost:2000/getrandomrecipe/${recipeToGet}`, {
+            }).then(response => {
+                return response.json().then(data=>{
+                    return data
+                })
+            })
+            recipes.push(recipe[0])
+        }
+        return recipes
+    }
 }

@@ -120,6 +120,17 @@ app.get('/getrecipescount', function (req, res) {
     })
 })
 
+app.get('/getrandomrecipe/:recipeCount', function(req, res) {
+    recipeToGet = (parseInt(req.params.recipeCount))
+// db.inventory.find( { status: "A" }, { item: 1, status: 1, _id: 0 } )
+    db.collection('recipes').find({}).skip(recipeToGet).limit(1).toArray(function(err, docs) {
+        console.log('recipes')
+        console.log(docs)
+        res.status(200)
+        res.send(JSON.stringify(docs))
+    })
+})
+
 // Connection URL
 const url = 'mongodb://localhost:27017';
 
