@@ -11,7 +11,7 @@ class AddToMongodb extends Component {
 
     addToMongodb() {
         getRandomRecipes(1).then((data) => {
-            console.log(fetch('https://recipe-app-mindgsv244709.codeanyapp.com:2000/insertfrommealdb', {
+            console.log(fetch('https://mealObj:2000/insertfrommealdb', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -55,7 +55,7 @@ class AddToMongodb extends Component {
     addCategoriesToMongo() {
         getCategories().then(categories => {
             categories.categories.forEach(category => {
-                console.log(fetch('https://recipe-app-mindgsv244709.codeanyapp.com:2000/insertcategories', {
+                console.log(fetch('https://mealObj:2000/insertcategories', {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',
