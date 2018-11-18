@@ -1,6 +1,6 @@
 export default class {
     static getAllRecipes (itemsPerPage, page) {
-         return fetch(`recipe-app-mindgsv244709.codeanyapp.com:2000/getallrecipes/${itemsPerPage}/${page}`, {
+         return fetch(`http://recipe-app-mindgsv244709.codeanyapp.com:2000/getallrecipes/${itemsPerPage}/${page}`, {
         }).then(response => {
             return response.json().then((data=>{
             return data;
@@ -8,7 +8,7 @@ export default class {
     }
 
     static getRecipesCount () {
-        return fetch(`recipe-app-mindgsv244709.codeanyapp.com:2000/getrecipescount/`, {
+        return fetch(`http://recipe-app-mindgsv244709.codeanyapp.com:2000/getrecipescount/`, {
         }).then(response => {
             return response.json().then((data=>{
                 return data;
@@ -16,7 +16,7 @@ export default class {
     }
 
    static getSearchValue (searchValue, itemsPerPage, page) {
-        return fetch(`recipe-app-mindgsv244709.codeanyapp.com:2000/searchrecipe/${searchValue}/${itemsPerPage}/${page}`, {
+        return fetch(`http://recipe-app-mindgsv244709.codeanyapp.com:2000/searchrecipe/${searchValue}/${itemsPerPage}/${page}`, {
         }).then(response => {
             return response.json().then((data=>{
                 return data;
@@ -24,7 +24,7 @@ export default class {
     }
 
     static getRecipeById (id) {
-        return fetch(`recipe-app-mindgsv244709.codeanyapp.com:2000/getById/${id}`, {
+        return fetch(`http://recipe-app-mindgsv244709.codeanyapp.com:2000/getById/${id}`, {
         }).then(response => {
             return response.json().then((data=>{
                 return data;
@@ -33,7 +33,7 @@ export default class {
 
     static createRecipe (recipe) {
         console.log(recipe);
-        return fetch(`recipe-app-mindgsv244709.codeanyapp.com:2000/insertfrommealdb`, {
+        return fetch(`http://recipe-app-mindgsv244709.codeanyapp.com:2000/insertfrommealdb`, {
             method: 'POST',
             body: JSON.stringify(recipe),
             headers: {
@@ -48,7 +48,7 @@ export default class {
 
     static updateRecipe (recipe) {
         console.log(recipe);
-        return fetch(`recipe-app-mindgsv244709.codeanyapp.com:2000/updateRecipe`, {
+        return fetch(`http://recipe-app-mindgsv244709.codeanyapp.com:2000/updateRecipe`, {
             method: 'PUT',
             body: JSON.stringify(recipe),
             headers: {
@@ -60,7 +60,7 @@ export default class {
     }
 
     static getCategories () {
-        return fetch(`recipe-app-mindgsv244709.codeanyapp.com:2000/getCategories/`, {
+        return fetch(`http://recipe-app-mindgsv244709.codeanyapp.com:2000/getCategories/`, {
         }).then(response => {
             return response.json().then((data=>{
                 return data;
@@ -68,7 +68,7 @@ export default class {
     }
 
     static getRecipesByCategory (category) {
-        return fetch(`recipe-app-mindgsv244709.codeanyapp.com:2000/getRecipesByCategory/${category}`, {
+        return fetch(`http://recipe-app-mindgsv244709.codeanyapp.com:2000/getRecipesByCategory/${category}`, {
         }).then(response => {
             return response.json().then((data=>{
                 return data;
