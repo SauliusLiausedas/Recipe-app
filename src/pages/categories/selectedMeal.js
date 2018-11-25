@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../../stylesheets/selectedMeal.css'
 import fs from '../../firestoreservice'
 import { Link } from 'react-router-dom'
+import help from '../../services/helperfunctions'
 
 class SelectedMeal extends Component {
     constructor(){
@@ -38,17 +39,13 @@ class SelectedMeal extends Component {
         this.setState({edit: !this.state.edit})
         if(this.state.edit) {
             this.recipeToEdit = []
-            this.state.ingredients = this.arrayClone(this.ingredientsToEdit)
-            this.state.measures = this.arrayClone(this.measuresToEdit)
+            this.state.ingredients = help.cloneArray(this.ingredientsToEdit)
+            this.state.measures = help.cloneArray(this.measuresToEdit)
         } else {
-            this.recipeToEdit = this.arrayClone(this.state.mealById)
-            this.ingredientsToEdit = this.arrayClone(this.state.ingredients)
-            this.measuresToEdit = this.arrayClone(this.state.measures)
+            this.recipeToEdit = help.cloneArray(this.state.mealById)
+            this.ingredientsToEdit = help.cloneArray(this.state.ingredients)
+            this.measuresToEdit = help.cloneArray(this.state.measures)
         }
-    }
-
-    arrayClone(arr) {
-        return JSON.parse(JSON.stringify(arr));
     }
 
     instructionsHandleChange(e) {
@@ -62,6 +59,19 @@ class SelectedMeal extends Component {
             this.recipeToEdit[0].data['strMeasure' + (i + 1)] = e.target.value
         }
         this.state[stateValue][i] = e.target.value;
+    }
+
+    addFields(add) {
+        let ingredients = help.cloneArray(this.state.ingredients)
+        let measures = help.cloneArray(this.state.measures)
+        if(add) {
+            ingredients.push('Add ingredient')
+            measures.push('Add measure unit')
+        } else {
+            ingredients.pop()
+            measures.pop()
+        }
+        this.setState({ingredients: ingredients, measures: measures})
     }
 
     getIngredientsElement () {
@@ -102,7 +112,7 @@ class SelectedMeal extends Component {
 
     getInstructionsElement(mealObj) {
         if (this.state.edit) {
-            return <textarea onChange={(e) => this.instructionsHandleChange(e)} className="instructions" rows="25" cols="50">{mealObj.data.strInstructions}</textarea>
+            return <textarea onChange={(e) => this.instructionsHandleChange(e)} className="instructions" >{mealObj.data.strInstructions}</textarea>
         } else {
             return <p className="instructions">{mealObj.data.strInstructions}</p>
         }
@@ -141,11 +151,10 @@ class SelectedMeal extends Component {
     }
 
     addRecipe() {
-
     }
 
     saveRecipe() {
-        this.state.mealById = this.arrayClone(this.recipeToEdit)
+        this.state.mealById = help.cloneArray(this.recipeToEdit)
         fs.createNewRecipe(this.recipeToEdit[0].data)
         this.setState({edit: false})
         this.recipeToEdit = []
@@ -159,19 +168,21 @@ class SelectedMeal extends Component {
                         return(
                             <div key={i}>
                                 <div className="mealViewGrid">
-                                    <div>
+                                    <div className={'ingredients-div'}>
                                         <h2 className="ingredients">Ingredients</h2>
                                         {this.getIngredientsElement()}
                                     </div>
-                                    <div>
+                                    <div className={'image-div'}>
                                         {/*{this.getNameElement(mealObj)}*/}
                                         <h2 className="ingredients">{mealObj.data.strMeal}</h2>
                                         <img alt={mealObj.data.strMeal} className="mealImage" src={mealObj.data.strMealThumb} />
                                         <em><h3 className="category">{mealObj.data.strCategory} category</h3></em>
-                                        <button className="edit btn" onClick={this.enableEdit.bind(this)}>{this.getEditButtonValue.bind(this)()}</button>
-                                        {this.getAddSaveButton()}
+                                        <div className={'editAddButtons'}>
+                                            <button className="edit btn" onClick={this.enableEdit.bind(this)}>{this.getEditButtonValue.bind(this)()}</button>
+                                            {this.getAddSaveButton()}
+                                        </div>
                                     </div>
-                                    <div>
+                                    <div className={'instructions-div'}>
                                         <h2 className="ingredients">Instructions</h2>
                                         {this.getInstructionsElement(mealObj)}
                                     </div>

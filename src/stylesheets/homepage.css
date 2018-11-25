@@ -2,19 +2,23 @@
     min-height: 500px;
     margin: 0;
 }
+.namePicAndInstructions {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
 .contentRecipe {
-    display: flex;
-    align-items: center;
     padding: 40px;
-    text-align: left;
+    text-align: center;
   }
-  
+  .nameAndInstructions {
+    text-align: left;
+    align-self: center;
+  }
   .contentRecipePic {
     padding: 0 30px;
-    width: 500px;
+    width: 100%;
     height: auto;
   }
-
   .contentRecipeTextTitle {
     text-align: left;
   }
@@ -43,6 +47,23 @@
 
   .recipeButton:hover {
     cursor: pointer;
-    box-shadow: 0px 0px 2px 2px slategrey;
+    box-shadow: 0 0 2px 2px slategrey;
     transition: all 500ms;
+  }
+  @media only screen and (max-width: 600px) {
+    .namePicAndInstructions {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .contentRecipePic {
+      padding: 0;
+    }
+    .namePicAndInstructions {
+      grid-template-columns: 95%;
+    }
+    .nameAndInstructions, .contentRecipeTextTitle {
+      text-align: center;
+    }
   }

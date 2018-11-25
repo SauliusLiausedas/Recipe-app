@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../../stylesheets/mealEdit.css'
 import fs from '../../firestoreservice'
+import help from '../../services/helperfunctions'
 
 class MealEdit extends Component {
     constructor() {
@@ -213,7 +214,7 @@ class MealEdit extends Component {
                                     </div>
                                     <div>
                                         <h2 className="ingredients">Instructions</h2>
-                                        <textarea rows="25" cols="50" id="instructions" onChange={(e)=> this.editRecipeElements(e)} className="instructions">{mealObj.data.strInstructions}</textarea>
+                                        <textarea rows="30" cols="70" id="instructions" onChange={(e)=> this.editRecipeElements(e)} className="instructionsEdit">{mealObj.data.strInstructions}</textarea>
                                     </div>
                                 </div>
                             </div>

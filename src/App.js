@@ -31,7 +31,7 @@ class App extends Component {
                             <Route path="/categories" exact component={ Categories }/>
                             <Route path="/categories/:category" exact  component={ SelectedCategory } />
                             <Route path="/categories/:category/:id" exact component={ SelectedMeal } />
-                            <Route path="/addtofirebase" exact component={ AddToFirebase } />
+                            {/*<Route path="/addtofirebase" exact component={ AddToFirebase } />*/}
                             <Route path="/add" exact component={ AddRecipe } />
                             <Route component={ Error } />
                         </Switch>

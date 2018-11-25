@@ -28,7 +28,6 @@ export default class {
 
     static getCollectionLength (collection) {
         return this.db.collection(collection).get().then((querySnapshot) => {
-            console.log(querySnapshot);
             return querySnapshot.docs.length;
         })
     }
@@ -247,7 +246,6 @@ export default class {
     * @param data object which contains all recipe data
     * */
     static createNewRecipe(data) {
-        console.log(data)
         return new Promise(resolve => {
             this.db.collection("recipes").doc(data.strMeal).set(data)
                 .then(function (docRef) {

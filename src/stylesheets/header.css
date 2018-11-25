@@ -96,3 +96,9 @@ input:focus {
     color: grey;
     text-decoration: underline;
   }
+
+@media only screen and (max-width: 500px) {
+  .navListItem {
+    display: block;
+  }
+}

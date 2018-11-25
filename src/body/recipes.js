@@ -52,13 +52,15 @@ class Recipes extends Component {
                     <button className="recipeButton" onClick={() => this.generateNewRecipes()}>Now showing {this.state.recipesId} recipes</button>
                     {this.state.recipesToShow.map((mealObj ,i) => {
                         return(
-                        <div key={i} className="contentRecipe">
-                            <Link to={'/categories/' + mealObj.strCategory + '/' + mealObj.idMeal}><img className="contentRecipePic" alt={mealObj.strMeal} src={mealObj.strMealThumb}/></Link>
-                        <div>
-                            <h2 className="contentRecipeTextTitle">{mealObj.strMeal}</h2>
-                            <p>{mealObj.strInstructions.slice(0, 250) + "..."}</p>
-                        </div>
-                        </div>
+                            <div className={'namePicAndInstructions'}>
+                                <div key={i} className="contentRecipe">
+                                    <Link to={'/categories/' + mealObj.strCategory + '/' + mealObj.id}><img className="contentRecipePic" alt={mealObj.strMeal} src={mealObj.strMealThumb}/></Link>
+                                </div>
+                                <div className={'nameAndInstructions'}>
+                                    <h2 className="contentRecipeTextTitle">{mealObj.strMeal}</h2>
+                                    <p>{mealObj.strInstructions.slice(0, 250) + "..."}</p>
+                                </div>
+                            </div>
                         )
                     })}
                 </div>

@@ -2,7 +2,6 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-column-gap: 15px;
-    grid-row-gap: 30px;
     text-align: center;
     width: 70%;
     margin: auto;
@@ -11,8 +10,8 @@
     min-height: 500px;
 }
 .categoryMealImg {
-    width: auto;
-    height: 200px;
+    width: 100%;
+    height: auto;
     border-radius: 0%;
     max-width: 270px;
     overflow: hidden;
@@ -25,8 +24,27 @@
 
 }
 .categoryMealName {
+    width: 100%;
     font-size: 1.3em;
     max-width: 250px;
     justify-self: center;
     overflow: hidden;
+}
+
+@media only screen and (max-width: 850px) {
+    .categoryMeals {
+        grid-template-columns: auto auto auto;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .categoryMeals {
+        grid-template-columns: 45% 45%;
+        grid-column-gap: 10%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .categoryMeals {
+        grid-template-columns: auto;
+        grid-column-gap: 10%;
+    }
 }

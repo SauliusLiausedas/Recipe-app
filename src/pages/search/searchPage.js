@@ -6,10 +6,10 @@ class SearchPage extends Component {
     render() {
         if (!this.props.searchResult) {
             return (
-                <div><h1>What are you looking for?</h1></div>
+                <div className={'searchStart'}><h1>What are you looking for?</h1></div>
             )
         } else if (Object.keys(this.props.searchResult).length === 0) {
-            return (<div><h1>Nothing was found. Try changing search words.</h1></div>)
+            return (<div className={'searchStart'}><h1>Nothing was found. Try changing search words.</h1></div>)
         } else {
             return (
                 this.props.searchResult.map((mealObj, i) => {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import fs from '../firestoreservice'
+import help from '../services/helperfunctions'
 
 class AddRecipe extends Component {
     constructor() {
@@ -45,14 +46,16 @@ class AddRecipe extends Component {
     }
 
     addFields(add) {
+        let ingredients = help.cloneArray(this.state.ingredients)
+        let measures = help.cloneArray(this.state.measures)
         if(add) {
-            this.state.ingredients.push('Add ingredient')
-            this.state.measures.push('Add measure unit')
+            ingredients.push('Add ingredient')
+            measures.push('Add measure unit')
         } else {
-            this.state.ingredients.pop()
-            this.state.measures.pop()
+            ingredients.pop()
+            measures.pop()
         }
-        this.repaint()
+        this.setState({ingredients: ingredients, measures: measures})
     }
 
     repaint() {
@@ -156,7 +159,7 @@ class AddRecipe extends Component {
             <div className="viewMeal">
                 <div>
                     <div className="mealViewGrid">
-                        <div>
+                        <div className={'ingredients-div'}>
                             <h2 className="ingredients">Ingredients</h2>
                             <ul className={'ingredientss-ul'}>
                                 {this.state.ingredients.map((ingredient, i) => { return(
@@ -169,7 +172,7 @@ class AddRecipe extends Component {
                                 <button className="edit btn addIngredientButton" onClick={() => this.addFields(true)}>+</button>
                             </ul>
                         </div>
-                        <div className="center">
+                        <div className="center image-div">
                             <input className="ingredients addInputWidth" id="recipeName" onChange={(e) => this.handleChange(e)} placeholder="Recipe Name" />
                             <img alt="Add Picture" className="mealImage addImage" src={this.state.imageURL} />
                             <input type="url"
@@ -183,9 +186,9 @@ class AddRecipe extends Component {
                                 <button className="edit btn" onClick={() => this.saveRecipe()}>Save</button>
                             </div>
                         </div>
-                        <div>
+                        <div className={'instructions-div'}>
                             <h2 className="ingredients">Instructions</h2>
-                            <textarea id="recipeInstructions" onChange={(e) => this.handleChange(e)} className="instructions" rows="25" cols="50" placeholder="Instructions for your meal"></textarea>
+                            <textarea id="recipeInstructions" onChange={(e) => this.handleChange(e)} className="instructions" placeholder="Instructions for your meal"/>
                         </div>
                     </div>
                 </div>
